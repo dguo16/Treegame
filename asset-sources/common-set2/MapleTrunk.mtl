@@ -1,0 +1,28 @@
+newmtl MapleBark
+Kd 0.800 0.550 0.240
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl MapleLimbs
+Kd 0.760 0.510 0.220
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl MaplePlates
+Kd 0.890 0.660 0.310
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl MapleStubs
+Kd 0.700 0.460 0.200
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+

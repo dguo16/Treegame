@@ -1,0 +1,34 @@
+{
+  "AdminSecurity": {
+    "OK": true,
+    "Result": 125
+  },
+  "Acceptance": {
+    "OK": true,
+    "Result": 461
+  },
+  "SaveFaults": {
+    "OK": true,
+    "Result": 22
+  },
+  "Integration": [
+    true,
+    67
+  ],
+  "Progression": {
+    "OK": true,
+    "Result": 40
+  },
+  "RoadmapPhase1": {
+    "OK": true,
+    "Result": 77
+  },
+  "StandardAssets": {
+    "OK": true,
+    "Result": 1708
+  },
+  "WorldUX": {
+    "OK": true,
+    "Result": 36
+  }
+}

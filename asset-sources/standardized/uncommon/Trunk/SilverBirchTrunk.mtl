@@ -1,0 +1,15 @@
+newmtl SilverBirchBark
+Kd 0.92 0.93 0.87
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl SilverBirchBarkMarks
+Kd 0.22 0.25 0.22
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

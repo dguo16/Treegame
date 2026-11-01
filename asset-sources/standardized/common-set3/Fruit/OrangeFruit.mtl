@@ -1,0 +1,23 @@
+newmtl OrangeBody
+Kd 0.98 0.55 0.1
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl OrangeStem
+Kd 0.42 0.3 0.14
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl OrangeLeaf
+Kd 0.3 0.72 0.26
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

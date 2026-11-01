@@ -1,0 +1,21 @@
+newmtl SproutLeaf
+Kd 0.450 0.880 0.350
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl SproutVein
+Kd 0.780 0.980 0.580
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl SproutHub
+Kd 0.280 0.620 0.240
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+

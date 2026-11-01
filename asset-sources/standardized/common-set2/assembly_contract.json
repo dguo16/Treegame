@@ -1,0 +1,1030 @@
+{
+  "version": 1,
+  "up": "Y",
+  "unit": "stud",
+  "slot_types": [
+    "Roots",
+    "Trunk",
+    "Leaves",
+    "Fruit"
+  ],
+  "world_origins": {
+    "Roots": [
+      0,
+      0,
+      0
+    ],
+    "Trunk": [
+      0,
+      0.6,
+      0
+    ],
+    "Leaves": [
+      0,
+      3.6,
+      0
+    ]
+  },
+  "fruit_placement": "For upright fruit: world origin = canopy world origin + chosen canopy fruit_socket - fruit fruit_attach. All coordinates Y-up. For rotated fruit, rotate fruit_attach before subtracting.",
+  "assets": [
+    {
+      "name": "OakTrunk",
+      "rarity": "Common",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.191795,
+        3.0,
+        1.776354
+      ],
+      "bounds_min": [
+        -1.068533,
+        0.0,
+        -1.026354
+      ],
+      "bounds_max": [
+        1.123262,
+        3.0,
+        0.75
+      ],
+      "triangles": 216,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "Bark"
+      ]
+    },
+    {
+      "name": "CloverLeaves",
+      "rarity": "Common",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 792,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            0.359659,
+            0.677571
+          ],
+          [
+            -0.677571,
+            0.394825,
+            0.990403
+          ],
+          [
+            -0.990403,
+            0.363852,
+            -0.677571
+          ],
+          [
+            0.677571,
+            0.391043,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "Foliage",
+        "FoliageLight"
+      ]
+    },
+    {
+      "name": "Taproot",
+      "rarity": "Common",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.563519
+      ],
+      "bounds_min": [
+        -1.870628,
+        0.0,
+        -1.625633
+      ],
+      "bounds_max": [
+        1.829372,
+        0.6,
+        1.937886
+      ],
+      "triangles": 282,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "Root"
+      ]
+    },
+    {
+      "name": "Apple",
+      "rarity": "Common",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.0,
+        1.00709,
+        1.0
+      ],
+      "bounds_min": [
+        -0.5,
+        -0.39257,
+        -0.5
+      ],
+      "bounds_max": [
+        0.5,
+        0.61452,
+        0.5
+      ],
+      "triangles": 424,
+      "joins": {
+        "fruit_attach": [
+          0.04999999999999999,
+          0.59309,
+          0.0
+        ]
+      },
+      "materials": [
+        "AppleBody",
+        "AppleStem",
+        "AppleLeaf"
+      ]
+    },
+    {
+      "name": "PineTrunk",
+      "rarity": "Common",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.317669,
+        3.0,
+        2.226084
+      ],
+      "bounds_min": [
+        -1.057088,
+        0.0,
+        -1.313447
+      ],
+      "bounds_max": [
+        1.260581,
+        3.0,
+        0.912638
+      ],
+      "triangles": 448,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "PineBark",
+        "PineStubs"
+      ]
+    },
+    {
+      "name": "MapleTrunk",
+      "rarity": "Common",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.85,
+        3.0,
+        1.468584
+      ],
+      "bounds_min": [
+        -1.425,
+        0.0,
+        -0.716672
+      ],
+      "bounds_max": [
+        1.425,
+        3.0,
+        0.751912
+      ],
+      "triangles": 600,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "MapleBark",
+        "MapleLimbs",
+        "MaplePlates",
+        "MapleStubs"
+      ]
+    },
+    {
+      "name": "OakleafLeaves",
+      "rarity": "Common",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 592,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            0.537883,
+            0.677571
+          ],
+          [
+            -0.677571,
+            0.558749,
+            0.990403
+          ],
+          [
+            -0.866602,
+            1.003925,
+            -0.592875
+          ],
+          [
+            0.677571,
+            0.749522,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "OakLobes",
+        "OakScallops",
+        "OakCrown",
+        "OakBase"
+      ]
+    },
+    {
+      "name": "SproutLeaves",
+      "rarity": "Common",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.187212,
+        2.8,
+        3.077325
+      ],
+      "bounds_min": [
+        -1.487212,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.377325
+      ],
+      "triangles": 680,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            0.983417,
+            0.677571
+          ],
+          [
+            -0.677571,
+            0.997523,
+            0.990403
+          ],
+          [
+            -0.866602,
+            1.055083,
+            -0.592875
+          ],
+          [
+            0.677571,
+            1.541987,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "SproutHub",
+        "SproutLeaf",
+        "SproutVein"
+      ]
+    },
+    {
+      "name": "FibrousRoot",
+      "rarity": "Common",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.7
+      ],
+      "bounds_min": [
+        -1.85,
+        0.0,
+        -1.85
+      ],
+      "bounds_max": [
+        1.85,
+        0.6,
+        1.85
+      ],
+      "triangles": 312,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "FibrousCrown",
+        "FibrousRoots",
+        "FibrousTips"
+      ]
+    },
+    {
+      "name": "KnottedRoot",
+      "rarity": "Common",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.7
+      ],
+      "bounds_min": [
+        -1.85,
+        0.0,
+        -1.85
+      ],
+      "bounds_max": [
+        1.85,
+        0.6,
+        1.85
+      ],
+      "triangles": 496,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "KnottedBase",
+        "KnottedRoots",
+        "KnottedKnots"
+      ]
+    },
+    {
+      "name": "CherryFruit",
+      "rarity": "Common",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.0,
+        0.957705,
+        0.487718
+      ],
+      "bounds_min": [
+        -0.5,
+        -0.230769,
+        -0.243859
+      ],
+      "bounds_max": [
+        0.5,
+        0.726936,
+        0.243859
+      ],
+      "triangles": 428,
+      "joins": {
+        "fruit_attach": [
+          0.0,
+          0.6974679487179486,
+          0.0
+        ]
+      },
+      "materials": [
+        "CherryBody",
+        "CherryStem",
+        "CherryLeaf"
+      ]
+    },
+    {
+      "name": "OrangeFruit",
+      "rarity": "Common",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.0,
+        1.012137,
+        1.0
+      ],
+      "bounds_min": [
+        -0.5,
+        -0.401961,
+        -0.5
+      ],
+      "bounds_max": [
+        0.5,
+        0.610176,
+        0.5
+      ],
+      "triangles": 272,
+      "joins": {
+        "fruit_attach": [
+          0.019607843137254905,
+          0.5196078431372549,
+          0.0
+        ]
+      },
+      "materials": [
+        "OrangeBody",
+        "OrangeStem",
+        "OrangeLeaf"
+      ]
+    },
+    {
+      "name": "WillowTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.60537,
+        3.0,
+        1.5
+      ],
+      "bounds_min": [
+        -1.322578,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.282792,
+        3.0,
+        0.75
+      ],
+      "triangles": 352,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "WillowBark"
+      ]
+    },
+    {
+      "name": "AspenTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.5,
+        3.0,
+        1.5
+      ],
+      "bounds_min": [
+        -0.75,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        0.75,
+        3.0,
+        0.75
+      ],
+      "triangles": 356,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "AspenBark",
+        "AspenBarkMarks"
+      ]
+    },
+    {
+      "name": "SilverBirchTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.184269,
+        3.0,
+        1.5
+      ],
+      "bounds_min": [
+        -1.130848,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.053421,
+        3.0,
+        0.75
+      ],
+      "triangles": 388,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "SilverBirchBark",
+        "SilverBirchBarkMarks"
+      ]
+    },
+    {
+      "name": "FernLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 968,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            0.371452,
+            0.677571
+          ],
+          [
+            -0.677571,
+            0.493948,
+            0.990403
+          ],
+          [
+            -0.990403,
+            0.299796,
+            -0.677571
+          ],
+          [
+            0.677571,
+            0.283277,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "FernGreen",
+        "FernTips"
+      ]
+    },
+    {
+      "name": "IvyLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 892,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            0.426631,
+            0.677571
+          ],
+          [
+            -0.677571,
+            0.609102,
+            0.990403
+          ],
+          [
+            -0.990403,
+            0.400598,
+            -0.677571
+          ],
+          [
+            0.677571,
+            0.324943,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "IvyGreen",
+        "IvyNewGrowth",
+        "IvyLeafTips"
+      ]
+    },
+    {
+      "name": "PalmFanLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 928,
+      "joins": {
+        "fruit_sockets": [
+          [
+            0.990403,
+            2.255072,
+            0.677571
+          ],
+          [
+            -0.677571,
+            2.283296,
+            0.990403
+          ],
+          [
+            -0.990403,
+            2.255072,
+            -0.677571
+          ],
+          [
+            0.677571,
+            2.283296,
+            -0.990403
+          ]
+        ]
+      },
+      "materials": [
+        "PalmGreen",
+        "PalmFold"
+      ]
+    },
+    {
+      "name": "VineRoots",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.617164
+      ],
+      "bounds_min": [
+        -1.798505,
+        0.0,
+        -1.672107
+      ],
+      "bounds_max": [
+        1.901495,
+        0.6,
+        1.945057
+      ],
+      "triangles": 422,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "VineRoot"
+      ]
+    },
+    {
+      "name": "MangroveRoot",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.621574,
+        0.6,
+        3.7
+      ],
+      "bounds_min": [
+        -1.811802,
+        0.0,
+        -1.850379
+      ],
+      "bounds_max": [
+        1.809772,
+        0.6,
+        1.849621
+      ],
+      "triangles": 408,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "MangroveRootRoot"
+      ]
+    },
+    {
+      "name": "CreepingRoot",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.668228,
+        0.6,
+        3.7
+      ],
+      "bounds_min": [
+        -1.731821,
+        0.0,
+        -1.798851
+      ],
+      "bounds_max": [
+        1.936406,
+        0.6,
+        1.901149
+      ],
+      "triangles": 532,
+      "joins": {
+        "root_to_trunk": [
+          0,
+          0.6,
+          0
+        ]
+      },
+      "materials": [
+        "CreepingRootRoot",
+        "CreepingRootYoungRoot"
+      ]
+    },
+    {
+      "name": "PearFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.0,
+        1.50772,
+        1.0
+      ],
+      "bounds_min": [
+        -0.5,
+        -0.62,
+        -0.5
+      ],
+      "bounds_max": [
+        0.5,
+        0.88772,
+        0.5
+      ],
+      "triangles": 314,
+      "joins": {
+        "fruit_attach": [
+          0.14049209893414852,
+          0.8467913579041795,
+          0.0
+        ]
+      },
+      "materials": [
+        "PearBody",
+        "PearStem",
+        "PearLeaf"
+      ]
+    },
+    {
+      "name": "PeachFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        0.937833,
+        1.141497,
+        1.0
+      ],
+      "bounds_min": [
+        -0.468916,
+        -0.445,
+        -0.5
+      ],
+      "bounds_max": [
+        0.468916,
+        0.696497,
+        0.5
+      ],
+      "triangles": 324,
+      "joins": {
+        "fruit_attach": [
+          0.015000000000000025,
+          0.60500000002059,
+          0.0
+        ]
+      },
+      "materials": [
+        "PeachGold",
+        "PeachBlush",
+        "PeachStem",
+        "PeachLeaf"
+      ]
+    },
+    {
+      "name": "LemonFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        1.1088,
+        0.830151,
+        0.7482
+      ],
+      "bounds_min": [
+        -0.5544,
+        -0.3741,
+        -0.3741
+      ],
+      "bounds_max": [
+        0.5544,
+        0.456051,
+        0.3741
+      ],
+      "triangles": 304,
+      "joins": {
+        "fruit_attach": [
+          0.0,
+          0.3741,
+          0.0
+        ]
+      },
+      "materials": [
+        "LemonRind",
+        "LemonLeaf"
+      ]
+    }
+  ]
+}

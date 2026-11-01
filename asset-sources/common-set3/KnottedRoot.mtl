@@ -1,0 +1,21 @@
+newmtl KnottedBase
+Kd 0.500 0.310 0.160
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl KnottedRoots
+Kd 0.580 0.360 0.190
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+
+newmtl KnottedKnots
+Kd 0.420 0.260 0.130
+Ka 1 1 1
+Ks 0 0 0
+Ns 1
+d 1
+

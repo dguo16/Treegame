@@ -1,0 +1,23 @@
+newmtl PearBody
+Kd 0.61 0.76 0.23
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PearStem
+Kd 0.38 0.26 0.12
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PearLeaf
+Kd 0.24 0.53 0.19
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

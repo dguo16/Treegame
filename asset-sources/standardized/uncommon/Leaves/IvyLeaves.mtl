@@ -1,0 +1,23 @@
+newmtl IvyGreen
+Kd 0.19 0.48 0.29
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl IvyNewGrowth
+Kd 0.31 0.6 0.32
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl IvyLeafTips
+Kd 0.24 0.54 0.28
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

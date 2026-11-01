@@ -1,0 +1,15 @@
+newmtl Foliage
+Kd 0.3 0.8 0.25
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FoliageLight
+Kd 0.5 0.92 0.35
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

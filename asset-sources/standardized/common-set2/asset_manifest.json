@@ -1,0 +1,163 @@
+{
+  "coordinate_system": "Y-up; one unit = one stud",
+  "assembly": {
+    "root_origin": [
+      0,
+      0,
+      0
+    ],
+    "trunk_origin": [
+      0,
+      0.6,
+      0
+    ],
+    "canopy_origin": [
+      0,
+      3.6,
+      0
+    ]
+  },
+  "assets": [
+    {
+      "name": "PineTrunk",
+      "rarity": "Common",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.317669,
+        3.0,
+        2.226084
+      ],
+      "bounds_min": [
+        -1.057088,
+        0.0,
+        -1.313447
+      ],
+      "bounds_max": [
+        1.260581,
+        3.0,
+        0.912638
+      ],
+      "triangles": 448,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "PineBark",
+        "PineStubs"
+      ]
+    },
+    {
+      "name": "MapleTrunk",
+      "rarity": "Common",
+      "category": "Trunk",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        2.85,
+        3.0,
+        1.468584
+      ],
+      "bounds_min": [
+        -1.425,
+        0.0,
+        -0.716672
+      ],
+      "bounds_max": [
+        1.425,
+        3.0,
+        0.751912
+      ],
+      "triangles": 600,
+      "joins": {
+        "trunk_to_canopy": [
+          0,
+          3,
+          0
+        ]
+      },
+      "materials": [
+        "MapleBark",
+        "MapleLimbs",
+        "MaplePlates",
+        "MapleStubs"
+      ]
+    },
+    {
+      "name": "OakleafLeaves",
+      "rarity": "Common",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "triangles": 592,
+      "joins": {},
+      "materials": [
+        "OakLobes",
+        "OakScallops",
+        "OakCrown",
+        "OakBase"
+      ]
+    },
+    {
+      "name": "SproutLeaves",
+      "rarity": "Common",
+      "category": "Leaves",
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": [
+        3.187212,
+        2.8,
+        3.077325
+      ],
+      "bounds_min": [
+        -1.487212,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.377325
+      ],
+      "triangles": 680,
+      "joins": {},
+      "materials": [
+        "SproutHub",
+        "SproutLeaf",
+        "SproutVein"
+      ]
+    }
+  ]
+}

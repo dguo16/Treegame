@@ -1,0 +1,15 @@
+newmtl PalmGreen
+Kd 0.26 0.6 0.26
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PalmFold
+Kd 0.36 0.69 0.29
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

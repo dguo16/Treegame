@@ -1,0 +1,15 @@
+newmtl CreepingRootRoot
+Kd 0.48 0.38 0.23
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CreepingRootYoungRoot
+Kd 0.5568 0.44079999999999997 0.2668
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

@@ -1,0 +1,38 @@
+{
+  "name": "Build a Tree",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "BuildATree": {
+        "$path": "src/ReplicatedStorage"
+      }
+    },
+    "ServerScriptService": {
+      "BuildATree": {
+        "$path": "src/ServerScriptService"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "BuildATree": {
+          "$path": "src/StarterPlayer/StarterPlayerScripts"
+        }
+      }
+    },
+    "StarterGui": {
+      "BuildATreeUI": {
+        "$path": "src/StarterGui"
+      }
+    },
+    "TestService": {
+      "BuildATreeTests": {
+        "$path": "src/TestService"
+      }
+    },
+    "Workspace": {
+      "StarterTreeEditor": {
+        "$path": "src/Workspace/StarterTreeEditor.rbxmx"
+      }
+    }
+  }
+}

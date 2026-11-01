@@ -1,0 +1,15 @@
+newmtl FernGreen
+Kd 0.25 0.57 0.23
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FernTips
+Kd 0.38 0.69 0.28
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

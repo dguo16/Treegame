@@ -1,0 +1,31 @@
+newmtl PeachGold
+Kd 0.98 0.64 0.32
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PeachBlush
+Kd 0.95 0.42 0.39
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PeachStem
+Kd 0.38 0.26 0.12
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PeachLeaf
+Kd 0.24 0.53 0.19
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

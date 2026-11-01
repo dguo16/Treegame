@@ -1,0 +1,17 @@
+WillowTrunk: 352 triangles; GLB/OBJ verified
+AspenTrunk: 356 triangles; GLB/OBJ verified
+SilverBirchTrunk: 388 triangles; GLB/OBJ verified
+FernLeaves: 968 triangles; GLB/OBJ verified
+IvyLeaves: 892 triangles; GLB/OBJ verified
+PalmFanLeaves: 928 triangles; GLB/OBJ verified
+VineRoots: 422 triangles; GLB/OBJ verified
+MangroveRoot: 408 triangles; GLB/OBJ verified
+CreepingRoot: 532 triangles; GLB/OBJ verified
+PearFruit: 314 triangles; GLB/OBJ verified
+PeachFruit: 324 triangles; GLB/OBJ verified
+LemonFruit: 304 triangles; GLB/OBJ verified
+PASS: structural checks, triangle budgets, and category bounds.
+Not tested in Roblox Studio.
+Revision 2: 18 common/uncommon crown combinations rendered and inspected.
+Approved willow, roots, pear and peach exports verified unchanged.
+Lemon has no stem mesh or material.

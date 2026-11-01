@@ -1,0 +1,15 @@
+OakTrunk: 216 triangles; Y bounds 0.000 to 3.000; exports valid
+CloverLeaves: 792 triangles; Y bounds 0.000 to 2.800; exports valid
+Taproot: 282 triangles; Y bounds 0.000 to 0.600; exports valid
+Apple: 424 triangles; Y bounds -0.393 to 0.615; exports valid
+PineTrunk: 448 triangles; Y bounds 0.000 to 3.000; exports valid
+MapleTrunk: 600 triangles; Y bounds 0.000 to 3.000; exports valid
+OakleafLeaves: 592 triangles; Y bounds 0.000 to 2.800; exports valid
+SproutLeaves: 680 triangles; Y bounds 0.000 to 2.800; exports valid
+FibrousRoot: 312 triangles; Y bounds 0.000 to 0.600; exports valid
+KnottedRoot: 496 triangles; Y bounds 0.000 to 0.600; exports valid
+CherryFruit: 428 triangles; Y bounds -0.231 to 0.727; exports valid
+OrangeFruit: 272 triangles; Y bounds -0.402 to 0.610; exports valid
+216 root/trunk/crown combinations passed vertical connection checks; all 36 trunk/crown pairings rendered.
+Common and uncommon fruit attach via body-center pivots; per-fruit stem-tip offsets are listed separately.
+Roblox Studio import not executed.

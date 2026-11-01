@@ -1,0 +1,23 @@
+newmtl FibrousCrown
+Kd 0.6 0.38 0.2
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FibrousRoots
+Kd 0.67 0.43 0.22
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FibrousTips
+Kd 0.8 0.57 0.33
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

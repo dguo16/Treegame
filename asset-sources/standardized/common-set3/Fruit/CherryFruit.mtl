@@ -1,0 +1,23 @@
+newmtl CherryBody
+Kd 0.8 0.08 0.16
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CherryStem
+Kd 0.45 0.28 0.14
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CherryLeaf
+Kd 0.28 0.72 0.25
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

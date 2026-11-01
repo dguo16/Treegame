@@ -1,0 +1,367 @@
+{
+  "up_axis": "Y",
+  "units": "stud",
+  "assets": [
+    {
+      "name": "WillowTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "triangles": 352,
+      "bounds_min": [
+        -1.32258,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.28279,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        2.60537,
+        3.0,
+        1.5
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "WillowBark"
+      ]
+    },
+    {
+      "name": "AspenTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "triangles": 356,
+      "bounds_min": [
+        -0.75,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        0.75,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        1.5,
+        3.0,
+        1.5
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "AspenBark",
+        "AspenBarkMarks"
+      ]
+    },
+    {
+      "name": "SilverBirchTrunk",
+      "rarity": "Uncommon",
+      "category": "Trunk",
+      "triangles": 388,
+      "bounds_min": [
+        -1.13085,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.05342,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        2.18427,
+        3.0,
+        1.5
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "SilverBirchBark",
+        "SilverBirchBarkMarks"
+      ]
+    },
+    {
+      "name": "FernLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "triangles": 968,
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "FernGreen",
+        "FernTips"
+      ]
+    },
+    {
+      "name": "IvyLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "triangles": 892,
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "IvyGreen",
+        "IvyNewGrowth",
+        "IvyLeafTips"
+      ]
+    },
+    {
+      "name": "PalmFanLeaves",
+      "rarity": "Uncommon",
+      "category": "Leaves",
+      "triangles": 928,
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "PalmGreen",
+        "PalmFold"
+      ]
+    },
+    {
+      "name": "VineRoots",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "triangles": 422,
+      "bounds_min": [
+        -1.79851,
+        0.0,
+        -1.67211
+      ],
+      "bounds_max": [
+        1.90149,
+        0.6,
+        1.94506
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.61716
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "VineRoot"
+      ]
+    },
+    {
+      "name": "MangroveRoot",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "triangles": 408,
+      "bounds_min": [
+        -1.8118,
+        0.0,
+        -1.85038
+      ],
+      "bounds_max": [
+        1.80977,
+        0.6,
+        1.84962
+      ],
+      "dimensions": [
+        3.62157,
+        0.6,
+        3.7
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "MangroveRootRoot"
+      ]
+    },
+    {
+      "name": "CreepingRoot",
+      "rarity": "Uncommon",
+      "category": "Roots",
+      "triangles": 532,
+      "bounds_min": [
+        -1.73182,
+        0.0,
+        -1.79885
+      ],
+      "bounds_max": [
+        1.93641,
+        0.6,
+        1.90115
+      ],
+      "dimensions": [
+        3.66823,
+        0.6,
+        3.7
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "CreepingRootRoot",
+        "CreepingRootYoungRoot"
+      ]
+    },
+    {
+      "name": "PearFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "triangles": 314,
+      "bounds_min": [
+        -0.5,
+        -0.62,
+        -0.5
+      ],
+      "bounds_max": [
+        0.5,
+        0.88772,
+        0.5
+      ],
+      "dimensions": [
+        1.0,
+        1.50772,
+        1.0
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "PearBody",
+        "PearStem",
+        "PearLeaf"
+      ]
+    },
+    {
+      "name": "PeachFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "triangles": 324,
+      "bounds_min": [
+        -0.46892,
+        -0.445,
+        -0.5
+      ],
+      "bounds_max": [
+        0.46892,
+        0.6965,
+        0.5
+      ],
+      "dimensions": [
+        0.93783,
+        1.1415,
+        1.0
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "PeachGold",
+        "PeachBlush",
+        "PeachStem",
+        "PeachLeaf"
+      ]
+    },
+    {
+      "name": "LemonFruit",
+      "rarity": "Uncommon",
+      "category": "Fruit",
+      "triangles": 304,
+      "bounds_min": [
+        -0.5544,
+        -0.3741,
+        -0.3741
+      ],
+      "bounds_max": [
+        0.5544,
+        0.45605,
+        0.3741
+      ],
+      "dimensions": [
+        1.1088,
+        0.83015,
+        0.7482
+      ],
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "materials": [
+        "LemonRind",
+        "LemonLeaf"
+      ]
+    }
+  ]
+}

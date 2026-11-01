@@ -1,0 +1,31 @@
+newmtl OakLobes
+Kd 0.32 0.74 0.22
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl OakScallops
+Kd 0.52 0.86 0.3
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl OakCrown
+Kd 0.42 0.8 0.26
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl OakBase
+Kd 0.2 0.52 0.2
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

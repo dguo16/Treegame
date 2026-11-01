@@ -1,0 +1,15 @@
+newmtl PineBark
+Kd 0.72 0.42 0.22
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PineStubs
+Kd 0.62 0.35 0.18
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
