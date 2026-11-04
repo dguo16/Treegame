@@ -1,0 +1,731 @@
+{
+  "Assumptions": {
+    "RarityWeights": [
+      60,
+      25,
+      10,
+      4,
+      0.9,
+      0.09,
+      0.01
+    ],
+    "MutationProbabilities": {
+      "None": 0.8,
+      "Golden": 0.12,
+      "Rainbow": 0.05,
+      "Void": 0.025,
+      "Cosmic": 0.005
+    },
+    "Luck": {
+      "Base": 1,
+      "Pets": 1.36,
+      "LuckPass": 2,
+      "PetsAndLuckPass": 2.72
+    },
+    "Pets": "Three tier-1 Epic pets: 1+3*4*.03 = 1.36 rarity luck. Pets unchanged.",
+    "IID": true,
+    "PityIncluded": false,
+    "FreeStartersIncluded": false,
+    "CooldownSeconds": 2.5,
+    "IllustrativeSecondsPerRoll": 15
+  },
+  "Sets": [
+    {
+      "Key": "Names1",
+      "Title": "Common names (12)",
+      "Kind": "Names",
+      "Tier": 1,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 62.06421356421357,
+        "Pets": 71.00146031746031,
+        "LuckPass": 86.889898989899,
+        "PetsAndLuckPass": 104.76439249639252
+      },
+      "MinimumHoursBase": 0.04310014830848165,
+      "IllustrativeHoursAt15Seconds": 0.25860088985088986
+    },
+    {
+      "Key": "Names2",
+      "Title": "Uncommon names (12)",
+      "Kind": "Names",
+      "Tier": 2,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 148.95411255411256,
+        "Pets": 125.29669467787116,
+        "LuckPass": 104.26787878787879,
+        "PetsAndLuckPass": 92.43916984975809
+      },
+      "MinimumHoursBase": 0.10344035594035593,
+      "IllustrativeHoursAt15Seconds": 0.6206421356421356
+    },
+    {
+      "Key": "Names3",
+      "Title": "Rare names (12)",
+      "Kind": "Names",
+      "Tier": 3,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 372.38528138528136,
+        "Pets": 313.24173669467785,
+        "LuckPass": 260.669696969697,
+        "PetsAndLuckPass": 231.0979246243952
+      },
+      "MinimumHoursBase": 0.25860088985088986,
+      "IllustrativeHoursAt15Seconds": 1.551605339105339
+    },
+    {
+      "Key": "Names4",
+      "Title": "Epic names (12)",
+      "Kind": "Names",
+      "Tier": 4,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 930.9632034632034,
+        "Pets": 783.1043417366947,
+        "LuckPass": 651.6742424242425,
+        "PetsAndLuckPass": 577.7448115609881
+      },
+      "MinimumHoursBase": 0.6465022246272245,
+      "IllustrativeHoursAt15Seconds": 3.8790133477633475
+    },
+    {
+      "Key": "Names5",
+      "Title": "Legendary names (12)",
+      "Kind": "Names",
+      "Tier": 5,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 4137.614237614237,
+        "Pets": 3480.463741051976,
+        "LuckPass": 2896.3299663299663,
+        "PetsAndLuckPass": 2567.7547180488355
+      },
+      "MinimumHoursBase": 2.8733432205654426,
+      "IllustrativeHoursAt15Seconds": 17.240059323392654
+    },
+    {
+      "Key": "Names6",
+      "Title": "Mythic names (12)",
+      "Kind": "Names",
+      "Tier": 6,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 41376.14237614238,
+        "Pets": 34804.63741051976,
+        "LuckPass": 28963.299663299666,
+        "PetsAndLuckPass": 25677.547180488356
+      },
+      "MinimumHoursBase": 28.73343220565443,
+      "IllustrativeHoursAt15Seconds": 172.4005932339266
+    },
+    {
+      "Key": "Names7",
+      "Title": "Godly names (12)",
+      "Kind": "Names",
+      "Tier": 7,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 372385.28138528136,
+        "Pets": 313241.73669467785,
+        "LuckPass": 260669.69696969696,
+        "PetsAndLuckPass": 231097.9246243952
+      },
+      "MinimumHoursBase": 258.6008898508898,
+      "IllustrativeHoursAt15Seconds": 1551.605339105339
+    },
+    {
+      "Key": "SlotTrunk",
+      "Title": "Trunk names Common\u2013Epic (12)",
+      "Kind": "CoreSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 572.5683741506193,
+        "Pets": 481.6524270346501,
+        "LuckPass": 400.9473495927457,
+        "PetsAndLuckPass": 355.868513252683
+      },
+      "MinimumHoursBase": 0.3976169264934856,
+      "IllustrativeHoursAt15Seconds": 2.3857015589609136
+    },
+    {
+      "Key": "LegendSlotTrunk",
+      "Title": "Trunk all names (21)",
+      "Kind": "FullSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 21,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 220167.87667656643,
+        "Pets": 185200.03743969998,
+        "LuckPass": 154117.51367359646,
+        "PetsAndLuckPass": 136633.59405516324
+      },
+      "MinimumHoursBase": 152.89435880317114,
+      "IllustrativeHoursAt15Seconds": 917.3661528190268
+    },
+    {
+      "Key": "SlotLeaves",
+      "Title": "Leaves names Common\u2013Epic (12)",
+      "Kind": "CoreSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 572.5683741506193,
+        "Pets": 481.6524270346501,
+        "LuckPass": 400.9473495927457,
+        "PetsAndLuckPass": 355.868513252683
+      },
+      "MinimumHoursBase": 0.3976169264934856,
+      "IllustrativeHoursAt15Seconds": 2.3857015589609136
+    },
+    {
+      "Key": "LegendSlotLeaves",
+      "Title": "Leaves all names (21)",
+      "Kind": "FullSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 21,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 220167.87667656643,
+        "Pets": 185200.03743969998,
+        "LuckPass": 154117.51367359646,
+        "PetsAndLuckPass": 136633.59405516324
+      },
+      "MinimumHoursBase": 152.89435880317114,
+      "IllustrativeHoursAt15Seconds": 917.3661528190268
+    },
+    {
+      "Key": "SlotRoots",
+      "Title": "Roots names Common\u2013Epic (12)",
+      "Kind": "CoreSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 572.5683741506193,
+        "Pets": 481.6524270346501,
+        "LuckPass": 400.9473495927457,
+        "PetsAndLuckPass": 355.868513252683
+      },
+      "MinimumHoursBase": 0.3976169264934856,
+      "IllustrativeHoursAt15Seconds": 2.3857015589609136
+    },
+    {
+      "Key": "LegendSlotRoots",
+      "Title": "Roots all names (21)",
+      "Kind": "FullSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 21,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 220167.87667656643,
+        "Pets": 185200.03743969998,
+        "LuckPass": 154117.51367359646,
+        "PetsAndLuckPass": 136633.59405516324
+      },
+      "MinimumHoursBase": 152.89435880317114,
+      "IllustrativeHoursAt15Seconds": 917.3661528190268
+    },
+    {
+      "Key": "SlotFruit",
+      "Title": "Fruit names Common\u2013Epic (12)",
+      "Kind": "CoreSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 12,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 572.5683741506193,
+        "Pets": 481.6524270346501,
+        "LuckPass": 400.9473495927457,
+        "PetsAndLuckPass": 355.868513252683
+      },
+      "MinimumHoursBase": 0.3976169264934856,
+      "IllustrativeHoursAt15Seconds": 2.3857015589609136
+    },
+    {
+      "Key": "LegendSlotFruit",
+      "Title": "Fruit all names (21)",
+      "Kind": "FullSlot",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 21,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 220167.87667656643,
+        "Pets": 185200.03743969998,
+        "LuckPass": 154117.51367359646,
+        "PetsAndLuckPass": 136633.59405516324
+      },
+      "MinimumHoursBase": 152.89435880317114,
+      "IllustrativeHoursAt15Seconds": 917.3661528190268
+    },
+    {
+      "Key": "AnyGolden",
+      "Title": "Any Golden",
+      "Kind": "AnyMutation",
+      "Tier": null,
+      "Mutation": "Golden",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 8.333333333333334,
+        "Pets": 8.333333333333334,
+        "LuckPass": 8.333333333333334,
+        "PetsAndLuckPass": 8.333333333333334
+      },
+      "MinimumHoursBase": 0.005787037037037038,
+      "IllustrativeHoursAt15Seconds": 0.034722222222222224
+    },
+    {
+      "Key": "AnyRainbow",
+      "Title": "Any Rainbow",
+      "Kind": "AnyMutation",
+      "Tier": null,
+      "Mutation": "Rainbow",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 20.0,
+        "Pets": 20.0,
+        "LuckPass": 20.0,
+        "PetsAndLuckPass": 20.0
+      },
+      "MinimumHoursBase": 0.013888888888888888,
+      "IllustrativeHoursAt15Seconds": 0.08333333333333333
+    },
+    {
+      "Key": "AnyVoid",
+      "Title": "Any Void",
+      "Kind": "AnyMutation",
+      "Tier": null,
+      "Mutation": "Void",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 40.0,
+        "Pets": 40.0,
+        "LuckPass": 40.0,
+        "PetsAndLuckPass": 40.0
+      },
+      "MinimumHoursBase": 0.027777777777777776,
+      "IllustrativeHoursAt15Seconds": 0.16666666666666666
+    },
+    {
+      "Key": "AnyCosmic",
+      "Title": "Any Cosmic",
+      "Kind": "AnyMutation",
+      "Tier": null,
+      "Mutation": "Cosmic",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 200.0,
+        "Pets": 200.0,
+        "LuckPass": 200.0,
+        "PetsAndLuckPass": 200.0
+      },
+      "MinimumHoursBase": 0.1388888888888889,
+      "IllustrativeHoursAt15Seconds": 0.8333333333333334
+    },
+    {
+      "Key": "Mutation1Golden",
+      "Title": "Common Golden distinct names (6/12)",
+      "Kind": "Mutation",
+      "Tier": 1,
+      "Mutation": "Golden",
+      "Need": 6,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 108.86844636844637,
+        "Pets": 124.54550264550267,
+        "LuckPass": 152.41582491582494,
+        "PetsAndLuckPass": 183.7699374699375
+      },
+      "MinimumHoursBase": 0.07560308775586554,
+      "IllustrativeHoursAt15Seconds": 0.45361852653519324
+    },
+    {
+      "Key": "Mutation1Rainbow",
+      "Title": "Common Rainbow distinct names (4/12)",
+      "Kind": "Mutation",
+      "Tier": 1,
+      "Mutation": "Rainbow",
+      "Need": 4,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 154.14141414141415,
+        "Pets": 176.33777777777777,
+        "LuckPass": 215.7979797979798,
+        "PetsAndLuckPass": 260.19070707070705
+      },
+      "MinimumHoursBase": 0.10704264870931537,
+      "IllustrativeHoursAt15Seconds": 0.6422558922558922
+    },
+    {
+      "Key": "Mutation1Void",
+      "Title": "Common Void distinct names (3/12)",
+      "Kind": "Mutation",
+      "Tier": 1,
+      "Mutation": "Void",
+      "Need": 3,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 219.3939393939394,
+        "Pets": 250.98666666666668,
+        "LuckPass": 307.1515151515152,
+        "PetsAndLuckPass": 370.33696969696973
+      },
+      "MinimumHoursBase": 0.15235690235690236,
+      "IllustrativeHoursAt15Seconds": 0.9141414141414141
+    },
+    {
+      "Key": "Mutation1Cosmic",
+      "Title": "Common Cosmic distinct names (1/12)",
+      "Kind": "Mutation",
+      "Tier": 1,
+      "Mutation": "Cosmic",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 333.3333333333333,
+        "Pets": 381.3333333333333,
+        "LuckPass": 466.66666666666663,
+        "PetsAndLuckPass": 562.6666666666667
+      },
+      "MinimumHoursBase": 0.23148148148148145,
+      "IllustrativeHoursAt15Seconds": 1.3888888888888888
+    },
+    {
+      "Key": "Mutation2Golden",
+      "Title": "Uncommon Golden distinct names (6/12)",
+      "Kind": "Mutation",
+      "Tier": 2,
+      "Mutation": "Golden",
+      "Need": 6,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 261.2842712842713,
+        "Pets": 219.78618113912233,
+        "LuckPass": 182.8989898989899,
+        "PetsAndLuckPass": 162.1499448264154
+      },
+      "MinimumHoursBase": 0.1814474106140773,
+      "IllustrativeHoursAt15Seconds": 1.088684463684464
+    },
+    {
+      "Key": "Mutation2Rainbow",
+      "Title": "Uncommon Rainbow distinct names (4/12)",
+      "Kind": "Mutation",
+      "Tier": 2,
+      "Mutation": "Rainbow",
+      "Need": 4,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 369.9393939393939,
+        "Pets": 311.1843137254902,
+        "LuckPass": 258.9575757575757,
+        "PetsAndLuckPass": 229.58003565062387
+      },
+      "MinimumHoursBase": 0.25690235690235685,
+      "IllustrativeHoursAt15Seconds": 1.5414141414141411
+    },
+    {
+      "Key": "Mutation2Void",
+      "Title": "Uncommon Void distinct names (3/12)",
+      "Kind": "Mutation",
+      "Tier": 2,
+      "Mutation": "Void",
+      "Need": 3,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 526.5454545454545,
+        "Pets": 442.91764705882355,
+        "LuckPass": 368.58181818181816,
+        "PetsAndLuckPass": 326.7679144385027
+      },
+      "MinimumHoursBase": 0.3656565656565656,
+      "IllustrativeHoursAt15Seconds": 2.193939393939394
+    },
+    {
+      "Key": "Mutation2Cosmic",
+      "Title": "Uncommon Cosmic distinct names (1/12)",
+      "Kind": "Mutation",
+      "Tier": 2,
+      "Mutation": "Cosmic",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 800.0,
+        "Pets": 672.9411764705883,
+        "LuckPass": 560.0,
+        "PetsAndLuckPass": 496.47058823529414
+      },
+      "MinimumHoursBase": 0.5555555555555556,
+      "IllustrativeHoursAt15Seconds": 3.3333333333333335
+    },
+    {
+      "Key": "Mutation3Golden",
+      "Title": "Rare Golden distinct names (6/12)",
+      "Kind": "Mutation",
+      "Tier": 3,
+      "Mutation": "Golden",
+      "Need": 6,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 653.2106782106782,
+        "Pets": 549.4654528478058,
+        "LuckPass": 457.2474747474748,
+        "PetsAndLuckPass": 405.37486206603853
+      },
+      "MinimumHoursBase": 0.45361852653519324,
+      "IllustrativeHoursAt15Seconds": 2.7217111592111594
+    },
+    {
+      "Key": "Mutation3Rainbow",
+      "Title": "Rare Rainbow distinct names (4/12)",
+      "Kind": "Mutation",
+      "Tier": 3,
+      "Mutation": "Rainbow",
+      "Need": 4,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 924.8484848484846,
+        "Pets": 777.9607843137254,
+        "LuckPass": 647.3939393939394,
+        "PetsAndLuckPass": 573.9500891265596
+      },
+      "MinimumHoursBase": 0.6422558922558921,
+      "IllustrativeHoursAt15Seconds": 3.853535353535353
+    },
+    {
+      "Key": "Mutation3Void",
+      "Title": "Rare Void distinct names (3/12)",
+      "Kind": "Mutation",
+      "Tier": 3,
+      "Mutation": "Void",
+      "Need": 3,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 1316.3636363636363,
+        "Pets": 1107.2941176470588,
+        "LuckPass": 921.4545454545455,
+        "PetsAndLuckPass": 816.9197860962568
+      },
+      "MinimumHoursBase": 0.914141414141414,
+      "IllustrativeHoursAt15Seconds": 5.484848484848484
+    },
+    {
+      "Key": "Mutation3Cosmic",
+      "Title": "Rare Cosmic distinct names (1/12)",
+      "Kind": "Mutation",
+      "Tier": 3,
+      "Mutation": "Cosmic",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 2000.0,
+        "Pets": 1682.3529411764703,
+        "LuckPass": 1400.0,
+        "PetsAndLuckPass": 1241.1764705882354
+      },
+      "MinimumHoursBase": 1.3888888888888888,
+      "IllustrativeHoursAt15Seconds": 8.333333333333334
+    },
+    {
+      "Key": "Mutation4Golden",
+      "Title": "Epic Golden distinct names (6/12)",
+      "Kind": "Mutation",
+      "Tier": 4,
+      "Mutation": "Golden",
+      "Need": 6,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 1633.0266955266957,
+        "Pets": 1373.6636321195144,
+        "LuckPass": 1143.1186868686868,
+        "PetsAndLuckPass": 1013.4371551650964
+      },
+      "MinimumHoursBase": 1.1340463163379833,
+      "IllustrativeHoursAt15Seconds": 6.804277898027898
+    },
+    {
+      "Key": "Mutation4Rainbow",
+      "Title": "Epic Rainbow distinct names (4/12)",
+      "Kind": "Mutation",
+      "Tier": 4,
+      "Mutation": "Rainbow",
+      "Need": 4,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 2312.121212121212,
+        "Pets": 1944.9019607843136,
+        "LuckPass": 1618.4848484848485,
+        "PetsAndLuckPass": 1434.8752228163992
+      },
+      "MinimumHoursBase": 1.6056397306397305,
+      "IllustrativeHoursAt15Seconds": 9.633838383838382
+    },
+    {
+      "Key": "Mutation4Void",
+      "Title": "Epic Void distinct names (3/12)",
+      "Kind": "Mutation",
+      "Tier": 4,
+      "Mutation": "Void",
+      "Need": 3,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 3290.909090909091,
+        "Pets": 2768.2352941176473,
+        "LuckPass": 2303.6363636363635,
+        "PetsAndLuckPass": 2042.299465240642
+      },
+      "MinimumHoursBase": 2.2853535353535355,
+      "IllustrativeHoursAt15Seconds": 13.712121212121213
+    },
+    {
+      "Key": "Mutation4Cosmic",
+      "Title": "Epic Cosmic distinct names (1/12)",
+      "Kind": "Mutation",
+      "Tier": 4,
+      "Mutation": "Cosmic",
+      "Need": 1,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 5000.0,
+        "Pets": 4205.882352941177,
+        "LuckPass": 3499.9999999999995,
+        "PetsAndLuckPass": 3102.941176470588
+      },
+      "MinimumHoursBase": 3.4722222222222223,
+      "IllustrativeHoursAt15Seconds": 20.833333333333332
+    },
+    {
+      "Key": "CoreNames48",
+      "Title": "Common\u2013Epic all names (48)",
+      "Kind": "CoreNames",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 48,
+      "Optional": false,
+      "ExpectedRolls": {
+        "Base": 937.2715701537262,
+        "Pets": 788.4108291122152,
+        "LuckPass": 656.0917067541909,
+        "PetsAndLuckPass": 581.6796195276853
+      },
+      "MinimumHoursBase": 0.6508830348289765,
+      "IllustrativeHoursAt15Seconds": 3.9052982089738593
+    },
+    {
+      "Key": "AllNames84",
+      "Title": "All names (84)",
+      "Kind": "AllNames",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 84,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 372385.8208744279,
+        "Pets": 313242.190500254,
+        "LuckPass": 260670.07461209942,
+        "PetsAndLuckPass": 231098.25942501248
+      },
+      "MinimumHoursBase": 258.6012644961305,
+      "IllustrativeHoursAt15Seconds": 1551.6075869767828
+    },
+    {
+      "Key": "Legend5",
+      "Title": "Legendary all mutation combinations (60)",
+      "Kind": "LegendTier",
+      "Tier": 5,
+      "Mutation": null,
+      "Need": 60,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 827624.1328878512,
+        "Pets": 696177.9470762515,
+        "LuckPass": 579336.8930214958,
+        "PetsAndLuckPass": 513613.800115696
+      },
+      "MinimumHoursBase": 574.7389811721189,
+      "IllustrativeHoursAt15Seconds": 3448.4338870327133
+    },
+    {
+      "Key": "Legend6",
+      "Title": "Mythic all mutation combinations (60)",
+      "Kind": "LegendTier",
+      "Tier": 6,
+      "Mutation": null,
+      "Need": 60,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 8276241.328878512,
+        "Pets": 6961779.470762512,
+        "LuckPass": 5793368.930214959,
+        "PetsAndLuckPass": 5136138.001156962
+      },
+      "MinimumHoursBase": 5747.389811721188,
+      "IllustrativeHoursAt15Seconds": 34484.338870327134
+    },
+    {
+      "Key": "Legend7",
+      "Title": "Godly all mutation combinations (60)",
+      "Kind": "LegendTier",
+      "Tier": 7,
+      "Mutation": null,
+      "Need": 60,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 74486171.9599066,
+        "Pets": 62656015.236862615,
+        "LuckPass": 52140320.371934615,
+        "PetsAndLuckPass": 46225242.01041263
+      },
+      "MinimumHoursBase": 51726.508305490686,
+      "IllustrativeHoursAt15Seconds": 310359.0498329441
+    },
+    {
+      "Key": "Legend420",
+      "Title": "All combinations (420)",
+      "Kind": "Legend",
+      "Tier": null,
+      "Mutation": null,
+      "Need": 420,
+      "Optional": true,
+      "ExpectedRolls": {
+        "Base": 74486259.80385889,
+        "Pets": 62656089.129128374,
+        "LuckPass": 52140381.86270122,
+        "PetsAndLuckPass": 46225296.525335975
+      },
+      "MinimumHoursBase": 51726.56930823534,
+      "IllustrativeHoursAt15Seconds": 310359.41584941203
+    }
+  ]
+}

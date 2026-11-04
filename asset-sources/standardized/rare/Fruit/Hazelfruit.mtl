@@ -1,0 +1,31 @@
+newmtl HazelfruitShell
+Kd 0.66 0.4 0.23
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl HazelfruitHusk
+Kd 0.36 0.52 0.31
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl HazelHuskEdges
+Kd 0.55 0.66 0.38
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl HazelfruitStem
+Kd 0.4 0.29 0.18
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

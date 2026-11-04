@@ -1,0 +1,379 @@
+{
+  "up_axis": "Y",
+  "units": "stud",
+  "assets": [
+    {
+      "name": "SapphireBirchTrunk",
+      "rarity": "Rare",
+      "category": "Trunk",
+      "triangles": 480,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.311823,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.311823,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        2.623646,
+        3.0,
+        1.5
+      ],
+      "materials": [
+        "SapphireBirchBark",
+        "SapphireBarkBands",
+        "SapphireCrystals"
+      ]
+    },
+    {
+      "name": "AzureCedarTrunk",
+      "rarity": "Rare",
+      "category": "Trunk",
+      "triangles": 540,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.43432,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.43432,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        2.868641,
+        3.0,
+        1.5
+      ],
+      "materials": [
+        "AzureCedarBark",
+        "CedarBranchShelves",
+        "CedarBarkRidges"
+      ]
+    },
+    {
+      "name": "CobaltPalmTrunk",
+      "rarity": "Rare",
+      "category": "Trunk",
+      "triangles": 576,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.91,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        0.836154,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        1.746154,
+        3.0,
+        1.5
+      ],
+      "materials": [
+        "CobaltPalmBark",
+        "PalmGrowthRings"
+      ]
+    },
+    {
+      "name": "BlueMapleLeaves",
+      "rarity": "Rare",
+      "category": "Leaves",
+      "triangles": 580,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.375329,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.075329,
+        2.8,
+        3.4
+      ],
+      "materials": [
+        "BlueMapleFoliage",
+        "BlueMapleCrown",
+        "BlueMapleLeafTips"
+      ]
+    },
+    {
+      "name": "FrostFernLeaves",
+      "rarity": "Rare",
+      "category": "Leaves",
+      "triangles": 808,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.531647,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.231647,
+        2.8,
+        3.4
+      ],
+      "materials": [
+        "FrostFernFoliage",
+        "FrostFernNewGrowth",
+        "FernFrostTips"
+      ]
+    },
+    {
+      "name": "AzureBlossomLeaves",
+      "rarity": "Rare",
+      "category": "Leaves",
+      "triangles": 1012,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.440541,
+        0.0,
+        -1.670892
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.140541,
+        2.8,
+        3.370892
+      ],
+      "materials": [
+        "AzureBlossomFoliage",
+        "AzurePetals",
+        "AzurePetalEdges",
+        "BlossomCenters"
+      ]
+    },
+    {
+      "name": "CoralRoot",
+      "rarity": "Rare",
+      "category": "Roots",
+      "triangles": 534,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.772567,
+        0.0,
+        -1.922333
+      ],
+      "bounds_max": [
+        1.927433,
+        0.6,
+        1.614894
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.537227
+      ],
+      "materials": [
+        "CoralRootBody",
+        "CoralRootTips"
+      ]
+    },
+    {
+      "name": "FrostRoot",
+      "rarity": "Rare",
+      "category": "Roots",
+      "triangles": 376,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.85,
+        0.0,
+        -1.85
+      ],
+      "bounds_max": [
+        1.85,
+        0.6,
+        1.85
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.7
+      ],
+      "materials": [
+        "FrostRootBody",
+        "FrostRootIce",
+        "RootIceCrystals"
+      ]
+    },
+    {
+      "name": "AzureTangleRoots",
+      "rarity": "Rare",
+      "category": "Roots",
+      "triangles": 540,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.557575,
+        0.0,
+        -1.999687
+      ],
+      "bounds_max": [
+        2.061152,
+        0.6,
+        1.700313
+      ],
+      "dimensions": [
+        3.618727,
+        0.6,
+        3.7
+      ],
+      "materials": [
+        "AzureTangleBody",
+        "AzureTangleStrands"
+      ]
+    },
+    {
+      "name": "CrystalberryFruit",
+      "rarity": "Rare",
+      "category": "Fruit",
+      "triangles": 464,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.562494,
+        -0.48,
+        -0.58494
+      ],
+      "bounds_max": [
+        0.56528,
+        0.676268,
+        0.582882
+      ],
+      "dimensions": [
+        1.127774,
+        1.156268,
+        1.167822
+      ],
+      "materials": [
+        "CrystalberryBody",
+        "CrystalberryCrystals",
+        "CrystalberryStem",
+        "CrystalberryLeaf"
+      ]
+    },
+    {
+      "name": "Hazelfruit",
+      "rarity": "Rare",
+      "category": "Fruit",
+      "triangles": 488,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.56709,
+        -0.53,
+        -0.5
+      ],
+      "bounds_max": [
+        0.56709,
+        0.655197,
+        0.5
+      ],
+      "dimensions": [
+        1.13418,
+        1.185197,
+        1.0
+      ],
+      "materials": [
+        "HazelfruitShell",
+        "HazelfruitHusk",
+        "HazelHuskEdges",
+        "HazelfruitStem"
+      ]
+    },
+    {
+      "name": "FrostberryFruit",
+      "rarity": "Rare",
+      "category": "Fruit",
+      "triangles": 344,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.478154,
+        -0.386487,
+        -0.5
+      ],
+      "bounds_max": [
+        0.478154,
+        0.581496,
+        0.5
+      ],
+      "dimensions": [
+        0.956307,
+        0.967983,
+        1.0
+      ],
+      "materials": [
+        "FrostberryBody",
+        "FrostberryBloom",
+        "FrostberryStem",
+        "FrostberryLeaf"
+      ]
+    }
+  ]
+}

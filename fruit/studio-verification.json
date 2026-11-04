@@ -1,0 +1,31 @@
+{
+  "Date": "2026-11-01",
+  "StudioId": "7fea0469-35d5-4764-8753-a1ae1002279a",
+  "PlaceId": 122763473283486,
+  "GameId": 10774301287,
+  "Mode": "Edit",
+  "DefaultViewport": "1631x753",
+  "HTTP": false,
+  "MaintainedScripts": 63,
+  "SourceDifferences": [],
+  "GeometryRecords": 104,
+  "GeometryDifferences": [],
+  "TestMemoryOnlyAttributeRemoved": true,
+  "TemporaryRunnerRemoved": true,
+  "NoPublishingPerformed": true,
+  "UI": {
+    "Desktop": true,
+    "iPhone17ProLandscape": "750x381",
+    "iPhone17ProPortrait": "401x778",
+    "FinalSellTextFits": true,
+    "TouchControlsHidden": true,
+    "VaultAndFruitIndexInspected": true,
+    "ShelfSixItemsInspected": true,
+    "PhysicalDeviceCertified": false
+  },
+  "Handbook": {
+    "Pages": 27,
+    "RenderedAndInspected": true,
+    "Renderer": "Background Word export plus bundled Poppler; LibreOffice unavailable"
+  }
+}

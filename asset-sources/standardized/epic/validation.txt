@@ -1,0 +1,14 @@
+AmethystSpiralTrunk: 588 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+VioletWillowTrunk: 584 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+RosewoodTwistTrunk: 632 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+LavenderFanLeaves: 1072 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+OrchidCloudLeaves: 872 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+VioletWingsLeaves: 816 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+CrystalRoot: 522 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+AmethystRoot: 396 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+OrchidTetherRoots: 472 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+RoyalPlumFruit: 396 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+PomegranateFruit: 468 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+Passionfruit: 444 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+1728 cross-tier root/trunk/crown combinations pass vertical join checks.
+Fruit sockets are ray-cast to canopy surfaces; collision and Roblox Studio import tests were not run.

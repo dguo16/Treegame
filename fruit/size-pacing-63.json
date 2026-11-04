@@ -1,0 +1,2585 @@
+[
+  {
+    "Before": {
+      "Sold": 55363,
+      "First300": {
+        "Wall": 3269.25,
+        "Active": 3269.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 12756.25,
+      "Ascensions": [
+        {
+          "RunActive": 12756.25,
+          "Active": 12756.25,
+          "Wall": 12756.25,
+          "Saplings": 0,
+          "Coins": 1002346418.8293555
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54787,
+      "First300": {
+        "Wall": 3269.25,
+        "Active": 3269.25
+      },
+      "Lost": 4,
+      "Coins": 35,
+      "Active": 12636.25,
+      "Ascensions": [
+        {
+          "RunActive": 12636.25,
+          "Active": 12636.25,
+          "Wall": 12636.25,
+          "Saplings": 0,
+          "Coins": 1000288821.3120518
+        }
+      ]
+    },
+    "Seed": 1
+  },
+  {
+    "Before": {
+      "Sold": 63385,
+      "First300": {
+        "Wall": 3509.75,
+        "Active": 3509.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 14544.25,
+      "Ascensions": [
+        {
+          "RunActive": 14544.25,
+          "Active": 14544.25,
+          "Wall": 14544.25,
+          "Saplings": 0,
+          "Coins": 1002186195.8854215
+        }
+      ]
+    },
+    "After": {
+      "Sold": 59581,
+      "First300": {
+        "Wall": 3512.25,
+        "Active": 3512.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13812.25,
+      "Ascensions": [
+        {
+          "RunActive": 13812.25,
+          "Active": 13812.25,
+          "Wall": 13812.25,
+          "Saplings": 0,
+          "Coins": 1000468772.1720539
+        }
+      ]
+    },
+    "Seed": 2
+  },
+  {
+    "Before": {
+      "Sold": 56027,
+      "First300": {
+        "Wall": 3877.25,
+        "Active": 3877.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13452.25,
+      "Ascensions": [
+        {
+          "RunActive": 13452.25,
+          "Active": 13452.25,
+          "Wall": 13452.25,
+          "Saplings": 0,
+          "Coins": 1032291201.61554
+        }
+      ]
+    },
+    "After": {
+      "Sold": 67431,
+      "First300": {
+        "Wall": 3889.75,
+        "Active": 3889.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 15828.25,
+      "Ascensions": [
+        {
+          "RunActive": 15828.25,
+          "Active": 15828.25,
+          "Wall": 15828.25,
+          "Saplings": 0,
+          "Coins": 1000102258.9830531
+        }
+      ]
+    },
+    "Seed": 3
+  },
+  {
+    "Before": {
+      "Sold": 53471,
+      "First300": {
+        "Wall": 3987.75,
+        "Active": 3987.75
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 13644.25,
+      "Ascensions": [
+        {
+          "RunActive": 13644.25,
+          "Active": 13644.25,
+          "Wall": 13644.25,
+          "Saplings": 0,
+          "Coins": 1000450038.8348134
+        }
+      ]
+    },
+    "After": {
+      "Sold": 79580,
+      "First300": {
+        "Wall": 2775.75,
+        "Active": 2775.75
+      },
+      "Lost": 18,
+      "Coins": 35,
+      "Active": 12336.25,
+      "Ascensions": [
+        {
+          "RunActive": 12336.25,
+          "Active": 12336.25,
+          "Wall": 12336.25,
+          "Saplings": 0,
+          "Coins": 1002002934.7408131
+        }
+      ]
+    },
+    "Seed": 4
+  },
+  {
+    "Before": {
+      "Sold": 62508,
+      "First300": {
+        "Wall": 3903.75,
+        "Active": 3903.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 14844.25,
+      "Ascensions": [
+        {
+          "RunActive": 14844.25,
+          "Active": 14844.25,
+          "Wall": 14844.25,
+          "Saplings": 0,
+          "Coins": 1001817024.8131764
+        }
+      ]
+    },
+    "After": {
+      "Sold": 63467,
+      "First300": {
+        "Wall": 3269.25,
+        "Active": 3269.25
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 10416.25,
+      "Ascensions": [
+        {
+          "RunActive": 10416.25,
+          "Active": 10416.25,
+          "Wall": 10416.25,
+          "Saplings": 0,
+          "Coins": 1001415098.3246014
+        }
+      ]
+    },
+    "Seed": 5
+  },
+  {
+    "Before": {
+      "Sold": 55807,
+      "First300": {
+        "Wall": 3788.25,
+        "Active": 3788.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13380.25,
+      "Ascensions": [
+        {
+          "RunActive": 13380.25,
+          "Active": 13380.25,
+          "Wall": 13380.25,
+          "Saplings": 0,
+          "Coins": 1002139382.2879763
+        }
+      ]
+    },
+    "After": {
+      "Sold": 58033,
+      "First300": {
+        "Wall": 3771.75,
+        "Active": 3771.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13788.25,
+      "Ascensions": [
+        {
+          "RunActive": 13788.25,
+          "Active": 13788.25,
+          "Wall": 13788.25,
+          "Saplings": 0,
+          "Coins": 1000136723.9735832
+        }
+      ]
+    },
+    "Seed": 6
+  },
+  {
+    "Before": {
+      "Sold": 46129,
+      "First300": {
+        "Wall": 4260.25,
+        "Active": 4260.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 14076.25,
+      "Ascensions": [
+        {
+          "RunActive": 14076.25,
+          "Active": 14076.25,
+          "Wall": 14076.25,
+          "Saplings": 0,
+          "Coins": 1001455492.9972544
+        }
+      ]
+    },
+    "After": {
+      "Sold": 47100,
+      "First300": {
+        "Wall": 3528.25,
+        "Active": 3528.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 12012.25,
+      "Ascensions": [
+        {
+          "RunActive": 12012.25,
+          "Active": 12012.25,
+          "Wall": 12012.25,
+          "Saplings": 0,
+          "Coins": 1000866817.2869484
+        }
+      ]
+    },
+    "Seed": 7
+  },
+  {
+    "Before": {
+      "Sold": 53459,
+      "First300": {
+        "Wall": 2832.75,
+        "Active": 2832.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 8820.25,
+      "Ascensions": [
+        {
+          "RunActive": 8820.25,
+          "Active": 8820.25,
+          "Wall": 8820.25,
+          "Saplings": 0,
+          "Coins": 1000178304.1322408
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54515,
+      "First300": {
+        "Wall": 2832.75,
+        "Active": 2832.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 8952.25,
+      "Ascensions": [
+        {
+          "RunActive": 8952.25,
+          "Active": 8952.25,
+          "Wall": 8952.25,
+          "Saplings": 0,
+          "Coins": 1000029485.5765258
+        }
+      ]
+    },
+    "Seed": 8
+  },
+  {
+    "Before": {
+      "Sold": 46977,
+      "First300": {
+        "Wall": 3910.75,
+        "Active": 3910.75
+      },
+      "Lost": 18,
+      "Coins": 35,
+      "Active": 14664.25,
+      "Ascensions": [
+        {
+          "RunActive": 14664.25,
+          "Active": 14664.25,
+          "Wall": 14664.25,
+          "Saplings": 0,
+          "Coins": 1000238769.2311558
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51174,
+      "First300": {
+        "Wall": 3915.75,
+        "Active": 3915.75
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 15888.25,
+      "Ascensions": [
+        {
+          "RunActive": 15888.25,
+          "Active": 15888.25,
+          "Wall": 15888.25,
+          "Saplings": 0,
+          "Coins": 1026011825.8863533
+        }
+      ]
+    },
+    "Seed": 9
+  },
+  {
+    "Before": {
+      "Sold": 51927,
+      "First300": {
+        "Wall": 4537.75,
+        "Active": 4537.75
+      },
+      "Lost": 4,
+      "Coins": 35,
+      "Active": 15168.25,
+      "Ascensions": [
+        {
+          "RunActive": 15168.25,
+          "Active": 15168.25,
+          "Wall": 15168.25,
+          "Saplings": 0,
+          "Coins": 1000266717.0156034
+        }
+      ]
+    },
+    "After": {
+      "Sold": 56475,
+      "First300": {
+        "Wall": 4399.75,
+        "Active": 4399.75
+      },
+      "Lost": 4,
+      "Coins": 35,
+      "Active": 14436.25,
+      "Ascensions": [
+        {
+          "RunActive": 14436.25,
+          "Active": 14436.25,
+          "Wall": 14436.25,
+          "Saplings": 0,
+          "Coins": 1000848112.0137053
+        }
+      ]
+    },
+    "Seed": 10
+  },
+  {
+    "Before": {
+      "Sold": 47587,
+      "First300": {
+        "Wall": 3533.25,
+        "Active": 3533.25
+      },
+      "Lost": 10,
+      "Coins": 35,
+      "Active": 12084.25,
+      "Ascensions": [
+        {
+          "RunActive": 12084.25,
+          "Active": 12084.25,
+          "Wall": 12084.25,
+          "Saplings": 0,
+          "Coins": 1001142873.6385142
+        }
+      ]
+    },
+    "After": {
+      "Sold": 55246,
+      "First300": {
+        "Wall": 3569.75,
+        "Active": 3569.75
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 12828.25,
+      "Ascensions": [
+        {
+          "RunActive": 12828.25,
+          "Active": 12828.25,
+          "Wall": 12828.25,
+          "Saplings": 0,
+          "Coins": 1001381181.5420185
+        }
+      ]
+    },
+    "Seed": 11
+  },
+  {
+    "Before": {
+      "Sold": 66360,
+      "First300": {
+        "Wall": 4301.25,
+        "Active": 4301.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 14328.25,
+      "Ascensions": [
+        {
+          "RunActive": 14328.25,
+          "Active": 14328.25,
+          "Wall": 14328.25,
+          "Saplings": 0,
+          "Coins": 1000525771.2932007
+        }
+      ]
+    },
+    "After": {
+      "Sold": 58771,
+      "First300": {
+        "Wall": 4174.25,
+        "Active": 4174.25
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 13548.25,
+      "Ascensions": [
+        {
+          "RunActive": 13548.25,
+          "Active": 13548.25,
+          "Wall": 13548.25,
+          "Saplings": 0,
+          "Coins": 1001351390.6726601
+        }
+      ]
+    },
+    "Seed": 12
+  },
+  {
+    "Before": {
+      "Sold": 54883,
+      "First300": {
+        "Wall": 4088.25,
+        "Active": 4088.25
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 17148.25,
+      "Ascensions": [
+        {
+          "RunActive": 17148.25,
+          "Active": 17148.25,
+          "Wall": 17148.25,
+          "Saplings": 0,
+          "Coins": 1000389295.4832207
+        }
+      ]
+    },
+    "After": {
+      "Sold": 46960,
+      "First300": {
+        "Wall": 3792.25,
+        "Active": 3792.25
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 13308.25,
+      "Ascensions": [
+        {
+          "RunActive": 13308.25,
+          "Active": 13308.25,
+          "Wall": 13308.25,
+          "Saplings": 0,
+          "Coins": 1000752840.8531976
+        }
+      ]
+    },
+    "Seed": 13
+  },
+  {
+    "Before": {
+      "Sold": 52509,
+      "First300": {
+        "Wall": 4772.25,
+        "Active": 4772.25
+      },
+      "Lost": 12,
+      "Coins": 35,
+      "Active": 23280.25,
+      "Ascensions": [
+        {
+          "RunActive": 23280.25,
+          "Active": 23280.25,
+          "Wall": 23280.25,
+          "Saplings": 0,
+          "Coins": 1000233048.4693415
+        }
+      ]
+    },
+    "After": {
+      "Sold": 41766,
+      "First300": {
+        "Wall": 4618.75,
+        "Active": 4618.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 16692.25,
+      "Ascensions": [
+        {
+          "RunActive": 16692.25,
+          "Active": 16692.25,
+          "Wall": 16692.25,
+          "Saplings": 0,
+          "Coins": 1000204502.5351062
+        }
+      ]
+    },
+    "Seed": 14
+  },
+  {
+    "Before": {
+      "Sold": 50837,
+      "First300": {
+        "Wall": 4271.25,
+        "Active": 4271.25
+      },
+      "Lost": 14,
+      "Coins": 35,
+      "Active": 15540.25,
+      "Ascensions": [
+        {
+          "RunActive": 15540.25,
+          "Active": 15540.25,
+          "Wall": 15540.25,
+          "Saplings": 0,
+          "Coins": 1014913009.414886
+        }
+      ]
+    },
+    "After": {
+      "Sold": 50138,
+      "First300": {
+        "Wall": 4271.25,
+        "Active": 4271.25
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 15936.25,
+      "Ascensions": [
+        {
+          "RunActive": 15936.25,
+          "Active": 15936.25,
+          "Wall": 15936.25,
+          "Saplings": 0,
+          "Coins": 1000549355.2571441
+        }
+      ]
+    },
+    "Seed": 15
+  },
+  {
+    "Before": {
+      "Sold": 50072,
+      "First300": {
+        "Wall": 3363.25,
+        "Active": 3363.25
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 14592.25,
+      "Ascensions": [
+        {
+          "RunActive": 14592.25,
+          "Active": 14592.25,
+          "Wall": 14592.25,
+          "Saplings": 0,
+          "Coins": 1000554531.1307033
+        }
+      ]
+    },
+    "After": {
+      "Sold": 50046,
+      "First300": {
+        "Wall": 3363.25,
+        "Active": 3363.25
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 14280.25,
+      "Ascensions": [
+        {
+          "RunActive": 14280.25,
+          "Active": 14280.25,
+          "Wall": 14280.25,
+          "Saplings": 0,
+          "Coins": 1000049537.9376117
+        }
+      ]
+    },
+    "Seed": 16
+  },
+  {
+    "Before": {
+      "Sold": 53451,
+      "First300": {
+        "Wall": 3696.25,
+        "Active": 3696.25
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 16368.25,
+      "Ascensions": [
+        {
+          "RunActive": 16368.25,
+          "Active": 16368.25,
+          "Wall": 16368.25,
+          "Saplings": 0,
+          "Coins": 1000596822.7435694
+        }
+      ]
+    },
+    "After": {
+      "Sold": 61729,
+      "First300": {
+        "Wall": 3636.25,
+        "Active": 3636.25
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 19344.25,
+      "Ascensions": [
+        {
+          "RunActive": 19344.25,
+          "Active": 19344.25,
+          "Wall": 19344.25,
+          "Saplings": 0,
+          "Coins": 1000715939.1534058
+        }
+      ]
+    },
+    "Seed": 17
+  },
+  {
+    "Before": {
+      "Sold": 61855,
+      "First300": {
+        "Wall": 3302.75,
+        "Active": 3302.75
+      },
+      "Lost": 14,
+      "Coins": 35,
+      "Active": 15972.25,
+      "Ascensions": [
+        {
+          "RunActive": 15972.25,
+          "Active": 15972.25,
+          "Wall": 15972.25,
+          "Saplings": 0,
+          "Coins": 1000692329.4511963
+        }
+      ]
+    },
+    "After": {
+      "Sold": 61361,
+      "First300": {
+        "Wall": 3290.75,
+        "Active": 3290.75
+      },
+      "Lost": 14,
+      "Coins": 35,
+      "Active": 15684.25,
+      "Ascensions": [
+        {
+          "RunActive": 15684.25,
+          "Active": 15684.25,
+          "Wall": 15684.25,
+          "Saplings": 0,
+          "Coins": 1000011637.5886228
+        }
+      ]
+    },
+    "Seed": 18
+  },
+  {
+    "Before": {
+      "Sold": 51358,
+      "First300": {
+        "Wall": 3679.75,
+        "Active": 3679.75
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 14448.25,
+      "Ascensions": [
+        {
+          "RunActive": 14448.25,
+          "Active": 14448.25,
+          "Wall": 14448.25,
+          "Saplings": 0,
+          "Coins": 1000484432.1994383
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54809,
+      "First300": {
+        "Wall": 3559.75,
+        "Active": 3559.75
+      },
+      "Lost": 4,
+      "Coins": 35,
+      "Active": 15396.25,
+      "Ascensions": [
+        {
+          "RunActive": 15396.25,
+          "Active": 15396.25,
+          "Wall": 15396.25,
+          "Saplings": 0,
+          "Coins": 1001523014.962011
+        }
+      ]
+    },
+    "Seed": 19
+  },
+  {
+    "Before": {
+      "Sold": 49460,
+      "First300": {
+        "Wall": 4922.75,
+        "Active": 4922.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 14292.25,
+      "Ascensions": [
+        {
+          "RunActive": 14292.25,
+          "Active": 14292.25,
+          "Wall": 14292.25,
+          "Saplings": 0,
+          "Coins": 1000516517.1513269
+        }
+      ]
+    },
+    "After": {
+      "Sold": 59182,
+      "First300": {
+        "Wall": 4961.25,
+        "Active": 4961.25
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 18840.25,
+      "Ascensions": [
+        {
+          "RunActive": 18840.25,
+          "Active": 18840.25,
+          "Wall": 18840.25,
+          "Saplings": 0,
+          "Coins": 1000269071.3213924
+        }
+      ]
+    },
+    "Seed": 20
+  },
+  {
+    "Before": {
+      "Sold": 55904,
+      "First300": {
+        "Wall": 2986.25,
+        "Active": 2986.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 12528.25,
+      "Ascensions": [
+        {
+          "RunActive": 12528.25,
+          "Active": 12528.25,
+          "Wall": 12528.25,
+          "Saplings": 0,
+          "Coins": 1001251724.4053586
+        }
+      ]
+    },
+    "After": {
+      "Sold": 57416,
+      "First300": {
+        "Wall": 3173.25,
+        "Active": 3173.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 12984.25,
+      "Ascensions": [
+        {
+          "RunActive": 12984.25,
+          "Active": 12984.25,
+          "Wall": 12984.25,
+          "Saplings": 0,
+          "Coins": 1002129672.7625906
+        }
+      ]
+    },
+    "Seed": 21
+  },
+  {
+    "Before": {
+      "Sold": 68126,
+      "First300": {
+        "Wall": 3366.25,
+        "Active": 3366.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 14868.25,
+      "Ascensions": [
+        {
+          "RunActive": 14868.25,
+          "Active": 14868.25,
+          "Wall": 14868.25,
+          "Saplings": 0,
+          "Coins": 1000208102.2679554
+        }
+      ]
+    },
+    "After": {
+      "Sold": 57347,
+      "First300": {
+        "Wall": 3346.25,
+        "Active": 3346.25
+      },
+      "Lost": 16,
+      "Coins": 35,
+      "Active": 16764.25,
+      "Ascensions": [
+        {
+          "RunActive": 16764.25,
+          "Active": 16764.25,
+          "Wall": 16764.25,
+          "Saplings": 0,
+          "Coins": 1001760148.2925044
+        }
+      ]
+    },
+    "Seed": 22
+  },
+  {
+    "Before": {
+      "Sold": 75880,
+      "First300": {
+        "Wall": 4005.75,
+        "Active": 4005.75
+      },
+      "Lost": 12,
+      "Coins": 35,
+      "Active": 13740.25,
+      "Ascensions": [
+        {
+          "RunActive": 13740.25,
+          "Active": 13740.25,
+          "Wall": 13740.25,
+          "Saplings": 0,
+          "Coins": 1001044078.9561725
+        }
+      ]
+    },
+    "After": {
+      "Sold": 76287,
+      "First300": {
+        "Wall": 4005.75,
+        "Active": 4005.75
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 15252.25,
+      "Ascensions": [
+        {
+          "RunActive": 15252.25,
+          "Active": 15252.25,
+          "Wall": 15252.25,
+          "Saplings": 0,
+          "Coins": 1002115099.8044766
+        }
+      ]
+    },
+    "Seed": 23
+  },
+  {
+    "Before": {
+      "Sold": 48050,
+      "First300": {
+        "Wall": 4260.75,
+        "Active": 4260.75
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 13428.25,
+      "Ascensions": [
+        {
+          "RunActive": 13428.25,
+          "Active": 13428.25,
+          "Wall": 13428.25,
+          "Saplings": 0,
+          "Coins": 1000200714.953324
+        }
+      ]
+    },
+    "After": {
+      "Sold": 48497,
+      "First300": {
+        "Wall": 3924.25,
+        "Active": 3924.25
+      },
+      "Lost": 15,
+      "Coins": 35,
+      "Active": 15840.25,
+      "Ascensions": [
+        {
+          "RunActive": 15840.25,
+          "Active": 15840.25,
+          "Wall": 15840.25,
+          "Saplings": 0,
+          "Coins": 1000132558.0560044
+        }
+      ]
+    },
+    "Seed": 24
+  },
+  {
+    "Before": {
+      "Sold": 46963,
+      "First300": {
+        "Wall": 5252.75,
+        "Active": 5252.75
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 15060.25,
+      "Ascensions": [
+        {
+          "RunActive": 15060.25,
+          "Active": 15060.25,
+          "Wall": 15060.25,
+          "Saplings": 0,
+          "Coins": 1001955760.1077242
+        }
+      ]
+    },
+    "After": {
+      "Sold": 56954,
+      "First300": {
+        "Wall": 4727.25,
+        "Active": 4727.25
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 14832.25,
+      "Ascensions": [
+        {
+          "RunActive": 14832.25,
+          "Active": 14832.25,
+          "Wall": 14832.25,
+          "Saplings": 0,
+          "Coins": 1000013738.136679
+        }
+      ]
+    },
+    "Seed": 25
+  },
+  {
+    "Before": {
+      "Sold": 60064,
+      "First300": {
+        "Wall": 3118.25,
+        "Active": 3118.25
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 13728.25,
+      "Ascensions": [
+        {
+          "RunActive": 13728.25,
+          "Active": 13728.25,
+          "Wall": 13728.25,
+          "Saplings": 0,
+          "Coins": 1001875440.4562933
+        }
+      ]
+    },
+    "After": {
+      "Sold": 57646,
+      "First300": {
+        "Wall": 3118.25,
+        "Active": 3118.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 13224.25,
+      "Ascensions": [
+        {
+          "RunActive": 13224.25,
+          "Active": 13224.25,
+          "Wall": 13224.25,
+          "Saplings": 0,
+          "Coins": 1000868569.0263032
+        }
+      ]
+    },
+    "Seed": 26
+  },
+  {
+    "Before": {
+      "Sold": 56409,
+      "First300": {
+        "Wall": 3497.75,
+        "Active": 3497.75
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 12912.25,
+      "Ascensions": [
+        {
+          "RunActive": 12912.25,
+          "Active": 12912.25,
+          "Wall": 12912.25,
+          "Saplings": 0,
+          "Coins": 1001061119.3243951
+        }
+      ]
+    },
+    "After": {
+      "Sold": 64601,
+      "First300": {
+        "Wall": 3401.75,
+        "Active": 3401.75
+      },
+      "Lost": 21,
+      "Coins": 35,
+      "Active": 15396.25,
+      "Ascensions": [
+        {
+          "RunActive": 15396.25,
+          "Active": 15396.25,
+          "Wall": 15396.25,
+          "Saplings": 0,
+          "Coins": 1002028045.6615808
+        }
+      ]
+    },
+    "Seed": 27
+  },
+  {
+    "Before": {
+      "Sold": 60424,
+      "First300": {
+        "Wall": 3023.75,
+        "Active": 3023.75
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 13476.25,
+      "Ascensions": [
+        {
+          "RunActive": 13476.25,
+          "Active": 13476.25,
+          "Wall": 13476.25,
+          "Saplings": 0,
+          "Coins": 1001826730.9678861
+        }
+      ]
+    },
+    "After": {
+      "Sold": 76685,
+      "First300": {
+        "Wall": 3070.75,
+        "Active": 3070.75
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 14316.25,
+      "Ascensions": [
+        {
+          "RunActive": 14316.25,
+          "Active": 14316.25,
+          "Wall": 14316.25,
+          "Saplings": 0,
+          "Coins": 1000132931.1025802
+        }
+      ]
+    },
+    "Seed": 28
+  },
+  {
+    "Before": {
+      "Sold": 62138,
+      "First300": {
+        "Wall": 3382.25,
+        "Active": 3382.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 14172.25,
+      "Ascensions": [
+        {
+          "RunActive": 14172.25,
+          "Active": 14172.25,
+          "Wall": 14172.25,
+          "Saplings": 0,
+          "Coins": 1026542174.2114809
+        }
+      ]
+    },
+    "After": {
+      "Sold": 63950,
+      "First300": {
+        "Wall": 3979.75,
+        "Active": 3979.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 14700.25,
+      "Ascensions": [
+        {
+          "RunActive": 14700.25,
+          "Active": 14700.25,
+          "Wall": 14700.25,
+          "Saplings": 0,
+          "Coins": 1000561831.9960737
+        }
+      ]
+    },
+    "Seed": 29
+  },
+  {
+    "Before": {
+      "Sold": 54135,
+      "First300": {
+        "Wall": 3540.75,
+        "Active": 3540.75
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 14856.25,
+      "Ascensions": [
+        {
+          "RunActive": 14856.25,
+          "Active": 14856.25,
+          "Wall": 14856.25,
+          "Saplings": 0,
+          "Coins": 1001978262.109744
+        }
+      ]
+    },
+    "After": {
+      "Sold": 67057,
+      "First300": {
+        "Wall": 3248.25,
+        "Active": 3248.25
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 15108.25,
+      "Ascensions": [
+        {
+          "RunActive": 15108.25,
+          "Active": 15108.25,
+          "Wall": 15108.25,
+          "Saplings": 0,
+          "Coins": 1001362111.7058537
+        }
+      ]
+    },
+    "Seed": 30
+  },
+  {
+    "Before": {
+      "Sold": 61036,
+      "First300": {
+        "Wall": 3291.25,
+        "Active": 3291.25
+      },
+      "Lost": 12,
+      "Coins": 35,
+      "Active": 18156.25,
+      "Ascensions": [
+        {
+          "RunActive": 18156.25,
+          "Active": 18156.25,
+          "Wall": 18156.25,
+          "Saplings": 0,
+          "Coins": 1000698969.7716126
+        }
+      ]
+    },
+    "After": {
+      "Sold": 60055,
+      "First300": {
+        "Wall": 3288.75,
+        "Active": 3288.75
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 12840.25,
+      "Ascensions": [
+        {
+          "RunActive": 12840.25,
+          "Active": 12840.25,
+          "Wall": 12840.25,
+          "Saplings": 0,
+          "Coins": 1000871807.9755144
+        }
+      ]
+    },
+    "Seed": 31
+  },
+  {
+    "Before": {
+      "Sold": 53626,
+      "First300": {
+        "Wall": 3963.25,
+        "Active": 3963.25
+      },
+      "Lost": 12,
+      "Coins": 35,
+      "Active": 17208.25,
+      "Ascensions": [
+        {
+          "RunActive": 17208.25,
+          "Active": 17208.25,
+          "Wall": 17208.25,
+          "Saplings": 0,
+          "Coins": 1000388072.6896785
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54043,
+      "First300": {
+        "Wall": 3965.75,
+        "Active": 3965.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13092.25,
+      "Ascensions": [
+        {
+          "RunActive": 13092.25,
+          "Active": 13092.25,
+          "Wall": 13092.25,
+          "Saplings": 0,
+          "Coins": 1000805752.551169
+        }
+      ]
+    },
+    "Seed": 32
+  },
+  {
+    "Before": {
+      "Sold": 56451,
+      "First300": {
+        "Wall": 2881.75,
+        "Active": 2881.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 12516.25,
+      "Ascensions": [
+        {
+          "RunActive": 12516.25,
+          "Active": 12516.25,
+          "Wall": 12516.25,
+          "Saplings": 0,
+          "Coins": 1000195016.6830969
+        }
+      ]
+    },
+    "After": {
+      "Sold": 62688,
+      "First300": {
+        "Wall": 2864.75,
+        "Active": 2864.75
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 11868.25,
+      "Ascensions": [
+        {
+          "RunActive": 11868.25,
+          "Active": 11868.25,
+          "Wall": 11868.25,
+          "Saplings": 0,
+          "Coins": 1000151272.6841058
+        }
+      ]
+    },
+    "Seed": 33
+  },
+  {
+    "Before": {
+      "Sold": 60288,
+      "First300": {
+        "Wall": 2808.75,
+        "Active": 2808.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 13272.25,
+      "Ascensions": [
+        {
+          "RunActive": 13272.25,
+          "Active": 13272.25,
+          "Wall": 13272.25,
+          "Saplings": 0,
+          "Coins": 1000398509.3989797
+        }
+      ]
+    },
+    "After": {
+      "Sold": 61038,
+      "First300": {
+        "Wall": 2808.75,
+        "Active": 2808.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 13428.25,
+      "Ascensions": [
+        {
+          "RunActive": 13428.25,
+          "Active": 13428.25,
+          "Wall": 13428.25,
+          "Saplings": 0,
+          "Coins": 1000235270.0027468
+        }
+      ]
+    },
+    "Seed": 34
+  },
+  {
+    "Before": {
+      "Sold": 53092,
+      "First300": {
+        "Wall": 3771.75,
+        "Active": 3771.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 12720.25,
+      "Ascensions": [
+        {
+          "RunActive": 12720.25,
+          "Active": 12720.25,
+          "Wall": 12720.25,
+          "Saplings": 0,
+          "Coins": 1000738950.0975763
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51421,
+      "First300": {
+        "Wall": 3776.75,
+        "Active": 3776.75
+      },
+      "Lost": 4,
+      "Coins": 35,
+      "Active": 12360.25,
+      "Ascensions": [
+        {
+          "RunActive": 12360.25,
+          "Active": 12360.25,
+          "Wall": 12360.25,
+          "Saplings": 0,
+          "Coins": 1000735032.0421846
+        }
+      ]
+    },
+    "Seed": 35
+  },
+  {
+    "Before": {
+      "Sold": 62006,
+      "First300": {
+        "Wall": 3408.75,
+        "Active": 3408.75
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 14400.25,
+      "Ascensions": [
+        {
+          "RunActive": 14400.25,
+          "Active": 14400.25,
+          "Wall": 14400.25,
+          "Saplings": 0,
+          "Coins": 1000442066.9695141
+        }
+      ]
+    },
+    "After": {
+      "Sold": 56834,
+      "First300": {
+        "Wall": 3267.25,
+        "Active": 3267.25
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 13296.25,
+      "Ascensions": [
+        {
+          "RunActive": 13296.25,
+          "Active": 13296.25,
+          "Wall": 13296.25,
+          "Saplings": 0,
+          "Coins": 1002125424.3611358
+        }
+      ]
+    },
+    "Seed": 36
+  },
+  {
+    "Before": {
+      "Sold": 59653,
+      "First300": {
+        "Wall": 3576.75,
+        "Active": 3576.75
+      },
+      "Lost": 15,
+      "Coins": 35,
+      "Active": 17988.25,
+      "Ascensions": [
+        {
+          "RunActive": 17988.25,
+          "Active": 17988.25,
+          "Wall": 17988.25,
+          "Saplings": 0,
+          "Coins": 1000106012.7855067
+        }
+      ]
+    },
+    "After": {
+      "Sold": 77679,
+      "First300": {
+        "Wall": 3576.75,
+        "Active": 3576.75
+      },
+      "Lost": 11,
+      "Coins": 35,
+      "Active": 19092.25,
+      "Ascensions": [
+        {
+          "RunActive": 19092.25,
+          "Active": 19092.25,
+          "Wall": 19092.25,
+          "Saplings": 0,
+          "Coins": 1001904398.4155122
+        }
+      ]
+    },
+    "Seed": 37
+  },
+  {
+    "Before": {
+      "Sold": 55357,
+      "First300": {
+        "Wall": 4301.25,
+        "Active": 4301.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 11640.25,
+      "Ascensions": [
+        {
+          "RunActive": 11640.25,
+          "Active": 11640.25,
+          "Wall": 11640.25,
+          "Saplings": 0,
+          "Coins": 1001033379.604163
+        }
+      ]
+    },
+    "After": {
+      "Sold": 50791,
+      "First300": {
+        "Wall": 4510.25,
+        "Active": 4510.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13488.25,
+      "Ascensions": [
+        {
+          "RunActive": 13488.25,
+          "Active": 13488.25,
+          "Wall": 13488.25,
+          "Saplings": 0,
+          "Coins": 1002061367.0861276
+        }
+      ]
+    },
+    "Seed": 38
+  },
+  {
+    "Before": {
+      "Sold": 58812,
+      "First300": {
+        "Wall": 3457.75,
+        "Active": 3457.75
+      },
+      "Lost": 1,
+      "Coins": 35,
+      "Active": 13608.25,
+      "Ascensions": [
+        {
+          "RunActive": 13608.25,
+          "Active": 13608.25,
+          "Wall": 13608.25,
+          "Saplings": 0,
+          "Coins": 1000116075.3878826
+        }
+      ]
+    },
+    "After": {
+      "Sold": 52159,
+      "First300": {
+        "Wall": 3353.75,
+        "Active": 3353.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 12072.25,
+      "Ascensions": [
+        {
+          "RunActive": 12072.25,
+          "Active": 12072.25,
+          "Wall": 12072.25,
+          "Saplings": 0,
+          "Coins": 1000566964.9452226
+        }
+      ]
+    },
+    "Seed": 39
+  },
+  {
+    "Before": {
+      "Sold": 63580,
+      "First300": {
+        "Wall": 4361.75,
+        "Active": 4361.75
+      },
+      "Lost": 10,
+      "Coins": 35,
+      "Active": 17124.25,
+      "Ascensions": [
+        {
+          "RunActive": 17124.25,
+          "Active": 17124.25,
+          "Wall": 17124.25,
+          "Saplings": 0,
+          "Coins": 1000624942.3394473
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54412,
+      "First300": {
+        "Wall": 4366.75,
+        "Active": 4366.75
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 15480.25,
+      "Ascensions": [
+        {
+          "RunActive": 15480.25,
+          "Active": 15480.25,
+          "Wall": 15480.25,
+          "Saplings": 0,
+          "Coins": 1000703115.1745297
+        }
+      ]
+    },
+    "Seed": 40
+  },
+  {
+    "Before": {
+      "Sold": 59654,
+      "First300": {
+        "Wall": 3554.75,
+        "Active": 3554.75
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 17940.25,
+      "Ascensions": [
+        {
+          "RunActive": 17940.25,
+          "Active": 17940.25,
+          "Wall": 17940.25,
+          "Saplings": 0,
+          "Coins": 1000373228.6475252
+        }
+      ]
+    },
+    "After": {
+      "Sold": 67149,
+      "First300": {
+        "Wall": 4124.25,
+        "Active": 4124.25
+      },
+      "Lost": 11,
+      "Coins": 35,
+      "Active": 14844.25,
+      "Ascensions": [
+        {
+          "RunActive": 14844.25,
+          "Active": 14844.25,
+          "Wall": 14844.25,
+          "Saplings": 0,
+          "Coins": 1000560742.0951424
+        }
+      ]
+    },
+    "Seed": 41
+  },
+  {
+    "Before": {
+      "Sold": 58262,
+      "First300": {
+        "Wall": 3370.25,
+        "Active": 3370.25
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 14772.25,
+      "Ascensions": [
+        {
+          "RunActive": 14772.25,
+          "Active": 14772.25,
+          "Wall": 14772.25,
+          "Saplings": 0,
+          "Coins": 1000558962.5955032
+        }
+      ]
+    },
+    "After": {
+      "Sold": 63878,
+      "First300": {
+        "Wall": 3982.75,
+        "Active": 3982.75
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 13536.25,
+      "Ascensions": [
+        {
+          "RunActive": 13536.25,
+          "Active": 13536.25,
+          "Wall": 13536.25,
+          "Saplings": 0,
+          "Coins": 1000309878.1062605
+        }
+      ]
+    },
+    "Seed": 42
+  },
+  {
+    "Before": {
+      "Sold": 51225,
+      "First300": {
+        "Wall": 3835.25,
+        "Active": 3835.25
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 14244.25,
+      "Ascensions": [
+        {
+          "RunActive": 14244.25,
+          "Active": 14244.25,
+          "Wall": 14244.25,
+          "Saplings": 0,
+          "Coins": 1002340622.2715778
+        }
+      ]
+    },
+    "After": {
+      "Sold": 60799,
+      "First300": {
+        "Wall": 3832.75,
+        "Active": 3832.75
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 18660.25,
+      "Ascensions": [
+        {
+          "RunActive": 18660.25,
+          "Active": 18660.25,
+          "Wall": 18660.25,
+          "Saplings": 0,
+          "Coins": 1026715696.4479725
+        }
+      ]
+    },
+    "Seed": 43
+  },
+  {
+    "Before": {
+      "Sold": 62792,
+      "First300": {
+        "Wall": 3452.25,
+        "Active": 3452.25
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 12768.25,
+      "Ascensions": [
+        {
+          "RunActive": 12768.25,
+          "Active": 12768.25,
+          "Wall": 12768.25,
+          "Saplings": 0,
+          "Coins": 1001982417.4366176
+        }
+      ]
+    },
+    "After": {
+      "Sold": 50254,
+      "First300": {
+        "Wall": 3308.25,
+        "Active": 3308.25
+      },
+      "Lost": 15,
+      "Coins": 35,
+      "Active": 15396.25,
+      "Ascensions": [
+        {
+          "RunActive": 15396.25,
+          "Active": 15396.25,
+          "Wall": 15396.25,
+          "Saplings": 0,
+          "Coins": 1000130591.410578
+        }
+      ]
+    },
+    "Seed": 44
+  },
+  {
+    "Before": {
+      "Sold": 59435,
+      "First300": {
+        "Wall": 3314.75,
+        "Active": 3314.75
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 13728.25,
+      "Ascensions": [
+        {
+          "RunActive": 13728.25,
+          "Active": 13728.25,
+          "Wall": 13728.25,
+          "Saplings": 0,
+          "Coins": 1002252779.1921319
+        }
+      ]
+    },
+    "After": {
+      "Sold": 62429,
+      "First300": {
+        "Wall": 3312.25,
+        "Active": 3312.25
+      },
+      "Lost": 11,
+      "Coins": 35,
+      "Active": 14352.25,
+      "Ascensions": [
+        {
+          "RunActive": 14352.25,
+          "Active": 14352.25,
+          "Wall": 14352.25,
+          "Saplings": 0,
+          "Coins": 1000292632.7708329
+        }
+      ]
+    },
+    "Seed": 45
+  },
+  {
+    "Before": {
+      "Sold": 51809,
+      "First300": {
+        "Wall": 3202.75,
+        "Active": 3202.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 11940.25,
+      "Ascensions": [
+        {
+          "RunActive": 11940.25,
+          "Active": 11940.25,
+          "Wall": 11940.25,
+          "Saplings": 0,
+          "Coins": 1000083804.535606
+        }
+      ]
+    },
+    "After": {
+      "Sold": 56761,
+      "First300": {
+        "Wall": 3364.25,
+        "Active": 3364.25
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13236.25,
+      "Ascensions": [
+        {
+          "RunActive": 13236.25,
+          "Active": 13236.25,
+          "Wall": 13236.25,
+          "Saplings": 0,
+          "Coins": 1000720937.3872889
+        }
+      ]
+    },
+    "Seed": 46
+  },
+  {
+    "Before": {
+      "Sold": 61032,
+      "First300": {
+        "Wall": 2951.25,
+        "Active": 2951.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 13548.25,
+      "Ascensions": [
+        {
+          "RunActive": 13548.25,
+          "Active": 13548.25,
+          "Wall": 13548.25,
+          "Saplings": 0,
+          "Coins": 1000573366.6835591
+        }
+      ]
+    },
+    "After": {
+      "Sold": 60684,
+      "First300": {
+        "Wall": 2951.25,
+        "Active": 2951.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 13476.25,
+      "Ascensions": [
+        {
+          "RunActive": 13476.25,
+          "Active": 13476.25,
+          "Wall": 13476.25,
+          "Saplings": 0,
+          "Coins": 1002213151.1399012
+        }
+      ]
+    },
+    "Seed": 47
+  },
+  {
+    "Before": {
+      "Sold": 50770,
+      "First300": {
+        "Wall": 3544.75,
+        "Active": 3544.75
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 12096.25,
+      "Ascensions": [
+        {
+          "RunActive": 12096.25,
+          "Active": 12096.25,
+          "Wall": 12096.25,
+          "Saplings": 0,
+          "Coins": 1000904223.8956788
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51349,
+      "First300": {
+        "Wall": 4084.25,
+        "Active": 4084.25
+      },
+      "Lost": 10,
+      "Coins": 35,
+      "Active": 14772.25,
+      "Ascensions": [
+        {
+          "RunActive": 14772.25,
+          "Active": 14772.25,
+          "Wall": 14772.25,
+          "Saplings": 0,
+          "Coins": 1002092924.3557627
+        }
+      ]
+    },
+    "Seed": 48
+  },
+  {
+    "Before": {
+      "Sold": 52277,
+      "First300": {
+        "Wall": 3572.25,
+        "Active": 3572.25
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 15888.25,
+      "Ascensions": [
+        {
+          "RunActive": 15888.25,
+          "Active": 15888.25,
+          "Wall": 15888.25,
+          "Saplings": 0,
+          "Coins": 1000082792.9363549
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51756,
+      "First300": {
+        "Wall": 3668.25,
+        "Active": 3668.25
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 16332.25,
+      "Ascensions": [
+        {
+          "RunActive": 16332.25,
+          "Active": 16332.25,
+          "Wall": 16332.25,
+          "Saplings": 0,
+          "Coins": 1000452960.9143529
+        }
+      ]
+    },
+    "Seed": 49
+  },
+  {
+    "Before": {
+      "Sold": 57344,
+      "First300": {
+        "Wall": 3959.75,
+        "Active": 3959.75
+      },
+      "Lost": 5,
+      "Coins": 35,
+      "Active": 14076.25,
+      "Ascensions": [
+        {
+          "RunActive": 14076.25,
+          "Active": 14076.25,
+          "Wall": 14076.25,
+          "Saplings": 0,
+          "Coins": 1001855362.6039809
+        }
+      ]
+    },
+    "After": {
+      "Sold": 62031,
+      "First300": {
+        "Wall": 3812.75,
+        "Active": 3812.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 14652.25,
+      "Ascensions": [
+        {
+          "RunActive": 14652.25,
+          "Active": 14652.25,
+          "Wall": 14652.25,
+          "Saplings": 0,
+          "Coins": 1000246371.5957505
+        }
+      ]
+    },
+    "Seed": 50
+  },
+  {
+    "Before": {
+      "Sold": 55335,
+      "First300": {
+        "Wall": 2825.25,
+        "Active": 2825.25
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 12264.25,
+      "Ascensions": [
+        {
+          "RunActive": 12264.25,
+          "Active": 12264.25,
+          "Wall": 12264.25,
+          "Saplings": 0,
+          "Coins": 1001787771.8025775
+        }
+      ]
+    },
+    "After": {
+      "Sold": 63057,
+      "First300": {
+        "Wall": 2832.75,
+        "Active": 2832.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13872.25,
+      "Ascensions": [
+        {
+          "RunActive": 13872.25,
+          "Active": 13872.25,
+          "Wall": 13872.25,
+          "Saplings": 0,
+          "Coins": 1001781965.4632813
+        }
+      ]
+    },
+    "Seed": 51
+  },
+  {
+    "Before": {
+      "Sold": 56188,
+      "First300": {
+        "Wall": 3720.25,
+        "Active": 3720.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13152.25,
+      "Ascensions": [
+        {
+          "RunActive": 13152.25,
+          "Active": 13152.25,
+          "Wall": 13152.25,
+          "Saplings": 0,
+          "Coins": 1000006536.7384987
+        }
+      ]
+    },
+    "After": {
+      "Sold": 59470,
+      "First300": {
+        "Wall": 3876.25,
+        "Active": 3876.25
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 13836.25,
+      "Ascensions": [
+        {
+          "RunActive": 13836.25,
+          "Active": 13836.25,
+          "Wall": 13836.25,
+          "Saplings": 0,
+          "Coins": 1000868576.7655323
+        }
+      ]
+    },
+    "Seed": 52
+  },
+  {
+    "Before": {
+      "Sold": 64108,
+      "First300": {
+        "Wall": 3324.25,
+        "Active": 3324.25
+      },
+      "Lost": 10,
+      "Coins": 35,
+      "Active": 14688.25,
+      "Ascensions": [
+        {
+          "RunActive": 14688.25,
+          "Active": 14688.25,
+          "Wall": 14688.25,
+          "Saplings": 0,
+          "Coins": 1000488672.8832955
+        }
+      ]
+    },
+    "After": {
+      "Sold": 55483,
+      "First300": {
+        "Wall": 3456.25,
+        "Active": 3456.25
+      },
+      "Lost": 15,
+      "Coins": 35,
+      "Active": 15876.25,
+      "Ascensions": [
+        {
+          "RunActive": 15876.25,
+          "Active": 15876.25,
+          "Wall": 15876.25,
+          "Saplings": 0,
+          "Coins": 1000268955.4544075
+        }
+      ]
+    },
+    "Seed": 53
+  },
+  {
+    "Before": {
+      "Sold": 53159,
+      "First300": {
+        "Wall": 3602.25,
+        "Active": 3602.25
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 15540.25,
+      "Ascensions": [
+        {
+          "RunActive": 15540.25,
+          "Active": 15540.25,
+          "Wall": 15540.25,
+          "Saplings": 0,
+          "Coins": 1007870629.2143836
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51104,
+      "First300": {
+        "Wall": 3604.25,
+        "Active": 3604.25
+      },
+      "Lost": 7,
+      "Coins": 35,
+      "Active": 15144.25,
+      "Ascensions": [
+        {
+          "RunActive": 15144.25,
+          "Active": 15144.25,
+          "Wall": 15144.25,
+          "Saplings": 0,
+          "Coins": 1000811650.4041766
+        }
+      ]
+    },
+    "Seed": 54
+  },
+  {
+    "Before": {
+      "Sold": 62259,
+      "First300": {
+        "Wall": 3044.75,
+        "Active": 3044.75
+      },
+      "Lost": 0,
+      "Coins": 35,
+      "Active": 13896.25,
+      "Ascensions": [
+        {
+          "RunActive": 13896.25,
+          "Active": 13896.25,
+          "Wall": 13896.25,
+          "Saplings": 0,
+          "Coins": 1000735706.7097551
+        }
+      ]
+    },
+    "After": {
+      "Sold": 62203,
+      "First300": {
+        "Wall": 3044.75,
+        "Active": 3044.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13884.25,
+      "Ascensions": [
+        {
+          "RunActive": 13884.25,
+          "Active": 13884.25,
+          "Wall": 13884.25,
+          "Saplings": 0,
+          "Coins": 1000084766.6243447
+        }
+      ]
+    },
+    "Seed": 55
+  },
+  {
+    "Before": {
+      "Sold": 50918,
+      "First300": {
+        "Wall": 3437.75,
+        "Active": 3437.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 12132.25,
+      "Ascensions": [
+        {
+          "RunActive": 12132.25,
+          "Active": 12132.25,
+          "Wall": 12132.25,
+          "Saplings": 0,
+          "Coins": 1001051179.223576
+        }
+      ]
+    },
+    "After": {
+      "Sold": 54314,
+      "First300": {
+        "Wall": 3403.75,
+        "Active": 3403.75
+      },
+      "Lost": 21,
+      "Coins": 35,
+      "Active": 16428.25,
+      "Ascensions": [
+        {
+          "RunActive": 16428.25,
+          "Active": 16428.25,
+          "Wall": 16428.25,
+          "Saplings": 0,
+          "Coins": 1001563942.7966307
+        }
+      ]
+    },
+    "Seed": 56
+  },
+  {
+    "Before": {
+      "Sold": 55906,
+      "First300": {
+        "Wall": 3142.25,
+        "Active": 3142.25
+      },
+      "Lost": 15,
+      "Coins": 35,
+      "Active": 16800.25,
+      "Ascensions": [
+        {
+          "RunActive": 16800.25,
+          "Active": 16800.25,
+          "Wall": 16800.25,
+          "Saplings": 0,
+          "Coins": 1001254146.2278168
+        }
+      ]
+    },
+    "After": {
+      "Sold": 66245,
+      "First300": {
+        "Wall": 3127.75,
+        "Active": 3127.75
+      },
+      "Lost": 18,
+      "Coins": 35,
+      "Active": 13824.25,
+      "Ascensions": [
+        {
+          "RunActive": 13824.25,
+          "Active": 13824.25,
+          "Wall": 13824.25,
+          "Saplings": 0,
+          "Coins": 1000368711.0739818
+        }
+      ]
+    },
+    "Seed": 57
+  },
+  {
+    "Before": {
+      "Sold": 63860,
+      "First300": {
+        "Wall": 4107.25,
+        "Active": 4107.25
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 16152.25,
+      "Ascensions": [
+        {
+          "RunActive": 16152.25,
+          "Active": 16152.25,
+          "Wall": 16152.25,
+          "Saplings": 0,
+          "Coins": 1000040740.6056521
+        }
+      ]
+    },
+    "After": {
+      "Sold": 57291,
+      "First300": {
+        "Wall": 4047.25,
+        "Active": 4047.25
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 14268.25,
+      "Ascensions": [
+        {
+          "RunActive": 14268.25,
+          "Active": 14268.25,
+          "Wall": 14268.25,
+          "Saplings": 0,
+          "Coins": 1009914920.1475017
+        }
+      ]
+    },
+    "Seed": 58
+  },
+  {
+    "Before": {
+      "Sold": 59406,
+      "First300": {
+        "Wall": 3816.25,
+        "Active": 3816.25
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 16116.25,
+      "Ascensions": [
+        {
+          "RunActive": 16116.25,
+          "Active": 16116.25,
+          "Wall": 16116.25,
+          "Saplings": 0,
+          "Coins": 1001747445.7266121
+        }
+      ]
+    },
+    "After": {
+      "Sold": 48100,
+      "First300": {
+        "Wall": 3756.25,
+        "Active": 3756.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 15900.25,
+      "Ascensions": [
+        {
+          "RunActive": 15900.25,
+          "Active": 15900.25,
+          "Wall": 15900.25,
+          "Saplings": 0,
+          "Coins": 1000038560.9037412
+        }
+      ]
+    },
+    "Seed": 59
+  },
+  {
+    "Before": {
+      "Sold": 61900,
+      "First300": {
+        "Wall": 3272.75,
+        "Active": 3272.75
+      },
+      "Lost": 6,
+      "Coins": 35,
+      "Active": 13992.25,
+      "Ascensions": [
+        {
+          "RunActive": 13992.25,
+          "Active": 13992.25,
+          "Wall": 13992.25,
+          "Saplings": 0,
+          "Coins": 1001905379.3398614
+        }
+      ]
+    },
+    "After": {
+      "Sold": 56174,
+      "First300": {
+        "Wall": 3660.25,
+        "Active": 3660.25
+      },
+      "Lost": 8,
+      "Coins": 35,
+      "Active": 15192.25,
+      "Ascensions": [
+        {
+          "RunActive": 15192.25,
+          "Active": 15192.25,
+          "Wall": 15192.25,
+          "Saplings": 0,
+          "Coins": 1000748734.5620191
+        }
+      ]
+    },
+    "Seed": 60
+  },
+  {
+    "Before": {
+      "Sold": 53628,
+      "First300": {
+        "Wall": 4323.75,
+        "Active": 4323.75
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13440.25,
+      "Ascensions": [
+        {
+          "RunActive": 13440.25,
+          "Active": 13440.25,
+          "Wall": 13440.25,
+          "Saplings": 0,
+          "Coins": 1000057997.439485
+        }
+      ]
+    },
+    "After": {
+      "Sold": 63764,
+      "First300": {
+        "Wall": 4652.25,
+        "Active": 4652.25
+      },
+      "Lost": 11,
+      "Coins": 35,
+      "Active": 20304.25,
+      "Ascensions": [
+        {
+          "RunActive": 20304.25,
+          "Active": 20304.25,
+          "Wall": 20304.25,
+          "Saplings": 0,
+          "Coins": 1000453263.3810912
+        }
+      ]
+    },
+    "Seed": 61
+  },
+  {
+    "Before": {
+      "Sold": 54500,
+      "First300": {
+        "Wall": 3656.75,
+        "Active": 3656.75
+      },
+      "Lost": 13,
+      "Coins": 35,
+      "Active": 16596.25,
+      "Ascensions": [
+        {
+          "RunActive": 16596.25,
+          "Active": 16596.25,
+          "Wall": 16596.25,
+          "Saplings": 0,
+          "Coins": 1000061497.8288928
+        }
+      ]
+    },
+    "After": {
+      "Sold": 48242,
+      "First300": {
+        "Wall": 3005.25,
+        "Active": 3005.25
+      },
+      "Lost": 3,
+      "Coins": 35,
+      "Active": 11340.25,
+      "Ascensions": [
+        {
+          "RunActive": 11340.25,
+          "Active": 11340.25,
+          "Wall": 11340.25,
+          "Saplings": 0,
+          "Coins": 1000208241.6605659
+        }
+      ]
+    },
+    "Seed": 62
+  },
+  {
+    "Before": {
+      "Sold": 41262,
+      "First300": {
+        "Wall": 4479.25,
+        "Active": 4479.25
+      },
+      "Lost": 2,
+      "Coins": 35,
+      "Active": 13584.25,
+      "Ascensions": [
+        {
+          "RunActive": 13584.25,
+          "Active": 13584.25,
+          "Wall": 13584.25,
+          "Saplings": 0,
+          "Coins": 1000797381.2148144
+        }
+      ]
+    },
+    "After": {
+      "Sold": 51524,
+      "First300": {
+        "Wall": 4464.75,
+        "Active": 4464.75
+      },
+      "Lost": 9,
+      "Coins": 35,
+      "Active": 13644.25,
+      "Ascensions": [
+        {
+          "RunActive": 13644.25,
+          "Active": 13644.25,
+          "Wall": 13644.25,
+          "Saplings": 0,
+          "Coins": 1000151324.7184044
+        }
+      ]
+    },
+    "Seed": 63
+  }
+]

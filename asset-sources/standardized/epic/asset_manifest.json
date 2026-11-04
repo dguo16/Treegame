@@ -1,0 +1,385 @@
+{
+  "up_axis": "Y",
+  "units": "stud",
+  "assets": [
+    {
+      "name": "AmethystSpiralTrunk",
+      "rarity": "Epic",
+      "category": "Trunk",
+      "triangles": 588,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.204584,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.21455,
+        3.0,
+        0.794143
+      ],
+      "dimensions": [
+        2.419133,
+        3.0,
+        1.544143
+      ],
+      "materials": [
+        "AmethystBark",
+        "SpiralRidge",
+        "EmbeddedAmethyst"
+      ]
+    },
+    {
+      "name": "VioletWillowTrunk",
+      "rarity": "Epic",
+      "category": "Trunk",
+      "triangles": 584,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.472463,
+        0.0,
+        -1.145573
+      ],
+      "bounds_max": [
+        1.459737,
+        3.0,
+        1.143099
+      ],
+      "dimensions": [
+        2.9322,
+        3.0,
+        2.288671
+      ],
+      "materials": [
+        "VioletWillowBark",
+        "WillowBoughs",
+        "WillowRaisedGrain"
+      ]
+    },
+    {
+      "name": "RosewoodTwistTrunk",
+      "rarity": "Epic",
+      "category": "Trunk",
+      "triangles": 632,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.273097,
+        0.0,
+        -0.75
+      ],
+      "bounds_max": [
+        1.288701,
+        3.0,
+        0.75
+      ],
+      "dimensions": [
+        2.561798,
+        3.0,
+        1.5
+      ],
+      "materials": [
+        "RosewoodCore",
+        "RosewoodBraid",
+        "RosewoodSecondBraid",
+        "RosewoodKnots"
+      ]
+    },
+    {
+      "name": "LavenderFanLeaves",
+      "rarity": "Epic",
+      "category": "Leaves",
+      "triangles": 1072,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "materials": [
+        "LavenderUndergrowth",
+        "LavenderFans",
+        "LavenderFanEdges"
+      ]
+    },
+    {
+      "name": "OrchidCloudLeaves",
+      "rarity": "Epic",
+      "category": "Leaves",
+      "triangles": 872,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.388155,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.088155,
+        2.8,
+        3.4
+      ],
+      "materials": [
+        "OrchidCloudShade",
+        "OrchidCloudPetals",
+        "OrchidCloudRims",
+        "OrchidCenters"
+      ]
+    },
+    {
+      "name": "VioletWingsLeaves",
+      "rarity": "Epic",
+      "category": "Leaves",
+      "triangles": 816,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.7,
+        0.0,
+        -1.7
+      ],
+      "bounds_max": [
+        1.7,
+        2.8,
+        1.7
+      ],
+      "dimensions": [
+        3.4,
+        2.8,
+        3.4
+      ],
+      "materials": [
+        "VioletWingCore",
+        "VioletWings",
+        "VioletWingEdges",
+        "VioletWingVeins"
+      ]
+    },
+    {
+      "name": "CrystalRoot",
+      "rarity": "Epic",
+      "category": "Roots",
+      "triangles": 522,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.470562,
+        0.0,
+        -2.066514
+      ],
+      "bounds_max": [
+        2.136196,
+        0.6,
+        1.633486
+      ],
+      "dimensions": [
+        3.606758,
+        0.6,
+        3.7
+      ],
+      "materials": [
+        "CrystalRootBark",
+        "CrystalRootPrisms",
+        "CrystalRootFacets"
+      ]
+    },
+    {
+      "name": "AmethystRoot",
+      "rarity": "Epic",
+      "category": "Roots",
+      "triangles": 396,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.716791,
+        0.0,
+        -1.73175
+      ],
+      "bounds_max": [
+        1.983209,
+        0.6,
+        1.73175
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.4635
+      ],
+      "materials": [
+        "AmethystRootCore",
+        "AmethystGeodeRim",
+        "AmethystRootCrystals"
+      ]
+    },
+    {
+      "name": "OrchidTetherRoots",
+      "rarity": "Epic",
+      "category": "Roots",
+      "triangles": 472,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -1.85,
+        0.0,
+        -1.85
+      ],
+      "bounds_max": [
+        1.85,
+        0.6,
+        1.85
+      ],
+      "dimensions": [
+        3.7,
+        0.6,
+        3.7
+      ],
+      "materials": [
+        "OrchidTetherCrown",
+        "OrchidTethers",
+        "OrchidTetherTwists",
+        "OrchidRootPads"
+      ]
+    },
+    {
+      "name": "RoyalPlumFruit",
+      "rarity": "Epic",
+      "category": "Fruit",
+      "triangles": 396,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.467228,
+        -0.63,
+        -0.49
+      ],
+      "bounds_max": [
+        0.467228,
+        0.80427,
+        0.49
+      ],
+      "dimensions": [
+        0.934455,
+        1.43427,
+        0.98
+      ],
+      "materials": [
+        "RoyalPlumSkin",
+        "RoyalPlumBlush",
+        "RoyalPlumStem",
+        "RoyalPlumSepals"
+      ]
+    },
+    {
+      "name": "PomegranateFruit",
+      "rarity": "Epic",
+      "category": "Fruit",
+      "triangles": 468,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.5175,
+        -0.5,
+        -0.4825
+      ],
+      "bounds_max": [
+        0.5175,
+        0.76,
+        0.4825
+      ],
+      "dimensions": [
+        1.035,
+        1.26,
+        0.965
+      ],
+      "materials": [
+        "PomegranateRind",
+        "PomegranateCalyx",
+        "PomegranateCrownInside"
+      ]
+    },
+    {
+      "name": "Passionfruit",
+      "rarity": "Epic",
+      "category": "Fruit",
+      "triangles": 444,
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "bounds_min": [
+        -0.5,
+        -0.6,
+        -0.401266
+      ],
+      "bounds_max": [
+        0.5,
+        0.694692,
+        0.335
+      ],
+      "dimensions": [
+        1.0,
+        1.294692,
+        0.736266
+      ],
+      "materials": [
+        "PassionfruitRind",
+        "PassionfruitPith",
+        "PassionfruitPulp",
+        "PassionfruitSeeds",
+        "PassionfruitStem"
+      ]
+    }
+  ]
+}

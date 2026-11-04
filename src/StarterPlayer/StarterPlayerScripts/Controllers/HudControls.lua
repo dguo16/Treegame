@@ -26,6 +26,7 @@ function Hud.new(gui,roll,onSettings,onAuto,onReady)
  local readyCorner=Instance.new("UICorner");readyCorner.CornerRadius=UDim.new(0,16);readyCorner.Parent=ready
  local readyStroke=Instance.new("UIStroke");readyStroke.Color=T.Ink;readyStroke.Thickness=2;readyStroke.Parent=ready
  local function resize()
+  ready.Position=UDim2.new(.5,0,1,gui.AbsoluteSize.Y<450 and -134 or -208)
   local rect=GuiService.TopbarInset;local h=rect.Max.Y-rect.Min.Y
   gear.Position=UDim2.fromOffset(rect.Min.X+6,rect.Min.Y+math.max(0,(h-44)/2))
   local mobile=Input.TouchEnabled or workspace.CurrentCamera.ViewportSize.X<650
@@ -35,7 +36,7 @@ function Hud.new(gui,roll,onSettings,onAuto,onReady)
  return self
 end
 function Hud:Update(state)
- local count=(state.Growth and state.Growth.State=="Ready"and 1 or 0)+(state.Growth2 and state.Growth2.State=="Ready"and 1 or 0)
+ local count=0;for _,key in require(S.Config).Growth.Fields do if state[key]and state[key].State=="Ready"then count+=1 end end
  self.Ready.Visible=count>0;self.Ready.Text=count..(count==1 and " TREE READY"or " TREES READY").." • GARDEN"
  self.Auto.BackgroundColor3=state.AutoRoll and T.Green or T.Paper;self.Label.Text=state.AutoRoll and "ON"or "OFF"
  for _,piece in self.Arcs do if piece:IsA("TextLabel")then piece.TextColor3=state.AutoRoll and T.Cream or T.Ink else piece.BackgroundColor3=state.AutoRoll and T.Cream or T.Ink end end

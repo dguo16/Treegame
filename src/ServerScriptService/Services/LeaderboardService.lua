@@ -17,6 +17,7 @@ end
 function B.Init(world)
  B.World=world;local ok,stores=pcall(function()return {Coins=DS:GetOrderedDataStore(C.Leaderboards.CoinsStore),Height=DS:GetOrderedDataStore(C.Leaderboards.HeightStore)}end)
  B.Stores=ok and stores or nil
+ if game:GetService("RunService"):IsStudio()and script.Parent.DataService:GetAttribute("TestMemoryOnly")==true then B.Stores=nil end
  local specs={{"GlobalCoins","GLOBAL COINS","Coins on hand • all players",-104,-73,"Coins",true},{"GlobalHeight","GLOBAL HEIGHT","Tallest tree ever grown",-52,-136,"Height",true},{"ServerCoins","SERVER COINS","Coins on hand",52,-136,"Coins",false},{"ServerHeight","SERVER HEIGHT","Currently producing trees",104,-73,"Height",false}}
  for _,spec in specs do
   local model=Instance.new("Model");model.Name=spec[1];model.Parent=world.Root

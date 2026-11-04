@@ -1,0 +1,31 @@
+{
+  "Date": "2026-11-02",
+  "PlaceId": 122763473283486,
+  "Mode": "Edit",
+  "HTTP": false,
+  "DefaultViewport": "1631x753",
+  "BeforeScripts": 63,
+  "FinalScripts": 66,
+  "SourceDifferences": [],
+  "GeometryRecords": 104,
+  "GeometryDifferences": [],
+  "TestMemoryOnlyRemoved": true,
+  "TemporaryRunnersRemoved": true,
+  "ConfigByteIdentical": true,
+  "UI": {
+    "Desktop": "1631x753",
+    "PhoneLandscape": "750x381",
+    "PhonePortrait": "401x778",
+    "ReelAndSummaryTextFits": true,
+    "SummaryTouchControlsHidden": true
+  },
+  "Handbook": {
+    "Pages": 27,
+    "ChangedAndInspected": [
+      1,
+      4
+    ],
+    "Other25PagePNGsByteIdenticalToPriorInspectedRender": true
+  },
+  "NoPublishingPerformed": true
+}

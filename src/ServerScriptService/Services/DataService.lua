@@ -12,6 +12,7 @@ local function create(deps)
 local D={Sessions={}}
 local storeOK,store=pcall(function() return deps.Store or DS:GetDataStore(C.Data.Store) end)
 if not storeOK then store=nil end
+if not deps.Store and Run:IsStudio()and script:GetAttribute("TestMemoryOnly")==true then store=nil end
 local token=deps.Token or(game.JobId..Http:GenerateGUID(false))
 local function retry(fn)
  local last
@@ -47,6 +48,7 @@ function D.Save(player,release)
  while s.Busy do waitStep() end
  if s.Closed then if release then D.Sessions[player]=nil end;return false end
  s.Busy=true
+ -- Schema 6 includes server reward reference, paid claims and bounded audit history.
  local data=Profile.Copy(s.Profile)
  local ok=true
  if not s.Ephemeral then
@@ -64,9 +66,9 @@ function D.Save(player,release)
  if not ok and not release then s.Closed=true;player:Kick("Save session lost; please rejoin to protect your progress.") end
  return ok
 end
-function D.Transaction(player,mutate)
+local function transaction(player,mutate,treeEdit)
  local s=D.Sessions[player]
- if not s or s.Ephemeral or s.Closed then return false end
+ if not s or (s.Ephemeral and not treeEdit)or s.Closed then return false end
  while s.Busy do waitStep() end
  if s.Closed then return false end
  s.Busy=true
@@ -74,18 +76,21 @@ function D.Transaction(player,mutate)
  local mutationOK,changed,reason=pcall(mutate,draft)
  if not mutationOK then s.Busy=false;return false,"Reward could not be applied."end
  if not changed then s.Busy=false; return reason=="duplicate",reason end
+ if s.Ephemeral then table.clear(s.Profile);for k,v in draft do s.Profile[k]=v end;s.Busy=false;return true,reason end
  local owns=false
  local ok=retry(function() owns=false;return store:UpdateAsync(tostring(player.UserId),function(old)
   owns=false
   if not old or not old.Lock or old.Lock.Token~=token then return nil end
   owns=true; return {Data=draft,Lock={Token=token,Expires=clock()+C.Data.LockSeconds}}
  end) end)
- if ok and owns then s.Profile=draft else
-  if ok and not owns then s.Closed=true;player:Kick("Save session lost; please rejoin to protect your progress.")end
+ if ok and owns then if treeEdit then table.clear(s.Profile);for k,v in draft do s.Profile[k]=v end else s.Profile=draft end else
+  if treeEdit or (ok and not owns)then s.Closed=true;player:Kick("Save session lost; please rejoin to protect your progress.")end
   ok=false
  end
  s.Busy=false; return ok,reason
 end
+function D.Transaction(player,mutate)return transaction(player,mutate,false)end
+function D.Atomic(player,mutate)return transaction(player,mutate,true)end
 function D.Get(player) local s=D.Sessions[player]; return s and not s.Closed and s.Profile end
 function D.Available(player) local s=D.Sessions[player]; return s and not s.Busy and not s.Closed end
 function D.Persistent(player) local s=D.Sessions[player]; return s and not s.Ephemeral end

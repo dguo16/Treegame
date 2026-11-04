@@ -1,0 +1,39 @@
+newmtl PassionfruitRind
+Kd 0.37 0.2 0.5
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PassionfruitPith
+Kd 0.93 0.8 0.57
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PassionfruitPulp
+Kd 0.95 0.65 0.22
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PassionfruitSeeds
+Kd 0.24 0.17 0.25
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PassionfruitStem
+Kd 0.37 0.29 0.31
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

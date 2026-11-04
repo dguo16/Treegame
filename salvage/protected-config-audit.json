@@ -1,0 +1,12 @@
+{
+  "OnlyListedConfigChanges": true,
+  "UnchangedFiles": {
+    "src/ReplicatedStorage/Util/RollEngine.lua": true,
+    "src/ReplicatedStorage/Util/BagInventory.lua": true,
+    "src/ReplicatedStorage/Util/FruitSizes.lua": true,
+    "src/ReplicatedStorage/Util/ValueCalculator.lua": true,
+    "src/ServerScriptService/Services/PurchaseService.lua": true,
+    "src/ReplicatedStorage/Assets/Starter.rbxmx": true,
+    "src/Workspace/StarterTreeEditor.rbxmx": true
+  }
+}

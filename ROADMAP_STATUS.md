@@ -1,3 +1,73 @@
+# Salvage and physical part ownership
+
+Schema **11**, November 2 2026. Planted and queued trees now own their non-starter parts until salvage. See [SALVAGE_REPORT.md](SALVAGE_REPORT.md) for ownership rules, migration, all before/after tables and test details.
+
+- Parts stay in inventory and count toward 500 while in use. Unlimited starter copies remain free. Locks prevent equip, sale and reuse; all three pads and queue preserve tree IDs through placement.
+- Tree Parts → Garden and owned tree info list four parts and offer confirmed salvage. Salvage requires own-garden range and a short cooldown, unlocks identical parts, clears only that tree's fruit and refunds no coins. Replacement commits salvage and planting together through session-owned persistence.
+- Idempotent migration preserves old trees and ownership, matches safe identities, retains ambiguous copies without creating duplicates, and reserves missing legacy capacity until recovery. Ascension clears trees and locks together.
+- Two economy levers: Leaf Power 1/2/4/8/**64/224** and **+250% per Sapling**. Prices/odds/Marketplace IDs and mutation rules remain unchanged; first Ascension stays 1B. Balanced A1 **3.89 h**, P90 **5.26 h**, run two **2.42 h (62.2%)**. 300 rolls **103.60 min**, above the older 60–90-minute target.
+- **15,374 assertions across 15 suites pass**, plus 40 client checks (**15,414 total**). Desktop and both phone orientations were checked. More, pets, fruit/Vault/size, authored geometry and draft purchase enable flags remain.
+- Nothing was published or activated. Backend/device/multiplayer release checks remain open. The current 28-page handbook is in docs/.
+
+
+## Historical model update
+
+# Rare and Epic model update November 2 2026
+
+Schema 10 adds both supplied 12-model packs. Common–Epic now have 48 authored models. Rare Blueberry is Crystalberry and Blackberry is Hazelfruit; variants, IDs, saved values, ownership, all build/harvest snapshots and discoveries/claims migrate without a wipe. The 80 new material meshes retain source shape, corrected facing and sRGB palettes; runtime fruit attachment heights were lowered under new opaque crowns for visibility.
+
+All 14 suites pass (15,167 assertions), plus 53 server/client checks for 15,220, and three further live integration repeats. All 80 mesh assets load. Original Common/Uncommon models, lowered Clover, economy, odds, mutation cap, purchases, pets and compact More remain unchanged. See ASSET_REPORT.md and asset-validation/.
+
+The 27-page handbook and catalog are updated and checked. No game publish or purchase activation occurred. Studio ends in Edit/default viewport, HTTP off, memory-test attribute and runners/fixtures removed. Backend, published-client/device and multiplayer release checks remain open.
+
+## Historical rolling roadmap
+
+# Vertical rolling update November 2 2026
+
+Vertical 3D part reel, faded neighbors, honest per-roll name/mutation odds, best-of-batch reveal, complete paginated recent results, Hide/Skip and reduced-effects support are implemented. Rolls keep the garden visible instead of opening inventory automatically. More remains compact.
+
+Schema 9 and all saved data stay unchanged. Config, RollEngine, prices, odds, luck/pity, cooldown, paid-random gates and Marketplace IDs are retained. All 13 suites pass (4,301 checks), plus 53 server/client presentation checks and three repeated live integrations. Desktop and simulated phone orientations were checked; the 27-page handbook is updated and rendered. See ROLLING_REPORT.md.
+
+Studio ends in Edit/default viewport with HTTP off and temporary test settings/runners removed. Nothing was published or activated. Backend, physical devices and multiplayer/load remain release checks.
+
+## Historical fruit roadmap
+
+# Fruit revision November 1 2026
+
+Schema 9 implements the Sell panel, quantity selection and previewed filters; separate 30-stack Vault; 105-entry optional Fruit Index and biggest-fruit record; six-item garden shelf; and server-rolled size classes. Vault and Fruit Index persist across Ascension, bag clears, retained fruit keeps value. Migration preserves old values/timestamps and repairs stack IDs. Exact-schema server requests, stale selection handling and rate limits are tested.
+
+Size odds are 30/60/9/1 with value multipliers 0.8/1/1.5/2.5 and expected value exactly 1. Across 63 paired seeds, median first Ascension changed +1.016% (3.9367 to 3.9767 hours). All 3,666 checks across 12 suites pass; three additional live runs pass. The 27-page handbook is rendered and inspected. No shelf follow-up is needed.
+
+Balance, prior collection/reward work, draft purchases, pets and protected economy/odds/Marketplace settings are retained. See FRUIT_REPORT.md for decisions, tradeoffs, migration, final Config and verification. The connected place has a real PlaceId; this revision used isolated memory-only test sessions and did not publish. Studio ends in Edit/default viewport, HTTP off, temporary test setting/runner removed. Backend, physical-device and multiplayer release checks remain open.
+
+## Historical schema 8 roadmap
+
+# Draft purchase revision November 1 2026
+
+Schema 8 retains completed balance/Index work and revises disabled monetization drafts. Maxer/Rebirth Skip are removed; Mutation Luck is not offered. Third Growth Pad replaces overlapping entitlements with all-pad settlement/placement/credits and free third-Ascension access. Starter Pack is once per account with reference coins, two credits and fixed cosmetics. Journal inventory is reused; no paid pet features or new More tiles were added. All IDs and live prices remain zero; every proposal is Draft=true and all purchases are globally disabled.
+
+All eleven suites pass: 3,526 assertions, plus three repeated live checks. The 25-page handbook is rendered/inspected. See MONETIZATION_REPORT.md for all 22 items, exact effects, proposed prices, free alternatives/times, policy review, migration and pet choices. Nothing is published, committed or pushed; backend/Marketplace/device/load release checks remain open.
+
+## Historical collection roadmap
+
+# Current collection revision November 1 2026
+
+Schema 7 builds on the completed balance revision. Name and Mutation tracks, optional Legend, achievable partial mutation sets, capped permanent core-name bonuses, one earned pet slot, fixed cosmetic Medal shop, like cosmetics/signs, moved Chill-off defenses, removed Shield developer product and five-times Windstorm are implemented. Existing discoveries/claims/medals/likes migrate without a wipe and survive Ascension through the Journal. More stays compact; pet mechanics and prior balance tuning are retained.
+
+3,170 checks pass, with StudioChecks passing three consecutive runs. Independent completion math, 512 production roll/pity samples and 21 collection-aware active policy runs are in COLLECTION_REPORT.md. The complete 420 tail remains optional and cosmetic-only. The handbook has 23 inspected pages. Studio finishes in Edit/default viewport; no publishing, real purchase activation or backend/device certification is claimed.
+
+## Historical balance roadmap
+
+# Current balance revision November 1 2026
+
+This section supersedes the numerical balance and schema notes in the earlier roadmap below. The three requested balance steps are installed in Studio and maintained source: rarity-aware value/cadence and mixed-build timing; a continued roll sink, staged multiplicative Leaf Power and stronger/rising Ascension progression; and server-scaled, capped, audited daily/lifetime rewards. Schema is 6. The first Ascension threshold stays 1B; reset/retention remains intact. Existing parts, mutations, claims, Saplings, bought levels and saved growing-tree durations survive migration.
+
+The primary 21-seed active model meets median targets (300 rolls 61.9 min, first reset 3.84 h, second run 2.33 h), with first-reset P90 4.68 h. RollFocused active first reset is 6.33 h and casual first reset remains 1.33 days because offline earnings stay enabled. These are model results with documented exclusions. See ECONOMY_REPORT.md for all six policies, tables, Config and uncertainty. TEST_REPORT.md records 2,994 passed checks.
+
+Pass/product definitions and enable flags, sabotage, the Index and its fixed rewards, pets/events, plot prices and offline limits were not retuned. Core free progression, compact colorful UI and the lowered Clover geometry are retained. No public publishing or purchase activation occurred. Published backend, real-player, physical-device and multiplayer release checks remain open.
+
+## Historical roadmap before the balance revision
+
 # Build a Tree — November 1 roadmap update
 
 Updated directly in connected Studio Place1, maintained in local source, and packaged in the accompanying ZIP. Studio ends in Edit mode; this is still an unpublished memory-only preview. No public release or live purchases were enabled. No named RBXL save is claimed.

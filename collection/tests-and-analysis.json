@@ -1,0 +1,59 @@
+{
+  "Luck1": {
+    "MedianReached": 791,
+    "Seeds": 128,
+    "FixedLuck": true,
+    "MeanReached": 869.546875,
+    "RollLimit": 20000,
+    "Pity": true,
+    "Luck": 1,
+    "FreeStarters": true,
+    "MedianMutationSetsAt1000": 10,
+    "Reached": 128,
+    "P90Reached": 1272
+  },
+  "Progress": "CollectionChecks",
+  "Done": true,
+  "AnalysisDone": true,
+  "Luck1.36": {
+    "MedianReached": 697,
+    "Seeds": 128,
+    "FixedLuck": true,
+    "MeanReached": 729.9609375,
+    "RollLimit": 20000,
+    "Pity": true,
+    "Luck": 1.36,
+    "FreeStarters": true,
+    "MedianMutationSetsAt1000": 11,
+    "Reached": 128,
+    "P90Reached": 1083
+  },
+  "Luck2.72": {
+    "MedianReached": 491,
+    "Seeds": 128,
+    "FixedLuck": true,
+    "MeanReached": 552.8046875,
+    "RollLimit": 20000,
+    "Pity": true,
+    "Luck": 2.72,
+    "FreeStarters": true,
+    "MedianMutationSetsAt1000": 12,
+    "Reached": 128,
+    "P90Reached": 852
+  },
+  "Luck2": {
+    "MedianReached": 576,
+    "Seeds": 128,
+    "FixedLuck": true,
+    "MeanReached": 619.6640625,
+    "RollLimit": 20000,
+    "Pity": true,
+    "Luck": 2,
+    "FreeStarters": true,
+    "MedianMutationSetsAt1000": 12,
+    "Reached": 128,
+    "P90Reached": 912
+  },
+  "AnalysisProgress": 2.72,
+  "Results": "{\"Progression\":{\"OK\":true,\"Result\":40},\"Acceptance\":{\"OK\":true,\"Result\":459},\"StudioChecks\":{\"OK\":true,\"Result\":94},\"Balance\":{\"OK\":true,\"Result\":458},\"SaveFaults\":{\"OK\":true,\"Result\":22},\"CollectionChecks\":{\"OK\":true,\"Result\":151},\"AdminSecurity\":{\"OK\":true,\"Result\":125},\"RoadmapPhase1\":{\"OK\":true,\"Result\":77},\"StandardAssets\":{\"OK\":true,\"Result\":1708},\"WorldUX\":{\"OK\":true,\"Result\":36}}"
+}

@@ -34,7 +34,7 @@ function Tests.Run()
  check(not Validate("Plant",{Time=0,Progress=1}),"Forged timestamps rejected")
  check(not Validate("Roll",{Count=0/0}),"NaN rejected")
  check(not Validate("Swap",{Plot=1,Coins=999}),"Extra keys rejected")
- check(Validate("Sell",{}) and Validate("Roll",{}),"Valid intents")
+ check(Validate("Sell",{Revision=0,Stacks={{Id="stack",Quantity=1}}})and Validate("Roll",{}),"Valid intents")
  check(Validate("Teleport",{Destination="Garden"}) and not Validate("Teleport",{Destination="Garden",Position=0}),"Teleport accepts destination intent only")
  local bag={Count=0,Value=0,Items={}}
  BagInventory.Add(bag,4,2,{Name="Apple",Tier=2,Mutation="Golden"},120,"fruit1")
@@ -42,7 +42,7 @@ function Tests.Run()
  check(bag.Count==3 and bag.Value==12 and #bag.Items==1,"Fruit stacks preserve count and exact value")
  check(bag.Items[1].ObtainedAt==120 and bag.Items[1].LastObtainedAt==140,"Server acquisition range retained")
  BagInventory.Add(bag,4,1,{Name="Apple",Tier=2,Mutation="Golden"},180,"fruit3")
- check(#bag.Items==2,"Separate acquisition minute creates a new stack")
+ check(#bag.Items==1 and bag.Items[1].LastObtainedAt==180,"Acquisition minutes no longer fragment identical size-class stacks")
  local legacy={Count=2,Value=6}; BagInventory.Ensure(legacy)
  check(legacy.Items[1].Value==3 and legacy.Items[1].ObtainedAt==nil,"Legacy harvest preserves value without inventing an acquisition date")
  local g={Progress=0,Duration=100,Rate=1,Settled=0,State="Growing"}
@@ -100,7 +100,7 @@ function Tests.Run()
  local original=P.Starter();local plain=V.Build(original,1,1,1,1)
  original.Trunk.Mutation="Golden"
  check(near(Catalog.Bonus(original),1.25) and near(V.Build(original,1,1,1,1),plain*1.25),"Each part contributes one quarter of its mutation multiplier")
- check(near(V.Build(original,5,1,1,1),plain*1.25*5),"Harvest and part mutation bonuses combine once")
+ check(near(V.Build(original,5,1,1,1),plain*C.Economy.MutationCeiling),"Harvest and part mutation bonuses combine once")
  for _,slot in C.Slots do original[slot].Mutation="Cosmic" end
  check(Catalog.Bonus(original)==50,"Maximum part mutation bonus is 50x")
  local legacyProfile=P.New(0);legacyProfile.Parts={{Id="old",Name="Oak",Slot="Trunk",Tier=1,Stat=1.1}}
@@ -121,7 +121,7 @@ function Tests.Run()
  local plots=P.New(0);plots.Upgrades.Plots=6
  check(Catalog.MaxPlots(plots)==6,"Six plots are reachable through coin upgrades")
  plots.Passes.ExtraPlots=true;check(Catalog.MaxPlots(plots)==6,"Pass never exposes a seventh production plot")
- plots.Upgrades.Plots=1;check(Catalog.MaxPlots(plots)==3,"Existing extra-plots pass retains early unlock bonus")
+ plots.Upgrades.Plots=1;check(Catalog.MaxPlots(plots)==1,"Retired extra-plots entitlement never bypasses coin plot progression")
  print("Build a Tree acceptance: "..count.." assertions passed")
  print("Sample: fruit=",V.FruitValue(1,{1},1,1,1,1,1),"grow=",G.GrowTime(1,1),"drop=",V.DropInterval({.15}))
  return count

@@ -2,11 +2,14 @@
 local C=require(script.Parent.Parent.Config)
 local Entitlements=require(script.Parent.Entitlements)
 local Catalog={}
+local Aliases=require(script.Parent.NameAliases)
 function Catalog.Variants(slot,tier) return C.PartVariants[slot] and C.PartVariants[slot][tier] end
 function Catalog.Variant(item)
  local names=Catalog.Variants(item.Slot,item.Tier)
- return names and table.find(names,item.Name) or 1
+ return names and table.find(names,Aliases.Name(item)) or 1
 end
+-- Saved raw stats stay unchanged; rarity power is always derived from Config.
+function Catalog.Power(item)return C.Economy.RarityFactor^(item.Tier-1)end
 function Catalog.Count()
  local count=0;for _,slot in C.Slots do for tier=1,#C.Rarities do count+=#Catalog.Variants(slot,tier) end end;return count
 end
@@ -22,7 +25,7 @@ function Catalog.Bonus(build,pruned)
 end
 function Catalog.MaxPlots(profile)
  local level=math.clamp(profile.Upgrades.Plots or 1,1,#C.Upgrades.Plots.Values)
- return math.min(C.Growth.TotalPlots,C.Upgrades.Plots.Values[level]+(Entitlements.Has(profile,"ExtraPlots")and C.Growth.ExtraPassPlots or 0))
+ return math.min(C.Growth.TotalPlots,C.Upgrades.Plots.Values[level])
 end
 function Catalog.Style(part,item)
  local mutation=Catalog.Mutation(item)

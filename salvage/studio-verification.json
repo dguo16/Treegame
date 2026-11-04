@@ -1,0 +1,92 @@
+{
+  "Date": "2026-11-02",
+  "PlaceId": 122763473283486,
+  "SourcesCompared": 73,
+  "SourceDiff": [],
+  "InitialSourceDifferences": [
+    {
+      "f": "src/ReplicatedStorage/Util/ImportedModels.lua",
+      "got": {
+        "Hash": 637153055,
+        "Length": 5722
+      },
+      "length": 6059,
+      "hash": 1649494901
+    }
+  ],
+  "GeometryCompared": 208,
+  "GeometryDiff": [],
+  "FinalState": {
+    "Device": "default",
+    "Runner": false,
+    "Viewport": "1631, 753",
+    "HTTP": false
+  },
+  "Suites": {
+    "Progression": {
+      "Pass": true,
+      "Result": 39
+    },
+    "Acceptance": {
+      "Pass": true,
+      "Result": 455
+    },
+    "StudioChecks": {
+      "Pass": true,
+      "Result": 186
+    },
+    "CommerceChecks": {
+      "Pass": true,
+      "Result": 338
+    },
+    "AuthoredAssets": {
+      "Pass": true,
+      "Result": 10866
+    },
+    "SalvageChecks": {
+      "Pass": true,
+      "Result": 168
+    },
+    "FruitChecks": {
+      "Pass": true,
+      "Result": 104
+    },
+    "RollPresentation": {
+      "Pass": true,
+      "Result": 635
+    },
+    "Balance": {
+      "Pass": true,
+      "Result": 458
+    },
+    "SaveFaults": {
+      "Pass": true,
+      "Result": 22
+    },
+    "CollectionChecks": {
+      "Pass": true,
+      "Result": 157
+    },
+    "AdminSecurity": {
+      "Pass": true,
+      "Result": 125
+    },
+    "RoadmapPhase1": {
+      "Pass": true,
+      "Result": 77
+    },
+    "StandardAssets": {
+      "Pass": true,
+      "Result": 1708
+    },
+    "WorldUX": {
+      "Pass": true,
+      "Result": 36
+    }
+  },
+  "Client": {
+    "Done": true,
+    "Result": 4,
+    "Checks": 36
+  }
+}

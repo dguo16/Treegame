@@ -1,0 +1,23 @@
+newmtl BlueMapleFoliage
+Kd 0.18 0.4 0.67
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl BlueMapleCrown
+Kd 0.3 0.59 0.83
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl BlueMapleLeafTips
+Kd 0.24 0.5 0.76
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

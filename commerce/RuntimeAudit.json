@@ -1,0 +1,10 @@
+{
+  "Enabled": false,
+  "Passes": 12,
+  "IDsZero": true,
+  "Products": 10,
+  "MutationEnabled": false,
+  "Drafts": true,
+  "Schema": 8,
+  "LivePricesZero": true
+}

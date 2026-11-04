@@ -1,0 +1,23 @@
+newmtl LavenderUndergrowth
+Kd 0.38 0.31 0.57
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl LavenderFans
+Kd 0.61 0.5 0.81
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl LavenderFanEdges
+Kd 0.77 0.68 0.91
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

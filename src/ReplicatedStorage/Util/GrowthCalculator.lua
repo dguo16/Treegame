@@ -13,6 +13,13 @@ end
 function G.GrowTime(tier,modifier)
  return math.clamp(C.Rarities[tier].Grow*modifier,C.Math.MinGrowSeconds,C.Math.MaxGrowSeconds)
 end
+-- Height/build label retain floor-average tier. Time also accounts for the best part.
+function G.BuildTime(build,modifier)
+ local high=1;for _,slot in C.Slots do high=math.max(high,build[slot].Tier)end
+ local average=G.Tier(build)
+ local tier=math.ceil(average*(1-C.Growth.HighestTierWeight)+high*C.Growth.HighestTierWeight)
+ return G.GrowTime(tier,modifier or 1)
+end
 function G.Settle(g,now)
  g.Progress=math.min(g.Duration,g.Progress+math.max(0,now-g.Settled)*g.Rate)
  g.Settled=now

@@ -1,0 +1,23 @@
+newmtl AmethystRootCore
+Kd 0.38 0.25 0.52
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl AmethystGeodeRim
+Kd 0.57 0.37 0.72
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl AmethystRootCrystals
+Kd 0.78 0.56 0.9
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

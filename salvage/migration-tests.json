@@ -1,0 +1,20 @@
+[
+  {
+    "RepairedIds": 0,
+    "Trees": 4,
+    "Reserved": 4,
+    "Missing": 4,
+    "Starter": 4,
+    "Ambiguous": 4,
+    "Matched": 4
+  },
+  {
+    "RepairedIds": 0,
+    "Trees": 1,
+    "Reserved": 0,
+    "Missing": 0,
+    "Starter": 0,
+    "Ambiguous": 1,
+    "Matched": 3
+  }
+]

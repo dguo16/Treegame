@@ -1,196 +1,90 @@
 # Build a Tree
 
-## Current build — November 1, 2026
+Schema **11**, November 2 2026. Planted and queued trees now own their non-starter parts until salvage. See [SALVAGE_REPORT.md](SALVAGE_REPORT.md) for ownership rules, migration, all before/after tables and test details.
 
-The approved roadmap's core loop and engagement features are now implemented in Studio and source, with disabled monetization drafts and a release-gate report. Read [ROADMAP_STATUS.md](ROADMAP_STATUS.md) first for exact behavior, preserved user edits, remaining work and migration notes. [ECONOMY_REPORT.md](ECONOMY_REPORT.md) contains the new price/pity audit and seeded simulation. [TEST_REPORT.md](TEST_REPORT.md) records 2,536 passing checks and their limits. Proposed prices, draft description and artwork are under marketing/.
+- Parts stay in inventory and count toward 500 while in use. Unlimited starter copies remain free. Locks prevent equip, sale and reuse; all three pads and queue preserve tree IDs through placement.
+- Tree Parts → Garden and owned tree info list four parts and offer confirmed salvage. Salvage requires own-garden range and a short cooldown, unlocks identical parts, clears only that tree's fruit and refunds no coins. Replacement commits salvage and planting together through session-owned persistence.
+- Idempotent migration preserves old trees and ownership, matches safe identities, retains ambiguous copies without creating duplicates, and reserves missing legacy capacity until recovery. Ascension clears trees and locks together.
+- Two economy levers: Leaf Power 1/2/4/8/**64/224** and **+250% per Sapling**. Prices/odds/Marketplace IDs and mutation rules remain unchanged; first Ascension stays 1B. Balanced A1 **3.89 h**, P90 **5.26 h**, run two **2.42 h (62.2%)**. 300 rolls **103.60 min**, above the older 60–90-minute target.
+- **15,374 assertions across 15 suites pass**, plus 40 client checks (**15,414 total**). Desktop and both phone orientations were checked. More, pets, fruit/Vault/size, authored geometry and draft purchase enable flags remain.
+- Nothing was published or activated. Backend/device/multiplayer release checks remain open. The current 28-page handbook is in docs/.
 
-Controls: roll, equip in Tree Parts, plant or queue a build, then hold E at a ready growth tree. Green plots plant; gold plots request explicit Replace confirmation. D-pad/A/B also select and cancel plots. Tree Parts → Journal contains Index, Daily, Goals, Gardens and News. More remains compact and unchanged. Pad 2 is earned on first Ascension or with ExtraPlots.
+## Previous Rare and Epic update
 
-Profiles use schema 5 in BuildATree_v1. New purchases and paid mutation luck remain disabled; all IDs are 0. Audio controls are implemented but licensed audio IDs are still needed. Studio ends in Edit mode. The project has not been published or certified for release.
+Schema **10**, November 2 2026. Both supplied Rare/Epic packs are applied: 24 authored models and 80 material meshes. Rare Blueberry becomes Crystalberry; Blackberry becomes Hazelfruit. Existing ownership, values, discoveries and claims migrate without loss. See [ASSET_REPORT.md](ASSET_REPORT.md).
 
-The older notes below document earlier revisions and may describe superseded controls. The current build and linked status report take precedence.
+- Common through Epic now use 48 authored templates (137 MeshParts). Legendary through Godly keep their procedural visuals.
+- New models appear in trees, rolling, inventory, harvests and Vault displays. New canopy attachment heights were lowered for visible fruit; original source files/contracts are retained.
+- Schema-9 names migrate across owned/equipped parts, all tree and growth snapshots, Bag/Vault and Fruit Index records. IDs, variants, stats, saved values, timestamps and claims remain.
+- **15,167 checks across 14 suites pass**, plus 53 additional server/client checks (**15,220 total**), three repeated live integrations and successful loads for all 80 new meshes.
+- All 104 original geometry records and the hand-adjusted Clover are unchanged. Prices, odds, purchase IDs and purchase enable flags are unchanged. Nothing was published to the live game.
 
----
+## Previous rolling update
 
-### Private admin panel
+Schema **9**, November 2 2026. Rolling now uses a vertical reel of actual 3D parts, faded neighbors, honest per-roll odds and complete batch results. See [ROLLING_REPORT.md](ROLLING_REPORT.md).
 
-Only Roblox UserId **515156085** (`chikinnugggets`, verified via Roblox's username lookup) can use the admin commands. Open **More → Admin Panel**, or press **F4** outside a text field on desktop. The client hides the entry for other accounts; every command independently checks the fixed UserId on the server. Display-name matches, client flags and target-player fields do not authorize access.
+- Best-of-batch reveal plus every awarded part in Results: ten per page, last 100 this session.
+- Hide/Skip affects presentation only; Auto Roll keeps collecting results. Reduced effects and shake preferences are respected.
+- Rolls keep the garden visible and no longer force Tree Parts open. More remains compact.
+- All 13 suites pass: **4,301 checks**, plus 25 live feedback and 28 client checks (**4,354 total**), and three additional repeated live suites.
+- Config, prices, odds, luck, pity, cooldown, Marketplace IDs and paid-random gating are unchanged. No save migration or schema bump is needed. Purchases remain disabled.
 
-- **Coins:** set, add or remove your balance. Supports plain numbers, comma separators, K/M/B/T/Qa/Qi suffixes and scientific notation. Values are bounded to 0–1e30; subtraction floors at zero. Lifetime earned-coins statistics are not fabricated.
-- **Parts:** select any of four slots, seven rarities and three catalog variants; grant a copy, grant and equip it, or add all 84 catalog entries. Stats are generated from the server's catalog at the rarity's maximum, and the normal inventory cap still applies. Grants do not consume coins or change roll/pity counters.
-- **Luck:** set an absolute personal part-roll luck override from 0.01× to 1,000,000×, or reset to normal pet/pass/boost luck. Effective odds still use the existing rarity system and pity rules. Other players, part/fruit mutations and egg odds are unaffected.
+## Fruit and Vault foundation
 
-Coins, parts and the optional luck override are stored in your profile through the normal save system. The override survives Ascension until explicitly reset. The server retains a bounded 30-entry admin audit log. Unpublished Studio continues to use the existing memory-only preview behavior. The allowlist lives in `Services/AdminConfig.lua` on the server; no extra users, groups or creator-role bypasses are enabled.
+Schema **9** fruit revision, November 1 2026. Sell opens a selection panel by default; fruit can be locked in a separate Vault; harvested fruit now has four size classes. Completed balance, achievable Index and disabled draft purchases are retained. See [FRUIT_REPORT.md](FRUIT_REPORT.md) for Config, formula, migration and simulation.
 
-### Square shop catalog
+- Sell All Unlocked, partial quantities and previewed filters send only server revision, stack IDs and quantities. The server recomputes payouts and reports stale selections. Quick sell on entry defaults off.
+- Vault holds 30 stacks outside bag capacity. All sale paths and Windstorm exclude it. Unlock requires room for the whole stack.
+- Vault, Fruit Index and biggest-fruit record survive Ascension; bag clears. Vault keeps saved value, allowing limited banking between runs.
+- Optional Fruit Index has 105 name/mutation discoveries and lists collected sizes. The cosmetic garden shelf displays six vaulted items. More stays compact.
+- Small/Normal/Large/Giant odds are 30/60/9/1%, value factors 0.8/1/1.5/2.5, visual scales 0.8/1/1.25/1.6. Expected value is exactly 1. Size is outside the unchanged ×2 mutation cap; Double Coins applies once.
+- Schema-8 stacks become Normal with values and known timestamps preserved. Missing/duplicate IDs are repaired. New stacks group by name, tier, mutation and size with a conserved total and average unit price.
+- The prior fruit revision passed 3,666 checks across 12 suites. The 63-pair first-Ascension simulation gives 3.9367 h before and 3.9767 h after (+1.016%). The 27-page handbook is in docs/.
 
-The shop now uses square, model-icon purchase tiles inspired by the supplied UI pack, while retaining this game's colors, rounded outlines and Fredoka lettering. Scroll through Garden Upgrades, Defenses and Pets & Eggs; all 15 tiles spend coins through the existing server-validated actions. Sell and Extras are not shop categories. Selling remains at the Sell stand/navigation button; optional purchases remain separate under More. Tile prices and owned/max states update after a purchase without resetting scroll during regular HUD updates. Phone layouts use three columns in landscape and two in portrait, with movement controls hidden while the shop is open.
+## Retained draft purchase revision
 
-A runnable Rojo source project, also installed into the connected Studio place. This is a playable first version, not a certified public-release build. See [TEST_REPORT.md](TEST_REPORT.md) for verified behavior and release gaps.
+All 12 passes and 10 products remain Id=0, Price=0 and Draft=true; EnableNewPurchases=false. Proposals and free alternatives remain in MONETIZATION_REPORT.md.
 
-## Play
+- Maxer and Rebirth Skip products/grant paths are removed. Mutation Luck is not offered; its calculator is explicitly pending policy review and live mutation luck is always 1.
+- Third Growth Pad replaces ExtraPlots and Extra Growth Pad. Pad 2 is free after first Ascension. Pad 3 and queue 2 to 3 activate with the pass after first Ascension, or free at third Ascension. No current entitlement unlocks production plots or an early second pad. All six production plots still use coin upgrades.
+- Pads 1/2/3 use Growth/Growth2/Growth3 and world indices 7/8/9. Identity-bound placement, replacement, growth, FIFO snapshots, watering selection, Grow Now, credits, offline settlement, event deadlines, height records and reset cleanup support all three. Queue entries never automatically replace a producer.
+- Starter Pack is once per account: 30 minutes of saved server reward-reference income (cap 50M), two Grow10 credits, Sprout Planter and Bud title. Coin packs now use the same reference instead of temporary/paid/pet-boosted current income, capped at 100M. No client-provided payout or price is accepted.
+- Double Coins applies once after the other value factors. Double Growth multiplies every pad with pet growth, eligible private x1.25 and one weather event (Rain x3 OR Wind x5). Super/Ultra keep their existing factor-replacement and time-extension rule, disclosed in descriptions and exact numeric purchase previews in Odds.
+- Square Passes tiles show draft prices, exact effects, quotes and account availability. Touch controls hide behind the panel; portrait and landscape layouts were inspected. More has no new tile and remains compact.
+- Reuse Journal > Style for owned cosmetics and equip/clear. Eight featured items include existing Index/Medal/like rewards plus four new fixed bundle items. Cosmetic Bundle grants Sunset Glow and Festival Pinwheel; free alternatives cost 16/20 medals. Starter cosmetics cost 2 medals each. No cosmetic has stats or random outcomes. Existing cosmetics remain owned. Already earned bundle items cannot prompt a redundant purchase.
+- Schema 8 converts retired pad ownership and preserves historical second-pad access, occupied plots, saved tree identities/durations/heights, queues and all prior collection/balance data. Old Starter Pack logs stay consumed; no coins or credits replay. Passes, bundle ownership, cosmetics and credits survive Ascension.
+- The existing conservative paid-random gate remains for every paid gameplay item, including indirect coin routes; fixed cosmetics are exempt. Receipts use session-owned durable transactions, duplicate protection and policy rechecks. Cancellation grants nothing; spending limits remain. All Marketplace tests use Studio-only fake dependencies.
 
-Press Play in Studio. A starter tree grows in five seconds. Roll a part, open **Tree Parts**, equip it, and Plant the new build on the Growth Pad. The old tree continues producing. Collect fruit by walking near it; step into the **red SELL zone** at the central market to sell automatically (or use the stand prompt). Buy **LeafPower** and other upgrades, hatch/equip/fuse pets, and add production plots. When a new tree is Ready, choose an unlocked, empty plot to plant into.
+The earlier schema-8 21-seed policy is retained as historical evidence in commerce/. The current size comparison and suite counts are reported above and in FRUIT_REPORT.md.
 
-The top Shop, Garden and Sell buttons teleport to server-selected locations without opening menus. Click **Tree Parts** for the category-grid inventory and live build preview, or the **Bag** counter for fruit details and a rotating fruit model. Use **Growth** inside Tree Parts to swap a ready tree. Secondary controls are under More. Shop still opens when you walk into its blue zone. Chill Mode defaults **on**. Turn it off to participate in public-server sabotage. Both parties must opt in and finish five minutes of active play.
+## Balance and collection foundation
 
-## Source layout
+Fruit value uses 25 x (rarity-scaled Fruit + rarity-scaled Leaves) x rarity-scaled Trunk x whole-build Leaf Power x min(2, averaged part mutation x harvest mutation) x Saplings x events x player factors. Rarity power is 1.17 per tier; Roots use rarity intervals down to 0.5 seconds. Leaf Power is 1/2/4/8/64/224. First Ascension stays 1B, later thresholds scale 1.3 per reset and each earned Sapling adds 250% base income. The roll curve keeps its late sink and cap.
 
-```
-default.project.json
-src/
-  ReplicatedStorage/
-    Config/init.lua                # all economic tables, odds, prices, product IDs
-    Types.lua, Remotes.lua
-    Util/                          # pure math, seeded RNG, profiles, validation, formatting
-  ServerScriptService/
-    Main.server.lua                # network boundary and shared schedulers
-    Services/                      # Data, World, Game, Growth, Event, Purchase
-  StarterPlayer/StarterPlayerScripts/
-    Main.client.lua
-    Controllers/                   # UI and cosmetic effects
-  StarterGui/                      # UI is generated on PlayerGui in code
-  TestService/                     # Acceptance, Integration, Simulation modules
-```
+Names tracks 84 any-mutation names, with 48 Common-Epic names as core completion. Mutation sets target 6 Golden / 4 Rainbow / 3 Void / 1 Cosmic distinct names per core rarity. The 420-combination Legend is optional and cosmetic only. Four core rarity sets cap earned coin/luck bonuses at +4% each; all 48 grant one permanent equipped-pet slot. Discoveries, claims, medals, likes and cosmetics persist through Ascension. See [COLLECTION_REPORT.md](COLLECTION_REPORT.md) and [ECONOMY_REPORT.md](ECONOMY_REPORT.md) for prior measured baselines.
 
-Inside Studio, source is under **ServerScriptService → BuildATree**, **ReplicatedStorage → BuildATree**, and **StarterPlayer → StarterPlayerScripts → BuildATree**. The jumping test has been removed.
+Chill starts on. Coin defenses appear only in More > Sabotage when Chill is off. Shield is not a developer product. Windstorm is x5 growth for 60 seconds with fruit collection, not instant completion. Pets, eggs, stats, prices and fusion were not monetized or retuned.
 
-## Rojo setup
+## Play and assets
 
-1. Install Rust/Cargo and Rojo (`cargo install rojo --locked`), or install an official Rojo release. Install the matching Rojo Studio plugin.
-2. Open a terminal in this folder and run `rojo serve default.project.json`.
-3. In Studio, open the Rojo plugin, connect to the displayed local port, review the sync changes, and accept them.
-4. Press Play. Alternatively, `rojo build default.project.json -o build/BuildATree.rbxlx` builds a place file after creating `build/`.
-5. Treat these source files as canonical. Export Studio edits to source before a future sync overwrites them.
+Start with 35 coins and free Oak/Clover/Taproot/Apple parts. Roll, equip in Tree Parts, plant or queue a build, collect landed fruit and visit Sell. SHOP/GARDEN/SELL are travel controls. Hold E at a ready tree to choose an empty plot or confirm replacement. Only the selected plot's fruit is cleared. Non-starter parts lock to one queued/growing/planted tree. Tree Parts → Garden provides confirmed salvage; replacement unlocks the old tree and transfers the ready one atomically.
 
-The current connected place already contains the source; Rojo installation is only needed for ongoing source sync. No other package manager or runtime dependency is required by the game. World objects and companions use primitive Parts. Leaderboard podiums load player avatars through Roblox's avatar service. No manually supplied art or audio IDs are required.
+Maintain the colorful Fredoka bubble UI. More contains Odds, Ascension, Sabotage, Pets/ Eggs, Passes and owner-only Admin. Settings stays a small gear. Leaderboards remain in the world. ScreenOrientation is Sensor; safe-area clipping is retained.
 
-## Implemented
+Common-through-Epic imported source models remain tracked in src/. Preserve AssemblyVersion=2, EditorOrigin, ReferenceHeight=13.5, named Fruit1-3 sockets and the lowered Clover geometry. Do not ignore *.rbxmx. default.project.json maps this maintained source into Studio through Rojo. Only owner UserId 515156085 has admin controls; no new privileged user was added.
 
-- Four slots with seven named parts each, free Common defaults, seeded server rolls, published/effective odds, Epic and Legendary pity, inventory, equip/sell, batch unlocks, auto-roll entitlement and cosmetic vertical reel/reveal.
-- Exact fruit/interval/tier/grow equations in pure modules; independent fruit mutations, colors/materials/particles; bag capacity, collection radius, fruit expiry and a bounded 150-part pool.
-- Session-locked profiles, schema/migration hook, retry/backoff, autosave, shutdown save, timestamp-based boosts/offline production/growth. Unpublished Studio falls back to clearly logged, **nonpersistent** preview with purchases disabled.
-- Main plot + Growth Pad, six coin-unlockable production plots; the optional entitlement unlocks two earlier, capped at six, hold-E ready-tree placement into highlighted empty plots, progress bars, local sapling scaling, watering, rate settlement, private-server growth and luck bonuses.
-- Striped market stands with automatic sell/shop zones; bag, radius, discount, plot, batch, pet-slot and LeafPower upgrades. LeafPower adds another flat leaf-power contribution to the specified fruit-value equation, making the requested long-term economy attainable without changing its formula.
-- Three egg tiers, five pets each, three-to-six equip slots, pet stats, Shiny fusion and local following companions.
-- Queued Golden Rain, Windstorm and cooperative clickable Pest Raid; offline production capped by entitlement, full-speed offline growth, optional auto-roll, range ring, idle/offline reminder.
-- Shake, Pest, Weather Trap and Prune with range, target cooldown, active-play protection, opt-out and per-victim theft budget. Scarecrow, spray, fence and shield defenses have visible primitive indicators.
-- Ascension, permanent Golden Saplings, reset/replant, optional purchases, receipt ledger and deterministic Maxer.
-- Top-left settings gear, tutorial progression/skip, number formatting, four physical global/server boards with top-three avatar podiums, Mythic/Godly announcements, VIP tag and gated terrace, basic pickup/sell/ready/reveal effects. Audio goes through `SoundConfig` and is intentionally silent until IDs are supplied.
+## Reproduce all suites
 
-## Security and persistence
-
-Clients send exact-schema intents with small identifiers only. Unknown fields (including forged amounts, timestamps, progress and rewards), NaN, oversized strings and invalid action names are rejected. A token bucket limits the network boundary; gameplay adds roll, water, purchase, raid and target cooldowns. There are no client-callable RemoteFunctions.
-
-DataStore records have a unique session token and expiring lease. Every write checks ownership using UpdateAsync. Transactional receipts copy the profile, apply the reward plus receipt ID to that copy, save them atomically, then publish the saved copy to the running game. A duplicate ID returns success without applying rewards twice. Lost sessions disconnect rather than continuing to write conflicting data.
-
-`ProcessReceipt` defers while no player/profile/durable store is available. Product IDs default to zero; zero IDs cannot open purchase prompts. Unknown real product IDs defer for operator investigation. Configure each product ID exactly once. Do not remove an ID while receipts may remain pending.
-
-Grow Now saves the requested tree ID before prompting and recomputes remaining time before granting. If the tree has changed or finished, it is **not** upgraded again: the purchase becomes a saved bracket-specific growth credit, redeemable explicitly on an eligible future tree. This avoids charging for nothing or leaving a legitimate receipt pending forever. Tutorial trees never accept skips. Coin packs and paid luck prompts are blocked when PolicyService restricts paid random items or policy lookup fails.
-
-An optional cumulative prompt budget is enforced before prompting. This is an in-game self-limit, not a replacement for Roblox parental or account spending controls. A legitimate paid receipt is fulfilled even if the player changes their self-limit afterward.
-
-## Tests
-
-Run in Studio's Command Bar (Edit mode):
+Use an isolated fresh Play session after startup. In Edit, set the DataService ModuleScript attribute TestMemoryOnly=true before starting Play; the hook is Studio-only and keeps the running profile away from durable stores. Wait for the profile and character. Live checks now refuse a persistent profile. Module fixtures use fake stores and do not prompt real purchases:
 
 ```lua
-require(game.TestService.BuildATreeTests.Acceptance).Run()
-require(game.TestService.BuildATreeTests.WorldUX).Run()
-require(game.TestService.BuildATreeTests.Simulation).Run(42, 3600)
-require(game.TestService.BuildATreeTests.Simulation).Median()
-```
-
-Run the reversible live smoke check on the **server** during a Studio playtest:
-
-```lua
+local tests = game.TestService.BuildATreeTests
+for _, name in {"Acceptance", "AdminSecurity", "WorldUX", "StandardAssets", "RoadmapPhase1", "Progression", "SaveFaults", "Balance", "CollectionChecks", "CommerceChecks", "FruitChecks", "RollPresentation", "AuthoredAssets", "SalvageChecks"} do
+ require(tests[name]).Run()
+end
 game.ServerScriptService.BuildATree.StudioChecks:Invoke(game.Players:GetPlayers()[1], "Run")
 ```
 
-The Studio-only BindableFunction is not created on public servers. The smoke check temporarily replaces the test player's in-memory profile, exercises real game services and restores it. It never prompts purchases or deliberately writes test profiles to a production key. Do not run it concurrently with a save/purchase or manual gameplay.
+Run the code from a normal temporary server Script. After stopping Play, remove the temporary runner and TestMemoryOnly attribute in Edit. Invoke live checks through the normal game harness, after the profile and character are ready. Do not run concurrently with manual gameplay or purchases. TestService modules follow the project's existing harness; no external testing package is required.
 
-The legacy simulation uses seeded active players, instant collection/sales, no paid boosts, no sabotage, no pets/events, upgrade priority and an income-relative roll budget. The shared value calculator now includes part mutation bonuses. Its automatic occupied-plot replacement policy differs from the current empty-only placement flow; revise that policy before treating new runs as current economy validation. It models all purchased production plots and an occupied growth pad. It asserts that production is never removed by a growing replacement; the first tutorial five seconds are the documented exception. It flags long inactivity and missed balance targets. These are policy-model results, **not measured median human-player outcomes**.
-
-## Manual steps
-
-1. **Publish a private TEST place**, enable Studio API access in Game Settings → Security, and verify persistent saves across rejoin. Never enable untrusted Studio plugins against production data.
-2. Set the place's maximum players to **8**, matching `Runtime.MaxPlayers`; verify multi-client public and private servers. Raise the garden allocation limit before raising player count.
-3. Create the gamepasses and developer products in Creator Dashboard, set real IDs in Config, confirm displayed prices match the actual listings, and test cancellation, pending/retry receipts, duplicate receipt delivery and policy-restricted accounts in the published test experience.
-4. Private servers are configured and priced in Creator Dashboard → Monetization → Private Servers. Choose a subscription price after testing demand; the code detects private/reserved-server IDs and grants the configured free bonuses. No private-server price is hardcoded or claimed to be optimal.
-5. Supply owned/licensed audio IDs in `SoundConfig`, or leave them empty for silent play. Configure Roblox music/SFX permissions for those assets.
-6. Review the experience questionnaire, paid-random-item policy disclosures, supported regions and account controls before enabling paid random currency/luck. Test existing paid entitlements when a player's policy eligibility changes.
-7. Complete the release-gap checks in TEST_REPORT, run a full hour with multiple real clients, tune the economy from observed play and profile budgets, and then publish the reviewed build publicly.
-
-## Deliberately disabled / release gaps
-
-- All actual sales and audio are placeholders until IDs are configured. Real DataStore/rejoin/session contention and real Marketplace receipt delivery could not be verified in the unpublished connected place.
-- Global OrderedDataStore reads/writes and cross-server ranking still need published-place verification. Elaborate custom pet silhouettes, texture unlock cosmetics, particle trails/aura tiers, a fully authored icon reel, count-up sell animation, targeted world-space tutorial arrows, automatic friction-based purchase prompts, and a direct revenge-target button remain follow-up polish.
-- We do not simulate input, evade Roblox idle disconnects or claim to extend Roblox's platform AFK timeout. Offline earnings and growth provide the supported continuation path. Private servers receive the coded economy/growth bonuses, not a fabricated engine timeout override.
-- Economy targets are approximations, not all met. The current 21-seed model is faster at 5–15 minutes than the brief, close to the hour target, and needs human playtesting. See exact results in TEST_REPORT.
-- Monetization and concurrency tests below remain release gates. This should be treated as a tested playable prototype until those gates pass, not advertised as fully publish-ready.
-
-## Parts and harvest inventory update
-
-Tree Parts has All Parts, Trunk, Leaves, Roots and Fruit tabs, paginated model-thumbnail grids, a selection/details panel, equip/sell actions, and a rotating preview of the currently equipped build. Common defaults can always be equipped again. Equipped inventory parts must be replaced before they can be sold.
-
-Bag records retain server-supplied fruit name, rarity, mutation, exact coin value, quantity and acquisition timestamps. Identical fruit collected during one minute can share a stack; the details show first and last acquisition times in UTC. Old aggregate-only saves migrate to Saved Harvest without losing coins or inventing timestamps. The profile schema is now version 3, using the existing DataStore namespace.
-
-Fruit falls from the canopy and bounces into place before it becomes collectible. Recycling cancels any outstanding tween. Full-bag collection attempts trigger red BAG FULL! CLICK SELL! text and a bobbing arrow toward the Sell teleport. Selling clears the warning.
-
-Sign boards sit in front of their supporting posts and use a single outward-facing text surface with a depth offset. Inventory modals temporarily hide mobile movement controls and restore them when closed.
-
-## Compact navigation and world interactions
-
-More contains Odds, Ascension, Sabotage, Pets & Eggs, Passes, plus Admin for the authorized owner. These are square bubble tiles in a non-scrolling grid. Parts and Bag keep their existing external buttons. Settings opens from the round gear immediately after Roblox's topbar controls. The two-arrow Auto-Roll button sits beside Roll on desktop and immediately above its left edge on narrow screens; the existing Auto-Roll entitlement still applies.
-
-Each manual or automatic roll chooses the largest unlocked, affordable batch, capped by inventory space. Costs include each successive roll's price increase. Partial batches can contain any count up to the unlocked maximum. Clients cannot supply a batch count.
-
-Hold E near a ready growth-pad tree to select a destination. Only unlocked, empty plots on your own land glow. Hover adds an outline; click or tap places the tree. Escape/right-click cancels, and selections expire after 60 seconds. If all unlocked plots are occupied, the message directs the player to buy Tree Plots. Existing producing trees keep running. A purchased watering can uses the same in-world prompt while a tree is growing. Grow Now remains available in Passes.
-
-Four physical boards around the market show global coins, global height, server coins and server height, each with three podium slots. Coin boards rank coins on hand; global balances can fall after spending. Global height preserves the best height reached, including across ascension; server height is the tallest currently producing tree. Server boards refresh every 5 seconds and global boards every 60 seconds. Coin scores use a monotonic integer logarithmic encoding to support the large economy; displayed global amounts are approximate at tiny relative increments. Podium avatars are cached (up to 24 templates), anchored and stripped of scripts. Empty ranks remain empty.
-
-Global data requires a published test experience with API access. An unpublished preview displays an unavailable status instead of invented global ranks. Verify multi-server changes, zero balances, backend throttling, rank changes and avatar loading before release. Optional leaderboard writes run after profile saving on departure so ranking failures cannot delay the player's primary save.
-
-
-## Catalog, part mutations and height expansion — October 31, 2026
-
-There are **84 rollable parts**: three catalog choices in each of four slots for all seven rarities. Original names remain the first choice, so starter parts and existing saved identities stay valid. The server first rolls rarity with the existing luck/pity system, then chooses a slot and a catalog variant uniformly. Rarity odds are unchanged.
-
-Every newly rolled part independently rolls the existing mutation distribution: None 80% (1×), Golden 12% (2×), Rainbow 5% (5×), Void 2.5% (15×), Cosmic 0.5% (50×). Rarity luck does not change mutation odds. The four equipped part mutation multipliers are **averaged** into one tree-value bonus: one Golden part and three normal parts give 1.25×; four Cosmic parts give 50×. This bonus multiplies the existing harvested-fruit mutation once. Raw part stats and root timing remain unchanged. A pruned slot contributes 1× while disabled.
-
-Inventory thumbnails, selected details, roll reveals, the rotating tree preview and world trees show part mutations. Each catalog variant also has a distinct primitive silhouette. Admin can select each variant or grant all 84; deterministic admin grants are unmutated. Grant authorization remains server-side and self-only.
-
-Each non-tutorial planting samples a server-owned height scale between **0.75 and 1.50** once. The visual grows toward that height and retains it when ready, placed, saved and restored. Taller trees do not increase coin value automatically. Tutorial and legacy trees use scale 1. Height is measured from the model base to canopy top, shared by models and leaderboard values, with base height 12 + average-tier × 1.5 studs. Inventory previews show the possible height range; the growth billboard shows the current height and the ready billboard shows final height. Part mutations stay attached to the build throughout.
-
-Tree Plots now progresses through **1, 2, 3, 4, 5, 6**. Incremental costs retain the existing curve: 1,000 / 10,000 / 100,000 / 1,000,000 / 10,000,000 coins. The garden has six production beds and one separate Growth Pad. ExtraPlots adds two early unlocks with a strict six-bed cap; the shop blocks purchases once six are available, including through the pass.
-
-Schema 3 retains the existing profile-store namespace and bag migration. Old parts gain an explicit None mutation without rerolling their stats or identities. Old growth and plot records gain height scale 1.
-
-## Imported starter models — October 31, 2026
-
-The user-supplied OakTrunk, CloverLeaves, Taproot and Apple GLBs were imported with Studio's 3D Importer under the current user creator. Seven mesh resources are stored as four reusable Models in ReplicatedStorage.BuildATree.Assets.Starter. The same templates are included in src/ReplicatedStorage/Assets/Starter.rbxmx for Rojo, and original GLB/OBJ/MTL source files are retained in asset-sources/starter. The supplied asset-building Python script was not executed or incorporated.
-
-ImportedModels adapts these exact Common catalog identities to existing inventory previews and mixed tree builds, preserves the original flat material colors, and applies part mutations to trunk/leaves/roots and the apple body. The apple stem and leaf retain their own colors. Trunks/canopies fit existing height targets; the downward root mesh is compressed into an above-soil root base. Other catalog parts keep their existing visual models.
-
-The imported apple is also used for hanging apples, Fruit Bag previews, and falling/collectible Apple fruit. Falling apples use three welded visual meshes on the existing pooled fruit anchor. Fall/bounce tweens now update CFrame so attached components move together. Recycling destroys the visual before returning the anchor to the pool. Mesh files are uploaded assets owned by the import creator; a different creator must arrange asset permissions or reimport the bundled original source files.
-
-## Edit the starter tree visually
-
-Stop Play. In Workspace, expand StarterTreeEditor and select its Trunk, Leaves or Roots Model group. Press F to focus it and use Move/Rotate. Position, rotation and mesh-size edits inside the named groups are copied into the assembled tree. The three Apple Models also control hanging-fruit placement. Keep EditorOrigin and each DefaultPivot value intact. Position/rotation edits are read on the next Play; the reference moves into ReplicatedStorage at runtime and is not shown in the garden. Moving the complete editor tree changes only its workbench location. This editor controls assembled-tree geometry. Individual inventory part models and dropped fruit retain the Assets.Starter templates. Save the place after editing. The bundled RBXMX reflects the layout at handoff; future Studio edits also need exporting to update the source archive.
-
-
-## Edit the starter tree visually
-
-Stop Play. In Workspace, expand StarterTreeEditor and select its Trunk, Leaves or Roots Model group. Press F to focus it and use Move/Rotate. Position, rotation and mesh-size edits inside the named groups are copied into the assembled tree. The three Apple Models also control hanging-fruit placement. Keep EditorOrigin and each DefaultPivot value intact. Position/rotation edits are read on the next Play; the reference moves into ReplicatedStorage at runtime and is not shown in the garden. Moving the complete editor tree changes only its workbench location. This editor controls assembled-tree geometry. Individual inventory part models and dropped fruit retain the Assets.Starter templates. Save the place after editing. The bundled RBXMX reflects the layout at handoff; future Studio edits also need exporting to update the source archive.
-
-
-## Common model set 2 and 3
-
-All 12 Common catalog parts now use imported models. Pine, Maple, Oakleaf, Sprout, Fibrous Root, Knotted Root, Cherry and Orange were added as eight separate models with 25 material meshes. They share the existing inventory, tree assembly, mutation and fruit-pool paths. StarterTreeEditor continues to control only the original Oak/Clover/Taproot/Apple build; its user-edited geometry is preserved. Other Common parts retain their own model shapes, and higher-rarity parts retain existing visuals. Original source files are bundled in asset-sources/common-set2 and common-set3.
-
-
-## Standardized Common and Uncommon revision
-
-The active model set now contains 24 imported parts: revised Common plus all Uncommon. Assembly preserves authored source coordinates: roots at Y=0, trunk at Y=0.6, canopy at Y=3.6. The 6.4-stud source tree scales uniformly to its server-owned height. Canopy fruit sockets and fruit attachment offsets come from the supplied assembly contract; hanging fruit is scaled to 65% of tree scale and its attachment meets the socket. Root/trunk/canopy shapes are no longer independently stretched. Procedural higher-rarity pieces normalize to compatible join heights for mixed builds. Mutations recolor fruit flesh/rind while retaining stem/leaf colors.
-
-StarterTreeEditor was refreshed from standardized geometry. Whole component and contained-mesh edits still carry into gameplay. The previous hand-edited layout and old mesh templates are preserved in asset-sources/previous-layout and Studio ServerStorage.BeforeStandardizedRevision. They are reference backups, not active geometry overrides. Revised source files and assembly metadata are under asset-sources/standardized. Supplied Python scripts were not executed.
+The connected place now has PlaceId 122763473283486; historical unpublished notes describe earlier sessions. This revision used explicitly isolated memory-only profiles with API access off. Studio ends in Edit/default viewport, HTTP off, test attribute and runners removed. No cloud publishing or purchase activation was performed. Real save/rejoin, session contention, receipt delivery, global backend, physical devices and multiplayer load need separate test-place verification. Giant uses a verified bundled ping; other audio remains unconfigured. Trading and gifting remain deferred.

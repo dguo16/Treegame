@@ -1,0 +1,31 @@
+newmtl CrystalberryBody
+Kd 0.35 0.36 0.72
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CrystalberryCrystals
+Kd 0.35 0.71 0.93
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CrystalberryStem
+Kd 0.24 0.36 0.4
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CrystalberryLeaf
+Kd 0.21 0.55 0.56
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

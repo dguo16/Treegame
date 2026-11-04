@@ -5,6 +5,7 @@ local S=game:GetService("ReplicatedStorage"):WaitForChild("BuildATree")
 local C=require(S.Config)
 local T=require(S.Theme)
 local P=require(S.Util.Profile)
+local O=require(S.Util.PartOwnership)
 local G=require(S.Util.GrowthCalculator)
 local V=require(S.Util.ValueCalculator)
 local Models=require(S.Util.PreviewModels)
@@ -38,8 +39,9 @@ local function viewport(parent,name,model)
  return vp,model:GetPivot()
 end
 local function growthAction(p)
- if not p or not p.Growth or ((p.MaxGrowthPads or 1)>1 and not p.Growth2)then return "Plant"end
- if p.Growth.State=="Ready"or(p.Growth2 and p.Growth2.State=="Ready")then return "Visit"end
+ if not p then return "Plant"end
+ for pad=1,p.MaxGrowthPads or 1 do if not p[C.Growth.Fields[pad]]then return "Plant"end end
+ for _,key in C.Growth.Fields do if p[key]and p[key].State=="Ready"then return "Visit"end end
  return "Queue"
 end
 function Inventory.new(gui,send)
@@ -129,8 +131,8 @@ function Inventory:Items()
  local out={}; if self.Mode=="Parts" then
   for _,slot in C.Slots do table.insert(out,P.Starter()[slot]) end
   for i=#self.State.Parts,1,-1 do table.insert(out,self.State.Parts[i]) end
- else for i=#(self.State.Bag.Items or {}),1,-1 do table.insert(out,self.State.Bag.Items[i]) end end
- local filtered={}; for _,item in out do if self.Category=="All Parts" or self.Category=="All Fruit" or (self.Mode=="Parts" and item.Slot==self.Category) or (self.Mode=="Bag" and item.Mutation==self.Category) then table.insert(filtered,item) end end
+ else local source=self.Category=="Vault"and self.State.Vault or self.State.Bag;for i=#(source.Items or {}),1,-1 do table.insert(out,source.Items[i])end end
+ local filtered={}; for _,item in out do if self.Category=="All Parts" or self.Category=="All Fruit" or self.Category=="Vault"or (self.Mode=="Parts" and item.Slot==self.Category) or (self.Mode=="Bag" and item.Mutation==self.Category) then table.insert(filtered,item) end end
  return filtered,out
 end
 function Inventory:Detail(value,color)
@@ -139,7 +141,9 @@ end
 function Inventory:Selection(item)
  for _,child in self.Details:GetChildren() do if not child:IsA("UIComponent") then child:Destroy() end end
  if self.Mode=="Parts"then
-  self:Detail("Growth pads: "..(self.State.MaxGrowthPads or 1).." / 2 • Queue: "..#(self.State.GrowthQueue or {}).." / "..C.Growth.QueueLimit..((self.State.MaxGrowthPads or 1)==1 and "\nAscend to unlock pad 2"or ""))
+  self:Detail("Parts: "..(self.State.PartCount or O.Count(self.State)).." / "..C.Runtime.MaxInventory.." (includes in-use parts)")
+  for _,slot in C.Slots do local label=O.Label(self.State,self.State.Equipped[slot]);if label then self:Detail(slot.." - "..label,T.Red)end end
+  self:Detail("Growth pads: "..(self.State.MaxGrowthPads or 1).." / 3 • Queue: "..#(self.State.GrowthQueue or {}).." / "..(self.State.MaxGrowthQueue or C.Growth.QueueLimit)..((self.State.MaxGrowthPads or 1)==1 and "\nAscend to unlock pad 2"or ""))
   for index,queued in self.State.GrowthQueue or {}do
    local queuedId=queued.Id;local cancel=button(self.Details,"CancelQueued_"..index,"CANCEL QUEUED "..index,T.Blue,function()self.Send("CancelQueuedTree",{QueueId=queuedId})end);cancel.LayoutOrder=#self.Details:GetChildren();cancel.Size=UDim2.new(1,-3,0,44)
   end
@@ -148,13 +152,20 @@ function Inventory:Selection(item)
  self:Detail(item.Name)
  self:Detail(C.Rarities[item.Tier or 1].Name..(item.Slot and " • "..item.Slot or " fruit"))
  if self.Mode=="Parts" then
-  local current=self.State.Equipped[item.Slot]
-  self:Detail(string.format("Stat: %.2f\nEquipped: %.2f",item.Stat,current.Stat))
+  local current=self.State.Equipped[item.Slot];local locked=O.Label(self.State,item);if locked then self:Detail(locked..". Salvage this tree to use the part again.",T.Red)end
+  self:Detail(string.format("Raw stat %.2f • Equipped %.2f",item.Stat,current.Stat))
+  if item.Slot=="Roots"then
+   local candidate=P.Copy(self.State.Equipped);candidate.Roots=item
+   self:Detail(string.format("Drops every %.2fs • Equipped %.2fs",V.Interval(candidate),V.Interval(self.State.Equipped)))
+  else self:Detail(string.format("Rarity power ×%.2f • Equipped ×%.2f",Catalog.Power(item),Catalog.Power(current)))end
   local mutation=Catalog.Mutation(item);self:Detail(mutation.Name.." • "..mutation.Mult.."× mutation",mutation.Name~="None" and mutation.Color:Lerp(T.Ink,.65) or T.Ink)
-  local equip=button(self.Details,"Equip","EQUIP",T.Green,function() self.Send("Equip",{Id=item.Id}) end); equip.LayoutOrder=#self.Details:GetChildren(); equip.Size=UDim2.new(1,-3,0,44)
-  if not item.Id:match("^starter_") then local sell=button(self.Details,"SellPart","SELL PART",T.Red,function() self.Send("SellPart",{Id=item.Id}) end); sell.LayoutOrder=#self.Details:GetChildren(); sell.Size=UDim2.new(1,-3,0,44) end
+  local equip=button(self.Details,"Equip",locked and "IN USE"or "EQUIP",locked and T.Purple or T.Green,function()if not locked then self.Send("Equip",{Id=item.Id})end end); equip.LayoutOrder=#self.Details:GetChildren(); equip.Size=UDim2.new(1,-3,0,44);equip.Active=not locked;equip.AutoButtonColor=not locked
+  if not locked and not item.Id:match("^starter_") then local sell=button(self.Details,"SellPart","SELL PART",T.Red,function() self.Send("SellPart",{Id=item.Id}) end); sell.LayoutOrder=#self.Details:GetChildren(); sell.Size=UDim2.new(1,-3,0,44) end
  else
-  self:Detail("Worth "..Format(item.Value).." coins each\n"..Format(item.Value*item.Count).." coins total")
+  self:Detail("Average "..Format(item.Value).." coins each\n"..Format(item.TotalValue or item.Value*item.Count).." coins total")
+  self:Detail("Size: "..(item.Size or "Normal")..(self.Category=="Vault"and " - LOCKED"or ""))
+  local locked=self.Category=="Vault";local id=item.Id
+  local move=button(self.Details,"LockFruit",locked and "UNLOCK TO BAG"or "LOCK IN VAULT",T.Purple,function()self.Send(locked and "UnlockFruit"or "LockFruit",{StackId=id,Revision=self.State.Bag.Revision})end);move.LayoutOrder=#self.Details:GetChildren();move.Size=UDim2.new(1,-3,0,44)
   self:Detail("Mutation: "..(item.Mutation or "None").."\nQuantity: "..item.Count)
   self:Detail(item.ObtainedAt and ("Obtained\n"..os.date("!%b %d, %H:%M:%S UTC",item.ObtainedAt)) or "Obtained before this update\nExact time unavailable")
   if item.LastObtainedAt and item.LastObtainedAt~=item.ObtainedAt then self:Detail("Last in stack\n"..os.date("!%H:%M:%S UTC",item.LastObtainedAt)) end
@@ -163,13 +174,13 @@ end
 function Inventory:Refresh(force)
  if not self.State then return end
  local p=self.State; local key=self.Mode..":"..self.Category..":"..self.Page..":"..tostring(self.Selected)
- if self.Mode=="Parts"then key..=":"..tostring(p.Journal and p.Journal.Version or 0);key..=":"..(p.Growth2 and p.Growth2.Id..p.Growth2.State or "None")..":"..(p.MaxGrowthPads or 1);for _,q in p.GrowthQueue or {}do key..=":"..q.Id end;key..=":"..p.Rolls..":"..#p.Parts..":"..(p.Growth and p.Growth.Id..p.Growth.State or "None"); for _,slot in C.Slots do local item=p.Equipped[slot]; key..=":"..item.Id..":"..item.Stat end
- else key..=":"..p.Bag.Count..":"..p.Bag.Value..":"..p.NextId end
+ if self.Mode=="Parts"then key..=":"..tostring(p.PartVersion or 0);key..=":"..tostring(p.Journal and p.Journal.Version or 0);key..=":"..(p.Growth3 and p.Growth3.Id..p.Growth3.State or "None");key..=":"..(p.Growth2 and p.Growth2.Id..p.Growth2.State or "None")..":"..(p.MaxGrowthPads or 1);for _,q in p.GrowthQueue or {}do key..=":"..q.Id end;key..=":"..p.Rolls..":"..#p.Parts..":"..(p.Growth and p.Growth.Id..p.Growth.State or "None"); for _,slot in C.Slots do local item=p.Equipped[slot]; key..=":"..item.Id..":"..item.Stat end
+ else key..=":"..p.Bag.Count..":"..p.Bag.Value..":"..p.Bag.Revision..":"..p.Vault.Revision end
  if self.Journal and self.Journal.Root.Visible then self.Journal:Update(p)end
  if not force and key==self.Hash then return end; self.Hash=key
- self.Title.Text=self.Mode=="Parts" and "TREE PARTS" or "FRUIT BAG"; self.Primary.Text=self.Mode=="Parts" and (growthAction(p)=="Plant"and "PLANT TREE"or growthAction(p)=="Visit"and "PLACE TREE"or "QUEUE BUILD")or "GO TO SELL"; self.Primary.BackgroundColor3=self.Mode=="Parts" and T.Green or T.Red
+ self.Title.Text=self.Mode=="Parts"and "TREE PARTS"or(self.Category=="Vault"and("VAULT - "..#p.Vault.Items.." / "..C.FruitInventory.VaultStacks.." STACKS")or "FRUIT BAG"); self.Primary.Text=self.Mode=="Parts" and (growthAction(p)=="Plant"and "PLANT TREE"or growthAction(p)=="Visit"and "PLACE TREE"or "QUEUE BUILD")or "GO TO SELL"; self.Primary.BackgroundColor3=self.Mode=="Parts" and T.Green or T.Red
  for _,child in self.Tabs:GetChildren() do child:Destroy() end
- local categories=self.Mode=="Parts" and {"All Parts","Trunk","Leaves","Roots","Fruit","Journal"} or {"All Fruit","None","Golden","Rainbow","Void","Cosmic"}
+ local categories=self.Mode=="Parts" and {"All Parts","Trunk","Leaves","Roots","Fruit","Garden","Journal"} or {"All Fruit","None","Golden","Rainbow","Void","Cosmic","Vault"}
  local x=3; for _,category in categories do
   local tab=button(self.Tabs,category,category:upper(),category==self.Category and T.Gold or T.Purple,function() self.Category=category; self.Selected=nil; self.Page=1; self.Grid.CanvasPosition=Vector2.zero; self:Refresh(true) end)
   tab.Position=UDim2.fromOffset(x,3); tab.Size=UDim2.fromOffset(category:find("All") and 108 or 91,44); x+=tab.Size.X.Offset+8
@@ -180,6 +191,7 @@ function Inventory:Refresh(force)
  self.Journal.Root.Visible=journal;self.Details.Visible=not journal;self.Grid.Visible=not journal;self.Preview.Visible=not journal;self.Primary.Visible=not journal
  self.Journal:Update(p)
  if journal then self.Empty.Visible=false;self.TotalPages=1;self.Pages.Text="Journal";return end
+ if self.Mode=="Parts"and self.Category=="Garden"then self:RenderGarden();return end
  local items,all=self:Items(); local selected
  for _,item in all do if item.Id==self.Selected then selected=item end end
  if not selected and self.Mode=="Bag" then selected=items[1]; self.Selected=selected and selected.Id end
@@ -190,27 +202,50 @@ function Inventory:Refresh(force)
   local item=items[index]; local equipped=self.Mode=="Parts" and p.Equipped[item.Slot].Id==item.Id
   local tint=C.Rarities[item.Tier or 1].Color:Lerp(T.Cream,.65)
   if self.Mode=="Bag" or self.Mode=="Parts" then for _,mutation in C.Mutations do if mutation.Name==item.Mutation and mutation.Name~="None" then tint=mutation.Color:Lerp(T.Cream,.65) end end end
-  local cell=button(self.Grid,"Item_"..item.Id,"",equipped and T.Green or tint,function() self.Selected=item.Id; self:Refresh(true) end); cell.LayoutOrder=index; cell:SetAttribute("ItemId",item.Id)
+  local locked=self.Mode=="Parts"and O.Label(p,item)
+  local cell=button(self.Grid,"Item_"..item.Id,"",equipped and T.Green or tint,function() self.Selected=item.Id; self:Refresh(true) end); cell.LayoutOrder=index; cell:SetAttribute("ItemId",item.Id);cell:SetAttribute("InUse",locked or "");if locked then cell.MouseEnter:Connect(function()self.PreviewStats.Text=locked..". Select for details; salvage to unlock."end)end
   if selected and selected.Id==item.Id then cell.UIStroke.Color=T.Purple; cell.UIStroke.Thickness=4 end
-  local vp=viewport(cell,"Thumbnail",self.Mode=="Parts" and Models.Part(item) or Models.Fruit(item)); vp.Position=UDim2.fromOffset(2,1); vp.Size=UDim2.new(1,-4,0,59)
+  local vp=viewport(cell,"Thumbnail",self.Mode=="Parts" and Models.Part(item) or Models.Harvest(item)); vp.Position=UDim2.fromOffset(2,1); vp.Size=UDim2.new(1,-4,0,59)
   local name=text(cell,item.Name,12); name.Size=UDim2.new(1,-4,0,18); name.Position=UDim2.fromOffset(2,59); name.TextWrapped=false; name.TextTruncate=Enum.TextTruncate.AtEnd
-  local stat=text(cell,self.Mode=="Parts" and (equipped and "EQUIPPED" or (Catalog.Mutation(item).Name~="None" and Catalog.Mutation(item).Name or C.Rarities[item.Tier].Name)) or ("×"..item.Count.." • "..Format(item.Value)),12); stat.Size=UDim2.new(1,-4,0,17); stat.Position=UDim2.fromOffset(2,77)
+  local stat=text(cell,self.Mode=="Parts" and (locked and "IN USE"or equipped and "EQUIPPED" or (Catalog.Mutation(item).Name~="None" and Catalog.Mutation(item).Name or C.Rarities[item.Tier].Name)) or (item.Size.." x"..item.Count),12); stat.Size=UDim2.new(1,-4,0,17); stat.Position=UDim2.fromOffset(2,77)
  end
- self.Empty.Visible=#items==0; self.Empty.Text=self.Mode=="Bag" and "Your bag is empty!\nCollect fruit from your trees." or "No parts in this category yet."
+ self.Empty.Visible=#items==0; self.Empty.Text=self.Mode=="Bag" and (self.Category=="Vault"and "Your Vault is empty! Lock fruit stacks to save and display them."or "Your bag is empty!\nCollect fruit from your trees.") or "No parts in this category yet."
  local modelKey=self.Mode=="Parts" and "Tree" or (selected and selected.Id or "Empty")
  if self.Mode=="Parts" then for _,slot in C.Slots do modelKey..=p.Equipped[slot].Id..p.Equipped[slot].Stat end end
  if modelKey~=self.MainKey then
   self.MainKey=modelKey; self.MainModel=nil
   local old=self.Preview:FindFirstChild("RotatingModel"); if old then old:Destroy() end
-  local model=self.Mode=="Parts" and Models.Tree(p.Equipped) or (selected and Models.Fruit(selected))
+  local model=self.Mode=="Parts" and Models.Tree(p.Equipped) or (selected and Models.Harvest(selected))
   if model then
    local vp,pivot=viewport(self.Preview,"RotatingModel",model);self:LayoutPreview()
    self.MainModel=model; self.MainPivot=pivot; self.RotationStart=os.clock()
   end
  end
  if self.Mode=="Parts" then
-  local tier=G.Tier(p.Equipped); self.PreviewTitle.Text="YOUR NEXT TREE"; self.PreviewStats.Text=C.Rarities[tier].Name.." • "..G.GrowTime(tier,1).."s grow\n"..Format(V.Build(p.Equipped,1,1,1,1,nil,C.Upgrades.LeafPower.Values[p.Upgrades.LeafPower or 1])).." coins / fruit\n"..string.format("%.1f–%.1f studs • %.2f× parts",G.Height(p.Equipped,C.Growth.HeightMin),G.Height(p.Equipped,C.Growth.HeightMax),Catalog.Bonus(p.Equipped))
- else self.PreviewTitle.Text=selected and selected.Name or "YOUR HARVEST"; self.PreviewStats.Text=selected and ((selected.Mutation or "None").." • "..C.Rarities[selected.Tier or 1].Name) or "Walk near fruit to fill your bag." end
+  local available=true;for _,slot in C.Slots do if not O.Available(p,p.Equipped[slot])then available=false end end;self.Primary.Active=available or growthAction(p)=="Visit";self.Primary.AutoButtonColor=self.Primary.Active;if not available and growthAction(p)~="Visit"then self.Primary.Text="CHOOSE FREE PARTS"end
+  local tier=G.Tier(p.Equipped); self.PreviewTitle.Text="YOUR NEXT TREE"; self.PreviewStats.Text=C.Rarities[tier].Name.." • "..G.BuildTime(p.Equipped,1).."s grow\n"..Format(V.Build(p.Equipped,1,1+p.Saplings*C.Math.RebirthPerSapling,1,1,nil,C.Upgrades.LeafPower.Values[p.Upgrades.LeafPower or 1])).." base coins / fruit\n"..string.format("%.1f–%.1f studs • %.2f× parts",G.Height(p.Equipped,C.Growth.HeightMin),G.Height(p.Equipped,C.Growth.HeightMax),V.Mutation(p.Equipped,1))
+ else self.PreviewTitle.Text=selected and selected.Name or "YOUR HARVEST"; self.PreviewStats.Text=selected and ((selected.Size or "Normal").." - "..(selected.Mutation or "None").." - "..C.Rarities[selected.Tier or 1].Name) or "Walk near fruit to fill your bag." end
+ self:Cells()
+end
+function Inventory:RenderGarden()
+ local rows={};for _,row in O.Trees(self.State)do if row.Kind~="Queue"then table.insert(rows,row)end end
+ for _,child in self.Details:GetChildren()do if not child:IsA("UIComponent")then child:Destroy()end end
+ for _,child in self.Grid:GetChildren()do if not child:IsA("UIComponent")then child:Destroy()end end
+ self.Primary.Visible=false;self.Empty.Visible=#rows==0;self.Empty.Text="Your garden is empty. Plant an available build!";self.TotalPages=1;self.Pages.Text="GARDEN"
+ local chosen;for _,row in rows do if row.Tree.Id==self.SelectedTreeId then chosen=row end end;chosen=chosen or rows[1];self.SelectedTreeId=chosen and chosen.Tree.Id
+ for i,row in rows do local tree=row.Tree;local id=tree.Id
+  local cell=button(self.Grid,"Tree_"..i,row.Label.."\n"..tree.State.." • INFO",chosen==row and T.Gold or T.Green,function()self.SelectedTreeId=id;self:Refresh(true)end);cell.LayoutOrder=i
+ end
+ self.PreviewTitle.Text=chosen and chosen.Label or "YOUR GARDEN";self.PreviewStats.Text=chosen and(chosen.Tree.State.."\nParts stay in use until salvage.\nNo coin refund; growth is lost.")or "Plant a build to begin."
+ local key=chosen and chosen.Tree.Id or "None"
+ if self.MainKey~=key then self.MainKey=key;self.MainModel=nil;local old=self.Preview:FindFirstChild("RotatingModel");if old then old:Destroy()end
+  if chosen then local model=Models.Tree(chosen.Tree.Build);local vp,pivot=viewport(self.Preview,"RotatingModel",model);self.MainModel=model;self.MainPivot=pivot;self.RotationStart=os.clock();self:LayoutPreview()end
+ end
+ if chosen then local tree=chosen.Tree;local heading=self:Detail(chosen.Label.." • "..tree.State);heading.LayoutOrder=0;heading.Size=UDim2.new(1,-3,0,workspace.CurrentCamera.ViewportSize.Y<500 and 32 or 44)
+  for _,slot in C.Slots do local part=tree.Build[slot];self:Detail(slot..": "..part.Name.."\n"..(part.Mutation or "None")..string.format(" • %.3f",part.Stat)..(O.Starter(part)and " • Free starter"or(tree.PartIds and tree.PartIds[slot]and " • In use"or " • Legacy snapshot")))end
+  local id=tree.Id;local salvage=button(self.Details,"Salvage","SALVAGE TREE",T.Red,function()self.Send("RequestSalvage",{TreeId=id})end);salvage.LayoutOrder=1;salvage.Size=UDim2.new(1,-3,0,workspace.CurrentCamera.ViewportSize.Y<500 and 44 or 48)
+  self:Detail("Returns its parts unchanged. No coins or other refunds. Confirmation required in your garden.")
+ end
  self:Cells()
 end
 return Inventory

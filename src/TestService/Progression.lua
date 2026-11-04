@@ -31,7 +31,7 @@ function Tests.Run()
   J.Discover(all,{Slot=slot,Tier=tier,Name=name,Mutation=m.Name})
  end end end end
  check(J.Count(all)==420,"Exactly 84 by 5 catalog combinations are discoverable")
- check(J.Claim(all,"Index420",1),"Full collection milestone grants server-defined reward")
+ all.Journal.Claims.Index420=true;P.Migrate(all,1);check(all.Journal.Collection.LegacyClaims.Index420.Claimed,"Historical full-collection claim stays archived")
  check(not J.Claim(all,"Index420",1),"Collection milestone cannot be reclaimed")
  check(J.Event(p,"Golden Rain",100) and not J.Event(p,"Golden Rain",100),"One participation medal per event instance")
  check(J.Event(p,"Golden Rain",200) and p.Journal.EventTokens==2,"Another event can earn another medal")
@@ -54,7 +54,7 @@ function Tests.Run()
  check(Entitlements.Has(p,"Coins"),"Eligible ownership activates gameplay perk")
  p.PolicyRestricted=true
  check(not Entitlements.Has(p,"Coins") and Entitlements.Has(p,"Cosmetics"),"Restricted accounts retain cosmetics while paid gameplay perks stay inactive")
- for _,key in {"Coins","GrowthSpeed","GrowthPad","AutoSell","MutationLuck","Cosmetics"}do
+ for _,key in {"Coins","GrowthSpeed","ThirdPad","AutoSell","Cosmetics"}do
   check(C.Passes[key].Id==0 and C.Passes[key].Price==0 and C.Passes[key].ProposedPrice>0,"New price remains a disabled proposal: "..key)
  end
  check(not C.Monetization.EnableNewPurchases and not C.Monetization.MutationLuckEnabled,"New purchasing and mutation luck are explicitly staged off")

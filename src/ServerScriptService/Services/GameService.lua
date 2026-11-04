@@ -8,7 +8,10 @@ local V=require(S.Util.ValueCalculator)
 local G=require(S.Util.GrowthCalculator)
 local R=require(S.Util.RollEngine)
 local P=require(S.Util.Profile)
+local O=require(S.Util.PartOwnership)
 local BagInventory=require(S.Util.BagInventory)
+local FruitSizes=require(S.Util.FruitSizes)
+local FruitCollection=require(S.Util.FruitCollection)
 local D=require(script.Parent.DataService)
 local W=require(script.Parent.WorldService)
 local Growth=require(script.Parent.GrowthService)
@@ -19,8 +22,9 @@ local Batch=require(S.Util.BatchCalculator)
 local Placement=require(S.Util.PlacementRules)
 local Catalog=require(S.Util.PartCatalog)
 local Journal=require(S.Util.Journal)
+local Collection=require(S.Util.Collection)
 local Entitlements=require(S.Util.Entitlements)
-local Game={Runtime={},Rng=Random.new(),Private=game.PrivateServerId~=""}
+local Game={Runtime={},Rng=Random.new(),SizeRng=Random.new(),Private=game.PrivateServerId~=""}
 function Game.Init(network) Game.Network=network end
 function Game.Feedback(player,kind,data) Game.Network.Feedback:FireClient(player,kind,data) end
 function Game.Toast(player,message) Game.Feedback(player,"Toast",message) end
@@ -38,40 +42,54 @@ function Game.Radius(p) return Entitlements.Has(p,"InfiniteRange") and C.Offline
 function Game.Luck(p,now,player)
  if Admin.IsAdmin(player) then local override=Admin.Override(p);if override then return override end end
  local boost=not p.PolicyRestricted and p.Boosts.LuckUntil and p.Boosts.LuckUntil>now and p.Boosts.LuckFactor or 1
- return (1+Game.PetStats(p).Luck)*(Entitlements.Has(p,"Luck") and 2 or 1)*(Game.Private and not p.PolicyRestricted and C.Offline.PrivateLuck or 1)*boost
+ return (1+Game.PetStats(p).Luck)*(Entitlements.Has(p,"Luck") and 2 or 1)*(Game.Private and not p.PolicyRestricted and C.Offline.PrivateLuck or 1)*boost*select(2,Collection.Factors(p))
+end
+-- Preview exact paid rarity effects using the same server luck calculation, with no mutations.
+function Game.PurchaseLuck(p,now,player,key)
+ local preview=table.clone(p);preview.Passes=table.clone(p.Passes);preview.Boosts=table.clone(p.Boosts)
+ if key=="Luck"then preview.Passes.Luck=true
+ elseif key=="SuperLucky"or key=="UltraLucky"then preview.Boosts.LuckUntil=now+C.Products[key].Duration;preview.Boosts.LuckFactor=C.Products[key].Factor end
+ return Game.Luck(preview,now,player)
 end
 function Game.MutationLuck(p)
- return C.Monetization.MutationLuckEnabled and Entitlements.Has(p,"MutationLuck")and 2 or 1
+ -- Pending policy review: calculator retained in RollEngine, never activated/offered.
+ return 1
 end
-function Game.Value(p,build,mutation,now)
+function Game.Value(p,build,mutation,now,fruitSize)
  local pet=Game.PetStats(p); local event=Event.Current=="Golden Rain" and C.Events.RainCoins or 1
  local prune=p.Boosts.PruneUntil and p.Boosts.PruneUntil>now and p.Boosts.Pruned or nil
  local trap=p.Boosts.TrapUntil and p.Boosts.TrapUntil>now and C.Sabotage.TrapRate or 1
- return V.Build(build,mutation,1+p.Saplings*C.Math.RebirthPerSapling,event,(Entitlements.Has(p,"VIP") and 1.1 or 1)*(1+pet.Coin)*trap,prune,C.Upgrades.LeafPower.Values[p.Upgrades.LeafPower or 1],Entitlements.Has(p,"Coins"))
+ return V.Build(build,mutation,1+p.Saplings*C.Math.RebirthPerSapling,event,(Entitlements.Has(p,"VIP") and 1.1 or 1)*(1+pet.Coin)*trap*Collection.Factors(p),prune,C.Upgrades.LeafPower.Values[p.Upgrades.LeafPower or 1],Entitlements.Has(p,"Coins"),fruitSize)
 end
 function Game.Income(p,now)
  local total=0
- for _,plot in p.Plots do total+=Game.Value(p,plot.Build,1,now)/V.DropInterval({plot.Build.Roots.Stat}) end
+ for _,plot in p.Plots do total+=Game.Value(p,plot.Build,1,now)/V.Interval(plot.Build) end
  return total
 end
 function Game.Rate(p,now)
- return (Entitlements.Has(p,"GrowthSpeed")and 2 or 1)*(Game.Private and not p.PolicyRestricted and C.Growth.PrivateRate or 1)*(1+Game.PetStats(p).Growth)*(Event.Current=="Golden Rain" and C.Events.RainGrowth or 1)*(p.Boosts.PestUntil and p.Boosts.PestUntil>now and C.Sabotage.PestRate or 1)
+ return (Entitlements.Has(p,"GrowthSpeed")and 2 or 1)*(Game.Private and not p.PolicyRestricted and C.Growth.PrivateRate or 1)*(1+Game.PetStats(p).Growth)*Event.GrowthFactor(now)*(p.Boosts.PestUntil and p.Boosts.PestUntil>now and C.Sabotage.PestRate or 1)
 end
 function Game.Settle(player,now)
- local p=D.Get(player);if p then for pad=1,2 do local g=Growth.Get(p,pad);if g then
-  local old=g.State;G.Rate(g,now,Game.Rate(p,now))
+ local p=D.Get(player);if p then for pad=1,C.Growth.MaxPads do local g=Growth.Get(p,pad);if g then
+  local old=g.State
+  if Event.Current and Event.GrowthFactor(Event.Ends-1)>1 and now>Event.Ends and g.Settled<Event.Ends then
+   G.Settle(g,Event.Ends);g.Rate=Game.Rate(p,now)
+  end
+  G.Rate(g,now,Game.Rate(p,now))
   if old~="Ready"and g.State=="Ready"then Game.Runtime[player].NotifyReady=true end
  end end end
 end
 function Game.State(player)
  local p=D.Get(player); if not p then return end
- Journal.Touch(p,os.time())
+ Journal.Login(p,os.time());local rewards=Journal.RewardState(p,os.time())
  local rt=Game.Runtime[player]; local copy=P.Copy(p)
- copy.Receipts=nil; copy.PurchaseLog=nil; copy.PendingGrow=nil
+ copy.Receipts=nil; copy.PurchaseLog=nil; copy.PendingGrow=nil;copy.Journal.RewardLog=nil;copy.RewardState=rewards
+ copy.VaultCapacity=C.FruitInventory.VaultStacks;copy.FruitShelfSlots=C.FruitInventory.ShelfSlots
  copy.Capacity=Game.Capacity(p)==math.huge and "Infinite" or Game.Capacity(p); copy.Radius=Game.Radius(p); copy.MaxPlots=Game.MaxPlots(p)
  copy.Income=Game.Income(p,os.time()); copy.RollCost=R.Cost(p.Rolls,C.Upgrades.Discount.Values[p.Upgrades.Discount]); copy.Luck=Game.Luck(p,os.time(),player)
  copy.MutationLuck=Game.MutationLuck(p)
- copy.MaxGrowthPads=Growth.MaxPads(p)
+ copy.PurchaseLuck={};for _,key in {"Luck","SuperLucky","UltraLucky"}do copy.PurchaseLuck[key]=Game.PurchaseLuck(p,os.time(),player,key)end
+ copy.PartCount=O.Count(p);copy.MaxGrowthPads=Growth.MaxPads(p);copy.MaxGrowthQueue=Growth.QueueLimit(p);copy.MaxPetSlots=Game.MaxPetSlots(p);copy.CollectionNext=Collection.Next(p);local coinBonus,luckBonus=Collection.Factors(p);copy.CollectionBonuses={Coins=coinBonus,Luck=luckBonus}
  copy.GardenVisitors={};local bestHeight=0;local rarest=1
  for other in Game.Runtime do local op=D.Get(other);if op then
   table.insert(copy.GardenVisitors,{UserId=other.UserId,Name=other.DisplayName,Likes=Journal.Ensure(op).LikesReceived or 0})
@@ -82,15 +100,16 @@ function Game.State(player)
  if copy.Showcase then copy.Showcase.Rarest=rarest end
  copy.IsAdmin=Admin.IsAdmin(player);copy.AdminControls=nil
  if copy.IsAdmin then copy.Admin={LuckOverride=Admin.Override(p),MinLuck=AdminConfig.MinLuck,MaxLuck=AdminConfig.MaxLuck,MaxCoins=C.Runtime.MaxCoins} end
+ copy.AscensionThreshold=Game.AscensionThreshold(p)
  copy.Event={Name=Event.Current,Ends=Event.Ends,Next=Event.Next,Health=Event.Health}; copy.Preview=math.max(1,math.floor((p.Coins/C.Rebirth.SaplingDivisor)^C.Rebirth.Exponent))
  copy.PaidRandom=rt and rt.PaidRandom or false; copy.Persistent=D.Persistent(player); copy.Private=Game.Private
- copy.RollCount,copy.RollTotalCost=Batch.Choose(p.Rolls,p.Coins,p.Upgrades.Batch,C.Upgrades.Discount.Values[p.Upgrades.Discount],C.Runtime.MaxInventory-#p.Parts)
+ copy.RollCount,copy.RollTotalCost=Batch.Choose(p.Rolls,p.Coins,p.Upgrades.Batch,C.Upgrades.Discount.Values[p.Upgrades.Discount],C.Runtime.MaxInventory-O.Count(p))
  Game.Network.State:FireClient(player,copy)
 end
 function Game.AddBag(p,value,count,metadata)
  local accepted=math.min(count or 1,math.max(0,Game.Capacity(p)-p.Bag.Count))
  if accepted<=0 then return false end
- BagInventory.Add(p.Bag,value,accepted,metadata,os.time(),Game.Id(p)); return true
+ BagInventory.Add(p.Bag,value,accepted,metadata,os.time(),"harvest_"..Game.Id(p));FruitCollection.Discover(p,metadata or {},os.time());return true
 end
 function Game.Teleport(player,destination)
  local rt=Game.Runtime[player]; local g=W.Gardens[player]
@@ -108,6 +127,13 @@ function Game.Teleport(player,destination)
  root.AssemblyLinearVelocity=Vector3.zero; root.AssemblyAngularVelocity=Vector3.zero; character:PivotTo(CFrame.lookAt(position,look))
  return true
 end
+function Game.StandingGrowthRate(p)
+ return (Game.Private and not p.PolicyRestricted and C.Growth.PrivateRate or 1)*(1+Game.PetStats(p).Growth)*(Entitlements.Has(p,"GrowthSpeed")and 2 or 1)
+end
+function Game.OfflineGrowth(p,now)
+ for pad=1,C.Growth.MaxPads do local g=Growth.Get(p,pad);if g then g.Rate=Game.StandingGrowthRate(p)end end
+ Growth.Step(p,now,Game.Rate(p,now))
+end
 function Game.Join(player)
  local p,err=D.Load(player); if not p then player:Kick(err); return end
  if not player.Parent then D.Save(player,true); return end
@@ -119,12 +145,9 @@ function Game.Join(player)
  rt.PaidRandom=policyOK and not policy.ArePaidRandomItemsRestricted;p.PolicyRestricted=not rt.PaidRandom
  local off=math.floor(Game.Income(p,p.LastSeen)*math.min(away,Entitlements.Has(p,"Offline") and C.Offline.PassSeconds or C.Offline.Seconds)*C.Offline.Fraction)
  p.Coins=math.min(C.Runtime.MaxCoins,p.Coins+off)
- -- Offline growth settles both pads without applying temporary weather or pests.
- for pad=1,2 do local g=Growth.Get(p,pad);if g then
-  g.Rate=(Game.Private and not p.PolicyRestricted and C.Growth.PrivateRate or 1)*(1+Game.PetStats(p).Growth)*(Entitlements.Has(p,"GrowthSpeed")and 2 or 1)
- end end
- Growth.Step(p,now,Game.Rate(p,now))
- if #p.Plots==0 and not p.Growth and not p.Growth2 then p.Growth=Growth.New(P.Starter(),now,true) end
+ -- Saved temporary event rates never multiply the whole absence.
+ Game.OfflineGrowth(p,now)
+ if #p.Plots==0 and not p.Growth and not p.Growth2 and not p.Growth3 then p.Growth=Growth.New(P.Starter(),now,true) end
  p.LastSeen=now
  local stats=Instance.new("Folder"); stats.Name="leaderstats"; stats.Parent=player
  local coins=Instance.new("NumberValue"); coins.Name="Coins"; coins.Parent=stats
@@ -136,29 +159,57 @@ function Game.Join(player)
  if player.Character then player.Character:PivotTo(CFrame.lookAt(W.Gardens[player].Origin+Vector3.new(0,5,31),W.Gardens[player].Origin)) end
  Game.State(player)
  task.delay(3,function()if player.Parent then
-  local ready=(p.Growth and p.Growth.State=="Ready"and 1 or 0)+(p.Growth2 and p.Growth2.State=="Ready"and 1 or 0)
+  local ready=(p.Growth and p.Growth.State=="Ready"and 1 or 0)+(p.Growth2 and p.Growth2.State=="Ready"and 1 or 0)+(p.Growth3 and p.Growth3.State=="Ready"and 1 or 0)
   if away>=60 then Game.Feedback(player,"OfflineSummary",{Away=away,Coins=off,Ready=ready,Cap=Entitlements.Has(p,"Offline") and C.Offline.PassSeconds or C.Offline.Seconds})else Game.Toast(player,"Welcome! Open Tree Parts → Journal for collections and daily goals.")end
  end end)
 end
-function Game.Sell(player)
- local p=D.Get(player); local root=player.Character and player.Character:FindFirstChild("HumanoidRootPart")
- if not root or ((root.Position-W.Shop).Magnitude>C.Runtime.ShopRange and not Entitlements.Has(p,"AutoSell"))then return false,"Step into the red SELL zone at the market." end
- if p.Bag.Count<=0 then return false,"Your bag is empty." end
- Journal.Add(p,"Sold",p.Bag.Count,os.time());if p.Onboarding==6 then p.Onboarding=7 end
- local value=p.Bag.Value; p.Coins=math.min(C.Runtime.MaxCoins,p.Coins+value); p.TotalCoins+=value; p.Bag={Count=0,Value=0,Items={}}
+function Game.CanSell(player)
+ local p=D.Get(player);local root=player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+ return p and root and((root.Position-W.Shop).Magnitude<=C.Runtime.ShopRange or Entitlements.Has(p,"AutoSell"))
+end
+function Game.SaleAllowed(rt,now)
+ if now<(rt.SellAt or 0)then return false end;rt.SellAt=now+C.FruitInventory.SaleCooldown;return true
+end
+function Game.Sell(player,revision,rows)
+ local key=rows and BagInventory.SaleKey(revision,rows)or nil
+ local function fail(message)Game.Feedback(player,"SaleResult",{Message=message,RequestKey=key});return false,message end
+ local p=D.Get(player);if not Game.CanSell(player)then return fail("Step into the red SELL zone at the market.")end
+ local rt=Game.Runtime[player];if not Game.SaleAllowed(rt,workspace:GetServerTimeNow())then return fail("Selling is cooling down briefly.")end
+ BagInventory.EnsureProfile(p)
+ local internal=rows==nil;rows=rows or BagInventory.All(p.Bag);revision=revision or p.Bag.Revision
+ local ok,result=BagInventory.Sell(p.Bag,revision,rows,internal)
+ result.RequestKey=key;Game.Feedback(player,"SaleResult",result)
+ if not ok then return false,result.Message end
+ Journal.Add(p,"Sold",result.Count,os.time());if p.Onboarding==6 then p.Onboarding=7 end
+ p.Coins=math.min(C.Runtime.MaxCoins,p.Coins+result.Coins);p.TotalCoins+=result.Coins
  if p.Tutorial==4 then p.Tutorial=5 end
- Game.Feedback(player,"Sell",{Value=value,Position=W.Shop}); return true,"Sold your fruit!"
+ Game.Feedback(player,"Sell",{Value=result.Coins,Count=result.Count,Position=W.Shop})
+ return true,(result.Stale and("Bag changed ("..result.Missing.." missing, "..result.Adjusted.." quantities adjusted). ")or "").."Sold "..result.Count.." unlocked fruit for "..result.Coins.." coins."
+end
+function Game.OpenSell(player)
+ if not Game.CanSell(player)then return false,"Step into the red SELL zone at the market."end
+ local p=D.Get(player)
+ if p.Settings.QuickSellOnEntry or(p.Settings.AutoSell and Entitlements.Has(p,"AutoSell"))then return Game.Sell(player)end
+ Game.Feedback(player,"SellPanel",{});return true
+end
+function Game.MoveFruit(player,id,revision,lock)
+ local p=D.Get(player);local rt=Game.Runtime[player];local now=workspace:GetServerTimeNow()
+ if now<(rt.FruitMoveAt or 0)then return false,"Fruit locking is cooling down briefly."end
+ rt.FruitMoveAt=now+C.FruitInventory.MoveCooldown
+ return BagInventory.Move(p,id,revision,lock,Game.Capacity(p))
 end
 function Game.Roll(player,automatic,free)
  local p=D.Get(player); local rt=Game.Runtime[player]; local now=workspace:GetServerTimeNow()
  if now<rt.RollAt then return false,"Roll is cooling down." end
- if #p.Parts>=C.Runtime.MaxInventory then return false,"Sell some spare parts first."end
+ if O.Count(p)>=C.Runtime.MaxInventory then return false,"Sell some spare parts first."end
  local count,cost=1,0
- if not free then count,cost=Batch.Choose(p.Rolls,p.Coins,p.Upgrades.Batch,C.Upgrades.Discount.Values[p.Upgrades.Discount],C.Runtime.MaxInventory-#p.Parts)end
+ if not free then count,cost=Batch.Choose(p.Rolls,p.Coins,p.Upgrades.Batch,C.Upgrades.Discount.Values[p.Upgrades.Discount],C.Runtime.MaxInventory-O.Count(p))end
  if count==0 then return false,"Collect and sell fruit for more coins."end
  rt.RollAt=now+C.Runtime.RollCooldown; p.Coins-=cost
  local results={}
- for _=1,count do local rolled=R.Roll(Game.Rng,p,Game.Luck(p,os.time(),player),Game.Id(p),Game.MutationLuck(p)); table.insert(p.Parts,rolled); table.insert(results,rolled);Journal.Discover(p,rolled)
+ local display=require(S.Util.RollDisplay)
+ for _=1,count do local luck=Game.Luck(p,os.time(),player);local mutationLuck=Game.MutationLuck(p);local context=display.Context(p,luck,mutationLuck)
+  local rolled=R.Roll(Game.Rng,p,luck,Game.Id(p),mutationLuck);table.insert(p.Parts,rolled);table.insert(results,display.Result(rolled,context));Journal.Discover(p,rolled)
   if C.Rarities[rolled.Tier].Announce then Game.Network.Feedback:FireAllClients("Announcement",player.DisplayName.." rolled "..C.Rarities[rolled.Tier].Name.." "..rolled.Name.."!") end
  end
  Journal.Add(p,"Rolls",count,os.time());if p.Onboarding==1 then p.Onboarding=2 end
@@ -177,6 +228,7 @@ function Game.Buy(player,kind)
   if p.Coins<C.Growth.WaterPrice then return false,"Not enough coins." end
   p.Coins-=C.Growth.WaterPrice; p.Defenses.Water=true
  elseif C.Defenses[kind] then
+  if p.Settings.Chill then return false,"Turn Chill off to buy sabotage defenses."end
   if p.Coins<C.Defenses[kind] then return false,"Not enough coins." end
   if kind=="Scarecrow" or kind=="Fence" then if p.Defenses[kind] then return false,"Already owned." end end
   Game.Settle(player,os.time()); p.Coins-=C.Defenses[kind]
@@ -199,6 +251,7 @@ function Game.Egg(player,tier)
  local pet={Id=Game.Id(p),Tier=tier,Rarity=rarity,Name=C.Pets.Names[rarity].." "..C.Pets.Themes[tier],Shiny=false}
  table.insert(p.Pets,pet); return true,"Hatched "..pet.Name
 end
+function Game.MaxPetSlots(p)return C.Upgrades.PetSlots.Values[p.Upgrades.PetSlots]+Collection.PetSlots(p)end
 function Game.EquipPet(player,id,fuse)
  local p=D.Get(player); Game.Settle(player,os.time())
  local pet; for _,v in p.Pets do if v.Id==id then pet=v end end
@@ -212,14 +265,18 @@ function Game.EquipPet(player,id,fuse)
  end
  local existing=table.find(p.EquippedPets,id)
  if existing then table.remove(p.EquippedPets,existing); return true,"Pet unequipped." end
- if #p.EquippedPets>=C.Upgrades.PetSlots.Values[p.Upgrades.PetSlots] then return false,"Pet slots full." end
+ if #p.EquippedPets>=Game.MaxPetSlots(p) then return false,"Pet slots full." end
  table.insert(p.EquippedPets,id); return true,"Pet equipped."
 end
-function Game.RebirthProfile(p,skip)
- if not skip and p.Coins<C.Rebirth.Threshold then return false end
+function Game.AscensionThreshold(p)
+ return require(S.Util.AscensionRules).Threshold(p)
+end
+function Game.RebirthProfile(p)
+ if p.Coins<Game.AscensionThreshold(p)then return false end
  local saplings=math.max(1,math.floor((p.Coins/C.Rebirth.SaplingDivisor)^C.Rebirth.Exponent))
  local fresh=P.New(os.time()); fresh.Saplings=p.Saplings+saplings; fresh.Rebirths=p.Rebirths+1
- for _,key in {"Receipts","Settings","Passes","Pets","EquippedPets","ProductSpent","PurchaseLog","GrowCredits","AdminControls","HeightRecord","Journal","EarlyRareClaimed","Onboarding","PolicyRestricted"} do fresh[key]=p[key] end
+ for _,key in {"Vault","FruitIndex","ProductsOwned","ProductQuotes","PassSpendRecorded","LegacySecondPad","Receipts","Settings","Passes","Pets","EquippedPets","ProductSpent","PurchaseLog","GrowCredits","AdminControls","HeightRecord","Journal","EarlyRareClaimed","Onboarding","PolicyRestricted"} do fresh[key]=p[key] end
+ fresh.Bag.Revision=(p.Bag.Revision or 0)+1
  fresh.TotalCoins=p.TotalCoins; fresh.Tutorial=6; fresh.Joined=p.Joined; fresh.Playtime=p.Playtime; fresh.NextId=p.NextId
  fresh.Growth=Growth.New(fresh.Equipped,os.time(),true)
  table.clear(p); for k,v in fresh do p[k]=v end; return true
@@ -275,20 +332,64 @@ function Game.PlaceTree(player,index,growthId,token)
  if token and not confirmed then return false,"That confirmation expired. Hold E again."end
  if occupied and not confirmed then
   local returned=Growth.ReturnParts(p,index)
-  if #p.Parts+#returned>C.Runtime.MaxInventory then return false,"Need "..#returned.." free part slots. Sell unequipped spares, then hold E again. Your trees are unchanged."end
+  if #p.Parts+#returned>math.max(C.Runtime.MaxInventory,O.Count(p))then return false,"Need "..#returned.." free part slots. Sell unequipped spares, then hold E again. Your trees are unchanged."end
   selection.Confirmation={Token=Http:GenerateGUID(false),Plot=index}
   Game.Feedback(player,"ConfirmReplacement",{Plot=index,GrowthId=growthId,Token=selection.Confirmation.Token,Expires=selection.Expires,Returned=#returned})
   return false,"Confirm Replace to change plot "..index.."."
  end
- local success,msg=Growth.Swap(p,index,Game.MaxPlots(p),workspace:GetServerTimeNow(),confirmed,selection.GrowthPad)
+ local success,msg=D.Atomic(player,function(draft)
+  local valid,why=Placement.Validate(draft,selection,index,growthId,Game.MaxPlots(draft),workspace:GetServerTimeNow(),occupied)
+  if not valid then return false,why end
+  local done,text=Growth.Swap(draft,index,Game.MaxPlots(draft),os.time(),confirmed,selection.GrowthPad)
+  if done then Journal.Add(draft,"Plants",1,os.time());if draft.Onboarding==4 then draft.Onboarding=5 end end
+  return done,text
+ end)
  if success then
-  Journal.Add(p,"Plants",1,os.time());if p.Onboarding==4 then p.Onboarding=5 end
   rt.Placement=nil;W.ClearPlotFruit(player,index);W.Invalidate(player,index);W.Invalidate(player,6+(selection.GrowthPad or 1));Game.Feedback(player,"PlacementDone",{})
  end
  return success,msg
 end
+function Game.InGarden(player)
+ local garden=W.Gardens[player];local root=player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+ return garden and root and(root.Position-garden.Origin).Magnitude<=C.Placement.GardenRange
+end
+function Game.TreePrompt(player,index,id)
+ if not id then return end;local garden=W.Gardens[player];local model=garden and garden.Models[index];local base=model and model.PrimaryPart
+ if not base then return end;local old=base:FindFirstChild("TreeInfo")
+ if old and old:GetAttribute("TreeId")==id then return end;if old then old:Destroy()end
+ local prompt=Instance.new("ProximityPrompt");prompt.Name="TreeInfo";prompt.KeyboardKeyCode=Enum.KeyCode.F;prompt.GamepadKeyCode=Enum.KeyCode.ButtonY;prompt.HoldDuration=.2;prompt.MaxActivationDistance=C.Placement.PromptRange;prompt.RequiresLineOfSight=false;prompt.ActionText="Tree info / Salvage";prompt.ObjectText=index<=6 and("Plot "..index)or("Growth Pad "..(index-6));prompt:SetAttribute("OwnerUserId",player.UserId);prompt:SetAttribute("Kind","Info");prompt:SetAttribute("TreeId",id);prompt.Parent=base
+ prompt.Triggered:Connect(function(actor)if actor==player and D.Available(player)and Game.InGarden(player)then Game.Feedback(player,"TreeInfo",{TreeId=id})end end)
+end
+function Game.RequestSalvage(player,id)
+ local p=D.Get(player);local rt=Game.Runtime[player];local now=workspace:GetServerTimeNow()
+ if not p or not rt or not D.Available(player)or not Game.InGarden(player)then return false,"Return to your garden to salvage."end
+ if now<(rt.SalvageAt or 0)or now<(rt.SalvageRequestAt or 0)then return false,"Wait a moment before salvaging again."end
+ rt.SalvageRequestAt=now+C.Salvage.Cooldown
+ local tree,row=O.Find(p,id);if not tree or row.Kind=="Queue"then return false,"That tree is no longer available."end
+ local ok,msg=O.CanRelease(p,tree);if not ok then return false,msg end
+ local confirmation={TreeId=id,Token=Http:GenerateGUID(false),Expires=now+C.Salvage.ConfirmationSeconds,Location=row.Label}
+ rt.Salvage=confirmation;Game.Feedback(player,"ConfirmSalvage",P.Copy(confirmation));return true
+end
+function Game.Salvage(player,id,token)
+ local rt=Game.Runtime[player];local now=workspace:GetServerTimeNow();local confirmation=rt and rt.Salvage
+ if not rt or now<(rt.SalvageAt or 0)or not confirmation or confirmation.TreeId~=id or confirmation.Token~=token or now>=confirmation.Expires then return false,"Salvage confirmation expired. Open the tree again."end
+ if not Game.InGarden(player)then return false,"Return to your garden to salvage."end
+ local removed
+ local ok,msg=D.Atomic(player,function(draft)
+  local tree,row=O.Find(draft,id)
+  if not tree or row.Label~=confirmation.Location then return false,"That tree moved. Open its info again."end
+  removed=row;return Growth.Salvage(draft,id,os.time())
+ end)
+ if ok then
+  rt.Salvage=nil;rt.Placement=nil;rt.SalvageAt=workspace:GetServerTimeNow()+C.Salvage.Cooldown
+  if removed.Kind=="Plot"then W.ClearPlotFruit(player,removed.Index);W.Invalidate(player,removed.Index)else W.Invalidate(player,6+removed.Index)end
+  Game.Feedback(player,"PlacementDone",{})
+ end
+ return ok,msg or "The tree could not be saved. Rejoin to check its state."
+end
 function Game.Intent(player,action,args)
- local p=D.Get(player); if not p then return end
+ local p=D.Get(player);if not p or not D.Available(player)then return false end
+ if not require(S.Util.IntentValidator)(action,args)then return false,"Invalid request rejected."end
  if Admin.Handles(action) then
   local success,message=Admin.Execute(player,p,action,args,function() return Game.Id(p) end)
   if success then Journal.Scan(p)end
@@ -297,10 +398,18 @@ function Game.Intent(player,action,args)
  local ok,message=false,nil; local now=os.time()
  if action=="Teleport" then ok,message=Game.Teleport(player,args.Destination)
  elseif action=="Roll" then ok,message=Game.Roll(player,false)
- elseif action=="Sell" then ok,message=Game.Sell(player)
+ elseif action=="Sell"then ok,message=Game.Sell(player,args.Revision,args.Stacks)
+ elseif action=="LockFruit"then ok,message=Game.MoveFruit(player,args.StackId,args.Revision,true)
+ elseif action=="UnlockFruit"then ok,message=Game.MoveFruit(player,args.StackId,args.Revision,false)
  elseif action=="Buy" then ok,message=Game.Buy(player,args.Kind)
- elseif action=="Plant"then ok,message=Growth.Plant(p,now);if ok then if p.Tutorial==2 then p.Tutorial=3 end;if p.Onboarding==3 then p.Onboarding=4 end end
+ elseif action=="Plant"then ok,message=D.Atomic(player,function(draft)
+  local planted,text=Growth.Plant(draft,now);if planted then if draft.Tutorial==2 then draft.Tutorial=3 end;if draft.Onboarding==3 then draft.Onboarding=4 end end;return planted,text
+ end)
  elseif action=="ClaimJournal"then ok,message=Journal.Claim(p,args.Key,now)
+ elseif action=="ClaimCollection"then ok,message=Collection.Claim(p,args.Key,Journal.ObserveIncome(p,now),now)
+ elseif action=="BuyMedalCosmetic"then ok,message=Collection.BuyMedal(p,args.Key)
+ elseif action=="EquipCosmetic"then ok,message=Collection.Equip(p,args.Slot,args.Key)
+ elseif action=="ClaimLikes"then ok,message=Collection.ClaimLikes(p,args.Key)
  elseif action=="DailyRoll"then
   local j=Journal.Touch(p,now)
   if not j.Daily.Claims.FreeRoll then ok,message=Game.Roll(player,false,true);if ok then j.Daily.Claims.FreeRoll=true;j.Version+=1 end else message="Today's free roll is already claimed. Come back any day for another."end
@@ -311,22 +420,19 @@ function Game.Intent(player,action,args)
    if action=="VisitGarden"and root and workspace:GetServerTimeNow()>=(Game.Runtime[player].TeleportAt or 0)then
     Game.Runtime[player].TeleportAt=workspace:GetServerTimeNow()+C.Inventory.TeleportCooldown;player.Character:PivotTo(CFrame.new(garden.Origin+Vector3.new(0,5,31)));ok=true
    elseif action=="LikeGarden"and root and(root.Position-garden.Origin).Magnitude<C.Placement.GardenRange then
-    local j=Journal.Touch(p,now);local key=tostring(target.UserId)
-    if not j.Liked[key]then j.Liked[key]=true;j.Version+=1;local tj=Journal.Ensure(tp);tj.LikesReceived=(tj.LikesReceived or 0)+1;tj.Version+=1;ok=true;message="Garden liked!"else message="You already liked this garden today."end
+    ok,message=Journal.Like(p,tp,player.UserId,target.UserId,now)
    else message="Visit this garden first."end
   else message="Choose another online gardener."end
- elseif action=="QueueTree"then ok,message=Growth.Queue(p,now)
- elseif action=="CancelQueuedTree"then ok,message=Growth.CancelQueue(p,args.QueueId)
+ elseif action=="QueueTree"then ok,message=D.Atomic(player,function(draft)return Growth.Queue(draft,now)end)
+ elseif action=="CancelQueuedTree"then ok,message=D.Atomic(player,function(draft)return Growth.CancelQueue(draft,args.QueueId)end)
+ elseif action=="RequestSalvage"then ok,message=Game.RequestSalvage(player,args.TreeId)
+ elseif action=="SalvageTree"then ok,message=Game.Salvage(player,args.TreeId,args.Token)
  elseif action=="PlaceTree"then ok,message=Game.PlaceTree(player,args.Plot,args.GrowthId)
  elseif action=="ReplaceTree"then ok,message=Game.PlaceTree(player,args.Plot,args.GrowthId,args.Token)
- elseif action=="CancelPlacement"then Game.Runtime[player].Placement=nil;ok=true
- elseif action=="Equip" or action=="SellPart" then
-  if action=="Equip" then for _,slot in C.Slots do if args.Id=="starter_"..slot then p.Equipped[slot]=P.Starter()[slot]; Game.State(player); return true end end end
-  for i,part in p.Parts do if part.Id==args.Id then
-   if action=="Equip" then p.Equipped[part.Slot]=P.Copy(part);if p.Onboarding==2 then p.Onboarding=3 end; ok=true; message="Equipped "..part.Name
-   elseif p.Equipped[part.Slot].Id==part.Id then message="Equip another "..part.Slot.." before selling this one."
-   else p.Coins+=math.floor(C.Roll.BaseCost*C.Roll.PartSellFraction*part.Stat); table.remove(p.Parts,i); ok=true; message="Part sold." end break
-  end end
+ elseif action=="CancelPlacement"then Game.Runtime[player].Placement=nil;Game.Runtime[player].Salvage=nil;ok=true
+ elseif action=="Equip"or action=="SellPart"then
+  ok,message=action=="Equip"and O.Equip(p,args.Id)or false,nil
+  if action=="SellPart"then ok,message=O.Sell(p,args.Id)elseif ok then message="Part equipped.";if p.Onboarding==2 then p.Onboarding=3 end else message="Choose an available owned part. In-use parts must be salvaged first."end
  elseif action=="Water" then
   if not p.Defenses.Water then message="Buy a Watering Can at the market."
   elseif p.WaterAt>now then message="Watering Can is cooling down."
@@ -334,7 +440,7 @@ function Game.Intent(player,action,args)
  elseif action=="Egg" then ok,message=Game.Egg(player,args.Tier)
  elseif action=="EquipPet" or action=="Fuse" then ok,message=Game.EquipPet(player,args.Id,action=="Fuse")
  elseif action=="Sabotage" then ok,message=Game.Sabotage(player,args.Target,args.Kind)
- elseif action=="Rebirth" and args.Confirm then ok=Game.RebirthProfile(p,false); message=ok and "Ascended! Your Golden Saplings are permanent." or "More coins needed."; if ok then for i=1,8 do W.Invalidate(player,i) end end
+ elseif action=="Rebirth" and args.Confirm then ok=Game.RebirthProfile(p,false); message=ok and "Ascended! Your Golden Saplings are permanent." or "More coins needed."; if ok then for i=1,C.Growth.TotalPlots+C.Growth.MaxPads do W.Invalidate(player,i) end end
  elseif action=="Tutorial" and args.Skip then p.Tutorial=6;p.Onboarding=9; ok=true
  elseif action=="AutoRoll" then if Entitlements.Has(p,"AutoRoll") then p.AutoRoll=not p.AutoRoll; ok=true else message="Auto-Roll requires the pass." end
  elseif action=="Setting" then
@@ -356,9 +462,9 @@ function Game.Tick()
  -- Settle under the OLD event rate, then transition; rates never apply retroactively.
  for player in Game.Runtime do if D.Available(player) then Game.Settle(player,now) end end
  Event.Tick(now,function(name)
-  Game.Network.Feedback:FireAllClients("Announcement",name.." has begun!")
+  Game.Network.Feedback:FireAllClients("Announcement",name=="Windstorm"and("Windstorm: ×"..C.Events.WindGrowth.." growth for 1 minute, plus outstanding fruit collection!")or(name.." has begun!"))
   if name=="Windstorm" then
-   for player in Game.Runtime do local p=D.Get(player); if p and D.Available(player) then if p.Growth or p.Growth2 then Journal.Event(p,"Windstorm",Event.Starts)end;Growth.FinishAll(p); for fruit,r in W.Fruit do if r.Owner==player and Game.AddBag(p,r.Value,1,r.Metadata) then W.Recycle(fruit) end end end end
+   for player in Game.Runtime do local p=D.Get(player); if p and D.Available(player) then if p.Growth or p.Growth2 or p.Growth3 then Journal.Event(p,"Windstorm",Event.Starts)end; for fruit,r in W.Fruit do if r.Owner==player and Game.AddBag(p,r.Value,1,r.Metadata) then W.Recycle(fruit) end end end end
   elseif name=="Giant Pest Raid" then
    local bug=W.Part(W.Root,"RaidBug",Vector3.new(8,5,7),W.Shop+Vector3.new(0,3,12),Color3.fromRGB(92,50,115),Enum.PartType.Ball)
    local click=Instance.new("ClickDetector"); click.MaxActivationDistance=C.Runtime.ShopRange*2; click.Parent=bug
@@ -371,13 +477,13 @@ function Game.Tick()
    p.Playtime+=math.max(0,now-p.LastSeen); p.LastSeen=now
    local ready=Growth.Step(p,now,Game.Rate(p,now)); if ready or rt.NotifyReady then rt.NotifyReady=nil; Game.Feedback(player,"Ready",{}); Game.Toast(player,"Your tree is ready! Hold E near it to plant or replace a tree.") end
    for i,plot in p.Plots do
-    W.Tree(player,i,plot.Build,"Producing",1,plot.HeightScale)
+    W.Tree(player,i,plot.Build,"Producing",1,plot.HeightScale);Game.TreePrompt(player,i,plot.Id)
    end
-   for pad=1,2 do
+   for pad=1,C.Growth.MaxPads do
     local g=Growth.Get(p,pad);local index=6+pad
     if g then
      local model=W.Tree(player,index,g.Build,g.State,g.Progress/g.Duration,g.HeightScale)
-     if model then local billboard=model.PrimaryPart.Progress;billboard.Label.Text=g.State=="Ready"and string.format("READY! %.1f studs • Choose a plot",G.Height(g.Build,g.HeightScale))or string.format("Pad %d • Growing • %ds",pad,math.ceil(G.Remaining(g)));billboard.Bar.Visible=g.State~="Ready";billboard.Bar.Size=UDim2.fromScale(g.Progress/g.Duration,.12)end
+     if model then Game.TreePrompt(player,index,g.Id);local billboard=model.PrimaryPart.Progress;billboard.Label.Text=g.State=="Ready"and string.format("READY! %.1f studs • Choose a plot",G.Height(g.Build,g.HeightScale))or string.format("Pad %d • Growing • %ds",pad,math.ceil(G.Remaining(g)));billboard.Bar.Visible=g.State~="Ready";billboard.Bar.Size=UDim2.fromScale(g.Progress/g.Duration,.12)end
      if g.State=="Ready"then W.GrowthPrompt(player,"Ready",function(actor)if actor==player then local ok,msg=Game.BeginPlacement(actor,pad);if not ok then Game.Toast(actor,msg)end end end,index)
      elseif p.Defenses.Water then W.GrowthPrompt(player,"Water",function(actor)if actor==player then Game.Intent(actor,"Water",{})end end,index)end
     else W.Invalidate(player,index)end
@@ -388,7 +494,7 @@ function Game.Tick()
    local root=player.Character and player.Character:FindFirstChild("HumanoidRootPart")
    if root and (root.Position-W.VIPPosition).Magnitude<12 and not Entitlements.Has(p,"VIP") then player.Character:PivotTo(CFrame.new(0,5,45)) end
    if humanoid then humanoid.WalkSpeed=(16+Game.PetStats(p).Speed)*(Entitlements.Has(p,"Speed") and 2 or 1)*((p.Boosts.StunUntil or 0)>now and 0 or 1) end
-   if player:FindFirstChild("leaderstats") then player.leaderstats.Coins.Value=p.Coins; local height=0; for _,plot in p.Plots do height=math.max(height,G.Height(plot.Build,plot.HeightScale)) end player.leaderstats["Tallest Tree"].Value=height;p.HeightRecord=math.max(p.HeightRecord or 0,height,p.Growth and p.Growth.State=="Ready" and G.Height(p.Growth.Build,p.Growth.HeightScale) or 0,p.Growth2 and p.Growth2.State=="Ready"and G.Height(p.Growth2.Build,p.Growth2.HeightScale)or 0) end
+   if player:FindFirstChild("leaderstats") then player.leaderstats.Coins.Value=p.Coins; local height=0; for _,plot in p.Plots do height=math.max(height,G.Height(plot.Build,plot.HeightScale)) end player.leaderstats["Tallest Tree"].Value=height;p.HeightRecord=math.max(p.HeightRecord or 0,height,p.Growth and p.Growth.State=="Ready" and G.Height(p.Growth.Build,p.Growth.HeightScale) or 0,p.Growth2 and p.Growth2.State=="Ready"and G.Height(p.Growth2.Build,p.Growth2.HeightScale)or 0,p.Growth3 and p.Growth3.State=="Ready"and G.Height(p.Growth3.Build,p.Growth3.HeightScale)or 0) end
    if p.AutoRoll and Entitlements.Has(p,"AutoRoll") and workspace:GetServerTimeNow()>=rt.RollAt then Game.Roll(player,true) end
    Game.State(player)
   end
@@ -409,15 +515,17 @@ function Game.Pickup()
    if root then
     if p.Settings.AutoSell and Entitlements.Has(p,"AutoSell")and p.Bag.Count>0 and(p.Bag.Count>=Game.Capacity(p)or now>=(rt.NextAutoSell or 0))then Game.Sell(player);rt.NextAutoSell=now+C.Runtime.AutoSellSeconds end
     local sell=W.Zones.Sell; local shop=W.Zones.Shop
-    if sell and (root.Position-sell.Position).Magnitude<sell.Radius and p.Bag.Count>0 then Game.Sell(player); Game.State(player) end
+    local inSell=sell and(root.Position-sell.Position).Magnitude<sell.Radius
+    if inSell and not rt.InSell then Game.OpenSell(player);Game.State(player);rt.InSell=true elseif not inSell then rt.InSell=false end
     local inside=shop and (root.Position-shop.Position).Magnitude<shop.Radius
     if inside and not rt.InShop then Game.Feedback(player,"Shop",{}); rt.InShop=true elseif not inside then rt.InShop=false end
    end
    for i,plot in p.Plots do if now>=plot.NextDrop then
-    local mutation=R.Mutation(Game.Rng,Game.MutationLuck(p))
-    W.SpawnFruit(player,i,Game.Value(p,plot.Build,mutation.Mult,now),mutation,now,{Name=plot.Build.Fruit.Name,Tier=plot.Build.Fruit.Tier,Mutation=mutation.Name})
+    local mutation=R.Mutation(Game.Rng,Game.MutationLuck(p));local size=FruitSizes.Roll(Game.SizeRng)
+    local spawned=W.SpawnFruit(player,i,Game.Value(p,plot.Build,mutation.Mult,now,size.Name),mutation,now,{Name=plot.Build.Fruit.Name,Tier=plot.Build.Fruit.Tier,Mutation=mutation.Name,Size=size.Name})
+    if spawned and size.Name=="Giant"and now>=(rt.GiantAt or 0)then rt.GiantAt=now+C.FruitInventory.GiantCooldown;Game.Feedback(player,"GiantFruit",{Position=spawned.Position})end
     local slow=(p.Boosts.PestUntil or 0)>now and C.Sabotage.PestRate or 1
-    plot.NextDrop=now+V.DropInterval({plot.Build.Roots.Stat})/slow
+    plot.NextDrop=now+V.Interval(plot.Build)/slow
    end end
   end
  end

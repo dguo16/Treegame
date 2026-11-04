@@ -33,7 +33,7 @@ network.Intent.OnServerEvent:Connect(function(player,action,args)
  local ok,err=pcall(Game.Intent,player,action,args)
  if not ok then warn("BuildATree intent",action,err); Game.Toast(player,"That action could not complete. Please try again.") end
 end)
-W.Prompt.Triggered:Connect(function(player) if D.Available(player) then Game.Sell(player); Game.State(player) end end)
+W.Prompt.Triggered:Connect(function(player) if D.Available(player) then Game.OpenSell(player); Game.State(player) end end)
 W.ShopPrompt.Triggered:Connect(function(player)
  local root=player.Character and player.Character:FindFirstChild("HumanoidRootPart")
  if D.Available(player) and root and (root.Position-W.ShopPrompt.Parent.Position).Magnitude<=C.Runtime.ShopRange then Game.Feedback(player,"Shop",{}) end

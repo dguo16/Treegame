@@ -1,0 +1,23 @@
+newmtl VioletWillowBark
+Kd 0.36 0.29 0.49
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl WillowBoughs
+Kd 0.48 0.37 0.62
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl WillowRaisedGrain
+Kd 0.64 0.51 0.73
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

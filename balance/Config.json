@@ -1,0 +1,223 @@
+{
+  "Rewards": {
+    "MaxRewardSeconds": 3600,
+    "LoginMaxSeconds": 600,
+    "MaxReferenceIncome": 100000,
+    "Milestones": {
+      "TotalCoins": [
+        [
+          10000,
+          1000
+        ],
+        [
+          1000000,
+          10000
+        ],
+        [
+          100000000,
+          100000
+        ],
+        [
+          1000000000,
+          1000000
+        ]
+      ],
+      "Rolls": [
+        [
+          10,
+          100
+        ],
+        [
+          50,
+          1000
+        ],
+        [
+          300,
+          10000
+        ],
+        [
+          1000,
+          100000
+        ]
+      ],
+      "Plants": [
+        [
+          1,
+          50
+        ],
+        [
+          6,
+          500
+        ],
+        [
+          25,
+          5000
+        ],
+        [
+          100,
+          100000
+        ]
+      ],
+      "Sold": [
+        [
+          25,
+          100
+        ],
+        [
+          100,
+          1000
+        ],
+        [
+          1000,
+          10000
+        ],
+        [
+          10000,
+          100000
+        ]
+      ]
+    },
+    "MilestoneSeconds": [
+      300,
+      900,
+      1800,
+      3600
+    ],
+    "AuditLimit": 128,
+    "LoginDays": 7,
+    "Daily": [
+      {
+        "Key": "DailyRolls",
+        "Metric": "Rolls",
+        "Title": "Roll 5 parts",
+        "Need": 5,
+        "Coins": 100
+      },
+      {
+        "Key": "DailySold",
+        "Metric": "Sold",
+        "Title": "Sell 25 fruit",
+        "Need": 25,
+        "Coins": 150
+      },
+      {
+        "Key": "DailyPlants",
+        "Metric": "Plants",
+        "Title": "Plant 1 tree",
+        "Need": 1,
+        "Coins": 200
+      }
+    ],
+    "LoginBase": 100,
+    "ReferenceSeconds": 604800,
+    "DailySeconds": {
+      "DailyPlants": 420,
+      "DailyRolls": 180,
+      "DailySold": 300
+    },
+    "LoginStep": 25,
+    "MaxRewardCoins": 100000000,
+    "LoginMinSeconds": 300
+  },
+  "Growth": {
+    "HeightMin": 0.75,
+    "MaxCoinPlots": 6,
+    "WaterReduction": 10,
+    "TotalPlots": 6,
+    "QueueLimit": 2,
+    "HeightMax": 1.5,
+    "ExtraPassPlots": 2,
+    "HighestTierWeight": 0.5,
+    "MainPlots": 1,
+    "PrivateRate": 1.25,
+    "WaterCooldown": 30,
+    "WaterPrice": 500
+  },
+  "SaplingBonus": 1.5,
+  "Roll": {
+    "PartSellFraction": 0.4,
+    "CostGrowth": 1.15,
+    "EpicPity": 50,
+    "SlowAfter": 50,
+    "BatchPrice": [
+      0,
+      2500,
+      25000
+    ],
+    "LegendaryPity": 300,
+    "SlowGrowth": 1.02,
+    "BatchSizes": [
+      1,
+      5,
+      10
+    ],
+    "BaseCost": 10,
+    "FirstCoins": 35,
+    "HardCap": 1500000
+  },
+  "Rebirth": {
+    "Threshold": 1000000000,
+    "SaplingDivisor": 1000000000,
+    "ThresholdGrowth": 1.3,
+    "StartingCoins": 35,
+    "Exponent": 0.5
+  },
+  "Simulation": {
+    "Seconds": 129600,
+    "Casual": {
+      "SessionsPerDay": 3,
+      "SaleEvery": 45,
+      "SessionSeconds": 1200,
+      "DaySeconds": 86400
+    },
+    "Seeds": 21,
+    "ReplaceImprovement": 1.01,
+    "ActiveSaleEvery": 12,
+    "Policies": {
+      "Balanced": {
+        "RollShare": 0.5
+      },
+      "RollFocused": {
+        "RollShare": 0.75
+      },
+      "UpgradeFocused": {
+        "RollShare": 0.25
+      }
+    },
+    "Ascensions": 5
+  },
+  "Economy": {
+    "MutationCeiling": 2,
+    "RarityFactor": 1.17,
+    "RootIntervals": [
+      5,
+      3.5,
+      2.5,
+      1.75,
+      1.2,
+      0.8,
+      0.5
+    ],
+    "ValueScale": 25
+  },
+  "Schema": 6,
+  "LeafPower": {
+    "Prices": [
+      25,
+      100000,
+      1500000,
+      15000000,
+      75000000
+    ],
+    "BasePrice": 25,
+    "Values": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "PriceGrowth": 10
+  }
+}

@@ -1,0 +1,3533 @@
+[
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 8556.25,
+        "Rolls": 678,
+        "Active": 8556.25
+      },
+      "SlotTrunk": {
+        "Wall": 8556.25,
+        "Rolls": 678,
+        "Active": 8556.25
+      },
+      "Mutation4Golden": {
+        "Wall": 13176.5,
+        "Rolls": 1149,
+        "Active": 13176.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 420.25,
+        "Rolls": 168,
+        "Active": 420.25
+      },
+      "AnyRainbow": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Mutation3Golden": {
+        "Wall": 6120.25,
+        "Rolls": 526,
+        "Active": 6120.25
+      },
+      "Mutation2Void": {
+        "Wall": 396.25,
+        "Rolls": 159,
+        "Active": 396.25
+      },
+      "AnyVoid": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names3": {
+        "Wall": 3432.25,
+        "Rolls": 365,
+        "Active": 3432.25
+      },
+      "AnyCosmic": {
+        "Wall": 420.25,
+        "Rolls": 168,
+        "Active": 420.25
+      },
+      "SlotRoots": {
+        "Wall": 4356.25,
+        "Rolls": 438,
+        "Active": 4356.25
+      },
+      "SlotLeaves": {
+        "Wall": 3276.25,
+        "Rolls": 302,
+        "Active": 3276.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 13536.5,
+        "Rolls": 1293,
+        "Active": 13536.5
+      },
+      "Mutation3Void": {
+        "Wall": 13308.5,
+        "Rolls": 1201,
+        "Active": 13308.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 13248.5,
+        "Rolls": 1177,
+        "Active": 13248.5
+      },
+      "SlotFruit": {
+        "Wall": 2136.25,
+        "Rolls": 278,
+        "Active": 2136.25
+      },
+      "Mutation1Void": {
+        "Wall": 456.25,
+        "Rolls": 183,
+        "Active": 456.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 636.25,
+        "Rolls": 203,
+        "Active": 636.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 288.25,
+        "Rolls": 116,
+        "Active": 288.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 8556.25,
+        "Rolls": 678,
+        "Active": 8556.25
+      },
+      "Mutation1Golden": {
+        "Wall": 144.25,
+        "Rolls": 58,
+        "Active": 144.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 1164.25,
+        "Rolls": 259,
+        "Active": 1164.25
+      },
+      "Names1": {
+        "Wall": 60.25,
+        "Rolls": 24,
+        "Active": 60.25
+      },
+      "Mutation2Golden": {
+        "Wall": 684.25,
+        "Rolls": 222,
+        "Active": 684.25
+      },
+      "Names2": {
+        "Wall": 348.25,
+        "Rolls": 140,
+        "Active": 348.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 20436.5,
+    "FreeRolls": 1,
+    "Rewards": 670572832,
+    "Lost": 8,
+    "Coins": 35,
+    "Sold": 83262,
+    "Replacements": 23,
+    "First300": {
+      "Wall": 3269.25,
+      "Active": 3269.25
+    },
+    "Seed": 1,
+    "Wall": 20436.5,
+    "Cancelled": 41,
+    "Queued": 78,
+    "Ascensions": [
+      {
+        "RunActive": 12756.25,
+        "Active": 12756.25,
+        "Wall": 12756.25,
+        "Saplings": 0,
+        "Coins": 1002346418.8293555
+      },
+      {
+        "RunActive": 7680.25,
+        "Active": 20436.5,
+        "Wall": 20436.5,
+        "Saplings": 1,
+        "Coins": 1301908164.087875
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 19356.5,
+        "Rolls": 1543,
+        "Active": 19356.5
+      },
+      "SlotTrunk": {
+        "Wall": 3996.25,
+        "Rolls": 396,
+        "Active": 3996.25
+      },
+      "Mutation4Golden": {
+        "Wall": 17328.5,
+        "Rolls": 1412,
+        "Active": 17328.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 3612.25,
+        "Rolls": 340,
+        "Active": 3612.25
+      },
+      "AnyRainbow": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation3Golden": {
+        "Wall": 4560.25,
+        "Rolls": 417,
+        "Active": 4560.25
+      },
+      "Mutation2Void": {
+        "Wall": 6312.25,
+        "Rolls": 487,
+        "Active": 6312.25
+      },
+      "Names2": {
+        "Wall": 456.25,
+        "Rolls": 156,
+        "Active": 456.25
+      },
+      "Names3": {
+        "Wall": 4740.25,
+        "Rolls": 424,
+        "Active": 4740.25
+      },
+      "AnyCosmic": {
+        "Wall": 3612.25,
+        "Rolls": 340,
+        "Active": 3612.25
+      },
+      "SlotRoots": {
+        "Wall": 1416.25,
+        "Rolls": 222,
+        "Active": 1416.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 624.25,
+        "Rolls": 182,
+        "Active": 624.25
+      },
+      "Mutation4Void": {
+        "Wall": 23412.5,
+        "Rolls": 1886,
+        "Active": 23412.5
+      },
+      "SlotLeaves": {
+        "Wall": 19356.5,
+        "Rolls": 1543,
+        "Active": 19356.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 11424.25,
+        "Rolls": 770,
+        "Active": 11424.25
+      },
+      "SlotFruit": {
+        "Wall": 14760.5,
+        "Rolls": 1067,
+        "Active": 14760.5
+      },
+      "Names1": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 6972.25,
+        "Rolls": 516,
+        "Active": 6972.25
+      },
+      "Mutation3Void": {
+        "Wall": 14616.5,
+        "Rolls": 1009,
+        "Active": 14616.5
+      },
+      "AnyGolden": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names4": {
+        "Wall": 19356.5,
+        "Rolls": 1543,
+        "Active": 19356.5
+      },
+      "Mutation1Golden": {
+        "Wall": 636.25,
+        "Rolls": 187,
+        "Active": 636.25
+      },
+      "AnyVoid": {
+        "Wall": 144.25,
+        "Rolls": 57,
+        "Active": 144.25
+      },
+      "Mutation1Void": {
+        "Wall": 672.25,
+        "Rolls": 201,
+        "Active": 672.25
+      },
+      "Mutation2Golden": {
+        "Wall": 3624.25,
+        "Rolls": 345,
+        "Active": 3624.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3192.25,
+        "Rolls": 261,
+        "Active": 3192.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 25716.5,
+    "FreeRolls": 1,
+    "Rewards": 641468944,
+    "Lost": 23,
+    "Coins": 35,
+    "Sold": 103470,
+    "Replacements": 61,
+    "First300": {
+      "Wall": 3509.75,
+      "Active": 3509.75
+    },
+    "Seed": 2,
+    "Wall": 25716.5,
+    "Cancelled": 44,
+    "Queued": 122,
+    "Ascensions": [
+      {
+        "RunActive": 14544.25,
+        "Active": 14544.25,
+        "Wall": 14544.25,
+        "Saplings": 0,
+        "Coins": 1002186195.8854215
+      },
+      {
+        "RunActive": 11172.25,
+        "Active": 25716.5,
+        "Wall": 25716.5,
+        "Saplings": 1,
+        "Coins": 1301472121.6230426
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 9576.25,
+        "Rolls": 684,
+        "Active": 9576.25
+      },
+      "SlotTrunk": {
+        "Wall": 9576.25,
+        "Rolls": 684,
+        "Active": 9576.25
+      },
+      "Mutation4Golden": {
+        "Wall": 9768.25,
+        "Rolls": 709,
+        "Active": 9768.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 14760.5,
+        "Rolls": 1276,
+        "Active": 14760.5
+      },
+      "AnyRainbow": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation3Golden": {
+        "Wall": 9588.25,
+        "Rolls": 686,
+        "Active": 9588.25
+      },
+      "Mutation2Void": {
+        "Wall": 5376.25,
+        "Rolls": 457,
+        "Active": 5376.25
+      },
+      "AnyVoid": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names3": {
+        "Wall": 5004.25,
+        "Rolls": 439,
+        "Active": 5004.25
+      },
+      "AnyCosmic": {
+        "Wall": 168.25,
+        "Rolls": 68,
+        "Active": 168.25
+      },
+      "SlotRoots": {
+        "Wall": 7308.25,
+        "Rolls": 556,
+        "Active": 7308.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 3972.25,
+        "Rolls": 337,
+        "Active": 3972.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 10332.25,
+        "Rolls": 762,
+        "Active": 10332.25
+      },
+      "Mutation1Void": {
+        "Wall": 816.25,
+        "Rolls": 140,
+        "Active": 816.25
+      },
+      "Names1": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 168.25,
+        "Rolls": 68,
+        "Active": 168.25
+      },
+      "SlotLeaves": {
+        "Wall": 1704.25,
+        "Rolls": 217,
+        "Active": 1704.25
+      },
+      "AnyGolden": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names4": {
+        "Wall": 9576.25,
+        "Rolls": 684,
+        "Active": 9576.25
+      },
+      "Mutation1Golden": {
+        "Wall": 900.25,
+        "Rolls": 151,
+        "Active": 900.25
+      },
+      "Names2": {
+        "Wall": 684.25,
+        "Rolls": 111,
+        "Active": 684.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 4068.25,
+        "Rolls": 376,
+        "Active": 4068.25
+      },
+      "Mutation2Golden": {
+        "Wall": 4080.25,
+        "Rolls": 381,
+        "Active": 4080.25
+      },
+      "SlotFruit": {
+        "Wall": 3924.25,
+        "Rolls": 318,
+        "Active": 3924.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 20832.5,
+    "FreeRolls": 1,
+    "Rewards": 641398000,
+    "Lost": 6,
+    "Coins": 35,
+    "Sold": 89817,
+    "Replacements": 36,
+    "First300": {
+      "Wall": 3877.25,
+      "Active": 3877.25
+    },
+    "Seed": 3,
+    "Wall": 20832.5,
+    "Cancelled": 30,
+    "Queued": 80,
+    "Ascensions": [
+      {
+        "RunActive": 13452.25,
+        "Active": 13452.25,
+        "Wall": 13452.25,
+        "Saplings": 0,
+        "Coins": 1032291201.61554
+      },
+      {
+        "RunActive": 7380.25,
+        "Active": 20832.5,
+        "Wall": 20832.5,
+        "Saplings": 1,
+        "Coins": 1303150329.832014
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 10488.25,
+        "Rolls": 769,
+        "Active": 10488.25
+      },
+      "SlotTrunk": {
+        "Wall": 10488.25,
+        "Rolls": 769,
+        "Active": 10488.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 9528.25,
+        "Rolls": 674,
+        "Active": 9528.25
+      },
+      "Mutation4Golden": {
+        "Wall": 13932.5,
+        "Rolls": 1096,
+        "Active": 13932.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 4920.25,
+        "Rolls": 426,
+        "Active": 4920.25
+      },
+      "AnyRainbow": {
+        "Wall": 144.25,
+        "Rolls": 58,
+        "Active": 144.25
+      },
+      "Mutation3Golden": {
+        "Wall": 10008.25,
+        "Rolls": 738,
+        "Active": 10008.25
+      },
+      "Mutation2Void": {
+        "Wall": 6204.25,
+        "Rolls": 484,
+        "Active": 6204.25
+      },
+      "Mutation4Cosmic": {
+        "Wall": 13872.5,
+        "Rolls": 1072,
+        "Active": 13872.5
+      },
+      "Names2": {
+        "Wall": 360.25,
+        "Rolls": 132,
+        "Active": 360.25
+      },
+      "Names3": {
+        "Wall": 4152.25,
+        "Rolls": 365,
+        "Active": 4152.25
+      },
+      "AnyCosmic": {
+        "Wall": 4920.25,
+        "Rolls": 426,
+        "Active": 4920.25
+      },
+      "SlotRoots": {
+        "Wall": 3972.25,
+        "Rolls": 293,
+        "Active": 3972.25
+      },
+      "SlotLeaves": {
+        "Wall": 3996.25,
+        "Rolls": 303,
+        "Active": 3996.25
+      },
+      "Mutation3Void": {
+        "Wall": 16260.5,
+        "Rolls": 1447,
+        "Active": 16260.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 13728.5,
+        "Rolls": 1014,
+        "Active": 13728.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 12468.25,
+        "Rolls": 900,
+        "Active": 12468.25
+      },
+      "SlotFruit": {
+        "Wall": 5412.25,
+        "Rolls": 448,
+        "Active": 5412.25
+      },
+      "Names1": {
+        "Wall": 192.25,
+        "Rolls": 76,
+        "Active": 192.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 7224.25,
+        "Rolls": 536,
+        "Active": 7224.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 2280.25,
+        "Rolls": 248,
+        "Active": 2280.25
+      },
+      "AnyGolden": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names4": {
+        "Wall": 10488.25,
+        "Rolls": 769,
+        "Active": 10488.25
+      },
+      "Mutation1Golden": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 4044.25,
+        "Rolls": 322,
+        "Active": 4044.25
+      },
+      "Mutation1Void": {
+        "Wall": 456.25,
+        "Rolls": 171,
+        "Active": 456.25
+      },
+      "Mutation2Golden": {
+        "Wall": 3456.25,
+        "Rolls": 277,
+        "Active": 3456.25
+      },
+      "AnyVoid": {
+        "Wall": 96.25,
+        "Rolls": 39,
+        "Active": 96.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 21420.5,
+    "FreeRolls": 1,
+    "Rewards": 644285535,
+    "Lost": 18,
+    "Coins": 35,
+    "Sold": 86446,
+    "Replacements": 38,
+    "First300": {
+      "Wall": 3987.75,
+      "Active": 3987.75
+    },
+    "Seed": 4,
+    "Wall": 21420.5,
+    "Cancelled": 37,
+    "Queued": 88,
+    "Ascensions": [
+      {
+        "RunActive": 13644.25,
+        "Active": 13644.25,
+        "Wall": 13644.25,
+        "Saplings": 0,
+        "Coins": 1000450038.8348134
+      },
+      {
+        "RunActive": 7776.25,
+        "Active": 21420.5,
+        "Wall": 21420.5,
+        "Saplings": 1,
+        "Coins": 1300546114.0501986
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 14736.25,
+        "Rolls": 975,
+        "Active": 14736.25
+      },
+      "SlotTrunk": {
+        "Wall": 7044.25,
+        "Rolls": 518,
+        "Active": 7044.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 900.25,
+        "Rolls": 126,
+        "Active": 900.25
+      },
+      "Mutation4Golden": {
+        "Wall": 14904.5,
+        "Rolls": 1005,
+        "Active": 14904.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 16680.5,
+        "Rolls": 1353,
+        "Active": 16680.5
+      },
+      "AnyRainbow": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation3Golden": {
+        "Wall": 7812.25,
+        "Rolls": 554,
+        "Active": 7812.25
+      },
+      "Mutation2Void": {
+        "Wall": 12984.25,
+        "Rolls": 864,
+        "Active": 12984.25
+      },
+      "Names2": {
+        "Wall": 696.25,
+        "Rolls": 94,
+        "Active": 696.25
+      },
+      "Names3": {
+        "Wall": 7812.25,
+        "Rolls": 554,
+        "Active": 7812.25
+      },
+      "AnyCosmic": {
+        "Wall": 204.25,
+        "Rolls": 44,
+        "Active": 204.25
+      },
+      "Mutation3Void": {
+        "Wall": 8304.25,
+        "Rolls": 578,
+        "Active": 8304.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 888.25,
+        "Rolls": 121,
+        "Active": 888.25
+      },
+      "Mutation4Void": {
+        "Wall": 15048.5,
+        "Rolls": 1062,
+        "Active": 15048.5
+      },
+      "SlotLeaves": {
+        "Wall": 14736.25,
+        "Rolls": 975,
+        "Active": 14736.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 5016.25,
+        "Rolls": 431,
+        "Active": 5016.25
+      },
+      "SlotRoots": {
+        "Wall": 14256.25,
+        "Rolls": 944,
+        "Active": 14256.25
+      },
+      "Mutation1Void": {
+        "Wall": 936.25,
+        "Rolls": 140,
+        "Active": 936.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 204.25,
+        "Rolls": 44,
+        "Active": 204.25
+      },
+      "SlotFruit": {
+        "Wall": 6288.25,
+        "Rolls": 484,
+        "Active": 6288.25
+      },
+      "AnyGolden": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Names4": {
+        "Wall": 14736.25,
+        "Rolls": 975,
+        "Active": 14736.25
+      },
+      "Mutation1Golden": {
+        "Wall": 648.25,
+        "Rolls": 78,
+        "Active": 648.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 2844.25,
+        "Rolls": 264,
+        "Active": 2844.25
+      },
+      "Names1": {
+        "Wall": 660.25,
+        "Rolls": 83,
+        "Active": 660.25
+      },
+      "Mutation2Golden": {
+        "Wall": 4068.25,
+        "Rolls": 365,
+        "Active": 4068.25
+      },
+      "AnyVoid": {
+        "Wall": 636.25,
+        "Rolls": 73,
+        "Active": 636.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 22032.5,
+    "FreeRolls": 1,
+    "Rewards": 649071593,
+    "Lost": 4,
+    "Coins": 35,
+    "Sold": 95124,
+    "Replacements": 27,
+    "First300": {
+      "Wall": 3903.75,
+      "Active": 3903.75
+    },
+    "Seed": 5,
+    "Wall": 22032.5,
+    "Cancelled": 44,
+    "Queued": 87,
+    "Ascensions": [
+      {
+        "RunActive": 14844.25,
+        "Active": 14844.25,
+        "Wall": 14844.25,
+        "Saplings": 0,
+        "Coins": 1001817024.8131764
+      },
+      {
+        "RunActive": 7188.25,
+        "Active": 22032.5,
+        "Wall": 22032.5,
+        "Saplings": 1,
+        "Coins": 1301397124.544387
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 14124.5,
+        "Rolls": 1278,
+        "Active": 14124.5
+      },
+      "SlotTrunk": {
+        "Wall": 1380.25,
+        "Rolls": 231,
+        "Active": 1380.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 13584.5,
+        "Rolls": 1062,
+        "Active": 13584.5
+      },
+      "Mutation4Golden": {
+        "Wall": 13620.5,
+        "Rolls": 1077,
+        "Active": 13620.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 4224.25,
+        "Rolls": 408,
+        "Active": 4224.25
+      },
+      "AnyRainbow": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Mutation3Golden": {
+        "Wall": 8676.25,
+        "Rolls": 630,
+        "Active": 8676.25
+      },
+      "Mutation2Void": {
+        "Wall": 1140.25,
+        "Rolls": 219,
+        "Active": 1140.25
+      },
+      "AnyVoid": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "Names3": {
+        "Wall": 828.25,
+        "Rolls": 168,
+        "Active": 828.25
+      },
+      "AnyCosmic": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "SlotRoots": {
+        "Wall": 14124.5,
+        "Rolls": 1278,
+        "Active": 14124.5
+      },
+      "SlotLeaves": {
+        "Wall": 3804.25,
+        "Rolls": 306,
+        "Active": 3804.25
+      },
+      "Mutation4Void": {
+        "Wall": 19680.5,
+        "Rolls": 2083,
+        "Active": 19680.5
+      },
+      "Mutation3Void": {
+        "Wall": 17676.5,
+        "Rolls": 1735,
+        "Active": 17676.5
+      },
+      "Mutation1Rainbow": {
+        "Wall": 156.25,
+        "Rolls": 63,
+        "Active": 156.25
+      },
+      "Names2": {
+        "Wall": 180.25,
+        "Rolls": 72,
+        "Active": 180.25
+      },
+      "Names1": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Mutation1Void": {
+        "Wall": 3804.25,
+        "Rolls": 306,
+        "Active": 3804.25
+      },
+      "AnyGolden": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Names4": {
+        "Wall": 14124.5,
+        "Rolls": 1278,
+        "Active": 14124.5
+      },
+      "Mutation1Golden": {
+        "Wall": 492.25,
+        "Rolls": 103,
+        "Active": 492.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3780.25,
+        "Rolls": 296,
+        "Active": 3780.25
+      },
+      "SlotFruit": {
+        "Wall": 2124.25,
+        "Rolls": 251,
+        "Active": 2124.25
+      },
+      "Mutation2Golden": {
+        "Wall": 3936.25,
+        "Rolls": 359,
+        "Active": 3936.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 840.25,
+        "Rolls": 173,
+        "Active": 840.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 20148.5,
+    "FreeRolls": 1,
+    "Rewards": 636446952,
+    "Lost": 2,
+    "Coins": 35,
+    "Sold": 84666,
+    "Replacements": 33,
+    "First300": {
+      "Wall": 3788.25,
+      "Active": 3788.25
+    },
+    "Seed": 6,
+    "Wall": 20148.5,
+    "Cancelled": 62,
+    "Queued": 112,
+    "Ascensions": [
+      {
+        "RunActive": 13380.25,
+        "Active": 13380.25,
+        "Wall": 13380.25,
+        "Saplings": 0,
+        "Coins": 1002139382.2879763
+      },
+      {
+        "RunActive": 6768.25,
+        "Active": 20148.5,
+        "Wall": 20148.5,
+        "Saplings": 1,
+        "Coins": 1301219701.1058717
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 6876.25,
+        "Rolls": 489,
+        "Active": 6876.25
+      },
+      "SlotTrunk": {
+        "Wall": 6876.25,
+        "Rolls": 489,
+        "Active": 6876.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 21852.5,
+        "Rolls": 1945,
+        "Active": 21852.5
+      },
+      "Mutation4Golden": {
+        "Wall": 16500.5,
+        "Rolls": 1416,
+        "Active": 16500.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 6696.25,
+        "Rolls": 481,
+        "Active": 6696.25
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 7392.25,
+        "Rolls": 515,
+        "Active": 7392.25
+      },
+      "Mutation2Void": {
+        "Wall": 9828.25,
+        "Rolls": 644,
+        "Active": 9828.25
+      },
+      "Mutation4Cosmic": {
+        "Wall": 3012.25,
+        "Rolls": 278,
+        "Active": 3012.25
+      },
+      "AnyVoid": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Names3": {
+        "Wall": 4380.25,
+        "Rolls": 344,
+        "Active": 4380.25
+      },
+      "AnyCosmic": {
+        "Wall": 3012.25,
+        "Rolls": 278,
+        "Active": 3012.25
+      },
+      "SlotRoots": {
+        "Wall": 4380.25,
+        "Rolls": 344,
+        "Active": 4380.25
+      },
+      "SlotLeaves": {
+        "Wall": 6156.25,
+        "Rolls": 460,
+        "Active": 6156.25
+      },
+      "Mutation3Void": {
+        "Wall": 21000.5,
+        "Rolls": 1860,
+        "Active": 21000.5
+      },
+      "Mutation1Cosmic": {
+        "Wall": 14004.25,
+        "Rolls": 977,
+        "Active": 14004.25
+      },
+      "Mutation1Void": {
+        "Wall": 768.25,
+        "Rolls": 133,
+        "Active": 768.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 10632.25,
+        "Rolls": 693,
+        "Active": 10632.25
+      },
+      "Names1": {
+        "Wall": 492.25,
+        "Rolls": 93,
+        "Active": 492.25
+      },
+      "Mutation4Rainbow": {
+        "Wall": 12864.25,
+        "Rolls": 887,
+        "Active": 12864.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 156.25,
+        "Rolls": 63,
+        "Active": 156.25
+      },
+      "AnyGolden": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Names4": {
+        "Wall": 6876.25,
+        "Rolls": 489,
+        "Active": 6876.25
+      },
+      "Mutation1Golden": {
+        "Wall": 3216.25,
+        "Rolls": 282,
+        "Active": 3216.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 1392.25,
+        "Rolls": 223,
+        "Active": 1392.25
+      },
+      "Names2": {
+        "Wall": 1164.25,
+        "Rolls": 199,
+        "Active": 1164.25
+      },
+      "Mutation2Golden": {
+        "Wall": 2136.25,
+        "Rolls": 265,
+        "Active": 2136.25
+      },
+      "SlotFruit": {
+        "Wall": 3012.25,
+        "Rolls": 278,
+        "Active": 3012.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23856.5,
+    "FreeRolls": 1,
+    "Rewards": 649776357,
+    "Lost": 13,
+    "Coins": 35,
+    "Sold": 79992,
+    "Replacements": 25,
+    "First300": {
+      "Wall": 4260.25,
+      "Active": 4260.25
+    },
+    "Seed": 7,
+    "Wall": 23856.5,
+    "Cancelled": 33,
+    "Queued": 75,
+    "Ascensions": [
+      {
+        "RunActive": 14076.25,
+        "Active": 14076.25,
+        "Wall": 14076.25,
+        "Saplings": 0,
+        "Coins": 1001455492.9972544
+      },
+      {
+        "RunActive": 9780.25,
+        "Active": 23856.5,
+        "Wall": 23856.5,
+        "Saplings": 1,
+        "Coins": 1300717070.3826315
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 7716.25,
+        "Rolls": 855,
+        "Active": 7716.25
+      },
+      "SlotTrunk": {
+        "Wall": 2616.25,
+        "Rolls": 287,
+        "Active": 2616.25
+      },
+      "Mutation4Golden": {
+        "Wall": 11808.5,
+        "Rolls": 1498,
+        "Active": 11808.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 13608.5,
+        "Rolls": 1684,
+        "Active": 13608.5
+      },
+      "AnyRainbow": {
+        "Wall": 84.25,
+        "Rolls": 34,
+        "Active": 84.25
+      },
+      "Mutation3Golden": {
+        "Wall": 3228.25,
+        "Rolls": 414,
+        "Active": 3228.25
+      },
+      "Mutation2Void": {
+        "Wall": 7248.25,
+        "Rolls": 802,
+        "Active": 7248.25
+      },
+      "AnyVoid": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names3": {
+        "Wall": 2616.25,
+        "Rolls": 287,
+        "Active": 2616.25
+      },
+      "AnyCosmic": {
+        "Wall": 144.25,
+        "Rolls": 58,
+        "Active": 144.25
+      },
+      "SlotRoots": {
+        "Wall": 7716.25,
+        "Rolls": 855,
+        "Active": 7716.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 252.25,
+        "Rolls": 101,
+        "Active": 252.25
+      },
+      "Mutation4Void": {
+        "Wall": 16368.5,
+        "Rolls": 2044,
+        "Active": 16368.5
+      },
+      "Mutation3Void": {
+        "Wall": 13692.5,
+        "Rolls": 1694,
+        "Active": 13692.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 9144.5,
+        "Rolls": 1109,
+        "Active": 9144.5
+      },
+      "SlotFruit": {
+        "Wall": 4140.25,
+        "Rolls": 487,
+        "Active": 4140.25
+      },
+      "SlotLeaves": {
+        "Wall": 7500.25,
+        "Rolls": 831,
+        "Active": 7500.25
+      },
+      "Mutation1Void": {
+        "Wall": 1236.25,
+        "Rolls": 216,
+        "Active": 1236.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 144.25,
+        "Rolls": 58,
+        "Active": 144.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 6528.25,
+        "Rolls": 695,
+        "Active": 6528.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 7716.25,
+        "Rolls": 855,
+        "Active": 7716.25
+      },
+      "Mutation1Golden": {
+        "Wall": 888.25,
+        "Rolls": 143,
+        "Active": 888.25
+      },
+      "Names2": {
+        "Wall": 1536.25,
+        "Rolls": 242,
+        "Active": 1536.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 2028.25,
+        "Rolls": 266,
+        "Active": 2028.25
+      },
+      "Mutation2Golden": {
+        "Wall": 972.25,
+        "Rolls": 164,
+        "Active": 972.25
+      },
+      "Names1": {
+        "Wall": 204.25,
+        "Rolls": 82,
+        "Active": 204.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 17172.5,
+    "FreeRolls": 1,
+    "Rewards": 649852781,
+    "Lost": 11,
+    "Coins": 35,
+    "Sold": 91372,
+    "Replacements": 34,
+    "First300": {
+      "Wall": 2832.75,
+      "Active": 2832.75
+    },
+    "Seed": 8,
+    "Wall": 17172.5,
+    "Cancelled": 50,
+    "Queued": 101,
+    "Ascensions": [
+      {
+        "RunActive": 8820.25,
+        "Active": 8820.25,
+        "Wall": 8820.25,
+        "Saplings": 0,
+        "Coins": 1000178304.1322408
+      },
+      {
+        "RunActive": 8352.25,
+        "Active": 17172.5,
+        "Wall": 17172.5,
+        "Saplings": 1,
+        "Coins": 1302910497.2241483
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 8244.25,
+        "Rolls": 594,
+        "Active": 8244.25
+      },
+      "SlotTrunk": {
+        "Wall": 1968.25,
+        "Rolls": 219,
+        "Active": 1968.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 2556.25,
+        "Rolls": 251,
+        "Active": 2556.25
+      },
+      "Mutation4Golden": {
+        "Wall": 13692.25,
+        "Rolls": 934,
+        "Active": 13692.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 3996.25,
+        "Rolls": 334,
+        "Active": 3996.25
+      },
+      "AnyRainbow": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation3Golden": {
+        "Wall": 14868.5,
+        "Rolls": 1062,
+        "Active": 14868.5
+      },
+      "Mutation2Void": {
+        "Wall": 15228.5,
+        "Rolls": 1203,
+        "Active": 15228.5
+      },
+      "Mutation4Cosmic": {
+        "Wall": 15276.5,
+        "Rolls": 1221,
+        "Active": 15276.5
+      },
+      "Names2": {
+        "Wall": 504.25,
+        "Rolls": 105,
+        "Active": 504.25
+      },
+      "Names3": {
+        "Wall": 8244.25,
+        "Rolls": 594,
+        "Active": 8244.25
+      },
+      "AnyCosmic": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "SlotRoots": {
+        "Wall": 8244.25,
+        "Rolls": 594,
+        "Active": 8244.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 672.25,
+        "Rolls": 133,
+        "Active": 672.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 18720.5,
+        "Rolls": 1610,
+        "Active": 18720.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 16896.5,
+        "Rolls": 1400,
+        "Active": 16896.5
+      },
+      "Mutation3Void": {
+        "Wall": 16200.5,
+        "Rolls": 1339,
+        "Active": 16200.5
+      },
+      "SlotLeaves": {
+        "Wall": 5004.25,
+        "Rolls": 441,
+        "Active": 5004.25
+      },
+      "Names1": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Mutation1Void": {
+        "Wall": 4788.25,
+        "Rolls": 431,
+        "Active": 4788.25
+      },
+      "AnyGolden": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Names4": {
+        "Wall": 4176.25,
+        "Rolls": 403,
+        "Active": 4176.25
+      },
+      "Mutation1Golden": {
+        "Wall": 648.25,
+        "Rolls": 123,
+        "Active": 648.25
+      },
+      "SlotFruit": {
+        "Wall": 720.25,
+        "Rolls": 146,
+        "Active": 720.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 4356.25,
+        "Rolls": 411,
+        "Active": 4356.25
+      },
+      "Mutation2Golden": {
+        "Wall": 4752.25,
+        "Rolls": 429,
+        "Active": 4752.25
+      },
+      "AnyVoid": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 22272.5,
+    "FreeRolls": 1,
+    "Rewards": 641959545,
+    "Lost": 27,
+    "Coins": 35,
+    "Sold": 81884,
+    "Replacements": 49,
+    "First300": {
+      "Wall": 3910.75,
+      "Active": 3910.75
+    },
+    "Seed": 9,
+    "Wall": 22272.5,
+    "Cancelled": 48,
+    "Queued": 110,
+    "Ascensions": [
+      {
+        "RunActive": 14664.25,
+        "Active": 14664.25,
+        "Wall": 14664.25,
+        "Saplings": 0,
+        "Coins": 1000238769.2311558
+      },
+      {
+        "RunActive": 7608.25,
+        "Active": 22272.5,
+        "Wall": 22272.5,
+        "Saplings": 1,
+        "Coins": 1304159508.691753
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 15180.5,
+        "Rolls": 989,
+        "Active": 15180.5
+      },
+      "SlotTrunk": {
+        "Wall": 15180.5,
+        "Rolls": 989,
+        "Active": 15180.5
+      },
+      "Mutation4Golden": {
+        "Wall": 13488.25,
+        "Rolls": 836,
+        "Active": 13488.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 17112.5,
+        "Rolls": 1421,
+        "Active": 17112.5
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 5832.25,
+        "Rolls": 420,
+        "Active": 5832.25
+      },
+      "Mutation2Void": {
+        "Wall": 2664.25,
+        "Rolls": 234,
+        "Active": 2664.25
+      },
+      "AnyVoid": {
+        "Wall": 60.25,
+        "Rolls": 24,
+        "Active": 60.25
+      },
+      "Names3": {
+        "Wall": 4668.25,
+        "Rolls": 352,
+        "Active": 4668.25
+      },
+      "AnyCosmic": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "SlotRoots": {
+        "Wall": 8028.25,
+        "Rolls": 487,
+        "Active": 8028.25
+      },
+      "SlotLeaves": {
+        "Wall": 4548.25,
+        "Rolls": 304,
+        "Active": 4548.25
+      },
+      "Mutation4Rainbow": {
+        "Wall": 21372.5,
+        "Rolls": 2002,
+        "Active": 21372.5
+      },
+      "Mutation1Rainbow": {
+        "Wall": 1212.25,
+        "Rolls": 174,
+        "Active": 1212.25
+      },
+      "Mutation3Void": {
+        "Wall": 15168.5,
+        "Rolls": 984,
+        "Active": 15168.5
+      },
+      "SlotFruit": {
+        "Wall": 14808.25,
+        "Rolls": 949,
+        "Active": 14808.25
+      },
+      "Names1": {
+        "Wall": 84.25,
+        "Rolls": 34,
+        "Active": 84.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 11736.25,
+        "Rolls": 675,
+        "Active": 11736.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 15180.5,
+        "Rolls": 989,
+        "Active": 15180.5
+      },
+      "Mutation1Golden": {
+        "Wall": 972.25,
+        "Rolls": 117,
+        "Active": 972.25
+      },
+      "Mutation1Void": {
+        "Wall": 1992.25,
+        "Rolls": 211,
+        "Active": 1992.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 4848.25,
+        "Rolls": 376,
+        "Active": 4848.25
+      },
+      "Mutation2Golden": {
+        "Wall": 1176.25,
+        "Rolls": 159,
+        "Active": 1176.25
+      },
+      "Names2": {
+        "Wall": 1020.25,
+        "Rolls": 136,
+        "Active": 1020.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 22404.5,
+    "FreeRolls": 1,
+    "Rewards": 647868471,
+    "Lost": 4,
+    "Coins": 35,
+    "Sold": 85179,
+    "Replacements": 30,
+    "First300": {
+      "Wall": 4537.75,
+      "Active": 4537.75
+    },
+    "Seed": 10,
+    "Wall": 22404.5,
+    "Cancelled": 40,
+    "Queued": 87,
+    "Ascensions": [
+      {
+        "RunActive": 15168.25,
+        "Active": 15168.25,
+        "Wall": 15168.25,
+        "Saplings": 0,
+        "Coins": 1000266717.0156034
+      },
+      {
+        "RunActive": 7236.25,
+        "Active": 22404.5,
+        "Wall": 22404.5,
+        "Saplings": 1,
+        "Coins": 1302793936.5950918
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 12480.5,
+        "Rolls": 1139,
+        "Active": 12480.5
+      },
+      "SlotTrunk": {
+        "Wall": 12480.5,
+        "Rolls": 1139,
+        "Active": 12480.5
+      },
+      "Mutation3Cosmic": {
+        "Wall": 828.25,
+        "Rolls": 159,
+        "Active": 828.25
+      },
+      "Mutation4Golden": {
+        "Wall": 16068.5,
+        "Rolls": 1590,
+        "Active": 16068.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 17316.5,
+        "Rolls": 1916,
+        "Active": 17316.5
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 10896.25,
+        "Rolls": 896,
+        "Active": 10896.25
+      },
+      "Mutation2Void": {
+        "Wall": 8112.25,
+        "Rolls": 658,
+        "Active": 8112.25
+      },
+      "Mutation4Cosmic": {
+        "Wall": 3588.25,
+        "Rolls": 321,
+        "Active": 3588.25
+      },
+      "AnyVoid": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Names3": {
+        "Wall": 924.25,
+        "Rolls": 196,
+        "Active": 924.25
+      },
+      "AnyCosmic": {
+        "Wall": 828.25,
+        "Rolls": 159,
+        "Active": 828.25
+      },
+      "SlotRoots": {
+        "Wall": 6312.25,
+        "Rolls": 534,
+        "Active": 6312.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 924.25,
+        "Rolls": 196,
+        "Active": 924.25
+      },
+      "SlotFruit": {
+        "Wall": 3936.25,
+        "Rolls": 413,
+        "Active": 3936.25
+      },
+      "Mutation3Void": {
+        "Wall": 9972.25,
+        "Rolls": 828,
+        "Active": 9972.25
+      },
+      "SlotLeaves": {
+        "Wall": 8724.25,
+        "Rolls": 719,
+        "Active": 8724.25
+      },
+      "Mutation1Void": {
+        "Wall": 336.25,
+        "Rolls": 72,
+        "Active": 336.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 5304.25,
+        "Rolls": 476,
+        "Active": 5304.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 6840.25,
+        "Rolls": 568,
+        "Active": 6840.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 12480.5,
+        "Rolls": 1139,
+        "Active": 12480.5
+      },
+      "Mutation1Golden": {
+        "Wall": 816.25,
+        "Rolls": 154,
+        "Active": 816.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3768.25,
+        "Rolls": 393,
+        "Active": 3768.25
+      },
+      "Names1": {
+        "Wall": 60.25,
+        "Rolls": 24,
+        "Active": 60.25
+      },
+      "Mutation2Golden": {
+        "Wall": 1092.25,
+        "Rolls": 244,
+        "Active": 1092.25
+      },
+      "Names2": {
+        "Wall": 468.25,
+        "Rolls": 89,
+        "Active": 468.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 18036.5,
+    "FreeRolls": 1,
+    "Rewards": 661290656,
+    "Lost": 11,
+    "Coins": 35,
+    "Sold": 77870,
+    "Replacements": 27,
+    "First300": {
+      "Wall": 3533.25,
+      "Active": 3533.25
+    },
+    "Seed": 11,
+    "Wall": 18036.5,
+    "Cancelled": 45,
+    "Queued": 86,
+    "Ascensions": [
+      {
+        "RunActive": 12084.25,
+        "Active": 12084.25,
+        "Wall": 12084.25,
+        "Saplings": 0,
+        "Coins": 1001142873.6385142
+      },
+      {
+        "RunActive": 5952.25,
+        "Active": 18036.5,
+        "Wall": 18036.5,
+        "Saplings": 1,
+        "Coins": 1303954690.6220067
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 14556.5,
+        "Rolls": 1072,
+        "Active": 14556.5
+      },
+      "SlotTrunk": {
+        "Wall": 2796.25,
+        "Rolls": 242,
+        "Active": 2796.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 9360.25,
+        "Rolls": 657,
+        "Active": 9360.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 8592.25,
+        "Rolls": 612,
+        "Active": 8592.25
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 14748.5,
+        "Rolls": 1149,
+        "Active": 14748.5
+      },
+      "Mutation2Void": {
+        "Wall": 16800.5,
+        "Rolls": 1427,
+        "Active": 16800.5
+      },
+      "AnyVoid": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Names3": {
+        "Wall": 6300.25,
+        "Rolls": 489,
+        "Active": 6300.25
+      },
+      "AnyCosmic": {
+        "Wall": 4032.25,
+        "Rolls": 291,
+        "Active": 4032.25
+      },
+      "Mutation3Void": {
+        "Wall": 4488.25,
+        "Rolls": 374,
+        "Active": 4488.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 204.25,
+        "Rolls": 44,
+        "Active": 204.25
+      },
+      "Mutation4Void": {
+        "Wall": 21600.5,
+        "Rolls": 1916,
+        "Active": 21600.5
+      },
+      "SlotLeaves": {
+        "Wall": 14556.5,
+        "Rolls": 1072,
+        "Active": 14556.5
+      },
+      "Names2": {
+        "Wall": 1308.25,
+        "Rolls": 167,
+        "Active": 1308.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 12492.25,
+        "Rolls": 875,
+        "Active": 12492.25
+      },
+      "Names1": {
+        "Wall": 228.25,
+        "Rolls": 47,
+        "Active": 228.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 4032.25,
+        "Rolls": 291,
+        "Active": 4032.25
+      },
+      "SlotRoots": {
+        "Wall": 9492.25,
+        "Rolls": 665,
+        "Active": 9492.25
+      },
+      "AnyGolden": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Names4": {
+        "Wall": 14556.5,
+        "Rolls": 1072,
+        "Active": 14556.5
+      },
+      "Mutation1Golden": {
+        "Wall": 888.25,
+        "Rolls": 81,
+        "Active": 888.25
+      },
+      "Mutation1Void": {
+        "Wall": 1116.25,
+        "Rolls": 134,
+        "Active": 1116.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3792.25,
+        "Rolls": 285,
+        "Active": 3792.25
+      },
+      "Mutation2Golden": {
+        "Wall": 3144.25,
+        "Rolls": 266,
+        "Active": 3144.25
+      },
+      "SlotFruit": {
+        "Wall": 3336.25,
+        "Rolls": 272,
+        "Active": 3336.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23952.5,
+    "FreeRolls": 1,
+    "Rewards": 657800932,
+    "Lost": 13,
+    "Coins": 35,
+    "Sold": 108125,
+    "Replacements": 40,
+    "First300": {
+      "Wall": 4301.25,
+      "Active": 4301.25
+    },
+    "Seed": 12,
+    "Wall": 23952.5,
+    "Cancelled": 27,
+    "Queued": 80,
+    "Ascensions": [
+      {
+        "RunActive": 14328.25,
+        "Active": 14328.25,
+        "Wall": 14328.25,
+        "Saplings": 0,
+        "Coins": 1000525771.2932007
+      },
+      {
+        "RunActive": 9624.25,
+        "Active": 23952.5,
+        "Wall": 23952.5,
+        "Saplings": 1,
+        "Coins": 1301760953.100095
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 11604.25,
+        "Rolls": 672,
+        "Active": 11604.25
+      },
+      "SlotTrunk": {
+        "Wall": 11604.25,
+        "Rolls": 672,
+        "Active": 11604.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 12708.25,
+        "Rolls": 757,
+        "Active": 12708.25
+      },
+      "Mutation4Golden": {
+        "Wall": 18012.5,
+        "Rolls": 1315,
+        "Active": 18012.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 4092.25,
+        "Rolls": 301,
+        "Active": 4092.25
+      },
+      "AnyRainbow": {
+        "Wall": 216.25,
+        "Rolls": 47,
+        "Active": 216.25
+      },
+      "Mutation3Golden": {
+        "Wall": 4284.25,
+        "Rolls": 378,
+        "Active": 4284.25
+      },
+      "Mutation2Void": {
+        "Wall": 13896.25,
+        "Rolls": 814,
+        "Active": 13896.25
+      },
+      "AnyVoid": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Names3": {
+        "Wall": 3252.25,
+        "Rolls": 274,
+        "Active": 3252.25
+      },
+      "AnyCosmic": {
+        "Wall": 4092.25,
+        "Rolls": 301,
+        "Active": 4092.25
+      },
+      "SlotRoots": {
+        "Wall": 4632.25,
+        "Rolls": 410,
+        "Active": 4632.25
+      },
+      "SlotLeaves": {
+        "Wall": 7872.25,
+        "Rolls": 519,
+        "Active": 7872.25
+      },
+      "Mutation4Rainbow": {
+        "Wall": 24420.5,
+        "Rolls": 1987,
+        "Active": 24420.5
+      },
+      "Mutation3Void": {
+        "Wall": 20808.5,
+        "Rolls": 1532,
+        "Active": 20808.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 17448.5,
+        "Rolls": 1101,
+        "Active": 17448.5
+      },
+      "Mutation1Rainbow": {
+        "Wall": 1356.25,
+        "Rolls": 155,
+        "Active": 1356.25
+      },
+      "Mutation1Void": {
+        "Wall": 360.25,
+        "Rolls": 59,
+        "Active": 360.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 10824.25,
+        "Rolls": 638,
+        "Active": 10824.25
+      },
+      "SlotFruit": {
+        "Wall": 9804.25,
+        "Rolls": 595,
+        "Active": 9804.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 11604.25,
+        "Rolls": 672,
+        "Active": 11604.25
+      },
+      "Mutation1Golden": {
+        "Wall": 1296.25,
+        "Rolls": 131,
+        "Active": 1296.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 8328.25,
+        "Rolls": 536,
+        "Active": 8328.25
+      },
+      "Names1": {
+        "Wall": 840.25,
+        "Rolls": 76,
+        "Active": 840.25
+      },
+      "Mutation2Golden": {
+        "Wall": 1464.25,
+        "Rolls": 198,
+        "Active": 1464.25
+      },
+      "Names2": {
+        "Wall": 1332.25,
+        "Rolls": 146,
+        "Active": 1332.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 25764.5,
+    "FreeRolls": 1,
+    "Rewards": 652788295,
+    "Lost": 23,
+    "Coins": 35,
+    "Sold": 88426,
+    "Replacements": 42,
+    "First300": {
+      "Wall": 4088.25,
+      "Active": 4088.25
+    },
+    "Seed": 13,
+    "Wall": 25764.5,
+    "Cancelled": 39,
+    "Queued": 93,
+    "Ascensions": [
+      {
+        "RunActive": 17148.25,
+        "Active": 17148.25,
+        "Wall": 17148.25,
+        "Saplings": 0,
+        "Coins": 1000389295.4832207
+      },
+      {
+        "RunActive": 8616.25,
+        "Active": 25764.5,
+        "Wall": 25764.5,
+        "Saplings": 1,
+        "Coins": 1300512259.7661958
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 19032.25,
+        "Rolls": 831,
+        "Active": 19032.25
+      },
+      "SlotTrunk": {
+        "Wall": 7596.25,
+        "Rolls": 457,
+        "Active": 7596.25
+      },
+      "Mutation4Golden": {
+        "Wall": 27108.5,
+        "Rolls": 1547,
+        "Active": 27108.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 7620.25,
+        "Rolls": 458,
+        "Active": 7620.25
+      },
+      "AnyRainbow": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Mutation3Golden": {
+        "Wall": 12192.25,
+        "Rolls": 582,
+        "Active": 12192.25
+      },
+      "Mutation2Void": {
+        "Wall": 984.25,
+        "Rolls": 170,
+        "Active": 984.25
+      },
+      "AnyVoid": {
+        "Wall": 192.25,
+        "Rolls": 77,
+        "Active": 192.25
+      },
+      "Names3": {
+        "Wall": 5724.25,
+        "Rolls": 383,
+        "Active": 5724.25
+      },
+      "AnyCosmic": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "SlotRoots": {
+        "Wall": 11256.25,
+        "Rolls": 555,
+        "Active": 11256.25
+      },
+      "SlotLeaves": {
+        "Wall": 3036.25,
+        "Rolls": 259,
+        "Active": 3036.25
+      },
+      "Mutation4Void": {
+        "Wall": 29124.5,
+        "Rolls": 1835,
+        "Active": 29124.5
+      },
+      "Mutation3Void": {
+        "Wall": 23568.5,
+        "Rolls": 1095,
+        "Active": 23568.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 23424.5,
+        "Rolls": 1037,
+        "Active": 23424.5
+      },
+      "SlotFruit": {
+        "Wall": 19032.25,
+        "Rolls": 831,
+        "Active": 19032.25
+      },
+      "Names1": {
+        "Wall": 132.25,
+        "Rolls": 53,
+        "Active": 132.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 396.25,
+        "Rolls": 117,
+        "Active": 396.25
+      },
+      "AnyGolden": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Names4": {
+        "Wall": 19032.25,
+        "Rolls": 831,
+        "Active": 19032.25
+      },
+      "Mutation1Golden": {
+        "Wall": 204.25,
+        "Rolls": 82,
+        "Active": 204.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3924.25,
+        "Rolls": 277,
+        "Active": 3924.25
+      },
+      "Mutation1Void": {
+        "Wall": 540.25,
+        "Rolls": 147,
+        "Active": 540.25
+      },
+      "Mutation2Golden": {
+        "Wall": 5724.25,
+        "Rolls": 383,
+        "Active": 5724.25
+      },
+      "Names2": {
+        "Wall": 984.25,
+        "Rolls": 170,
+        "Active": 984.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 30792.5,
+    "FreeRolls": 1,
+    "Rewards": 611646128,
+    "Lost": 19,
+    "Coins": 35,
+    "Sold": 78353,
+    "Replacements": 32,
+    "First300": {
+      "Wall": 4772.25,
+      "Active": 4772.25
+    },
+    "Seed": 14,
+    "Wall": 30792.5,
+    "Cancelled": 47,
+    "Queued": 94,
+    "Ascensions": [
+      {
+        "RunActive": 23280.25,
+        "Active": 23280.25,
+        "Wall": 23280.25,
+        "Saplings": 0,
+        "Coins": 1000233048.4693415
+      },
+      {
+        "RunActive": 7512.25,
+        "Active": 30792.5,
+        "Wall": 30792.5,
+        "Saplings": 1,
+        "Coins": 1302075173.4708433
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 6816.25,
+        "Rolls": 495,
+        "Active": 6816.25
+      },
+      "SlotTrunk": {
+        "Wall": 996.25,
+        "Rolls": 187,
+        "Active": 996.25
+      },
+      "Mutation4Golden": {
+        "Wall": 13584.25,
+        "Rolls": 821,
+        "Active": 13584.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 384.25,
+        "Rolls": 96,
+        "Active": 384.25
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 5472.25,
+        "Rolls": 439,
+        "Active": 5472.25
+      },
+      "Mutation2Void": {
+        "Wall": 912.25,
+        "Rolls": 154,
+        "Active": 912.25
+      },
+      "AnyVoid": {
+        "Wall": 36.25,
+        "Rolls": 15,
+        "Active": 36.25
+      },
+      "Names3": {
+        "Wall": 4356.25,
+        "Rolls": 333,
+        "Active": 4356.25
+      },
+      "AnyCosmic": {
+        "Wall": 384.25,
+        "Rolls": 96,
+        "Active": 384.25
+      },
+      "SlotRoots": {
+        "Wall": 4356.25,
+        "Rolls": 333,
+        "Active": 4356.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 180.25,
+        "Rolls": 72,
+        "Active": 180.25
+      },
+      "Mutation4Rainbow": {
+        "Wall": 18828.5,
+        "Rolls": 1401,
+        "Active": 18828.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 12576.25,
+        "Rolls": 774,
+        "Active": 12576.25
+      },
+      "Mutation3Void": {
+        "Wall": 11208.25,
+        "Rolls": 682,
+        "Active": 11208.25
+      },
+      "SlotLeaves": {
+        "Wall": 6816.25,
+        "Rolls": 495,
+        "Active": 6816.25
+      },
+      "Mutation1Void": {
+        "Wall": 756.25,
+        "Rolls": 116,
+        "Active": 756.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 4260.25,
+        "Rolls": 295,
+        "Active": 4260.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 4500.25,
+        "Rolls": 391,
+        "Active": 4500.25
+      },
+      "AnyGolden": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names4": {
+        "Wall": 6816.25,
+        "Rolls": 495,
+        "Active": 6816.25
+      },
+      "Mutation1Golden": {
+        "Wall": 144.25,
+        "Rolls": 58,
+        "Active": 144.25
+      },
+      "Names2": {
+        "Wall": 768.25,
+        "Rolls": 118,
+        "Active": 768.25
+      },
+      "SlotFruit": {
+        "Wall": 3444.25,
+        "Rolls": 260,
+        "Active": 3444.25
+      },
+      "Mutation2Golden": {
+        "Wall": 924.25,
+        "Rolls": 158,
+        "Active": 924.25
+      },
+      "Names1": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23748.5,
+    "FreeRolls": 1,
+    "Rewards": 632947814,
+    "Lost": 16,
+    "Coins": 35,
+    "Sold": 87674,
+    "Replacements": 44,
+    "First300": {
+      "Wall": 4271.25,
+      "Active": 4271.25
+    },
+    "Seed": 15,
+    "Wall": 23748.5,
+    "Cancelled": 38,
+    "Queued": 96,
+    "Ascensions": [
+      {
+        "RunActive": 15540.25,
+        "Active": 15540.25,
+        "Wall": 15540.25,
+        "Saplings": 0,
+        "Coins": 1014913009.414886
+      },
+      {
+        "RunActive": 8208.25,
+        "Active": 23748.5,
+        "Wall": 23748.5,
+        "Saplings": 1,
+        "Coins": 1301164859.33524
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 12660.25,
+        "Rolls": 852,
+        "Active": 12660.25
+      },
+      "SlotTrunk": {
+        "Wall": 12660.25,
+        "Rolls": 852,
+        "Active": 12660.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 384.25,
+        "Rolls": 147,
+        "Active": 384.25
+      },
+      "AnyRainbow": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Mutation3Golden": {
+        "Wall": 9732.25,
+        "Rolls": 648,
+        "Active": 9732.25
+      },
+      "Mutation2Void": {
+        "Wall": 15432.5,
+        "Rolls": 1250,
+        "Active": 15432.5
+      },
+      "AnyVoid": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names3": {
+        "Wall": 3384.25,
+        "Rolls": 308,
+        "Active": 3384.25
+      },
+      "AnyCosmic": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "SlotRoots": {
+        "Wall": 10752.25,
+        "Rolls": 715,
+        "Active": 10752.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 1836.25,
+        "Rolls": 268,
+        "Active": 1836.25
+      },
+      "Mutation3Void": {
+        "Wall": 23664.5,
+        "Rolls": 2131,
+        "Active": 23664.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 16236.5,
+        "Rolls": 1320,
+        "Active": 16236.5
+      },
+      "SlotFruit": {
+        "Wall": 5544.25,
+        "Rolls": 463,
+        "Active": 5544.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 12516.25,
+        "Rolls": 842,
+        "Active": 12516.25
+      },
+      "Mutation1Void": {
+        "Wall": 876.25,
+        "Rolls": 226,
+        "Active": 876.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "SlotLeaves": {
+        "Wall": 6384.25,
+        "Rolls": 495,
+        "Active": 6384.25
+      },
+      "AnyGolden": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Names4": {
+        "Wall": 12660.25,
+        "Rolls": 852,
+        "Active": 12660.25
+      },
+      "Mutation1Golden": {
+        "Wall": 432.25,
+        "Rolls": 166,
+        "Active": 432.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3492.25,
+        "Rolls": 351,
+        "Active": 3492.25
+      },
+      "Names2": {
+        "Wall": 420.25,
+        "Rolls": 161,
+        "Active": 420.25
+      },
+      "Mutation2Golden": {
+        "Wall": 480.25,
+        "Rolls": 185,
+        "Active": 480.25
+      },
+      "Names1": {
+        "Wall": 96.25,
+        "Rolls": 39,
+        "Active": 96.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23952.5,
+    "FreeRolls": 1,
+    "Rewards": 663173195,
+    "Lost": 23,
+    "Coins": 35,
+    "Sold": 80064,
+    "Replacements": 36,
+    "First300": {
+      "Wall": 3363.25,
+      "Active": 3363.25
+    },
+    "Seed": 16,
+    "Wall": 23952.5,
+    "Cancelled": 59,
+    "Queued": 112,
+    "Ascensions": [
+      {
+        "RunActive": 14592.25,
+        "Active": 14592.25,
+        "Wall": 14592.25,
+        "Saplings": 0,
+        "Coins": 1000554531.1307033
+      },
+      {
+        "RunActive": 9360.25,
+        "Active": 23952.5,
+        "Wall": 23952.5,
+        "Saplings": 1,
+        "Coins": 1300416108.5700092
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 5436.25,
+        "Rolls": 464,
+        "Active": 5436.25
+      },
+      "SlotTrunk": {
+        "Wall": 4800.25,
+        "Rolls": 439,
+        "Active": 4800.25
+      },
+      "Mutation4Golden": {
+        "Wall": 21708.5,
+        "Rolls": 1731,
+        "Active": 21708.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 11376.25,
+        "Rolls": 757,
+        "Active": 11376.25
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 17100.5,
+        "Rolls": 1226,
+        "Active": 17100.5
+      },
+      "Mutation2Void": {
+        "Wall": 13536.25,
+        "Rolls": 855,
+        "Active": 13536.25
+      },
+      "Mutation4Cosmic": {
+        "Wall": 13908.25,
+        "Rolls": 872,
+        "Active": 13908.25
+      },
+      "Names2": {
+        "Wall": 180.25,
+        "Rolls": 71,
+        "Active": 180.25
+      },
+      "Names3": {
+        "Wall": 3888.25,
+        "Rolls": 376,
+        "Active": 3888.25
+      },
+      "AnyCosmic": {
+        "Wall": 900.25,
+        "Rolls": 191,
+        "Active": 900.25
+      },
+      "SlotRoots": {
+        "Wall": 972.25,
+        "Rolls": 219,
+        "Active": 972.25
+      },
+      "SlotLeaves": {
+        "Wall": 3888.25,
+        "Rolls": 376,
+        "Active": 3888.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 13212.25,
+        "Rolls": 840,
+        "Active": 13212.25
+      },
+      "SlotFruit": {
+        "Wall": 5436.25,
+        "Rolls": 464,
+        "Active": 5436.25
+      },
+      "Names1": {
+        "Wall": 72.25,
+        "Rolls": 29,
+        "Active": 72.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 900.25,
+        "Rolls": 191,
+        "Active": 900.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 132.25,
+        "Rolls": 52,
+        "Active": 132.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 5436.25,
+        "Rolls": 464,
+        "Active": 5436.25
+      },
+      "Mutation1Golden": {
+        "Wall": 864.25,
+        "Rolls": 176,
+        "Active": 864.25
+      },
+      "Mutation1Void": {
+        "Wall": 816.25,
+        "Rolls": 157,
+        "Active": 816.25
+      },
+      "AnyVoid": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Mutation2Golden": {
+        "Wall": 912.25,
+        "Rolls": 195,
+        "Active": 912.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 924.25,
+        "Rolls": 200,
+        "Active": 924.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23844.5,
+    "FreeRolls": 1,
+    "Rewards": 666083474,
+    "Lost": 12,
+    "Coins": 35,
+    "Sold": 90212,
+    "Replacements": 21,
+    "First300": {
+      "Wall": 3696.25,
+      "Active": 3696.25
+    },
+    "Seed": 17,
+    "Wall": 23844.5,
+    "Cancelled": 29,
+    "Queued": 64,
+    "Ascensions": [
+      {
+        "RunActive": 16368.25,
+        "Active": 16368.25,
+        "Wall": 16368.25,
+        "Saplings": 0,
+        "Coins": 1000596822.7435694
+      },
+      {
+        "RunActive": 7476.25,
+        "Active": 23844.5,
+        "Wall": 23844.5,
+        "Saplings": 1,
+        "Coins": 1302258582.0383778
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 14856.25,
+        "Rolls": 915,
+        "Active": 14856.25
+      },
+      "SlotTrunk": {
+        "Wall": 6336.25,
+        "Rolls": 479,
+        "Active": 6336.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 11772.25,
+        "Rolls": 718,
+        "Active": 11772.25
+      },
+      "Mutation2Cosmic": {
+        "Wall": 396.25,
+        "Rolls": 126,
+        "Active": 396.25
+      },
+      "AnyRainbow": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Mutation3Golden": {
+        "Wall": 252.25,
+        "Rolls": 100,
+        "Active": 252.25
+      },
+      "Mutation2Void": {
+        "Wall": 6492.25,
+        "Rolls": 484,
+        "Active": 6492.25
+      },
+      "AnyVoid": {
+        "Wall": 456.25,
+        "Rolls": 148,
+        "Active": 456.25
+      },
+      "Names3": {
+        "Wall": 3552.25,
+        "Rolls": 399,
+        "Active": 3552.25
+      },
+      "AnyCosmic": {
+        "Wall": 396.25,
+        "Rolls": 126,
+        "Active": 396.25
+      },
+      "SlotRoots": {
+        "Wall": 5700.25,
+        "Rolls": 460,
+        "Active": 5700.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 252.25,
+        "Rolls": 100,
+        "Active": 252.25
+      },
+      "SlotFruit": {
+        "Wall": 14856.25,
+        "Rolls": 915,
+        "Active": 14856.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 10992.25,
+        "Rolls": 680,
+        "Active": 10992.25
+      },
+      "Names1": {
+        "Wall": 168.25,
+        "Rolls": 68,
+        "Active": 168.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 732.25,
+        "Rolls": 218,
+        "Active": 732.25
+      },
+      "SlotLeaves": {
+        "Wall": 13548.25,
+        "Rolls": 842,
+        "Active": 13548.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 14856.25,
+        "Rolls": 915,
+        "Active": 14856.25
+      },
+      "Mutation1Golden": {
+        "Wall": 276.25,
+        "Rolls": 110,
+        "Active": 276.25
+      },
+      "Names2": {
+        "Wall": 636.25,
+        "Rolls": 179,
+        "Active": 636.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3576.25,
+        "Rolls": 400,
+        "Active": 3576.25
+      },
+      "Mutation2Golden": {
+        "Wall": 960.25,
+        "Rolls": 249,
+        "Active": 960.25
+      },
+      "Mutation1Void": {
+        "Wall": 3432.25,
+        "Rolls": 351,
+        "Active": 3432.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 24348.5,
+    "FreeRolls": 1,
+    "Rewards": 640931810,
+    "Lost": 28,
+    "Coins": 35,
+    "Sold": 100685,
+    "Replacements": 56,
+    "First300": {
+      "Wall": 3302.75,
+      "Active": 3302.75
+    },
+    "Seed": 18,
+    "Wall": 24348.5,
+    "Cancelled": 37,
+    "Queued": 107,
+    "Ascensions": [
+      {
+        "RunActive": 15972.25,
+        "Active": 15972.25,
+        "Wall": 15972.25,
+        "Saplings": 0,
+        "Coins": 1000692329.4511963
+      },
+      {
+        "RunActive": 8376.25,
+        "Active": 24348.5,
+        "Wall": 24348.5,
+        "Saplings": 1,
+        "Coins": 1301871129.1342678
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 12984.25,
+        "Rolls": 882,
+        "Active": 12984.25
+      },
+      "SlotTrunk": {
+        "Wall": 8484.25,
+        "Rolls": 548,
+        "Active": 8484.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 1632.25,
+        "Rolls": 258,
+        "Active": 1632.25
+      },
+      "Mutation4Golden": {
+        "Wall": 18996.5,
+        "Rolls": 1610,
+        "Active": 18996.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 14604.5,
+        "Rolls": 1043,
+        "Active": 14604.5
+      },
+      "AnyRainbow": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Mutation3Golden": {
+        "Wall": 12696.25,
+        "Rolls": 863,
+        "Active": 12696.25
+      },
+      "Mutation2Void": {
+        "Wall": 15720.5,
+        "Rolls": 1291,
+        "Active": 15720.5
+      },
+      "Mutation4Cosmic": {
+        "Wall": 11748.25,
+        "Rolls": 800,
+        "Active": 11748.25
+      },
+      "AnyVoid": {
+        "Wall": 108.25,
+        "Rolls": 44,
+        "Active": 108.25
+      },
+      "Names3": {
+        "Wall": 4068.25,
+        "Rolls": 368,
+        "Active": 4068.25
+      },
+      "AnyCosmic": {
+        "Wall": 600.25,
+        "Rolls": 138,
+        "Active": 600.25
+      },
+      "SlotRoots": {
+        "Wall": 6264.25,
+        "Rolls": 463,
+        "Active": 6264.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 1572.25,
+        "Rolls": 256,
+        "Active": 1572.25
+      },
+      "Mutation3Void": {
+        "Wall": 22056.5,
+        "Rolls": 1980,
+        "Active": 22056.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 18180.5,
+        "Rolls": 1520,
+        "Active": 18180.5
+      },
+      "SlotLeaves": {
+        "Wall": 12984.25,
+        "Rolls": 882,
+        "Active": 12984.25
+      },
+      "Mutation1Void": {
+        "Wall": 252.25,
+        "Rolls": 98,
+        "Active": 252.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 600.25,
+        "Rolls": 138,
+        "Active": 600.25
+      },
+      "SlotFruit": {
+        "Wall": 10188.25,
+        "Rolls": 668,
+        "Active": 10188.25
+      },
+      "AnyGolden": {
+        "Wall": 48.25,
+        "Rolls": 20,
+        "Active": 48.25
+      },
+      "Names4": {
+        "Wall": 12984.25,
+        "Rolls": 882,
+        "Active": 12984.25
+      },
+      "Mutation1Golden": {
+        "Wall": 276.25,
+        "Rolls": 107,
+        "Active": 276.25
+      },
+      "Names1": {
+        "Wall": 264.25,
+        "Rolls": 103,
+        "Active": 264.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 672.25,
+        "Rolls": 167,
+        "Active": 672.25
+      },
+      "Mutation2Golden": {
+        "Wall": 2364.25,
+        "Rolls": 275,
+        "Active": 2364.25
+      },
+      "Names2": {
+        "Wall": 612.25,
+        "Rolls": 143,
+        "Active": 612.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23280.5,
+    "FreeRolls": 1,
+    "Rewards": 627440340,
+    "Lost": 17,
+    "Coins": 35,
+    "Sold": 79464,
+    "Replacements": 48,
+    "First300": {
+      "Wall": 3679.75,
+      "Active": 3679.75
+    },
+    "Seed": 19,
+    "Wall": 23280.5,
+    "Cancelled": 39,
+    "Queued": 104,
+    "Ascensions": [
+      {
+        "RunActive": 14448.25,
+        "Active": 14448.25,
+        "Wall": 14448.25,
+        "Saplings": 0,
+        "Coins": 1000484432.1994383
+      },
+      {
+        "RunActive": 8832.25,
+        "Active": 23280.5,
+        "Wall": 23280.5,
+        "Saplings": 1,
+        "Coins": 1302124726.2577224
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 11712.25,
+        "Rolls": 737,
+        "Active": 11712.25
+      },
+      "SlotTrunk": {
+        "Wall": 4968.25,
+        "Rolls": 318,
+        "Active": 4968.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 20160.5,
+        "Rolls": 1719,
+        "Active": 20160.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 396.25,
+        "Rolls": 123,
+        "Active": 396.25
+      },
+      "AnyRainbow": {
+        "Wall": 324.25,
+        "Rolls": 94,
+        "Active": 324.25
+      },
+      "Mutation3Golden": {
+        "Wall": 2412.25,
+        "Rolls": 218,
+        "Active": 2412.25
+      },
+      "Mutation2Void": {
+        "Wall": 14208.25,
+        "Rolls": 972,
+        "Active": 14208.25
+      },
+      "Names2": {
+        "Wall": 372.25,
+        "Rolls": 113,
+        "Active": 372.25
+      },
+      "Names3": {
+        "Wall": 2652.25,
+        "Rolls": 224,
+        "Active": 2652.25
+      },
+      "AnyCosmic": {
+        "Wall": 396.25,
+        "Rolls": 123,
+        "Active": 396.25
+      },
+      "SlotRoots": {
+        "Wall": 11064.25,
+        "Rolls": 653,
+        "Active": 11064.25
+      },
+      "SlotLeaves": {
+        "Wall": 4980.25,
+        "Rolls": 322,
+        "Active": 4980.25
+      },
+      "Mutation4Void": {
+        "Wall": 18144.5,
+        "Rolls": 1534,
+        "Active": 18144.5
+      },
+      "Mutation3Rainbow": {
+        "Wall": 14820.5,
+        "Rolls": 1191,
+        "Active": 14820.5
+      },
+      "SlotFruit": {
+        "Wall": 11712.25,
+        "Rolls": 737,
+        "Active": 11712.25
+      },
+      "Names1": {
+        "Wall": 120.25,
+        "Rolls": 48,
+        "Active": 120.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 11472.25,
+        "Rolls": 685,
+        "Active": 11472.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 1488.25,
+        "Rolls": 198,
+        "Active": 1488.25
+      },
+      "AnyGolden": {
+        "Wall": 12.25,
+        "Rolls": 5,
+        "Active": 12.25
+      },
+      "Names4": {
+        "Wall": 11712.25,
+        "Rolls": 737,
+        "Active": 11712.25
+      },
+      "Mutation1Golden": {
+        "Wall": 3972.25,
+        "Rolls": 249,
+        "Active": 3972.25
+      },
+      "Mutation1Void": {
+        "Wall": 5820.25,
+        "Rolls": 409,
+        "Active": 5820.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 5052.25,
+        "Rolls": 351,
+        "Active": 5052.25
+      },
+      "Mutation2Golden": {
+        "Wall": 912.25,
+        "Rolls": 182,
+        "Active": 912.25
+      },
+      "AnyVoid": {
+        "Wall": 96.25,
+        "Rolls": 39,
+        "Active": 96.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 23064.5,
+    "FreeRolls": 1,
+    "Rewards": 630940791,
+    "Lost": 10,
+    "Coins": 35,
+    "Sold": 83492,
+    "Replacements": 41,
+    "First300": {
+      "Wall": 4922.75,
+      "Active": 4922.75
+    },
+    "Seed": 20,
+    "Wall": 23064.5,
+    "Cancelled": 51,
+    "Queued": 109,
+    "Ascensions": [
+      {
+        "RunActive": 14292.25,
+        "Active": 14292.25,
+        "Wall": 14292.25,
+        "Saplings": 0,
+        "Coins": 1000516517.1513269
+      },
+      {
+        "RunActive": 8772.25,
+        "Active": 23064.5,
+        "Wall": 23064.5,
+        "Saplings": 1,
+        "Coins": 1301732741.0308
+      }
+    ]
+  },
+  {
+    "CollectionTimes": {
+      "CoreNames48": {
+        "Wall": 5604.25,
+        "Rolls": 492,
+        "Active": 5604.25
+      },
+      "SlotTrunk": {
+        "Wall": 1020.25,
+        "Rolls": 210,
+        "Active": 1020.25
+      },
+      "Mutation3Cosmic": {
+        "Wall": 5952.25,
+        "Rolls": 508,
+        "Active": 5952.25
+      },
+      "Mutation4Golden": {
+        "Wall": 19032.5,
+        "Rolls": 2028,
+        "Active": 19032.5
+      },
+      "Mutation2Cosmic": {
+        "Wall": 9084.25,
+        "Rolls": 691,
+        "Active": 9084.25
+      },
+      "AnyRainbow": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Mutation3Golden": {
+        "Wall": 2724.25,
+        "Rolls": 272,
+        "Active": 2724.25
+      },
+      "Mutation2Void": {
+        "Wall": 9288.25,
+        "Rolls": 705,
+        "Active": 9288.25
+      },
+      "Mutation4Cosmic": {
+        "Wall": 15228.5,
+        "Rolls": 1477,
+        "Active": 15228.5
+      },
+      "Names2": {
+        "Wall": 720.25,
+        "Rolls": 90,
+        "Active": 720.25
+      },
+      "Names3": {
+        "Wall": 4308.25,
+        "Rolls": 437,
+        "Active": 4308.25
+      },
+      "AnyCosmic": {
+        "Wall": 2604.25,
+        "Rolls": 264,
+        "Active": 2604.25
+      },
+      "SlotRoots": {
+        "Wall": 4056.25,
+        "Rolls": 429,
+        "Active": 4056.25
+      },
+      "Mutation1Rainbow": {
+        "Wall": 876.25,
+        "Rolls": 153,
+        "Active": 876.25
+      },
+      "Mutation4Void": {
+        "Wall": 17412.5,
+        "Rolls": 1788,
+        "Active": 17412.5
+      },
+      "Mutation4Rainbow": {
+        "Wall": 17340.5,
+        "Rolls": 1777,
+        "Active": 17340.5
+      },
+      "Mutation3Void": {
+        "Wall": 16536.5,
+        "Rolls": 1659,
+        "Active": 16536.5
+      },
+      "SlotFruit": {
+        "Wall": 5604.25,
+        "Rolls": 492,
+        "Active": 5604.25
+      },
+      "AnyVoid": {
+        "Wall": 300.25,
+        "Rolls": 74,
+        "Active": 300.25
+      },
+      "Names1": {
+        "Wall": 264.25,
+        "Rolls": 62,
+        "Active": 264.25
+      },
+      "Mutation1Cosmic": {
+        "Wall": 2604.25,
+        "Rolls": 264,
+        "Active": 2604.25
+      },
+      "SlotLeaves": {
+        "Wall": 5364.25,
+        "Rolls": 481,
+        "Active": 5364.25
+      },
+      "AnyGolden": {
+        "Wall": 24.25,
+        "Rolls": 10,
+        "Active": 24.25
+      },
+      "Names4": {
+        "Wall": 5604.25,
+        "Rolls": 492,
+        "Active": 5604.25
+      },
+      "Mutation1Golden": {
+        "Wall": 924.25,
+        "Rolls": 172,
+        "Active": 924.25
+      },
+      "Mutation3Rainbow": {
+        "Wall": 4008.25,
+        "Rolls": 427,
+        "Active": 4008.25
+      },
+      "Mutation2Rainbow": {
+        "Wall": 3444.25,
+        "Rolls": 403,
+        "Active": 3444.25
+      },
+      "Mutation2Golden": {
+        "Wall": 756.25,
+        "Rolls": 105,
+        "Active": 756.25
+      },
+      "Mutation1Void": {
+        "Wall": 3084.25,
+        "Rolls": 339,
+        "Active": 3084.25
+      }
+    },
+    "Rolls": 0,
+    "Active": 19932.5,
+    "FreeRolls": 1,
+    "Rewards": 691591807,
+    "Lost": 16,
+    "Coins": 35,
+    "Sold": 86469,
+    "Replacements": 41,
+    "First300": {
+      "Wall": 2986.25,
+      "Active": 2986.25
+    },
+    "Seed": 21,
+    "Wall": 19932.5,
+    "Cancelled": 41,
+    "Queued": 95,
+    "Ascensions": [
+      {
+        "RunActive": 12528.25,
+        "Active": 12528.25,
+        "Wall": 12528.25,
+        "Saplings": 0,
+        "Coins": 1001251724.4053586
+      },
+      {
+        "RunActive": 7404.25,
+        "Active": 19932.5,
+        "Wall": 19932.5,
+        "Saplings": 1,
+        "Coins": 1303216471.2516742
+      }
+    ]
+  }
+]

@@ -16,6 +16,8 @@ local ShopGraphics=require(script.Parent.ShopGraphics)
 local AdminController=require(script.Parent.AdminController)
 local HudControls=require(script.Parent.HudControls)
 local PlotController=require(script.Parent.PlotController)
+local SellController=require(script.Parent.SellController)
+local RollController=require(script.Parent.RollController)
 local UI={State=nil,Tab=nil,SeenRoll=false,Rolling=false}
 local gui,coins,bag,roll,plant,eventLabel,tutorial,toastStack,panel,content,heading,reel,footer,nav,sellNav,fullWarning,fullArrow
 local colors={Background=T.Cream,Panel=T.Paper,Green=T.Green,Gold=T.Gold,Text=T.Ink}
@@ -82,17 +84,13 @@ local function shopCatalog(p)
  for _,kind in {"LeafPower","Bag","Radius","Discount","Plots","PetSlots","Batch"} do
   local up=C.Upgrades[kind];local level=p.Upgrades[kind] or 1;local nextValue=up.Values[level+1];local price=up.Prices and up.Prices[level] or up.BasePrice*up.PriceGrowth^(level-1)
   local currentValue=up.Values[level]
+  if kind=="PetSlots"then local extra=(p.MaxPetSlots or currentValue)-currentValue;currentValue+=extra;if nextValue then nextValue+=extra end end
   if kind=="Plots" then currentValue=p.MaxPlots;nextValue=currentValue<C.Growth.TotalPlots and math.min(C.Growth.TotalPlots,currentValue+1) or nil end
-  local detail=tostring(currentValue)..(nextValue and " → "..tostring(nextValue) or " • Fully upgraded")
+  local detail=(kind=="LeafPower"and "×"or "")..tostring(currentValue)..(nextValue and " → "..(kind=="LeafPower"and "×"or "")..tostring(nextValue) or " • Fully upgraded")
   table.insert(upgrades,{Key=kind,Title=names[kind],Icon=kind,Detail=detail,Price=price or 0,Owned=not nextValue,Maxed=not nextValue,Action="Buy",Args={Kind=kind}})
  end
  table.insert(upgrades,{Key="Water",Title="Watering Can",Icon="Water",Detail="Water to speed up growth",Price=C.Growth.WaterPrice,Owned=p.Defenses.Water,Action="Buy",Args={Kind="Water"}})
  shopSection("GARDEN UPGRADES",T.Gold,upgrades)
- local defenses={}
- local defenseNames={Scarecrow="Scarecrow",BugSpray="Bug Spray",Fence="Electric Fence",Shield="Shield Bubble"}
- local descriptions={Scarecrow="Blocks fruit shaking",BugSpray="Clean & prevent pests",Fence="Stops would-be shakers",Shield="60 seconds of protection"}
- for _,kind in {"Scarecrow","BugSpray","Fence","Shield"} do table.insert(defenses,{Key=kind,Title=defenseNames[kind],Icon=kind,Detail=descriptions[kind],Price=C.Defenses[kind],Owned=(kind=="Scarecrow" or kind=="Fence") and p.Defenses[kind],Action="Buy",Args={Kind=kind}}) end
- shopSection("PROTECT YOUR GARDEN",T.Green,defenses)
  local eggs={}
  for tier,price in C.Pets.EggPrices do table.insert(eggs,{Key="Egg"..tier,Title=C.Pets.Themes[tier].." Egg",Icon="Egg"..tier,Detail="Tier "..tier.." • Hatch a buddy",Price=price,Action="Egg",Args={Tier=tier}}) end
  local odds={};for rarity,weight in C.Pets.Weights do table.insert(odds,C.Rarities[rarity].Name.." "..weight.."%") end
@@ -126,18 +124,18 @@ function UI.Toast(message)
  task.delay(C.UI.ToastSeconds,function() if t.Parent then t:Destroy() end end)
 end
 local function comparison(build)
- return string.format("%s • %.0fs grow • %s / fruit • %.1fs drops",C.Rarities[G.Tier(build)].Name,G.GrowTime(G.Tier(build),1),Format(V.Build(build,1,1,1,1)),V.DropInterval({build.Roots.Stat}))
+ return string.format("%s • %.0fs grow • %s / fruit • %.1fs drops",C.Rarities[G.Tier(build)].Name,G.BuildTime(build,1),Format(V.Build(build,1,1,1,1)),V.Interval(build))
 end
 function UI.RenderMenu()
- if UI.Tab~="Shop"and UI.Tab~="More"then UI.RestoreShopTouch()end
+ if UI.Tab~="Shop"and UI.Tab~="More"and UI.Tab~="Robux"then UI.RestoreShopTouch()end
  if not UI.Tab or not UI.State then panel.Visible=false; return end
- panel.Visible=true; heading.Text=string.upper(UI.Tab)
+ panel.ZIndex=UI.Tab=="Robux"and 15 or 1;panel.Visible=true; heading.Text=UI.Tab=="Robux"and "PASSES • DRAFTS"or string.upper(UI.Tab)
  content.ScrollingEnabled=UI.Tab~="More";content.ScrollBarThickness=UI.Tab=="More"and 0 or 8;content.AutomaticCanvasSize=UI.Tab=="More"and Enum.AutomaticSize.None or Enum.AutomaticSize.Y
  if UI.Tab=="More"then
   content.CanvasSize=UDim2.new();local hash=tostring(UI.State.IsAdmin)..":"..tostring(content.AbsoluteSize)
   if UI.MoreHash==hash then return end;UI.MoreHash=hash
  else UI.MoreHash=nil end
- if UI.Tab=="Shop"or UI.Tab=="More"then local touch=Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui");if touch then if not UI.ShopTouch then UI.ShopTouch={Gui=touch,Enabled=touch.Enabled}end;touch.Enabled=false end end
+ if UI.Tab=="Shop"or UI.Tab=="More"or UI.Tab=="Robux"then local touch=Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui");if touch then if not UI.ShopTouch then UI.ShopTouch={Gui=touch,Enabled=touch.Enabled}end;touch.Enabled=false end end
  if UI.Tab=="Shop" then
   local touch=Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui")
   if touch then if not UI.ShopTouch then UI.ShopTouch={Gui=touch,Enabled=touch.Enabled} end;touch.Enabled=false end
@@ -146,6 +144,12 @@ function UI.RenderMenu()
   for _,kind in {"Scarecrow","Fence","Water"} do hash..=":"..tostring(p.Defenses[kind]) end
   if UI.ShopHash==hash then return end;UI.ShopHash=hash
  else UI.ShopHash=nil end
+ if UI.Tab=="Robux"then
+  local hash=tostring(content.AbsoluteSize)..":"..tostring(UI.State.PaidRandom)..":"..tostring(UI.State.MaxGrowthPads)
+  for _,key in C.PassOrder do hash..=":"..tostring(UI.State.Passes[key])end
+  hash..=":"..tostring(UI.State.Journal.Version)..":"..tostring(UI.State.ProductsOwned.StarterPack)..":"..tostring(UI.State.RewardState.Reference)
+  if UI.PurchaseHash==hash then return end;UI.PurchaseHash=hash
+ else UI.PurchaseHash=nil end
  local savedScroll=content.CanvasPosition
  for _,child in content:GetChildren() do if not child:IsA("UIListLayout") and not child:IsA("UIPadding") then child:Destroy() end end
  local p=UI.State
@@ -154,18 +158,15 @@ function UI.RenderMenu()
   shopCatalog(p)
  elseif UI.Tab=="Sell" then
   label("Step into the red SELL zone at the market. Your fruit is worth "..Format(p.Bag.Value).." coins!")
-  row("Sell all fruit",function() send("Sell") end)
+  row("Open Sell panel",function()UI.Open("Sell")end)
  elseif UI.Tab=="Upgrades" then
   local names={LeafPower="Leaf Power",Bag="Bigger Bag",Radius="Fruit Magnet",Discount="Cheaper Rolls",Plots="More Tree Plots",PetSlots="More Pet Buddies",Batch="Multi Roll"}
   for _,kind in {"LeafPower","Bag","Radius","Discount","Plots","PetSlots","Batch"} do local up=C.Upgrades[kind]; local level=p.Upgrades[kind] or 1
-   if up.Values[level+1] then row(names[kind].." → "..up.Values[level+1].." • "..Format(up.Prices and up.Prices[level] or up.BasePrice*up.PriceGrowth^(level-1)).." coins",function() send("Buy",{Kind=kind}) end) else label(names[kind].." • MAX") end
+   if up.Values[level+1] then row(names[kind].." → "..(kind=="LeafPower"and "×"or "")..up.Values[level+1].." • "..Format(up.Prices and up.Prices[level] or up.BasePrice*up.PriceGrowth^(level-1)).." coins",function() send("Buy",{Kind=kind}) end) else label(names[kind].." • MAX") end
   end
   row("Watering Can • "..Format(C.Growth.WaterPrice).." coins",function() send("Buy",{Kind="Water"}) end)
- elseif UI.Tab=="Defenses" then
-  label("Chill Mode is a free opt-out for both sides. New players have five minutes of protection.")
-  for _,kind in {"Scarecrow","BugSpray","Fence","Shield"} do row(kind.." • "..Format(C.Defenses[kind]).." coins",function() send("Buy",{Kind=kind}) end) end
  elseif UI.Tab=="Pets / Eggs" then
-  label("Egg odds: 60%, 25%, 10%, 4%, 1%. Equip three pets; upgrade to six. Fuse three identical pets for 2× stats.")
+  label("Egg odds: 60%, 25%, 10%, 4%, 1%. Current pet capacity: "..(p.MaxPetSlots or 3)..". Orchard Curator adds one permanent slot. Fuse three identical pets for 2× stats.")
   for tier,price in C.Pets.EggPrices do row(C.Pets.Themes[tier].." egg • "..Format(price).." coins",function() send("Egg",{Tier=tier}) end) end
   for _,pet in p.Pets do
    row((pet.Shiny and "Shiny " or "")..pet.Name..(table.find(p.EquippedPets,pet.Id) and " • EQUIPPED" or " • Equip"),function() send("EquipPet",{Id=pet.Id}) end)
@@ -173,33 +174,86 @@ function UI.RenderMenu()
   end
  elseif UI.Tab=="Odds" then
   label("Real current odds • luck "..string.format("%.2f",p.Luck).."×\nPity: Epic+ "..p.EpicPity.."/50 • Legendary+ "..p.LegendaryPity.."/300")
+  label("Earned collection rarity luck: ×"..string.format("%.2f",p.CollectionBonuses and p.CollectionBonuses.Luck or 1).." (included above; max +4%). It does not affect mutations or eggs.")
   local min=R.Minimum(p)
+  if p.PaidRandom then
+   label("Draft purchase previews for this next roll, including current pity. Lucky products replace the boost factor and extend its time. Mutation and egg odds stay unchanged.")
+   for _,key in {"Luck","SuperLucky","UltraLucky"}do
+    local luck=p.PurchaseLuck[key];local future,total=R.Weights(luck,min);local lines={(C.Passes[key]or C.Products[key]).Name.." • preview luck "..string.format("%.3f",luck).."×"}
+    for i,r in C.Rarities do table.insert(lines,r.Name.." "..string.format("%.5f",future[i]/total*100).."%")end
+    local preview=label(table.concat(lines,"\n"),T.Blue);preview.Size=UDim2.new(1,-8,0,210)
+   end
+  end
   local weights,total=R.Weights(p.Luck,min)
   for i,r in C.Rarities do label(string.format("%s • base %g%% • next roll %.5f%%\nGrows in %ds • stats %.2f–%.2f",r.Name,r.Weight,weights[i]/total*100,r.Grow,r.Min,r.Max),r.Color) end
   label("Your third lifetime roll guarantees Rare or better. Daily free rolls use the same pity and odds. Each rarity has 12 equally likely named parts; each specific name has one twelfth of its rarity chance.")
   label("Each part roll and each harvested fruit independently rolls a mutation. Part choices within each type and rarity are equally likely.")
-  label("The four part mutation multipliers are averaged into a tree bonus, then multiplied by the harvested fruit mutation. Height varies from 75% to 150% when planting.")
+  label("Part mutation factors are averaged, multiplied by the harvest factor, then capped at ×"..C.Economy.MutationCeiling.." combined. Listed factors are raw before this cap. Height varies from 75% to 150% when planting.")
+  label("Rarity power: ×"..C.Economy.RarityFactor.." per tier on Fruit, Leaves and Trunk. Leaf Power multiplies total value. Roots use rarity-based drop intervals; mixed build grow time also weights its highest tier.")
+  label("Harvest sizes are separate from mutations. Pets, rarity luck and paid luck do not change size odds. Size multiplies after the mutation ceiling, before Double Coins; expected size value is exactly x1.")
+  for _,size in C.FruitSizes do label(size.Name.." - "..size.Weight.."% - value x"..size.Value.." - visual x"..size.Scale,T.Gold)end
   local mutationWeights,mutationTotal=R.MutationWeights(p.MutationLuck or 1)
-  for i,m in C.Mutations do label(m.Name.." • base "..m.Weight.."% • current "..string.format("%.5f",mutationWeights[i]/mutationTotal*100).."% • "..m.Mult.."×",m.Color)end
+  for i,m in C.Mutations do label(m.Name.." • base "..m.Weight.."% • current "..string.format("%.5f",mutationWeights[i]/mutationTotal*100).."% • "..m.Mult.."× raw (combined cap ×"..C.Economy.MutationCeiling..")",m.Color)end
  elseif UI.Tab=="Settings" then
-  for _,key in {"Music","SFX","Chill","ReducedShake","ReducedEffects","SkipRolls","AutoSell"} do row(key..": "..tostring(p.Settings[key]),function() send("Setting",{Key=key,Value=not p.Settings[key]}) end) end
+  for _,key in {"Music","SFX","Chill","ReducedShake","ReducedEffects","SkipRolls","AutoSell","QuickSellOnEntry"} do row((key=="QuickSellOnEntry"and "Quick sell on entry"or key)..": "..tostring(p.Settings[key]),function() send("Setting",{Key=key,Value=not p.Settings[key]}) end) end
   for _,key in {"MusicVolume","SFXVolume"}do for _,volume in {0,.25,.5,.75,1}do row(key..": "..math.floor(volume*100).."%",function()send("Setting",{Key=key,Value=volume})end)end end
   label("Optional cumulative in-game prompt budget. 0 = no self-imposed limit. Roblox account spending controls also apply.")
   for _,limit in {0,100,500,1000} do row("Prompt budget: "..limit.." Robux",function() send("Setting",{Key="SpendingLimit",Value=limit}) end) end
   row("Skip tutorial",function() send("Tutorial",{Skip=true}) end)
  elseif UI.Tab=="Robux" then
-  label("All purchases are optional. Unconfigured products cannot charge you. Free play supports every core activity.")
-  label("ExtraPlots unlocks two plots earlier, up to the six-plot garden limit. All six are also available through coin upgrades. ExtraPlots also unlocks growth pad 2, which is earned free by Ascending.")
-  if not p.Persistent then label("STUDIO PREVIEW • Purchases disabled until durable saves are available.") end
-  if (p.Growth and p.Growth.State=="Growing"and not p.Growth.Tutorial)or(p.Growth2 and p.Growth2.State=="Growing")then row("Grow Now • finish this tree",function()send("GrowNow",{})end)end
-  for key,pass in C.Passes do if pass.Price>0 or pass.ProposedPrice then row(key.." • "..(pass.New and ("DRAFT proposal: "..pass.ProposedPrice.." Robux")or(pass.Price.." Robux")).."\n"..(pass.Description or "Optional perk")..(pass.Id==0 and " • not configured"or ""),function()send("Pass",{Key=key})end)end end
-  for key,product in C.Products do if not product.Limit then row(key.." • "..(product.ProposedPrice and ("DRAFT "..product.ProposedPrice)or product.Price).." Robux"..(product.Id==0 and " (not configured)" or ""),function() send("Product",{Key=key}) end) end end
+  heading.Text="PASSES • DRAFTS"
+  label("All prices are proposals. Purchases are disabled; every Marketplace ID is 0. Core progression stays free.",T.Gold)
+  if not p.PaidRandom then label("Paid gameplay items are unavailable for this account. Cosmetic-only items and earned progression remain available.")end
+  row("Exact current and preview Odds • before any purchase",function()UI.Open("Odds")end)
+  local function section(title,keys,source,action,color)
+   local caption=text(content,title,23);caption.Size=UDim2.new(1,-8,0,38);caption.TextXAlignment=Enum.TextXAlignment.Left
+   local width=math.max(140,content.AbsoluteSize.X-24);local vp=workspace.CurrentCamera.ViewportSize
+   local columns=vp.X<650 and 1 or(vp.X<1000 and 2 or 3)
+   local side=math.min(350,math.max(170,math.floor(content.AbsoluteSize.Y-16)),math.floor((width-14*(columns-1))/columns))
+   local group=Instance.new("Frame");group.Name=title;group.BackgroundTransparency=1;group.LayoutOrder=#content:GetChildren();group.Size=UDim2.new(1,-12,0,math.ceil(#keys/columns)*(side+14));group.Parent=content
+   local grid=Instance.new("UIGridLayout");grid.CellSize=UDim2.fromOffset(side,side);grid.CellPadding=UDim2.fromOffset(14,14);grid.HorizontalAlignment=Enum.HorizontalAlignment.Center;grid.SortOrder=Enum.SortOrder.LayoutOrder;grid.Parent=group
+   for i,key in keys do
+    local id=key;local item=source[id];local owned=action=="Pass"and p.Passes[id]or(item.Once and p.ProductsOwned[id]);local restricted=item.PaidRandom and not p.PaidRandom
+    local earned=id=="ThirdPad"and(p.MaxGrowthPads or 1)>=3
+    if id=="Cosmetics"then local all=true;for _,key in C.Cosmetics.Bundle do if not p.Journal.Cosmetics.Owned[key]then all=false end end;earned=all end
+    local tile=button(group,"",function()
+     if owned or earned then UI.Toast("Already owned or earned.")
+     elseif restricted then UI.Toast("Unavailable for this account. Free progression stays available.")
+     elseif item.Limit then send("GrowNow",{})else send(action,{Key=id})end
+    end)
+    tile.Name="PurchaseTile_"..id;tile.LayoutOrder=i;tile:SetAttribute("PurchaseKey",id);tile:SetAttribute("Restricted",restricted);tile.BackgroundColor3=(owned or earned)and T.Teal or color
+    local name=text(tile,item.Name,24);name.Name="ItemTitle";name.Position=UDim2.fromScale(.035,.03);name.Size=UDim2.fromScale(.93,.16);name.TextColor3=T.Cream;name.TextStrokeColor3=T.Ink;name.TextStrokeTransparency=0;name.TextScaled=true
+    local n=Instance.new("UITextSizeConstraint");n.MinTextSize=14;n.MaxTextSize=24;n.Parent=name
+    local description=item.Description or("Finishes the first eligible active tree with ≤"..math.floor(item.Limit/60).." min remaining, across all pads. Changed tree → reusable credit. Free: wait or water.")
+    if item.Seconds then description..=" Current server reference quote: "..Format(math.floor(math.min(item.Cap,(p.RewardState.Reference or 0)*item.Seconds))).." coins."end
+    local detail=text(tile,description,17);detail.Name="ExactEffect";detail.BackgroundTransparency=0;detail.BackgroundColor3=T.Cream;detail.Position=UDim2.fromScale(.04,.22);detail.Size=UDim2.fromScale(.92,.54);detail.TextScaled=true
+    local corner=Instance.new("UICorner");corner.CornerRadius=UDim.new(0,12);corner.Parent=detail
+    local pad=Instance.new("UIPadding");pad.PaddingLeft=UDim.new(0,8);pad.PaddingRight=UDim.new(0,8);pad.PaddingTop=UDim.new(0,8);pad.PaddingBottom=UDim.new(0,8);pad.Parent=detail
+    local d=Instance.new("UITextSizeConstraint");d.MinTextSize=12;d.MaxTextSize=17;d.Parent=detail
+    local status=(owned or earned)and "OWNED / EARNED"or(restricted and "UNAVAILABLE FOR ACCOUNT"or("DRAFT • "..item.ProposedPrice.." Robux"))
+    local price=text(tile,status.."\n"..((owned or earned)and "Journal → Style for cosmetics"or "Not configured • no charge"),16);price.Name="DraftPrice";price.Position=UDim2.fromScale(.03,.79);price.Size=UDim2.fromScale(.94,.18);price.TextScaled=true;price.TextColor3=T.Cream;price.TextStrokeColor3=T.Ink;price.TextStrokeTransparency=0
+    local pc=Instance.new("UITextSizeConstraint");pc.MinTextSize=11;pc.MaxTextSize=16;pc.Parent=price
+   end
+  end
+  section("LASTING PASSES",C.PassOrder,C.Passes,"Pass",T.Blue)
+  section("OPTIONAL PRODUCTS",C.ProductOrder,C.Products,"Product",T.Purple)
+  label("Coin amounts use server reward reference income, excluding paid, pet and weather boosts. Starter Pack locks its quote before the prompt. Luck products use exact current Odds.")
+  section("GROW NOW BRACKETS",C.GrowProducts,C.Products,"Product",T.Green)
+  row("Use a saved growth credit",function()send("RedeemGrow",{})end)
+  row("Cosmetic inventory • Journal → Style",function()UI.Open("Tree Parts");UI.Inventory.Category="Journal";UI.Inventory.Journal.Tab="Style";UI.Inventory:Refresh(true)end)
  elseif UI.Tab=="Ascension" then
-  label("Ascend at "..Format(C.Rebirth.Threshold).." coins. Preview: +"..p.Preview.." Golden Saplings.\nResets coins, parts and plots. Keep pets, permanent bonuses and purchases.",colors.Gold)
+  label("Ascend at "..Format(p.AscensionThreshold or C.Rebirth.Threshold).." coins. Preview: +"..p.Preview.." Golden Saplings (each +"..(C.Math.RebirthPerSapling*100).."% base income).\nResets coins, parts and plots. Keep pets, permanent bonuses and purchases.",colors.Gold)
   row("Confirm Ascension • reset this garden",function() send("Rebirth",{Confirm=true}) end)
  elseif UI.Tab=="Sabotage" then
+  row("Chill: "..(p.Settings.Chill and "ON • peaceful garden"or "OFF • sabotage enabled").." • Toggle",function()send("Setting",{Key="Chill",Value=not p.Settings.Chill})end)
+  if not p.Settings.Chill then
+   local names={Scarecrow="Scarecrow",BugSpray="Bug Spray",Fence="Electric Fence",Shield="Shield Bubble"}
+   for _,kind in {"Scarecrow","BugSpray","Fence","Shield"}do local key=kind
+    row(names[key].." • "..Format(C.Defenses[key]).." coins"..((key=="Scarecrow"or key=="Fence")and p.Defenses[key]and " • OWNED"or ""),function()send("Buy",{Kind=key})end)
+   end
+  else label("Turn Chill off to view sabotage defenses. Peaceful progression remains free.")end
   label(p.Private and "Private gardens have sabotage disabled, +10% luck and +25% growth." or "Chill Mode must be off for both players. Actions require proximity and respect protection.")
-  for _,player in Players:GetPlayers() do if player~=Players.LocalPlayer then
+  for _,player in Players:GetPlayers() do if not p.Settings.Chill and player~=Players.LocalPlayer then
    label(player.DisplayName)
    for _,kind in {"Shake","Pest","Trap","Prune"} do row(kind.." "..player.DisplayName,function() send("Sabotage",{Target=player.UserId,Kind=kind}) end) end
   end end
@@ -210,6 +264,8 @@ function UI.RestoreShopTouch()
  if UI.ShopTouch then if UI.ShopTouch.Gui.Parent then UI.ShopTouch.Gui.Enabled=UI.ShopTouch.Enabled end;UI.ShopTouch=nil end
 end
 function UI.Open(tab)
+ if UI.RollDisplay then UI.RollDisplay.Summary.Visible=false end
+ if UI.SellPanel then UI.SellPanel:Close()end
  if UI.Placement and UI.Placement.Selection then UI.Placement:Clear();send("CancelPlacement",{})end
  UI.RestoreShopTouch()
  if UI.Admin then UI.Admin:Close()end
@@ -217,8 +273,12 @@ function UI.Open(tab)
   UI.Tab=nil;panel.Visible=false;if UI.Inventory then UI.Inventory:Close()end
   if UI.State and UI.State.IsAdmin and UI.Admin then UI.Admin:Open()end;return
  end
+ if tab=="Sell"then
+  UI.Tab=nil;panel.Visible=false;if UI.Inventory then UI.Inventory:Close()end;UI.SellPanel:Open();return
+ end
  UI.ShopHash=nil
  UI.MoreHash=nil
+ UI.PurchaseHash=nil
  if tab=="Garden" then tab="Tree Parts" end
  if UI.Inventory then
   if tab=="Tree Parts" or tab=="Bag" then UI.Tab=nil; panel.Visible=false; UI.Inventory:Open(tab=="Bag" and "Bag" or "Parts"); return end
@@ -227,6 +287,8 @@ function UI.Open(tab)
  UI.Tab=tab; content.CanvasPosition=Vector2.zero;if UI.ResizeMenu then UI.ResizeMenu() end;UI.RenderMenu()
 end
 function UI.Travel(destination)
+ if UI.RollDisplay then UI.RollDisplay.Summary.Visible=false end
+ if UI.SellPanel then UI.SellPanel:Close()end
  if UI.Placement and UI.Placement.Selection then UI.Placement:Clear();send("CancelPlacement",{})end
  UI.RestoreShopTouch()
  if UI.Admin then UI.Admin:Close()end
@@ -234,30 +296,7 @@ function UI.Travel(destination)
  send("Teleport",{Destination=destination})
 end
 function UI.Reel(results)
- if UI.Rolling then return end
- UI.Rolling=true; reel.Visible=true; local skip=false
- local connection=reel.Activated:Connect(function() skip=true end)
- local best=results[1]; for _,part in results do if part.Tier>best.Tier then best=part end end
- local started=os.clock();skip=UI.State and UI.State.Settings.SkipRolls or false
- while os.clock()-started<C.UI.RollDuration and not skip do
-  local elapsed=os.clock()-started
-  local variants=Catalog.Variants(C.Slots[math.random(1,#C.Slots)],math.random(1,#C.Rarities))
-  reel.Text=variants[math.random(1,#variants)].."\nRolling…"; reel.TextColor3=elapsed>C.UI.RollDuration-C.UI.RevealDuration and C.Rarities[best.Tier].Color or colors.Text
-  reel.Position=UDim2.fromScale(.15,.35)
-  Tween:Create(reel,TweenInfo.new(.08),{Position=UDim2.fromScale(.15,.39)}):Play()
-  Effects.Sound("Tick",1+elapsed/C.UI.RollDuration); task.wait(.07+elapsed*.025)
- end
- connection:Disconnect(); UI.SeenRoll=true
- local mutation=Catalog.Mutation(best)
- reel.Text=(mutation.Name~="None" and mutation.Name.." " or "")..best.Name.."\n"..C.Rarities[best.Tier].Name.." "..best.Slot..(mutation.Name~="None" and " • "..mutation.Mult.."×" or "")..(#results>1 and " • +"..(#results-1).." more" or "")
- reel.TextColor3=C.Rarities[best.Tier].Color; Effects.Sound("Reveal"); Effects.Shake(best.Tier)
- if best.Tier>=3 and not (UI.State and UI.State.Settings.ReducedEffects)then
-  local root=Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"); if root then Effects.Burst(root.Position,C.Rarities[best.Tier].Color,best.Tier*8) end
-  local flash=Instance.new("Frame"); flash.Size=UDim2.fromScale(1,1); flash.BackgroundColor3=best.Tier>=6 and C.Rarities[best.Tier].Color or Color3.new(1,1,1); flash.BackgroundTransparency=.45; flash.Parent=gui
-  Tween:Create(flash,TweenInfo.new(.5),{BackgroundTransparency=1}):Play(); task.delay(.6,function() flash:Destroy() end)
- end
- if mutation.Name~="None"then UI.Toast(mutation.Name.." mutation • "..mutation.Mult.."× part bonus contribution!")end
- task.wait(skip and .12 or math.min(2,.6+best.Tier*.15)); reel.Visible=false; UI.Rolling=false; UI.Open("Garden")
+ UI.SeenRoll=true;UI.RollDisplay:Push(results)
 end
 function UI.ReturnSummary(data)
  local old=gui:FindFirstChild("OfflineReturn");if old then old:Destroy()end
@@ -267,12 +306,12 @@ function UI.ReturnSummary(data)
  local done=button(box,"LET'S GROW",function()box:Destroy()end);done.Size=UDim2.new(.8,0,0,48);done.Position=UDim2.new(.1,0,1,-58);done.ZIndex=36;done.BackgroundColor3=T.Green
 end
 function UI.Update(state)
- UI.State=state; Effects.Update(state); Effects.Radius=state.Radius
+ UI.State=state;if UI.RollDisplay then UI.RollDisplay:Update(state)end;if UI.SellPanel then UI.SellPanel:Update(state)end;Effects.Update(state); Effects.Radius=state.Radius
  if UI.Admin then UI.Admin:Update(state)end
  if UI.Hud then UI.Hud:Update(state)end
  if UI.Placement then UI.Placement:Update(state)end
  if UI.Inventory then UI.Inventory:Update(state) end
- coins.Text=Format(state.Coins).." COINS\n+"..Format(state.Income).." / sec"
+ coins.Text=Format(state.Coins).." COINS\n+"..Format(state.Income).." base / sec"
  bag.Text="BAG "..state.Bag.Count.." / "..tostring(state.Capacity).."\n"..Format(state.Bag.Value).." coins of fruit"
  local full=type(state.Capacity)=="number" and state.Bag.Count>=state.Capacity
  bag.TextColor3=T.Cream; bag.BackgroundColor3=full and T.Red or T.Blue; if full then bag.Text="BAG FULL! Visit SELL" end
@@ -302,11 +341,11 @@ function UI.Start(network)
  fullArrow=text(sellNav,"▲",32); fullArrow.TextColor3=T.Red; fullArrow.Name="SellArrow"; fullArrow.AnchorPoint=Vector2.new(.5,0); fullArrow.Position=UDim2.new(.5,0,1,6); fullArrow.Size=UDim2.fromOffset(46,38); fullArrow.TextStrokeColor3=T.Cream; fullArrow.TextStrokeTransparency=0; fullArrow.Visible=false; fullArrow.ZIndex=20
  Tween:Create(fullArrow,TweenInfo.new(.5,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,-1,true),{Position=UDim2.new(.5,0,1,18)}):Play()
  fullWarning=text(gui,"BAG FULL! CLICK SELL!",25); fullWarning.TextColor3=T.Red; fullWarning.Name="BagFullWarning"; fullWarning.TextStrokeColor3=T.Cream; fullWarning.TextStrokeTransparency=0; fullWarning.Visible=false; fullWarning.ZIndex=20
- eventLabel=text(gui,"",17); eventLabel.TextColor3=T.Cream; eventLabel.TextStrokeColor3=T.Ink; eventLabel.TextStrokeTransparency=0
- tutorial=text(gui,"",19); tutorial.TextColor3=T.Cream; tutorial.TextStrokeColor3=T.Ink; tutorial.TextStrokeTransparency=0
+ eventLabel=text(gui,"",17); eventLabel.Name="EventLabel"; eventLabel.TextColor3=T.Cream; eventLabel.TextStrokeColor3=T.Ink; eventLabel.TextStrokeTransparency=0
+ tutorial=text(gui,"",19);tutorial.Name="TutorialHint"; tutorial.TextColor3=T.Cream; tutorial.TextStrokeColor3=T.Ink; tutorial.TextStrokeTransparency=0
  footer=Instance.new("Frame"); footer.Name="PrimaryActions"; footer.BackgroundTransparency=1; footer.Parent=gui
  local grid=Instance.new("UIGridLayout"); grid.SortOrder=Enum.SortOrder.LayoutOrder; grid.CellSize=UDim2.new(.32,0,1,-6); grid.CellPadding=UDim2.fromScale(.015,0); grid.Parent=footer
- roll=button(footer,"ROLL",function() if not UI.Rolling then send("Roll",{}) end end); roll.BackgroundColor3=T.Gold; roll.TextSize=24; roll.TextScaled=true
+ roll=button(footer,"ROLL",function() if not UI.RollDisplay or not UI.RollDisplay.Busy then send("Roll",{}) end end); roll.BackgroundColor3=T.Gold; roll.TextSize=24; roll.TextScaled=true
  local rollTextSize=Instance.new("UITextSizeConstraint"); rollTextSize.MinTextSize=12; rollTextSize.MaxTextSize=24; rollTextSize.Parent=roll
  plant=button(footer,"TREE PARTS",function() UI.Open("Tree Parts") end); plant.Name="TreePartsButton"; plant.BackgroundColor3=T.Green
  button(footer,"MORE",function() UI.Open("More") end).BackgroundColor3=T.Teal
@@ -327,7 +366,8 @@ function UI.Start(network)
   if panel then
    if UI.Tab=="More"then
     local area=gui.AbsoluteSize;local w=math.min(area.X*.90,620);local tile=math.min(160,(w*.95-32)/3-8);local h=math.min(area.Y*.9,430,tile*2+114);panel.Size=UDim2.fromOffset(w,h);panel.Position=UDim2.new(.5,-w/2,.5,-h/2)
-   elseif mobile and UI.Tab=="Shop" then panel.Size=UDim2.new(.94,0,1,-20);panel.Position=UDim2.fromScale(.03,.01)
+   elseif UI.Tab=="Robux"then panel.Size=UDim2.new(.94,0,1,-20);panel.Position=UDim2.fromScale(.03,.01)
+   elseif mobile and UI.Tab=="Shop"then panel.Size=UDim2.new(.94,0,1,-20);panel.Position=UDim2.fromScale(.03,.01)
    else panel.Size=mobile and UDim2.new(.92,0,1,-100) or UDim2.fromScale(.7,.65);panel.Position=UDim2.fromScale(mobile and .04 or .15,mobile and .01 or .16) end
   end
  end
@@ -344,8 +384,8 @@ function UI.Start(network)
  content.ScrollingDirection=Enum.ScrollingDirection.Y;content.ScrollBarThickness=8
  local list=Instance.new("UIListLayout"); list.SortOrder=Enum.SortOrder.LayoutOrder; list.Padding=UDim.new(0,12); list.Parent=content
  local padding=Instance.new("UIPadding"); padding.PaddingTop=UDim.new(0,5); padding.PaddingLeft=UDim.new(0,5); padding.PaddingRight=UDim.new(0,5); padding.PaddingBottom=UDim.new(0,5); padding.Parent=content
- content:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()if UI.Tab=="Shop"or UI.Tab=="More"then UI.ShopHash=nil;UI.MoreHash=nil;task.defer(UI.RenderMenu)end end)
- reel=button(gui,"Rolling…",function() end); reel.Size=UDim2.fromScale(.7,.22); reel.Position=UDim2.fromScale(.15,.38); reel.TextSize=25; reel.Visible=false
+ content:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()if UI.Tab=="Shop"or UI.Tab=="More"or UI.Tab=="Robux"then UI.ShopHash=nil;UI.MoreHash=nil;task.defer(UI.RenderMenu)end end)
+ UI.RollDisplay=RollController.new(gui);if UI.State then UI.RollDisplay:Update(UI.State)end
  network.State.OnClientEvent:Connect(UI.Update)
  network.Feedback.OnClientEvent:Connect(function(kind,data)
   if kind=="AdminResult"then if UI.Admin then UI.Admin:Result(data)end
@@ -355,9 +395,14 @@ function UI.Start(network)
   elseif kind=="OfflineSummary"then UI.ReturnSummary(data)
   elseif kind=="Ready" then Effects.Sound("Ready"); UI.Toast("Your tree is ready! Hold E near it to choose a plot.")
   elseif kind=="SelectPlot"then UI.Tab=nil;panel.Visible=false;UI.Inventory:Close();if UI.Admin then UI.Admin:Close()end;UI.RestoreShopTouch();UI.Placement:Begin(data)
+  elseif kind=="TreeInfo"then UI.Open("Tree Parts");UI.Inventory.Category="Garden";UI.Inventory.SelectedTreeId=data.TreeId;UI.Inventory:Refresh(true)
+  elseif kind=="ConfirmSalvage"then UI.Placement:ConfirmSalvage(data)
   elseif kind=="ConfirmReplacement"then UI.Placement:Confirm(data)
   elseif kind=="PlacementDone"then UI.Placement:Clear()
   elseif kind=="BagFull" then UI.FullWarningUntil=os.clock()+C.Inventory.FullWarningSeconds; if UI.State then UI.Update(UI.State) end
+  elseif kind=="SellPanel"then UI.Open("Sell")
+  elseif kind=="SaleResult"then if UI.SellPanel then UI.SellPanel:Result(data)end
+  elseif kind=="GiantFruit"then Effects.Giant(data)
   elseif kind=="Shop" then UI.Open("Shop")
   elseif kind=="Revenge" then UI.Toast(data.Text); UI.Open("Sabotage")
   else UI.Toast(tostring(data)) end
@@ -365,6 +410,7 @@ function UI.Start(network)
  UI.Inventory=InventoryController.new(gui,send)
  UI.Admin=AdminController.new(gui,send,function()UI.Open("Admin")end,function()UI.Open("Tree Parts")end)
  UI.Placement=PlotController.new(gui,send)
+ UI.SellPanel=SellController.new(gui,send,UI.Toast);if UI.State then UI.SellPanel:Update(UI.State)end
  UI.Hud=HudControls.new(gui,roll,function()UI.Open("Settings")end,function()send("AutoRoll",{})end,function()UI.Travel("Garden")end)
  Effects.Start()
  responsive()

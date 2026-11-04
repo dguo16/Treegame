@@ -1,0 +1,807 @@
+{
+  "Cosmetics": {
+    "Items": {
+      "BluePlanter": {
+        "Color": [
+          110,
+          185,
+          255
+        ],
+        "Name": "Bluebell Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation3Cosmic": {
+        "Name": "Rare Cosmic Curator",
+        "Slot": "Title"
+      },
+      "FlowerPlanter": {
+        "Color": [
+          250,
+          175,
+          210
+        ],
+        "Name": "Flower Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation2Cosmic": {
+        "Name": "Uncommon Cosmic Curator",
+        "Slot": "Title"
+      },
+      "RainbowGlow": {
+        "Color": [
+          130,
+          245,
+          220
+        ],
+        "Name": "Rainbow Glow",
+        "Slot": "Aura"
+      },
+      "CosmicGlow": {
+        "Color": [
+          200,
+          245,
+          255
+        ],
+        "Name": "Starlight Glow",
+        "Slot": "Aura"
+      },
+      "LegendaryCollector": {
+        "Name": "Legendary Collector",
+        "Slot": "Title"
+      },
+      "GoldGlow": {
+        "Color": [
+          255,
+          210,
+          90
+        ],
+        "Name": "Golden Glow",
+        "Slot": "Aura"
+      },
+      "Mutation3Void": {
+        "Name": "Rare Void Curator",
+        "Slot": "Title"
+      },
+      "StarPlanter": {
+        "Color": [
+          255,
+          215,
+          90
+        ],
+        "Name": "Star Planter",
+        "Slot": "Decoration"
+      },
+      "GoldenFinder": {
+        "Name": "Golden Finder",
+        "Slot": "Title"
+      },
+      "BlueGlow": {
+        "Color": [
+          100,
+          180,
+          255
+        ],
+        "Name": "Bluebell Glow",
+        "Slot": "Aura"
+      },
+      "Friendly": {
+        "Name": "Friendly Gardener",
+        "Slot": "Title"
+      },
+      "Mutation4Rainbow": {
+        "Name": "Epic Rainbow Curator",
+        "Slot": "Title"
+      },
+      "LegendRootsCollector": {
+        "Name": "Worldtree Roots Curator",
+        "Slot": "Title"
+      },
+      "LegendTrunkCollector": {
+        "Name": "Worldtree Trunk Curator",
+        "Slot": "Title"
+      },
+      "HeartPlanter": {
+        "Color": [
+          255,
+          130,
+          170
+        ],
+        "Name": "Heart Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation3Rainbow": {
+        "Name": "Rare Rainbow Curator",
+        "Slot": "Title"
+      },
+      "LegendFruitCollector": {
+        "Name": "Worldtree Fruit Curator",
+        "Slot": "Title"
+      },
+      "GodlyCollector": {
+        "Name": "Godly Collector",
+        "Slot": "Title"
+      },
+      "HeartGlow": {
+        "Color": [
+          255,
+          145,
+          185
+        ],
+        "Name": "Heart Glow",
+        "Slot": "Aura"
+      },
+      "MythicCollector": {
+        "Name": "Mythic Collector",
+        "Slot": "Title"
+      },
+      "Mutation4Void": {
+        "Name": "Epic Void Curator",
+        "Slot": "Title"
+      },
+      "VoidGlow": {
+        "Color": [
+          135,
+          90,
+          200
+        ],
+        "Name": "Twilight Glow",
+        "Slot": "Aura"
+      },
+      "Mutation2Void": {
+        "Name": "Uncommon Void Curator",
+        "Slot": "Title"
+      },
+      "Mutation2Golden": {
+        "Name": "Uncommon Golden Curator",
+        "Slot": "Title"
+      },
+      "CosmicFinder": {
+        "Name": "Cosmic Finder",
+        "Slot": "Title"
+      },
+      "Mutation4Golden": {
+        "Name": "Epic Golden Curator",
+        "Slot": "Title"
+      },
+      "Mutation3Golden": {
+        "Name": "Rare Golden Curator",
+        "Slot": "Title"
+      },
+      "LegendLeavesCollector": {
+        "Name": "Worldtree Leaves Curator",
+        "Slot": "Title"
+      },
+      "GreenGlow": {
+        "Color": [
+          110,
+          230,
+          130
+        ],
+        "Name": "Meadow Glow",
+        "Slot": "Aura"
+      },
+      "RootsCollector": {
+        "Name": "Root Curator",
+        "Slot": "Title"
+      },
+      "Legend6": {
+        "Name": "Mythic Archivist",
+        "Slot": "Title"
+      },
+      "Mutation4Cosmic": {
+        "Name": "Epic Cosmic Curator",
+        "Slot": "Title"
+      },
+      "Mutation2Rainbow": {
+        "Name": "Uncommon Rainbow Curator",
+        "Slot": "Title"
+      },
+      "Legend7": {
+        "Name": "Godly Archivist",
+        "Slot": "Title"
+      },
+      "Mutation1Void": {
+        "Name": "Common Void Curator",
+        "Slot": "Title"
+      },
+      "Mutation1Rainbow": {
+        "Name": "Common Rainbow Curator",
+        "Slot": "Title"
+      },
+      "RainbowFinder": {
+        "Name": "Rainbow Finder",
+        "Slot": "Title"
+      },
+      "EventFriend": {
+        "Name": "Event Friend",
+        "Slot": "Title"
+      },
+      "Favorite": {
+        "Name": "Garden Favorite",
+        "Slot": "Title"
+      },
+      "AllNames": {
+        "Name": "Worldtree Curator",
+        "Slot": "Title"
+      },
+      "Legend5": {
+        "Name": "Legendary Archivist",
+        "Slot": "Title"
+      },
+      "FruitCollector": {
+        "Name": "Fruit Curator",
+        "Slot": "Title"
+      },
+      "LegendAll": {
+        "Name": "Living Legend",
+        "Slot": "Title"
+      },
+      "Mutation1Cosmic": {
+        "Name": "Common Cosmic Curator",
+        "Slot": "Title"
+      },
+      "LeavesCollector": {
+        "Name": "Canopy Curator",
+        "Slot": "Title"
+      },
+      "TrunkCollector": {
+        "Name": "Trunk Curator",
+        "Slot": "Title"
+      },
+      "VoidFinder": {
+        "Name": "Void Finder",
+        "Slot": "Title"
+      },
+      "Mutation1Golden": {
+        "Name": "Common Golden Curator",
+        "Slot": "Title"
+      },
+      "CoreCollector": {
+        "Name": "Orchard Curator",
+        "Slot": "Title"
+      },
+      "Lantern": {
+        "Color": [
+          255,
+          225,
+          145
+        ],
+        "Name": "Garden Lantern",
+        "Slot": "Decoration"
+      },
+      "Collector": {
+        "Name": "Part Collector",
+        "Slot": "Title"
+      },
+      "VioletGlow": {
+        "Color": [
+          190,
+          130,
+          255
+        ],
+        "Name": "Orchid Glow",
+        "Slot": "Aura"
+      }
+    },
+    "AuraDistance": 90,
+    "MedalShop": [
+      {
+        "Key": "FlowerPlanter",
+        "Cost": 2
+      },
+      {
+        "Key": "Lantern",
+        "Cost": 4
+      },
+      {
+        "Key": "GreenGlow",
+        "Cost": 6
+      },
+      {
+        "Key": "BlueGlow",
+        "Cost": 8
+      },
+      {
+        "Key": "EventFriend",
+        "Cost": 10
+      },
+      {
+        "Key": "GoldGlow",
+        "Cost": 12
+      }
+    ],
+    "AuraRate": 0.5
+  },
+  "Events": {
+    "Every": 900,
+    "Duration": {
+      "Golden Rain": 120,
+      "Windstorm": 60,
+      "Giant Pest Raid": 120
+    },
+    "RainGrowth": 3,
+    "RainCoins": 5,
+    "RaidReward": 250,
+    "RaidHitCooldown": 0.2,
+    "RaidHealth": 100,
+    "Order": [
+      "Golden Rain",
+      "Windstorm",
+      "Giant Pest Raid"
+    ],
+    "WindGrowth": 5
+  },
+  "Collection": {
+    "AnalysisRollLimit": 20000,
+    "Likes": [
+      1,
+      10,
+      25,
+      100
+    ],
+    "CoinFloor": 50,
+    "MutationNeeds": {
+      "Golden": 6,
+      "Cosmic": 1,
+      "Void": 3,
+      "Rainbow": 4
+    },
+    "ExtraPetSlots": 1,
+    "CoinSeconds": 120,
+    "CoreMaxTier": 4,
+    "LikeRewards": [
+      "Friendly",
+      "HeartPlanter",
+      "HeartGlow",
+      "Favorite"
+    ],
+    "CoinPerSet": 0.01,
+    "LuckPerSet": 0.01,
+    "AnalysisLuck": [
+      1,
+      1.36,
+      2,
+      2.72
+    ],
+    "MutationOrder": [
+      "Golden",
+      "Rainbow",
+      "Void",
+      "Cosmic"
+    ],
+    "AnalysisSeeds": 128,
+    "CoinCap": 0.04,
+    "CoinCapReward": 1000000,
+    "LuckCap": 0.04
+  },
+  "Sets": [
+    {
+      "Optional": false,
+      "Need": 12,
+      "Key": "Names1",
+      "Tier": 1,
+      "Cosmetic": "GreenGlow",
+      "Kind": "Names",
+      "Stat": true,
+      "Title": "Common names"
+    },
+    {
+      "Optional": false,
+      "Need": 12,
+      "Key": "Names2",
+      "Tier": 2,
+      "Cosmetic": "BlueGlow",
+      "Kind": "Names",
+      "Stat": true,
+      "Title": "Uncommon names"
+    },
+    {
+      "Optional": false,
+      "Need": 12,
+      "Key": "Names3",
+      "Tier": 3,
+      "Cosmetic": "VioletGlow",
+      "Kind": "Names",
+      "Stat": true,
+      "Title": "Rare names"
+    },
+    {
+      "Optional": false,
+      "Need": 12,
+      "Key": "Names4",
+      "Tier": 4,
+      "Cosmetic": "StarPlanter",
+      "Kind": "Names",
+      "Stat": true,
+      "Title": "Epic names"
+    },
+    {
+      "Optional": true,
+      "Need": 12,
+      "Key": "Names5",
+      "Tier": 5,
+      "Cosmetic": "LegendaryCollector",
+      "Kind": "Names",
+      "Stat": false,
+      "Title": "Legendary names"
+    },
+    {
+      "Optional": true,
+      "Need": 12,
+      "Key": "Names6",
+      "Tier": 6,
+      "Cosmetic": "MythicCollector",
+      "Kind": "Names",
+      "Stat": false,
+      "Title": "Mythic names"
+    },
+    {
+      "Optional": true,
+      "Need": 12,
+      "Key": "Names7",
+      "Tier": 7,
+      "Cosmetic": "GodlyCollector",
+      "Kind": "Names",
+      "Stat": false,
+      "Title": "Godly names"
+    },
+    {
+      "Optional": false,
+      "Slot": "Trunk",
+      "Need": 12,
+      "Key": "SlotTrunk",
+      "Cosmetic": "TrunkCollector",
+      "Kind": "CoreSlot",
+      "Stat": false,
+      "Title": "Trunk names • Common–Epic"
+    },
+    {
+      "Optional": true,
+      "Slot": "Trunk",
+      "Need": 21,
+      "Key": "LegendSlotTrunk",
+      "Cosmetic": "LegendTrunkCollector",
+      "Kind": "FullSlot",
+      "Stat": false,
+      "Title": "Trunk • all rarities"
+    },
+    {
+      "Optional": false,
+      "Slot": "Leaves",
+      "Need": 12,
+      "Key": "SlotLeaves",
+      "Cosmetic": "LeavesCollector",
+      "Kind": "CoreSlot",
+      "Stat": false,
+      "Title": "Leaves names • Common–Epic"
+    },
+    {
+      "Optional": true,
+      "Slot": "Leaves",
+      "Need": 21,
+      "Key": "LegendSlotLeaves",
+      "Cosmetic": "LegendLeavesCollector",
+      "Kind": "FullSlot",
+      "Stat": false,
+      "Title": "Leaves • all rarities"
+    },
+    {
+      "Optional": false,
+      "Slot": "Roots",
+      "Need": 12,
+      "Key": "SlotRoots",
+      "Cosmetic": "RootsCollector",
+      "Kind": "CoreSlot",
+      "Stat": false,
+      "Title": "Roots names • Common–Epic"
+    },
+    {
+      "Optional": true,
+      "Slot": "Roots",
+      "Need": 21,
+      "Key": "LegendSlotRoots",
+      "Cosmetic": "LegendRootsCollector",
+      "Kind": "FullSlot",
+      "Stat": false,
+      "Title": "Roots • all rarities"
+    },
+    {
+      "Optional": false,
+      "Slot": "Fruit",
+      "Need": 12,
+      "Key": "SlotFruit",
+      "Cosmetic": "FruitCollector",
+      "Kind": "CoreSlot",
+      "Stat": false,
+      "Title": "Fruit names • Common–Epic"
+    },
+    {
+      "Optional": true,
+      "Slot": "Fruit",
+      "Need": 21,
+      "Key": "LegendSlotFruit",
+      "Cosmetic": "LegendFruitCollector",
+      "Kind": "FullSlot",
+      "Stat": false,
+      "Title": "Fruit • all rarities"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Golden",
+      "Key": "AnyGolden",
+      "Cosmetic": "GoldenFinder",
+      "Kind": "AnyMutation",
+      "Stat": false,
+      "Title": "Find any Golden part"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Rainbow",
+      "Key": "AnyRainbow",
+      "Cosmetic": "RainbowFinder",
+      "Kind": "AnyMutation",
+      "Stat": false,
+      "Title": "Find any Rainbow part"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Void",
+      "Key": "AnyVoid",
+      "Cosmetic": "VoidFinder",
+      "Kind": "AnyMutation",
+      "Stat": false,
+      "Title": "Find any Void part"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Cosmic",
+      "Key": "AnyCosmic",
+      "Cosmetic": "CosmicFinder",
+      "Kind": "AnyMutation",
+      "Stat": false,
+      "Title": "Find any Cosmic part"
+    },
+    {
+      "Optional": false,
+      "ExtraCosmetic": "GoldGlow",
+      "Need": 6,
+      "Mutation": "Golden",
+      "Key": "Mutation1Golden",
+      "Tier": 1,
+      "Cosmetic": "Mutation1Golden",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Common Golden names"
+    },
+    {
+      "Optional": false,
+      "ExtraCosmetic": "RainbowGlow",
+      "Need": 4,
+      "Mutation": "Rainbow",
+      "Key": "Mutation1Rainbow",
+      "Tier": 1,
+      "Cosmetic": "Mutation1Rainbow",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Common Rainbow names"
+    },
+    {
+      "Optional": false,
+      "ExtraCosmetic": "VoidGlow",
+      "Need": 3,
+      "Mutation": "Void",
+      "Key": "Mutation1Void",
+      "Tier": 1,
+      "Cosmetic": "Mutation1Void",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Common Void names"
+    },
+    {
+      "Optional": false,
+      "ExtraCosmetic": "CosmicGlow",
+      "Need": 1,
+      "Mutation": "Cosmic",
+      "Key": "Mutation1Cosmic",
+      "Tier": 1,
+      "Cosmetic": "Mutation1Cosmic",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Common Cosmic names"
+    },
+    {
+      "Optional": false,
+      "Need": 6,
+      "Mutation": "Golden",
+      "Key": "Mutation2Golden",
+      "Tier": 2,
+      "Cosmetic": "Mutation2Golden",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Uncommon Golden names"
+    },
+    {
+      "Optional": false,
+      "Need": 4,
+      "Mutation": "Rainbow",
+      "Key": "Mutation2Rainbow",
+      "Tier": 2,
+      "Cosmetic": "Mutation2Rainbow",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Uncommon Rainbow names"
+    },
+    {
+      "Optional": false,
+      "Need": 3,
+      "Mutation": "Void",
+      "Key": "Mutation2Void",
+      "Tier": 2,
+      "Cosmetic": "Mutation2Void",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Uncommon Void names"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Cosmic",
+      "Key": "Mutation2Cosmic",
+      "Tier": 2,
+      "Cosmetic": "Mutation2Cosmic",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Uncommon Cosmic names"
+    },
+    {
+      "Optional": false,
+      "Need": 6,
+      "Mutation": "Golden",
+      "Key": "Mutation3Golden",
+      "Tier": 3,
+      "Cosmetic": "Mutation3Golden",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Rare Golden names"
+    },
+    {
+      "Optional": false,
+      "Need": 4,
+      "Mutation": "Rainbow",
+      "Key": "Mutation3Rainbow",
+      "Tier": 3,
+      "Cosmetic": "Mutation3Rainbow",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Rare Rainbow names"
+    },
+    {
+      "Optional": false,
+      "Need": 3,
+      "Mutation": "Void",
+      "Key": "Mutation3Void",
+      "Tier": 3,
+      "Cosmetic": "Mutation3Void",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Rare Void names"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Cosmic",
+      "Key": "Mutation3Cosmic",
+      "Tier": 3,
+      "Cosmetic": "Mutation3Cosmic",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Rare Cosmic names"
+    },
+    {
+      "Optional": false,
+      "Need": 6,
+      "Mutation": "Golden",
+      "Key": "Mutation4Golden",
+      "Tier": 4,
+      "Cosmetic": "Mutation4Golden",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Epic Golden names"
+    },
+    {
+      "Optional": false,
+      "Need": 4,
+      "Mutation": "Rainbow",
+      "Key": "Mutation4Rainbow",
+      "Tier": 4,
+      "Cosmetic": "Mutation4Rainbow",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Epic Rainbow names"
+    },
+    {
+      "Optional": false,
+      "Need": 3,
+      "Mutation": "Void",
+      "Key": "Mutation4Void",
+      "Tier": 4,
+      "Cosmetic": "Mutation4Void",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Epic Void names"
+    },
+    {
+      "Optional": false,
+      "Need": 1,
+      "Mutation": "Cosmic",
+      "Key": "Mutation4Cosmic",
+      "Tier": 4,
+      "Cosmetic": "Mutation4Cosmic",
+      "Kind": "Mutation",
+      "Stat": false,
+      "Title": "Epic Cosmic names"
+    },
+    {
+      "Optional": false,
+      "Need": 48,
+      "Key": "CoreNames48",
+      "Cosmetic": "CoreCollector",
+      "Kind": "CoreNames",
+      "Stat": false,
+      "Title": "Common–Epic name collection"
+    },
+    {
+      "Optional": true,
+      "Need": 84,
+      "Key": "AllNames84",
+      "Cosmetic": "AllNames",
+      "Kind": "AllNames",
+      "Stat": false,
+      "Title": "All 84 names"
+    },
+    {
+      "Optional": true,
+      "Need": 60,
+      "Key": "Legend5",
+      "Tier": 5,
+      "Cosmetic": "Legend5",
+      "Kind": "LegendTier",
+      "Stat": false,
+      "Title": "Legendary • all mutations"
+    },
+    {
+      "Optional": true,
+      "Need": 60,
+      "Key": "Legend6",
+      "Tier": 6,
+      "Cosmetic": "Legend6",
+      "Kind": "LegendTier",
+      "Stat": false,
+      "Title": "Mythic • all mutations"
+    },
+    {
+      "Optional": true,
+      "Need": 60,
+      "Key": "Legend7",
+      "Tier": 7,
+      "Cosmetic": "Legend7",
+      "Kind": "LegendTier",
+      "Stat": false,
+      "Title": "Godly • all mutations"
+    },
+    {
+      "Optional": true,
+      "Need": 420,
+      "Key": "Legend420",
+      "Cosmetic": "LegendAll",
+      "Kind": "Legend",
+      "Stat": false,
+      "Title": "All 420 combinations"
+    }
+  ],
+  "Schema": 7
+}

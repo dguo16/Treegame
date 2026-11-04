@@ -1,8 +1,10 @@
--- Standardized Common/Uncommon models and authored join/socket metadata.
+-- Authored Common through Epic models and shared join/socket metadata.
 local S=script.Parent.Parent
 local Catalog=require(script.Parent.PartCatalog)
 local Templates=S:WaitForChild("Assets"):WaitForChild("Starter")
 local A={BaseHeight=6.4}
+local Authored=require(script.Parent.AuthoredCatalog)
+local Aliases=require(script.Parent.NameAliases)
 local definitions={
  ["Trunk:Oak"]={Asset="OakTrunk",Tier=1,Attach={0,0,0},Sockets={}},
  ["Trunk:Pine"]={Asset="PineTrunk",Tier=1,Attach={0,0,0},Sockets={}},
@@ -31,7 +33,8 @@ local definitions={
 }
 function A.Definition(item,slot)
  if type(item.Name)~="string" then return nil end
- local d=definitions[slot..":"..item.Name]
+ local key=slot..":"..Aliases.Name(item)
+ local d=definitions[key]or Authored[key]
  return d and d.Tier==(item.Tier or 1) and d or nil
 end
 function A.Is(item,slot) return slot~=nil and A.Definition(item,slot)~=nil end
@@ -70,7 +73,10 @@ end
 function A.Socket(build,index)
  local d=A.Definition(build.Leaves,"Leaves")
  local sockets=d and d.Sockets or {{1.2,.4,.8},{-.8,.4,1.2},{-1.2,.4,-.8}}
- return Vector3.new(table.unpack(sockets[(index-1)%#sockets+1]))
+ local socket=sockets[(index-1)%#sockets+1]
+ -- New opaque crowns hide their source surface sockets. Hang fruit at the lower crown instead.
+ local y=d and d.Tier>=3 and d.Tier<=4 and math.min(socket[2],.4)or socket[2]
+ return Vector3.new(socket[1],y,socket[3])
 end
 function A.Attach(item)
  local d=A.Definition(item,"Fruit");return d and Vector3.new(table.unpack(d.Attach)) or Vector3.new(0,1.55,0)

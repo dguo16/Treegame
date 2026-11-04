@@ -1,0 +1,31 @@
+newmtl FrostberryBody
+Kd 0.33 0.62 0.8
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FrostberryBloom
+Kd 0.78 0.91 0.96
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FrostberryStem
+Kd 0.29 0.43 0.47
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FrostberryLeaf
+Kd 0.46 0.72 0.76
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

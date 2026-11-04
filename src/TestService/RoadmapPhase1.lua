@@ -53,15 +53,15 @@ function Tests.Run()
  check(not Validate("ReplaceTree",{Plot=1,GrowthId="g"}),"Token is required")
  check(not Validate("ReplaceTree",{Plot=0/0,GrowthId="g",Token="t"}),"NaN target rejected")
  local cost=R.Cost(299,1)
- check(cost<=11000 and cost==R.Cost(100000,1),"Late roll cost stays bounded near 10.8K")
+ check(cost<=C.Roll.HardCap and R.Cost(100000,1)==C.Roll.HardCap,"Late roll cost has a hard cap")
  local total=0;for n=0,299 do total+=R.Cost(n,1)end
- check(total<C.Rebirth.Threshold*.01,"300-roll cost stays below one percent of Ascension")
+ check(total>=C.Rebirth.Threshold*.05 and total<=C.Rebirth.Threshold*.1,"300-roll cost is five to ten percent of first Ascension")
  check(R.Cost(299,.7)<=cost*.7+1,"Discount still applies at price cap")
  -- Both growth pads share settlement, validation and receipt identity rules.
  p=P.New(0);check(Growth.MaxPads(p)==1,"New free players start with one pad")
  p.Rebirths=1;check(Growth.MaxPads(p)==2,"First Ascension unlocks second pad")
- p.Rebirths=0;p.Passes.ExtraPlots=true;check(Growth.MaxPads(p)==2,"ExtraPlots retains lasting second-pad value")
- p.Passes.ExtraPlots=false;p.Rebirths=1
+ p.Rebirths=0;p.Schema=7;p.Passes.ExtraPlots=true;P.Migrate(p,0);check(Growth.MaxPads(p)==3 and p.LegacySecondPad,"Old entitlement migrates to third pad without losing old pad access")
+ p.Passes.ThirdPad=false;p.LegacySecondPad=nil;p.Rebirths=1
  check(Growth.Plant(p,0) and Growth.Plant(p,0),"Both free unlocked pads can grow simultaneously")
  check(p.Growth and p.Growth2 and p.Growth.Id~=p.Growth2.Id,"Growth pads have independent immutable IDs")
  local first=p.Growth.Id;local second=p.Growth2.Id
@@ -99,7 +99,9 @@ function Tests.Run()
  for tier=3,7 do for _,slot in C.Slots do
   local model=Models.Part({Id="visual",Slot=slot,Tier=tier,Name=C.PartVariants[slot][tier][1],Mutation="None"})
   local count=0;for _,part in model:GetDescendants()do if part.Name=="RarityAccent"then count+=1 end end
-  check(count==tier-2 and count<=C.RarityEffects.MaxAccentParts,"Procedural accents scale with rarity within fixed budget")
+  if tier<=4 then
+   check(count==0 and model:FindFirstChildWhichIsA("MeshPart",true)~=nil,"Authored Rare/Epic silhouettes replace procedural accents")
+  else check(count==tier-2 and count<=C.RarityEffects.MaxAccentParts,"Procedural accents scale with rarity within fixed budget")end
   model:Destroy()
  end end
  local fancy=P.Starter();fancy.Trunk.Tier=7;fancy.Trunk.Name=C.PartNames.Trunk[7]

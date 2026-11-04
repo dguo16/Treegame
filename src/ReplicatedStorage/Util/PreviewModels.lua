@@ -102,4 +102,8 @@ function M.Tree(build,heightScale,world)
  if not world then piece(model,"Soil",Vector3.new(9,.3,9),Vector3.new(0,-.3,0),T.Soil) end
  return model
 end
+-- Harvest previews scale size classes; rolled tree parts have no fruit size.
+function M.Harvest(item)
+ local model=M.Fruit(item);model:ScaleTo(model:GetScale()*require(S.Util.FruitSizes).Get(item.Size).Scale);return model
+end
 return M

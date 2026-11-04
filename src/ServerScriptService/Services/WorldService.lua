@@ -130,8 +130,8 @@ function W.Assign(player)
  fence(folder,origin)
  part(folder,"GardenWalk",Vector3.new(8,.15,65),origin+Vector3.new(0,.01,0),T.Path)
  part(folder,"AvenueConnection",Vector3.new(math.abs(origin.X),.16,8),Vector3.new(origin.X/2,.88,origin.Z+36),T.Path)
- for i=1,C.Growth.TotalPlots+2 do
-  local offset=i>=7 and Vector3.new(i==7 and -9 or 9,.2,23) or Vector3.new(((i-1)%3-1)*18,.2,math.floor((i-1)/3)*18-22)
+ for i=1,C.Growth.TotalPlots+C.Growth.MaxPads do
+  local offset=i>=7 and Vector3.new((i-8)*18,.2,23) or Vector3.new(((i-1)%3-1)*18,.2,math.floor((i-1)/3)*18-22)
   local pos=origin+offset
   part(folder,"BedBorder",Vector3.new(15,.5,15),pos,T.DarkWood)
   local pad=part(folder,"Plot"..i,Vector3.new(13.5,.55,13.5),pos+Vector3.new(0,.15,0),i>=7 and Color3.fromRGB(124,175,67) or T.Soil); g.Pads[i]=pad
@@ -146,14 +146,20 @@ function W.Assign(player)
 end
 
 function W.Status(player,p,now)
+ require(script.Parent.CosmeticWorld).Apply(W,player,p)
+ require(script.Parent.FruitWorld).Apply(W,player,p)
  local g=W.Gardens[player]; if not g then return end
- local extra=g.Pads[8];local unlocked=require(script.Parent.GrowthService).MaxPads(p)>1
- extra.Color=unlocked and T.Green or T.Soil
- local label=extra:FindFirstChild("UnlockHint")
- if not label then label=W.Billboard(extra,"",T.Gold);label.Name="UnlockHint"end
- label.Label.Text=unlocked and ""or "Ascend to unlock pad 2";label.Enabled=not unlocked
+ local Growth=require(script.Parent.GrowthService)
+ for pad=2,C.Growth.MaxPads do
+  local extra=g.Pads[6+pad];local unlocked=Growth.MaxPads(p)>=pad
+  extra.Color=unlocked and T.Green or T.Soil
+  local label=extra:FindFirstChild("UnlockHint")
+  if not label then label=W.Billboard(extra,"",T.Gold);label.Name="UnlockHint"end
+  label.Label.Text=unlocked and ""or(pad==2 and "Ascend to unlock pad 2"or "Pad 3: third Ascension • optional pass after first")
+  label.Enabled=not unlocked
+ end
  local Entitlements=require(game.ReplicatedStorage.BuildATree.Util.Entitlements)
- local statuses={GardenAura=Entitlements.Has(p,"Cosmetics")or Entitlements.Has(p,"VIP"),Scarecrow=p.Defenses.Scarecrow,Fence=p.Defenses.Fence,Shield=(p.Boosts.ShieldUntil or 0)>now,Pests=(p.Boosts.PestUntil or 0)>now}
+ local statuses={GardenAura=Entitlements.Has(p,"VIP"),Scarecrow=p.Defenses.Scarecrow,Fence=p.Defenses.Fence,Shield=(p.Boosts.ShieldUntil or 0)>now,Pests=(p.Boosts.PestUntil or 0)>now}
  for name,active in statuses do
   local existing=g.Folder:FindFirstChild(name)
   if active and not existing then
@@ -209,17 +215,22 @@ function W.SpawnFruit(player,index,value,mutation,now,metadata)
  local fruit=table.remove(W.Pool)
  local landing=g.Pads[index].Position+Vector3.new(math.random(-C.Runtime.FruitSpacing,C.Runtime.FruitSpacing),2,math.random(-C.Runtime.FruitSpacing,C.Runtime.FruitSpacing))
  local tree=g.Models[index]; local height=tree and tree:GetAttribute("Height") or 9
+ local size=require(game.ReplicatedStorage.BuildATree.Util.FruitSizes).Get(metadata and metadata.Size)
+ fruit.Size=Vector3.one*C.Runtime.FruitSize*size.Scale;fruit:SetAttribute("SizeClass",size.Name)
  fruit.Position=g.Pads[index].Position+Vector3.new(math.random(-2,2),height-1,math.random(-2,2)); fruit.Orientation=Vector3.zero
  fruit.Color=mutation.Color; fruit.Material=mutation.Material; fruit.Transparency=0
  fruit.Mutation.Color=ColorSequence.new(mutation.Color); fruit.Mutation.Rate=mutation.Particles
  fruit:SetAttribute("Owner",player.UserId); fruit:SetAttribute("Value",value); fruit:SetAttribute("MutationName",mutation.Name)
- if metadata and Imported.Is(metadata,"Fruit") then
-  local copy=table.clone(metadata);copy.Slot="Fruit";local visual=Imported.Part(copy);visual.Name="ImportedVisual"
-  visual:ScaleTo(C.Runtime.FruitSize/2);visual:PivotTo(fruit.CFrame);visual.Parent=fruit;fruit.Transparency=1
-  for _,p in visual:GetDescendants() do if p:IsA("BasePart") then
-   p.Anchored=false;p.Massless=true;p.CanQuery=false
+ if metadata then
+  local copy=table.clone(metadata);copy.Slot="Fruit";local visual=require(game.ReplicatedStorage.BuildATree.Util.PreviewModels).Harvest(copy);visual.Name="ImportedVisual"
+  visual:ScaleTo(visual:GetScale()*C.Runtime.FruitSize/2);visual:PivotTo(fruit.CFrame);visual.Parent=fruit;fruit.Transparency=1
+  for _,p in visual:GetDescendants()do if p:IsA("BasePart")then
+   p.Anchored=false;p.Massless=true;p.CanCollide=false;p.CanTouch=false;p.CanQuery=false
    local weld=Instance.new("WeldConstraint");weld.Part0=fruit;weld.Part1=p;weld.Parent=p
   end end
+ end
+ if size.Name=="Giant"then
+  local glow=Instance.new("PointLight");glow.Name="GiantGlow";glow.Color=Color3.fromRGB(255,225,135);glow.Brightness=.5;glow.Range=C.FruitInventory.GiantGlowRange;glow.Shadows=false;glow.Parent=fruit
  end
  local record={Owner=player,Value=value,Born=now,Index=index,Metadata=metadata or {Name="Harvest Fruit",Tier=1,Mutation=mutation.Name},ReadyAt=now+C.Inventory.FallSeconds+C.Inventory.BounceSeconds}
  W.Fruit[fruit]=record
@@ -241,12 +252,14 @@ function W.Recycle(fruit)
  local record=W.Fruit[fruit]; W.Fruit[fruit]=nil
  local visual=fruit:FindFirstChild("ImportedVisual");if visual then visual:Destroy() end
  if record.Tween then record.Tween:Cancel(); record.Tween:Destroy() end
+ local glow=fruit:FindFirstChild("GiantGlow");if glow then glow:Destroy()end
+ fruit.Size=Vector3.one*C.Runtime.FruitSize;fruit:SetAttribute("SizeClass",nil)
  fruit.Transparency=1; fruit.Position=Vector3.new(0,-100,0); fruit.Mutation.Rate=0; fruit:SetAttribute("Owner",nil); table.insert(W.Pool,fruit)
 end
 function W.Remove(player)
  local g=W.Gardens[player]; if g then
   for _,model in g.Models do model:Destroy() end
-  for _,name in {"Scarecrow","Fence","Shield","Pests"} do local prop=g.Folder:FindFirstChild(name); if prop then prop:Destroy() end end
+  for _,name in {"Scarecrow","Fence","Shield","Pests","EarnedDecoration","VaultShelf"} do local prop=g.Folder:FindFirstChild(name); if prop then prop:Destroy() end end
   local board=g.Folder:FindFirstChild("GardenName"); if board then for _,label in board:GetDescendants() do if label:IsA("TextLabel") then label.Text="Unclaimed Garden" end end end
   g.Folder.Name="AvailableGarden_"..g.Slot; W.Vacant[g.Slot]=g.Folder; W.Slots[g.Slot]=nil; W.Gardens[player]=nil
  end

@@ -1,0 +1,23 @@
+newmtl AzureCedarBark
+Kd 0.24 0.39 0.48
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CedarBranchShelves
+Kd 0.36 0.53 0.6
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl CedarBarkRidges
+Kd 0.18 0.31 0.4
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

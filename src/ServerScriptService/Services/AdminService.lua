@@ -40,19 +40,19 @@ function A.Execute(player,p,action,args,nextId)
   audit(p,action,args.Mode.." "..tostring(amount));return true,"Your coin balance was updated."
  elseif action=="AdminPart" or action=="AdminCatalogPart" then
   if not table.find(C.Slots,args.Slot) or args.Tier%1~=0 or not C.Rarities[args.Tier] then return false,"Choose a valid slot and rarity." end
-  if #p.Parts>=C.Runtime.MaxInventory then return false,"Your part inventory is full." end
+  if require(S.Util.PartOwnership).Count(p)>=C.Runtime.MaxInventory then return false,"Your part inventory is full." end
   local variant=1;local equip=args.Equip
   if action=="AdminCatalogPart" then
    local raw,mode=args.Choice:match("^(%d+):(%a+)$");variant=tonumber(raw)
    if not variant or not Catalog.Variants(args.Slot,args.Tier)[variant] or (mode~="Give" and mode~="Equip") then return false,"Choose a valid catalog part." end
    equip=mode=="Equip"
   end
-  local part=makePart(args.Slot,args.Tier,nextId(),variant);table.insert(p.Parts,part)
+  local part=makePart(args.Slot,args.Tier,nextId(),variant);if require(S.Util.PartOwnership).Part(p,part.Id)then return false,"That identity is already owned. Nothing changed."end;table.insert(p.Parts,part)
   if equip then p.Equipped[part.Slot]=P.Copy(part) end
   audit(p,action,part.Name);return true,"Granted "..C.Rarities[part.Tier].Name.." "..part.Name..(equip and " and equipped it." or ".")
  elseif action=="AdminAllParts" then
   local total=Catalog.Count()
-  if #p.Parts+total>C.Runtime.MaxInventory then return false,"Make room for "..total.." parts first." end
+  if require(S.Util.PartOwnership).Count(p)+total>C.Runtime.MaxInventory then return false,"Make room for "..total.." parts first." end
   for _,slot in C.Slots do for tier=1,#C.Rarities do for variant=1,#Catalog.Variants(slot,tier) do table.insert(p.Parts,makePart(slot,tier,nextId(),variant)) end end end
   audit(p,action,total);return true,"Added all "..total.." catalog parts to your inventory."
  elseif action=="AdminLuck" then

@@ -1,0 +1,46 @@
+{
+  "Progression": {
+    "Pass": true,
+    "Result": 39
+  },
+  "Acceptance": {
+    "Pass": true,
+    "Result": 455
+  },
+  "StudioChecks": {
+    "Pass": true,
+    "Result": 111
+  },
+  "CommerceChecks": {
+    "Pass": true,
+    "Result": 338
+  },
+  "Balance": {
+    "Pass": true,
+    "Result": 458
+  },
+  "SaveFaults": {
+    "Pass": true,
+    "Result": 22
+  },
+  "CollectionChecks": {
+    "Pass": true,
+    "Result": 157
+  },
+  "AdminSecurity": {
+    "Pass": true,
+    "Result": 125
+  },
+  "RoadmapPhase1": {
+    "Pass": true,
+    "Result": 77
+  },
+  "StandardAssets": {
+    "Pass": true,
+    "Result": 1708
+  },
+  "WorldUX": {
+    "Pass": true,
+    "Result": 36
+  }
+}

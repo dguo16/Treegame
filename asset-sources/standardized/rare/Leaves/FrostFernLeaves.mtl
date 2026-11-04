@@ -1,0 +1,23 @@
+newmtl FrostFernFoliage
+Kd 0.29 0.57 0.65
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FrostFernNewGrowth
+Kd 0.48 0.76 0.81
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl FernFrostTips
+Kd 0.77 0.91 0.93
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

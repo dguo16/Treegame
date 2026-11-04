@@ -1,0 +1,31 @@
+newmtl RosewoodCore
+Kd 0.38 0.2 0.3
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RosewoodBraid
+Kd 0.64 0.34 0.45
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RosewoodSecondBraid
+Kd 0.76 0.45 0.54
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RosewoodKnots
+Kd 0.81 0.59 0.6
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

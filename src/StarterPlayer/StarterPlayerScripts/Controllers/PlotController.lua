@@ -67,7 +67,7 @@ function Plot:Confirm(data)
  local size=Instance.new("UISizeConstraint");size.MaxSize=Vector2.new(500,320);size.Parent=panel
  local corner=Instance.new("UICorner");corner.CornerRadius=UDim.new(0,20);corner.Parent=panel
  local stroke=Instance.new("UIStroke");stroke.Color=T.Ink;stroke.Thickness=3;stroke.Parent=panel
- local label=Instance.new("TextLabel");label.BackgroundTransparency=1;label.Position=UDim2.fromScale(.05,.04);label.Size=UDim2.fromScale(.9,.62);label.Font=Enum.Font.FredokaOne;label.TextColor3=T.Ink;label.TextWrapped=true;label.TextScaled=true;label.Text="Replace tree in plot "..data.Plot.."?\n\n"..(data.Returned>0 and (data.Returned.." missing parts return to your inventory.")or "All its parts are already available in your inventory or starter set.").." Dropped fruit from this tree will be cleared.\nYour ready tree takes its place.";label.ZIndex=42;label.Parent=panel
+ local label=Instance.new("TextLabel");label.BackgroundTransparency=1;label.Position=UDim2.fromScale(.05,.04);label.Size=UDim2.fromScale(.9,.62);label.Font=Enum.Font.FredokaOne;label.TextColor3=T.Ink;label.TextWrapped=true;label.TextScaled=true;label.Text="Salvage and replace plot "..data.Plot.."?\n\n"..(data.Returned>0 and (data.Returned.." legacy parts return; all held parts unlock.")or "The old tree is salvaged and its non-starter parts unlock.").." Dropped fruit from this tree will be cleared.\nYour ready tree takes its place.";label.ZIndex=42;label.Parent=panel
  local textSize=Instance.new("UITextSizeConstraint");textSize.MaxTextSize=22;textSize.MinTextSize=12;textSize.Parent=label
  local function action(name,x,color,fn)
   local b=Instance.new("TextButton");b.Name=name;b.Text=name;b.Position=UDim2.fromScale(x,.73);b.Size=UDim2.new(.42,0,0,48);b.BackgroundColor3=color;b.TextColor3=T.Ink;b.Font=Enum.Font.FredokaOne;b.TextSize=22;b.ZIndex=42;b.Parent=panel
@@ -76,6 +76,15 @@ function Plot:Confirm(data)
  action("Cancel",.05,T.Blue,function()self:Clear();self.Send("CancelPlacement",{})end)
  action("Replace",.53,T.Gold,function()local pending=self.Confirmation;if not pending then return end;self:Clear();self.Send("ReplaceTree",{Plot=pending.Plot,GrowthId=pending.GrowthId,Token=pending.Token})end)
 end
+function Plot:ConfirmSalvage(data)
+ self:Confirm({Plot=data.Location,GrowthId="",Token=data.Token,Expires=data.Expires,Returned=0})
+ self.Confirmation.Salvage=true;self.Confirmation.TreeId=data.TreeId
+ local label=self.Dialog:FindFirstChildWhichIsA("TextLabel",true)
+ label.Text="Salvage "..data.Location.."?\n\nIts parts become available unchanged. Growth progress and this tree's dropped fruit are lost. No coins or other refunds."
+ local confirm=self.Dialog:FindFirstChild("Replace",true);confirm.Text="Salvage"
+ -- The replacement callback is already connected; replace its button to keep a single exact intent.
+ local b=confirm:Clone();confirm:Destroy();b.Name="Salvage";b.Parent=self.Dialog:FindFirstChildWhichIsA("Frame");b.Activated:Connect(function()local pending=self.Confirmation;if not pending then return end;self:Clear();self.Send("SalvageTree",{TreeId=pending.TreeId,Token=pending.Token})end)
+end
 function Plot:Hover(pos)
  local camera=workspace.CurrentCamera;local ray=camera:ViewportPointToRay(pos.X,pos.Y)
  local params=RaycastParams.new();params.FilterType=Enum.RaycastFilterType.Include;params.FilterDescendantsInstances=self.Parts
@@ -83,8 +92,8 @@ function Plot:Hover(pos)
  for part,h in self.Highlights do h.OutlineTransparency=part==self.Hovered and 0 or 1 end
 end
 function Plot:Update(state)
- local function ready(id)return (state.Growth and state.Growth.Id==id and state.Growth.State=="Ready")or(state.Growth2 and state.Growth2.Id==id and state.Growth2.State=="Ready")end
- if self.Confirmation and(not ready(self.Confirmation.GrowthId))then self:Clear()end
+ local function ready(id)return (state.Growth and state.Growth.Id==id and state.Growth.State=="Ready")or(state.Growth2 and state.Growth2.Id==id and state.Growth2.State=="Ready")or(state.Growth3 and state.Growth3.Id==id and state.Growth3.State=="Ready")end
+ if self.Confirmation and not self.Confirmation.Salvage and(not ready(self.Confirmation.GrowthId))then self:Clear()end
  if self.Selection and(not ready(self.Selection.GrowthId))then self:Clear()end
 end
 return Plot

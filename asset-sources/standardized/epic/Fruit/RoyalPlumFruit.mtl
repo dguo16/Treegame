@@ -1,0 +1,31 @@
+newmtl RoyalPlumSkin
+Kd 0.32 0.18 0.48
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RoyalPlumBlush
+Kd 0.51 0.26 0.6
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RoyalPlumStem
+Kd 0.39 0.27 0.29
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl RoyalPlumSepals
+Kd 0.53 0.44 0.64
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

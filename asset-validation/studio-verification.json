@@ -1,0 +1,35 @@
+{
+  "Date": "2026-11-02",
+  "Schema": 10,
+  "PlaceId": 122763473283486,
+  "Mode": "Edit",
+  "HTTP": false,
+  "DefaultViewport": "1631x753",
+  "MaintainedScripts": 69,
+  "SourceDifferences": [],
+  "OriginalGeometryRecords": 104,
+  "FinalGeometryRecords": 208,
+  "OriginalGeometryDifferences": [],
+  "OriginalModelsPreserved": 24,
+  "FinalModels": 48,
+  "NewMaterialGroups": 80,
+  "TotalTemplateMeshParts": 137,
+  "MeshFetchSuccess": 80,
+  "MeshFetchFailures": 0,
+  "CreatorId": 515156085,
+  "UploaderId": 515156085,
+  "ProfileTestAttributeRemoved": true,
+  "TemporaryRunnersRemoved": true,
+  "Handbook": {
+    "Pages": 27,
+    "ChangedAndInspected": [
+      1,
+      3,
+      24,
+      25,
+      27
+    ],
+    "Other22PagePNGsByteIdenticalToPreviousInspectedRender": true
+  },
+  "NoGamePublishingPerformed": true
+}

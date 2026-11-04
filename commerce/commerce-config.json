@@ -1,0 +1,652 @@
+{
+  "Products": {
+    "UltraLucky": {
+      "Description": "15 minutes at \u00d74 rarity luck. Replaces current boost factor and extends remaining time. No mutation/egg effect.",
+      "Factor": 4,
+      "Name": "Ultra Lucky",
+      "PaidRandom": true,
+      "Id": 0,
+      "Duration": 900,
+      "Price": 0,
+      "ProposedPrice": 249,
+      "Draft": true
+    },
+    "CoinsM": {
+      "Description": "5 minutes of server reward reference income, capped at 100M. Can fund random rolls/eggs.",
+      "Seconds": 300,
+      "Name": "Medium Coins",
+      "Cap": 100000000,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 199,
+      "Draft": true
+    },
+    "StarterPack": {
+      "Seconds": 1800,
+      "Description": "Once per account: 30 min reward reference income (cap 50M), 2 Grow10 credits, Sprout Planter and Bud title. No random grant.",
+      "Id": 0,
+      "Cosmetics": [
+        "SproutPlanter",
+        "Bud"
+      ],
+      "Credits": 2,
+      "Name": "Starter Pack",
+      "Cap": 50000000,
+      "PaidRandom": true,
+      "Once": true,
+      "Price": 0,
+      "ProposedPrice": 99,
+      "Draft": true
+    },
+    "CoinsL": {
+      "Description": "30 minutes of server reward reference income, capped at 100M. Can fund random rolls/eggs.",
+      "Seconds": 1800,
+      "Name": "Large Coins",
+      "Cap": 100000000,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 799,
+      "Draft": true
+    },
+    "Grow3": {
+      "Name": "Grow Now \u22643 min",
+      "Limit": 180,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 5,
+      "Draft": true
+    },
+    "Grow60": {
+      "Name": "Grow Now \u226460 min",
+      "Limit": 3600,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 99,
+      "Draft": true
+    },
+    "SuperLucky": {
+      "Description": "15 minutes at \u00d72 rarity luck. Replaces current boost factor and extends remaining time. No mutation/egg effect.",
+      "Factor": 2,
+      "Name": "Super Lucky",
+      "PaidRandom": true,
+      "Id": 0,
+      "Duration": 900,
+      "Price": 0,
+      "ProposedPrice": 99,
+      "Draft": true
+    },
+    "Grow30": {
+      "Name": "Grow Now \u226430 min",
+      "Limit": 1800,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 49,
+      "Draft": true
+    },
+    "CoinsS": {
+      "Description": "1 minute of server reward reference income, capped at 100M. Can fund random rolls/eggs.",
+      "Seconds": 60,
+      "Name": "Small Coins",
+      "Cap": 100000000,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 49,
+      "Draft": true
+    },
+    "Grow10": {
+      "Name": "Grow Now \u226410 min",
+      "Limit": 600,
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 25,
+      "Draft": true
+    }
+  },
+  "GrowProducts": [
+    "Grow3",
+    "Grow10",
+    "Grow30",
+    "Grow60"
+  ],
+  "Growth": {
+    "MaxCoinPlots": 6,
+    "HeightMin": 0.75,
+    "QueueLimit": 2,
+    "ThirdFreeAscensions": 3,
+    "WaterReduction": 10,
+    "TotalPlots": 6,
+    "MaxPads": 3,
+    "Fields": [
+      "Growth",
+      "Growth2",
+      "Growth3"
+    ],
+    "HeightMax": 1.5,
+    "HighestTierWeight": 0.5,
+    "MainPlots": 1,
+    "PrivateRate": 1.25,
+    "WaterCooldown": 30,
+    "WaterPrice": 500
+  },
+  "ProductOrder": [
+    "StarterPack",
+    "CoinsS",
+    "CoinsM",
+    "CoinsL",
+    "SuperLucky",
+    "UltraLucky"
+  ],
+  "Cosmetics": {
+    "Items": {
+      "BluePlanter": {
+        "Color": [
+          110,
+          185,
+          255
+        ],
+        "Name": "Bluebell Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation3Cosmic": {
+        "Name": "Rare Cosmic Curator",
+        "Slot": "Title"
+      },
+      "FlowerPlanter": {
+        "Color": [
+          250,
+          175,
+          210
+        ],
+        "Name": "Flower Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation2Cosmic": {
+        "Name": "Uncommon Cosmic Curator",
+        "Slot": "Title"
+      },
+      "RainbowGlow": {
+        "Color": [
+          130,
+          245,
+          220
+        ],
+        "Name": "Rainbow Glow",
+        "Slot": "Aura"
+      },
+      "CosmicGlow": {
+        "Color": [
+          200,
+          245,
+          255
+        ],
+        "Name": "Starlight Glow",
+        "Slot": "Aura"
+      },
+      "LegendaryCollector": {
+        "Name": "Legendary Collector",
+        "Slot": "Title"
+      },
+      "GoldGlow": {
+        "Color": [
+          255,
+          210,
+          90
+        ],
+        "Name": "Golden Glow",
+        "Slot": "Aura"
+      },
+      "LegendFruitCollector": {
+        "Name": "Worldtree Fruit Curator",
+        "Slot": "Title"
+      },
+      "Mutation3Void": {
+        "Name": "Rare Void Curator",
+        "Slot": "Title"
+      },
+      "StarPlanter": {
+        "Color": [
+          255,
+          215,
+          90
+        ],
+        "Name": "Star Planter",
+        "Slot": "Decoration"
+      },
+      "RainbowFinder": {
+        "Name": "Rainbow Finder",
+        "Slot": "Title"
+      },
+      "GoldenFinder": {
+        "Name": "Golden Finder",
+        "Slot": "Title"
+      },
+      "BlueGlow": {
+        "Color": [
+          100,
+          180,
+          255
+        ],
+        "Name": "Bluebell Glow",
+        "Slot": "Aura"
+      },
+      "Mutation1Void": {
+        "Name": "Common Void Curator",
+        "Slot": "Title"
+      },
+      "Mutation3Golden": {
+        "Name": "Rare Golden Curator",
+        "Slot": "Title"
+      },
+      "Friendly": {
+        "Name": "Friendly Gardener",
+        "Slot": "Title"
+      },
+      "Mutation4Rainbow": {
+        "Name": "Epic Rainbow Curator",
+        "Slot": "Title"
+      },
+      "LegendRootsCollector": {
+        "Name": "Worldtree Roots Curator",
+        "Slot": "Title"
+      },
+      "LegendTrunkCollector": {
+        "Name": "Worldtree Trunk Curator",
+        "Slot": "Title"
+      },
+      "HeartPlanter": {
+        "Color": [
+          255,
+          130,
+          170
+        ],
+        "Name": "Heart Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation3Rainbow": {
+        "Name": "Rare Rainbow Curator",
+        "Slot": "Title"
+      },
+      "Mutation4Golden": {
+        "Name": "Epic Golden Curator",
+        "Slot": "Title"
+      },
+      "GodlyCollector": {
+        "Name": "Godly Collector",
+        "Slot": "Title"
+      },
+      "HeartGlow": {
+        "Color": [
+          255,
+          145,
+          185
+        ],
+        "Name": "Heart Glow",
+        "Slot": "Aura"
+      },
+      "MythicCollector": {
+        "Name": "Mythic Collector",
+        "Slot": "Title"
+      },
+      "Mutation4Void": {
+        "Name": "Epic Void Curator",
+        "Slot": "Title"
+      },
+      "VoidGlow": {
+        "Color": [
+          135,
+          90,
+          200
+        ],
+        "Name": "Twilight Glow",
+        "Slot": "Aura"
+      },
+      "Mutation2Void": {
+        "Name": "Uncommon Void Curator",
+        "Slot": "Title"
+      },
+      "EventFriend": {
+        "Name": "Event Friend",
+        "Slot": "Title"
+      },
+      "CosmicFinder": {
+        "Name": "Cosmic Finder",
+        "Slot": "Title"
+      },
+      "Mutation2Golden": {
+        "Name": "Uncommon Golden Curator",
+        "Slot": "Title"
+      },
+      "LeavesCollector": {
+        "Name": "Canopy Curator",
+        "Slot": "Title"
+      },
+      "LegendLeavesCollector": {
+        "Name": "Worldtree Leaves Curator",
+        "Slot": "Title"
+      },
+      "GreenGlow": {
+        "Color": [
+          110,
+          230,
+          130
+        ],
+        "Name": "Meadow Glow",
+        "Slot": "Aura"
+      },
+      "Mutation1Rainbow": {
+        "Name": "Common Rainbow Curator",
+        "Slot": "Title"
+      },
+      "SproutPlanter": {
+        "Color": [
+          125,
+          230,
+          155
+        ],
+        "Name": "Sprout Planter",
+        "Slot": "Decoration"
+      },
+      "Mutation4Cosmic": {
+        "Name": "Epic Cosmic Curator",
+        "Slot": "Title"
+      },
+      "Mutation2Rainbow": {
+        "Name": "Uncommon Rainbow Curator",
+        "Slot": "Title"
+      },
+      "Legend7": {
+        "Name": "Godly Archivist",
+        "Slot": "Title"
+      },
+      "Favorite": {
+        "Name": "Garden Favorite",
+        "Slot": "Title"
+      },
+      "Pinwheel": {
+        "Color": [
+          170,
+          225,
+          255
+        ],
+        "Name": "Festival Pinwheel",
+        "Slot": "Decoration"
+      },
+      "AllNames": {
+        "Name": "Worldtree Curator",
+        "Slot": "Title"
+      },
+      "RootsCollector": {
+        "Name": "Root Curator",
+        "Slot": "Title"
+      },
+      "Legend6": {
+        "Name": "Mythic Archivist",
+        "Slot": "Title"
+      },
+      "Bud": {
+        "Name": "Bud",
+        "Slot": "Title"
+      },
+      "Legend5": {
+        "Name": "Legendary Archivist",
+        "Slot": "Title"
+      },
+      "FruitCollector": {
+        "Name": "Fruit Curator",
+        "Slot": "Title"
+      },
+      "LegendAll": {
+        "Name": "Living Legend",
+        "Slot": "Title"
+      },
+      "Mutation1Cosmic": {
+        "Name": "Common Cosmic Curator",
+        "Slot": "Title"
+      },
+      "TrunkCollector": {
+        "Name": "Trunk Curator",
+        "Slot": "Title"
+      },
+      "VoidFinder": {
+        "Name": "Void Finder",
+        "Slot": "Title"
+      },
+      "SunsetGlow": {
+        "Color": [
+          255,
+          155,
+          110
+        ],
+        "Name": "Sunset Glow",
+        "Slot": "Aura"
+      },
+      "Mutation1Golden": {
+        "Name": "Common Golden Curator",
+        "Slot": "Title"
+      },
+      "CoreCollector": {
+        "Name": "Orchard Curator",
+        "Slot": "Title"
+      },
+      "Lantern": {
+        "Color": [
+          255,
+          225,
+          145
+        ],
+        "Name": "Garden Lantern",
+        "Slot": "Decoration"
+      },
+      "Collector": {
+        "Name": "Part Collector",
+        "Slot": "Title"
+      },
+      "VioletGlow": {
+        "Color": [
+          190,
+          130,
+          255
+        ],
+        "Name": "Orchid Glow",
+        "Slot": "Aura"
+      }
+    },
+    "AuraRate": 0.5,
+    "AuraDistance": 90,
+    "Bundle": [
+      "SunsetGlow",
+      "Pinwheel"
+    ],
+    "MedalShop": [
+      {
+        "Key": "SproutPlanter",
+        "Cost": 2
+      },
+      {
+        "Key": "Bud",
+        "Cost": 2
+      },
+      {
+        "Key": "SunsetGlow",
+        "Cost": 16
+      },
+      {
+        "Key": "Pinwheel",
+        "Cost": 20
+      },
+      {
+        "Key": "FlowerPlanter",
+        "Cost": 2
+      },
+      {
+        "Key": "Lantern",
+        "Cost": 4
+      },
+      {
+        "Key": "GreenGlow",
+        "Cost": 6
+      },
+      {
+        "Key": "BlueGlow",
+        "Cost": 8
+      },
+      {
+        "Key": "EventFriend",
+        "Cost": 10
+      },
+      {
+        "Key": "GoldGlow",
+        "Cost": 12
+      }
+    ],
+    "Featured": [
+      "GreenGlow",
+      "GoldGlow",
+      "StarPlanter",
+      "HeartGlow",
+      "SunsetGlow",
+      "Pinwheel",
+      "SproutPlanter",
+      "Bud"
+    ]
+  },
+  "Passes": {
+    "ThirdPad": {
+      "Name": "Third Growth Pad",
+      "Description": "After first Ascension: pad 3 and queue 2 \u2192 3. Free at third Ascension. No plots or early pad 2.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 349,
+      "Draft": true
+    },
+    "InfiniteBag": {
+      "Name": "Infinite Bag",
+      "Description": "No fruit-count bag limit. Does not sell fruit or change value/odds; AutoSell is separate.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 449,
+      "Draft": true
+    },
+    "AutoRoll": {
+      "Name": "Auto Roll",
+      "Description": "Toggle automatic affordable batches. Same coin prices, inventory limit, guarantees and 2.5-second cooldown.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 299,
+      "Draft": true
+    },
+    "Coins": {
+      "Name": "Double Coins",
+      "Description": "\u00d72 fruit value once, after rarity, Leaf Power, mutations, Saplings, pets, collection and events.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 399,
+      "Draft": true
+    },
+    "Cosmetics": {
+      "Name": "Cosmetic Bundle",
+      "Description": "Sunset Glow aura + Festival Pinwheel decoration. Visual only. Also 16 + 20 participation medals in Journal.",
+      "Id": 0,
+      "PaidRandom": false,
+      "Price": 0,
+      "ProposedPrice": 199,
+      "Draft": true
+    },
+    "VIP": {
+      "Name": "VIP",
+      "Description": "\u00d71.10 fruit value, VIP terrace and golden garden petals. No rarity or mutation luck.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 799,
+      "Draft": true
+    },
+    "Luck": {
+      "Name": "Luck",
+      "Description": "\u00d72 non-Common rarity weights, then normalize. Stacks with pets/earned luck. Exact next-roll Odds; no mutation or egg effect.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 399,
+      "Draft": true
+    },
+    "AutoSell": {
+      "Name": "AutoSell + Sell Anywhere",
+      "Description": "Sell from anywhere. With AutoSell ON, sells a full bag or every 15 seconds, including Infinite Bag.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 249,
+      "Draft": true
+    },
+    "Speed": {
+      "Name": "Speed",
+      "Description": "\u00d72 walking speed after pet speed. Does not change tree growth or odds.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 149,
+      "Draft": true
+    },
+    "Offline": {
+      "Name": "Offline",
+      "Description": "Offline coin cap 2 \u2192 8 hours, at the same 50% rate. No extra growth rate or offline queue chaining.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 299,
+      "Draft": true
+    },
+    "InfiniteRange": {
+      "Name": "Infinite Range",
+      "Description": "100-stud pickup radius (not global). Collection convenience only; no mutation or egg effect.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 349,
+      "Draft": true
+    },
+    "GrowthSpeed": {
+      "Name": "Double Growth Speed",
+      "Description": "\u00d72 growth on every unlocked pad. Multiplies pets, private \u00d71.25 and one weather event: Rain \u00d73 OR Wind \u00d75.",
+      "Id": 0,
+      "PaidRandom": true,
+      "Price": 0,
+      "ProposedPrice": 299,
+      "Draft": true
+    }
+  },
+  "Monetization": {
+    "CoinPackCap": 100000000,
+    "EnableNewPurchases": false,
+    "StarterCoinCap": 50000000,
+    "MutationLuckReview": "Pending policy review; calculator only, never offered",
+    "MutationLuckEnabled": false
+  },
+  "Schema": 8,
+  "PassOrder": [
+    "Coins",
+    "GrowthSpeed",
+    "ThirdPad",
+    "AutoSell",
+    "VIP",
+    "Luck",
+    "InfiniteBag",
+    "InfiniteRange",
+    "Speed",
+    "AutoRoll",
+    "Offline",
+    "Cosmetics"
+  ]
+}

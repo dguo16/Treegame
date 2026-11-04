@@ -1,34 +1,90 @@
 {
-  "AdminSecurity": {
-    "OK": true,
-    "Result": 125
+  "Schema": 11,
+  "Suites": {
+    "Progression": {
+      "Pass": true,
+      "Result": 39
+    },
+    "Acceptance": {
+      "Pass": true,
+      "Result": 455
+    },
+    "StudioChecks": {
+      "Pass": true,
+      "Result": 186
+    },
+    "CommerceChecks": {
+      "Pass": true,
+      "Result": 338
+    },
+    "AuthoredAssets": {
+      "Pass": true,
+      "Result": 10866
+    },
+    "SalvageChecks": {
+      "Pass": true,
+      "Result": 168
+    },
+    "FruitChecks": {
+      "Pass": true,
+      "Result": 104
+    },
+    "RollPresentation": {
+      "Pass": true,
+      "Result": 635
+    },
+    "Balance": {
+      "Pass": true,
+      "Result": 458
+    },
+    "SaveFaults": {
+      "Pass": true,
+      "Result": 22
+    },
+    "CollectionChecks": {
+      "Pass": true,
+      "Result": 157
+    },
+    "AdminSecurity": {
+      "Pass": true,
+      "Result": 125
+    },
+    "RoadmapPhase1": {
+      "Pass": true,
+      "Result": 77
+    },
+    "StandardAssets": {
+      "Pass": true,
+      "Result": 1708
+    },
+    "WorldUX": {
+      "Pass": true,
+      "Result": 36
+    }
   },
-  "Acceptance": {
-    "OK": true,
-    "Result": 461
-  },
-  "SaveFaults": {
-    "OK": true,
-    "Result": 22
-  },
-  "Integration": [
-    true,
-    67
+  "SuiteAssertions": 15374,
+  "ClientChecks": 40,
+  "Total": 15414,
+  "MigrationFixtures": [
+    {
+      "RepairedIds": 0,
+      "Trees": 4,
+      "Reserved": 4,
+      "Missing": 4,
+      "Starter": 4,
+      "Ambiguous": 4,
+      "Matched": 4
+    },
+    {
+      "RepairedIds": 0,
+      "Trees": 1,
+      "Reserved": 0,
+      "Missing": 0,
+      "Starter": 0,
+      "Ambiguous": 1,
+      "Matched": 3
+    }
   ],
-  "Progression": {
-    "OK": true,
-    "Result": 40
-  },
-  "RoadmapPhase1": {
-    "OK": true,
-    "Result": 77
-  },
-  "StandardAssets": {
-    "OK": true,
-    "Result": 1708
-  },
-  "WorldUX": {
-    "OK": true,
-    "Result": 36
-  }
+  "StudioMemoryOnly": true,
+  "Published": false
 }

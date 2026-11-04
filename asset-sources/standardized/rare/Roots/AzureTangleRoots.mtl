@@ -1,0 +1,15 @@
+newmtl AzureTangleBody
+Kd 0.22 0.42 0.59
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl AzureTangleStrands
+Kd 0.36 0.62 0.74
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

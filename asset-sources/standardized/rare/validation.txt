@@ -1,0 +1,16 @@
+SapphireBirchTrunk: 480 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+AzureCedarTrunk: 540 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+CobaltPalmTrunk: 576 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+BlueMapleLeaves: 580 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+FrostFernLeaves: 808 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+AzureBlossomLeaves: 1012 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+CoralRoot: 534 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+FrostRoot: 376 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+AzureTangleRoots: 540 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+CrystalberryFruit: 464 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+Hazelfruit: 488 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+FrostberryFruit: 344 triangles; GLB/OBJ, bounds, finite vertices, and nonzero faces verified.
+729 cross-tier root/trunk/crown combinations pass vertical join checks.
+Fruit sockets are ray-cast to canopy surfaces; collision and Roblox Studio import tests were not run.
+Revision 2: all nine non-fruit assets rebuilt; silhouette study inspected.
+Fruit OBJ/MTL/GLB files verified byte-for-byte unchanged.

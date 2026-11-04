@@ -1,3 +1,194 @@
+# Salvage verification November 2 2026
+
+Schema 11. All **15 suites pass, 15,374 assertions**, plus **40 client checks** for **15,414 total**. No persistent player profile, live purchase or published game was changed.
+
+| Suite | Pass count |
+|---|---:|
+| Progression | 39 |
+| Acceptance | 455 |
+| StudioChecks | 186 |
+| CommerceChecks | 338 |
+| AuthoredAssets | 10866 |
+| SalvageChecks | 168 |
+| FruitChecks | 104 |
+| RollPresentation | 635 |
+| Balance | 458 |
+| SaveFaults | 22 |
+| CollectionChecks | 157 |
+| AdminSecurity | 125 |
+| RoadmapPhase1 | 77 |
+| StandardAssets | 1708 |
+| WorldUX | 36 |
+
+SalvageChecks: 168. StudioChecks: 186, including 39 live salvage and 35 live fruit checks. Forty additional client checks cover locked controls, location tags, actual recovery and desktop/phone portrait/landscape touch visibility. The actual phone click left 12 inventory parts and reduced locks 12 → 8 while removing plot 1. Final console is clean except the expected isolated-memory preview notice and pre-existing Hello world messages.
+
+Migration fixtures: 4 matched / 4 ambiguous / 4 missing / 4 starter (4 reserved), plus 3 matched / 1 ambiguous for an ID-less snapshot. Extra cases verify tree-ID collision avoidance, idempotence and preservation of legacy over-cap custody. Fake backend tests cover errors before write, ambiguous errors after commit, disconnect and interrupted/cancelled mutation; uncertain writes close the session.
+
+126 before and 126 final policy runs (21 seeds × six policies), three Ascensions each; all final seeds reach all three. Independent 256-seed tier audit and retained tuning evidence are in salvage/. Balanced A1 3.89 h, P90 5.26 h, second run 2.42 h, 62.2%; all active-policy A1 P90s under 8 h. 300-roll median 103.60 minutes misses the older target. See SALVAGE_REPORT.md for every table and limitations.
+
+73 maintained sources match Studio at final verification; all 208 prior geometry records are unchanged. Both XML assets and protected odds/fruit/purchase modules retain their hashes. The 28-page handbook is rendered/inspected. Temporary runner and memory attribute are removed after testing; Studio ends in Edit/default viewport, HTTP/API off. No publish, activation, commit or push. Real backend/receipts, physical devices and multiplayer remain separate release checks.
+
+## Historical verification below
+
+# Rare and Epic asset verification November 2 2026
+
+Schema 10 applies 24 authored Rare/Epic models and migrates Blueberry→Crystalberry and Blackberry→Hazelfruit while preserving tier/variant identities. All **14 suites pass (15,167 assertions)**, plus **25 live server feedback** and **28 client checks**, for **15,220 checks including the additional checks**. Three further StudioChecks runs pass at 147 checks each and are excluded from that headline total. All 80 new MeshIds fetched successfully.
+
+The new AuthoredAssets suite passes 10,866 checks: all 1,728 completed-tier root/trunk/crown combinations, shared joins and fruit offsets, mutation recoloring and botanical accents, every new named part, all new Giant harvest variants, stable old/new collection keys, schema-9 migration through ownership/equipment/production/all growth pads/queues/pending snapshots/Bag/Vault/Fruit Index/biggest records, preserved values/times/claims, and idempotence. Existing balance, purchase/receipt, authority, save-fault, fruit/Vault and rolling suites pass.
+
+The prior procedural-accent fixture now checks authored Rare/Epic models; the original bounded procedural expectations remain for Legendary–Godly. The procedural harvest fixture uses Legendary Starfruit since Epic Plum is now authored. A floating-point attachment assertion was adjusted to the existing geometry tolerance; runtime values were not changed to satisfy it.
+
+Studio inspection covered all 24 standalone models, Rare/Epic assembled trees and mixed earlier-tier trees, the cut Passionfruit, and fruit visibility under all six new crowns. The source surface socket heights hid fruit inside opaque Epic crowns; runtime heights for the new six canopies cap at 0.4 while retaining source X/Z and fruit offsets. Original contracts remain archived. Import rotation and sRGB colors were corrected and checked against source bounds.
+
+All 66 initial scripts matched disk; all 69 final scripts match. All 104 original geometry records are unchanged. The final model set is 48 Models/137 MeshParts, including 24 new Models/80 meshes. All 24 old model XML elements are unchanged; StarterTreeEditor is byte-identical. Config differs only in schema, two catalog names and a comment, preserving prices, odds, value math, mutation ceiling, purchase IDs and disabled flags.
+
+The 27-page handbook was rendered with background Word/Poppler. Five changed pages were inspected; the other 22 PNGs match the prior inspected render byte-for-byte. README, PART_CATALOG, ROADMAP_STATUS, TEST_RESULTS and ASSET_REPORT are updated; source asset packs, mapping, IDs and preservation evidence are in asset-sources/standardized and asset-validation. Supplied generation scripts were not run.
+
+All Play checks used isolated memory-only profiles with HTTP/API access off. Mesh assets uploaded to the same Roblox owner as the experience; no game publish or purchase activation occurred. Studio ends in Edit/default viewport with test attribute/runners/fixtures removed. Real backend, published-client permissions, physical devices and multiplayer performance remain release checks.
+
+## Historical rolling verification
+
+# Vertical rolling verification November 2 2026
+
+Schema remains 9; this is a presentation update. All **13 suites pass (4,301 checks)**. Additional live server feedback checks pass (25) and client presentation checks pass (28), for **4,354 checks including the additional server/client checks**. StudioChecks also passed three additional consecutive runs of 147 checks each, excluded from that headline total.
+
+The new 635-check RollPresentation suite verifies exact name/mutation odds under ordinary and guaranteed rolls, 310 seeded outcome comparisons, no metadata RNG consumption, unchanged pity progression, complete bounded batch history and correct best-of-batch choice. The extra server checks verify all ten production awards and feedback identities, third-roll guarantee, original cooldown and no stored odds fields. Client checks exercise queued five/ten batches, hidden/skip/reduced-effects behavior, every result preview/odds, ten-row pagination and no forced inventory opening. Reproducible integration scripts and JSON results are in rolling/.
+
+Desktop and iPhone 17 Pro simulated portrait/landscape reel and summary screens were inspected. All visible tested text fits; safe-area resize timing, compact landscape layout, touch overlap and ready-tree notice placement were corrected. Sensor orientation, CoreUISafeInsets and clipping remain. Real devices and multiplayer load are not certified.
+
+All 63 initial maintained sources matched Studio before changes. All 66 final sources match disk; 104 geometry records remain identical, including lowered Clover. Config is byte-identical, protecting prices, odds, cooldown, Marketplace IDs and existing flags. Profile schema, purchase/receipt behavior and server intent schemas are unchanged.
+
+The handbook remains 27 rendered pages: pages 1/4 updated and inspected, other 25 PNGs byte-identical to the previously inspected version. Background Word/Poppler rendering was reused because the bundled LibreOffice renderer was unavailable in the prior task. README, ROADMAP_STATUS, TEST_RESULTS and ROLLING_REPORT are updated. Final source/project copies and ZIP contents are verified.
+
+All Play checks used explicitly isolated memory-only profiles. Studio ends in Edit/default viewport, HTTP off, temporary runners/test attribute removed. No publishing, commit, push or purchase activation occurred. Real backend/save contention, live receipts, physical devices and multiplayer/load remain release checks.
+
+## Historical fruit revision verification
+
+# Fruit revision verification November 1 2026
+
+Profile schema 9. This section supersedes current-state statements in the historical reports below.
+
+All 12 suites pass: **3,666 assertions**. StudioChecks passed three additional consecutive runs, 147 checks each. Final fresh Play explicitly forced a memory-only profile; the test attribute and temporary runner were removed afterward. The live test harness now refuses persistent profiles. See TEST_RESULTS.json and fruit/final-tests.json.
+
+| Suite | Checks |
+|---|---:|
+| Progression | 39 |
+| Acceptance | 455 |
+| StudioChecks | 147 |
+| CommerceChecks | 338 |
+| FruitChecks | 104 |
+| Balance | 458 |
+| SaveFaults | 22 |
+| CollectionChecks | 157 |
+| AdminSecurity | 125 |
+| RoadmapPhase1 | 77 |
+| StandardAssets | 1708 |
+| WorldUX | 36 |
+
+FruitChecks and live FruitIntegration cover partial/current/stale/future sales, new arrivals during selection, exact schemas and forged amounts, payload bounds, cooldowns, all Vault exclusions, capacity and full-bag unlock refusal, quantity counters, schema-8 idempotent migration, stable IDs/unknown timestamps/conserved values, stack blending, Ascension retention, exact size expectation and independent sampling, imported/procedural scaling, welded tween anchors, recycle cleanup, Giant cooldown and safe six-fruit shelf placement.
+
+The size expected value is exactly 1. All 63 paired seeds reached first Ascension. Before/after medians: 3.9367 / 3.9767 hours (+1.016%); means: 4.0131 / 4.0308 (+0.440%); P90: 4.7567 / 4.6367. Raw results and reproducible calls are in fruit/ and FRUIT_REPORT.md. The 12-second manual Sell All policy excludes real panel/travel time, pets, events, paid/private bonuses and Vault banking.
+
+Desktop and simulated iPhone 17 Pro landscape (750x381) and portrait (401x778) Sell screens were inspected. A clipped portrait estimate was corrected and rechecked: all visible Sell text fits, including the coin estimate, with touch controls hidden. Vault and Fruit Index were inspected on desktop/portrait. The six-fruit shelf was inspected; fixtures remain cosmetic and non-colliding. Imported/procedural Giant bounds are checked against the unchanged center-based collection radius; the HUD bag-full arrow remains separate. Parent-Sound preload verified the bundled Giant ping loaded at 0.72 seconds. Harness-only inspection mistakes were corrected; the final fresh suite run passed without gameplay errors.
+
+Before edits, 57 maintained Lua sources matched disk. Final count is 63 and all normalized source hashes match Studio. All 104 geometry records match both the starting Studio snapshot and disk, preserving lowered Clover and assembly contract. Protected Config comparison, after excluding only schema/size/Vault/Giant-sound additions and newline normalization, is identical: no price, existing odds, Marketplace ID or mutation-cap changes.
+
+The 27-page handbook was rendered with background Word and bundled Poppler after the packaged LibreOffice renderer proved unavailable. Every page was inspected; final edited pages were re-rendered and rechecked. README, TEST_RESULTS, ROADMAP_STATUS, FRUIT_REPORT and the packaged handbook are updated. Historical balance/collection/commerce evidence remains included.
+
+Current connected PlaceId is 122763473283486, GameId 10774301287. This is no longer an unnamed zero-ID place; visibility was not changed or inferred. API access was off. Temporary runner/test attribute/fixtures were removed, and Studio ends in Edit/default viewport with HTTP off. No publishing, commit, push or purchase activation occurred. Real backend save/rejoin/session contention, live receipts, cross-server data, physical devices and multiplayer load remain release checks.
+
+## Historical schema 8 purchase verification
+
+# Draft purchase revision verification November 1 2026
+
+Profile schema 8. **3,526 checks pass across all eleven suites** in the final fresh Play session. Pure/service modules ran through normal server Scripts. StudioChecks additionally passed three consecutive repeated runs with no failures after the canopy fixture correction. All Marketplace IDs/live prices are zero, every catalog item is Draft=true and purchase enable flags remain false. No real purchase or publishing occurred.
+
+| Suite | Passed |
+|---|---:|
+| Progression | 39 |
+| Acceptance | 455 |
+| StudioChecks | 111 |
+| CommerceChecks | 338 |
+| Balance | 458 |
+| SaveFaults | 22 |
+| CollectionChecks | 157 |
+| AdminSecurity | 125 |
+| RoadmapPhase1 | 77 |
+| StandardAssets | 1708 |
+| WorldUX | 36 |
+| Total | 3526 |
+
+CommerceChecks has 338 assertions against the production PurchaseService and DataService factories with a fake Marketplace/backend: each product request, duplicate receipt, restriction, cancellation and draft kill switch; each pass request, cancel, verified ownership, duplicate callback, restriction and earned-Ascension persistence; all-item spending budgets; locked reference-income quotes/caps; Starter one-per-account and historical consumption; migration; three-pad immutable identity/queue/placement/credits/offline/weather; eight featured cosmetics/ownership/free alternatives; and exact prospective luck. SaveFaults retains session ownership, retry/reentry, throw isolation and no speculative reward exposure coverage.
+
+Acceptance is four assertions lower than schema 7 because the two removed products no longer run their two generic receipt-grant checks. Progression is one lower because the retired Mutation Luck offer is no longer in its five-item draft list. CollectionChecks adds schema-7 migration coverage. StudioChecks grows from 94 to 111 with actual ninth-pad ownership, rendering, queue bound, placement capability, FIFO pump, retired-route rejection and seven-part Pinwheel/equip/unequip checks. No valid gameplay assertion was weakened.
+
+A pre-existing intermittent canopy check compared the full tree bounds against a foliage-only Clover reference, so a random rolled fruit could protrude above that reference. It now measures the declared foliage component using ImportedModels.Definition and its Asset mapping, retaining the same geometry expectation/tolerance. The edited source model was not changed to satisfy the test.
+
+All 21 production-simulator Balanced seeds reached the third Ascension within 12 active hours: first median 4.01 h; third median 8.73 h, P90 9.26. These timings exclude pets, events, paid/private perks, travel and actual human behavior. Raw results and every pass/product proposal are in commerce/ and MONETIZATION_REPORT.md.
+
+Initial comparison found all 55 maintained Lua sources matching Studio and 104 editable/imported geometry records matching disk. Final maintained Lua count is 57. The manually lowered Clover and assembly contract remain. Final Studio/source/canonical/ZIP checks are recorded at packaging. Desktop and iPhone 17 Pro landscape (750x381) and portrait (401x778) Passes layouts were inspected: square tiles, readable exact effects, draft/zero-ID text, no clipped tile text, hidden overlapping touch controls and panel above HUD. Odds and Journal Style were inspected; More remains compact with no extra tile. Sensor orientation, CoreUISafeInsets HUD clipping and None topbar clipping are retained. These are simulated UI checks, not physical-device certification.
+
+The handbook has 25 rendered, inspected pages. The bundled LibreOffice renderer was unavailable; background Word export and bundled Poppler supplied the render. A blank page and connector-exported catalog symbol encoding were corrected and rechecked. README, TEST_RESULTS, draft catalog, handbook, local project copies and ZIP are updated. Studio ends in Edit/default viewport, HTTP off. Nothing was committed, pushed or published. Real backend, live receipts/regional prices, physical devices and multiplayer remain release checks.
+
+## Historical collection verification
+
+# Collection and feature verification November 1 2026
+
+Schema 7. **3,170 checks passed** in a fresh isolated Play session. All existing suites and the new CollectionChecks ran through normal server Scripts; StudioChecks invoked actual running services after readiness and passed three consecutive runs. No test or game runtime errors remain in the final session. The two pre-existing Workspace hello messages and memory-only preview warning are expected.
+
+| Suite | Passed |
+|---|---:|
+| Acceptance | 459 |
+| AdminSecurity | 125 |
+| WorldUX | 36 |
+| StandardAssets | 1708 |
+| RoadmapPhase1 | 77 |
+| Progression | 40 |
+| SaveFaults | 22 |
+| Balance | 458 |
+| CollectionChecks | 151 |
+| StudioChecks | 94 |
+| Total | 3170 |
+
+Acceptance is two assertions lower than schema 6 because the removed Shield product no longer runs the two per-product receipt-grant assertions; no remaining product coverage was removed. New collection/service assertions cover the replacement behavior.
+
+Coverage includes valid/invalid discovery identities, any-mutation name deduplication, schemas 3–6 migration and idempotence, archived legacy payouts/no replay, partial set targets, core reward caps, actual value/luck/slot effects, no mutation/egg changes, Ascension retention, optional cosmetic-only tail, medal prices/duplicates/insufficient funds, cosmetic ownership and slot checks, received-like milestones, self/UTC-like limits, bounded non-colliding decorations/auras, all named event durations, both-pad Windstorm rates, fruit capacity, delayed deadline settlement, offline standing rates, removed Shield product and Chill-on purchase rejection. Event unit fixtures are isolated, and integration restores profiles, runtime, event state, geometry and temporary fruit even after failures.
+
+Independent math covers every one of 41 sets, all four luck scenarios and the optional 420 tail. The real RollEngine/pity check ran 128 seeds for each luck (512 samples), all completing the core names. The final 21-seed collection-aware active economy run includes earned coin/luck bonuses and automatic claims. See COLLECTION_REPORT.md and collection/ for raw evidence. These measurements are separate from assertion counts.
+
+All 55 final maintained Lua sources are compared with Studio at packaging. Initial comparison found all 51 existing sources matching; 104 editable/imported geometry records also matched. The preserved lowered Clover canopy and source assembly assets are unchanged. Desktop and iPhone 17 Pro landscape Index/Medals/Sabotage screens were inspected; the next-closest hint was moved near the top for short screens. HUD uses CoreUISafeInsets with clipping and GardenTopbar uses None with clipping, under Sensor orientation. Physical devices and broader multiplayer remain unverified. Studio returns to Edit and the default viewport after review.
+
+The updated handbook has 23 rendered, inspected pages. README, source, canonical copy and ZIP include schema 7 and the collection report. Purchases remain disabled, HTTP remains off, and the place remains unpublished memory-only. Real saves/rejoins, receipts, cross-server data, physical devices and full-player load remain release checks.
+
+## Historical balance verification
+
+# Balance revision verification November 1 2026
+
+Profile schema 6. The final isolated fresh Play session passed **2,994 checks**. Tests ran through normal server Scripts and StudioChecks used the actual running service harness after readiness. The session was stopped after the final UI review. No game runtime errors appeared in the final clean session; the memory-only preview warning and two pre-existing Workspace hello messages are expected.
+
+| Suite | Passed |
+|---|---:|
+| Acceptance | 461 |
+| AdminSecurity | 125 |
+| WorldUX | 36 |
+| StandardAssets | 1708 |
+| RoadmapPhase1 | 77 |
+| Progression | 40 |
+| SaveFaults | 22 |
+| Balance | 458 |
+| StudioChecks | 67 |
+| Total | 2994 |
+
+Balance covers rarity power and 2–3× full-tier income jumps, all slot improvements, multiplicative Leaf Power, Root cadence/floor, mixed-build growth, combined mutation ceiling, price continuity/caps/huge counters, 300-roll spending, rising thresholds/overflow, legacy schemas 3/4/5, unchanged identities/mutations/bought levels/Saplings/claims, retained in-flight durations, reward reference exclusions and weak swaps, expiry, claim-time amounts, static floors, every daily/milestone step, reward caps, replay rejection, actual wallet deltas, bounded audit storage, save roundtrip and Ascension retention. Existing acceptance/security/asset/service checks still pass.
+
+The corrected simulator was measured before economy changes, then after tuning. Each version has 21 seeds for each of three active and three casual policies (126 runs per version), through up to five Ascensions. All final seeds reached every reported milestone. See ECONOMY_REPORT.md and balance/before.json, balance/after.json, balance/Config.json. Primary active results: 300 rolls 61.9 min; first Ascension 3.84 h; P90 4.68 h; second run 2.33 h. Casual first reset is 1.33 elapsed days, missing the several-day aspiration; RollFocused active first reset is 6.33 h. These limits are retained, not hidden by claiming every policy met every target.
+
+Before overwriting source, all maintained Lua containers matched disk and 104 editable/imported geometry records were compared with no differences. The lowered Clover reference and assembly metadata are preserved. Desktop HUD baseline label, Leaf Power ×1→×2/25-coin tile, exact mutation Odds with cap, and Journal live scaled amounts were inspected. The updated 21-page handbook was rendered and every page reviewed.
+
+No Marketplace, sabotage, Index reward/odds, pet, event, plot-price or offline-limit retune was made. New purchases stay disabled. This is still unpublished memory-only Studio evidence, not real DataStore/rejoin, receipts, multiplayer, physical devices, movement/retention validation or release readiness. Final source/ZIP verification is recorded by the packaging manifest.
+
+## Historical verification before this balance revision
+
 # Latest verification — November 1, 2026
 
 This section supersedes historical counts and empty-only placement notes below. All tests ran in an isolated memory-only Studio server Play session. The session was stopped afterward. There were no game runtime errors in the final console; the memory-only preview warning is expected.

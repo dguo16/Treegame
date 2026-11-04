@@ -1,0 +1,14 @@
+{
+  "Schema": 8,
+  "LuaSources": 57,
+  "SourceMismatches": [],
+  "GeometryRecords": 104,
+  "GeometryDifferences": 0,
+  "HTTP": false,
+  "Viewport": "1332, 753",
+  "Device": "default",
+  "ResetOK": true,
+  "TemporaryRunner": false,
+  "Editor": true,
+  "TestTotal": 3526
+}

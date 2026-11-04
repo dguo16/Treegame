@@ -1,0 +1,31 @@
+newmtl VioletWingCore
+Kd 0.33 0.22 0.53
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl VioletWings
+Kd 0.5 0.35 0.72
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl VioletWingEdges
+Kd 0.71 0.51 0.86
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl VioletWingVeins
+Kd 0.83 0.66 0.91
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

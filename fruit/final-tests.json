@@ -1,0 +1,75 @@
+{
+  "Date": "2026-11-01",
+  "Schema": 9,
+  "Context": "Final fresh Play, explicitly isolated memory-only Studio profile; fake Marketplace/backend fixtures",
+  "Suites": {
+    "Progression": {
+      "Pass": true,
+      "Result": 39
+    },
+    "Acceptance": {
+      "Pass": true,
+      "Result": 455
+    },
+    "StudioChecks": {
+      "Pass": true,
+      "Result": 147
+    },
+    "CommerceChecks": {
+      "Pass": true,
+      "Result": 338
+    },
+    "FruitChecks": {
+      "Pass": true,
+      "Result": 104
+    },
+    "Balance": {
+      "Pass": true,
+      "Result": 458
+    },
+    "SaveFaults": {
+      "Pass": true,
+      "Result": 22
+    },
+    "CollectionChecks": {
+      "Pass": true,
+      "Result": 157
+    },
+    "AdminSecurity": {
+      "Pass": true,
+      "Result": 125
+    },
+    "RoadmapPhase1": {
+      "Pass": true,
+      "Result": 77
+    },
+    "StandardAssets": {
+      "Pass": true,
+      "Result": 1708
+    },
+    "WorldUX": {
+      "Pass": true,
+      "Result": 36
+    }
+  },
+  "Total": 3666,
+  "StudioChecksRepeated": [
+    {
+      "Pass": true,
+      "Result": 147
+    },
+    {
+      "Pass": true,
+      "Result": 147
+    },
+    {
+      "Pass": true,
+      "Result": 147
+    }
+  ],
+  "SizePolicyPairedSeeds": 63,
+  "AllMarketplaceIDsZero": true,
+  "AllPurchasesDisabled": true,
+  "HandbookPages": 27,
+  "PublishedBackendVerified": false
+}

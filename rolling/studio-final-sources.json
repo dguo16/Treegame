@@ -1,0 +1,271 @@
+{
+  "HTTP": false,
+  "PlaceId": 122763473283486,
+  "Sources": {
+    "TestService.BuildATreeTests.Balance": {
+      "Hash": 1806187777,
+      "Length": 9875
+    },
+    "TestService.BuildATreeTests.FruitChecks": {
+      "Hash": 922376136,
+      "Length": 10503
+    },
+    "ServerScriptService.BuildATree.Services.LeaderboardService": {
+      "Hash": 25772765,
+      "Length": 9405
+    },
+    "TestService.BuildATreeTests.SaveFaults": {
+      "Hash": 1290930159,
+      "Length": 3681
+    },
+    "ServerScriptService.BuildATree.Services.FruitWorld": {
+      "Hash": 1893615,
+      "Length": 2300
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.RollController": {
+      "Hash": 1078225519,
+      "Length": 15231
+    },
+    "ReplicatedStorage.BuildATree.Types": {
+      "Hash": 1176581477,
+      "Length": 621
+    },
+    "ReplicatedStorage.BuildATree.Util.FruitCollection": {
+      "Hash": 1136350141,
+      "Length": 1557
+    },
+    "ServerScriptService.BuildATree.Services.WorldService": {
+      "Hash": 1072376809,
+      "Length": 19908
+    },
+    "ReplicatedStorage.BuildATree.Theme": {
+      "Hash": 1825878427,
+      "Length": 1072
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.AdminController": {
+      "Hash": 1337976011,
+      "Length": 11066
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.ShopGraphics": {
+      "Hash": 1563262608,
+      "Length": 4710
+    },
+    "TestService.BuildATreeTests.Simulation": {
+      "Hash": 1440393814,
+      "Length": 10419
+    },
+    "ReplicatedStorage.BuildATree.Util.FruitSizes": {
+      "Hash": 634450689,
+      "Length": 651
+    },
+    "TestService.BuildATreeTests.WorldUX": {
+      "Hash": 2117723146,
+      "Length": 2859
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.SellController": {
+      "Hash": 369075108,
+      "Length": 10989
+    },
+    "TestService.BuildATreeTests.CollectionChecks": {
+      "Hash": 798801622,
+      "Length": 10317
+    },
+    "ReplicatedStorage.BuildATree.Util.FormatNumber": {
+      "Hash": 2144481301,
+      "Length": 416
+    },
+    "ReplicatedStorage.BuildATree.Util.Entitlements": {
+      "Hash": 1772345406,
+      "Length": 208
+    },
+    "ReplicatedStorage.BuildATree.Util.Collection": {
+      "Hash": 1509177370,
+      "Length": 8900
+    },
+    "TestService.BuildATreeTests.Acceptance": {
+      "Hash": 825714301,
+      "Length": 10026
+    },
+    "ServerScriptService.BuildATree.Services.AdminConfig": {
+      "Hash": 935484410,
+      "Length": 189
+    },
+    "ServerScriptService.BuildATree.Services.AdminService": {
+      "Hash": 2088693498,
+      "Length": 4374
+    },
+    "ServerScriptService.BuildATree.Services.GrowthService": {
+      "Hash": 1603314965,
+      "Length": 4992
+    },
+    "TestService.BuildATreeTests.StandardAssets": {
+      "Hash": 226559922,
+      "Length": 3418
+    },
+    "ReplicatedStorage.BuildATree.Util.AscensionRules": {
+      "Hash": 840841070,
+      "Length": 440
+    },
+    "ServerScriptService.BuildATree.Services.CosmeticWorld": {
+      "Hash": 1605757361,
+      "Length": 3334
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.HudControls": {
+      "Hash": 477763344,
+      "Length": 4701
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.InventoryController": {
+      "Hash": 2049907913,
+      "Length": 20655
+    },
+    "ReplicatedStorage.BuildATree.Util.ImportedModels": {
+      "Hash": 637153055,
+      "Length": 5722
+    },
+    "ReplicatedStorage.BuildATree.Util.BatchCalculator": {
+      "Hash": 2024942354,
+      "Length": 534
+    },
+    "TestService.BuildATreeTests.Progression": {
+      "Hash": 2088818939,
+      "Length": 5125
+    },
+    "ReplicatedStorage.BuildATree.Util.LeaderboardScores": {
+      "Hash": 605540975,
+      "Length": 518
+    },
+    "ReplicatedStorage.BuildATree.Util.PlacementRules": {
+      "Hash": 148079670,
+      "Length": 1411
+    },
+    "ReplicatedStorage.BuildATree.Remotes": {
+      "Hash": 1242898769,
+      "Length": 156
+    },
+    "ServerScriptService.BuildATree.Services.DataService": {
+      "Hash": 1458571515,
+      "Length": 4444
+    },
+    "ReplicatedStorage.BuildATree.Util.GrowthPads": {
+      "Hash": 1720615713,
+      "Length": 551
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Main": {
+      "Hash": 826609910,
+      "Length": 1020
+    },
+    "TestService.BuildATreeTests.FruitIntegration": {
+      "Hash": 1324535309,
+      "Length": 11356
+    },
+    "ReplicatedStorage.BuildATree.Util.BagInventory": {
+      "Hash": 723535365,
+      "Length": 6201
+    },
+    "StarterGui.BuildATreeUI.README": {
+      "Hash": 246974016,
+      "Length": 116
+    },
+    "TestService.BuildATreeTests.RollPresentation": {
+      "Hash": 937633840,
+      "Length": 3075
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.PlotController": {
+      "Hash": 208731514,
+      "Length": 8417
+    },
+    "TestService.BuildATreeTests.AdminSecurity": {
+      "Hash": 1201183563,
+      "Length": 5232
+    },
+    "ReplicatedStorage.BuildATree.Util.ValueCalculator": {
+      "Hash": 1427570688,
+      "Length": 1582
+    },
+    "ServerScriptService.BuildATree.Services.PurchaseService": {
+      "Hash": 950389966,
+      "Length": 11307
+    },
+    "TestService.BuildATreeTests.CollectionAnalysis": {
+      "Hash": 1823433007,
+      "Length": 1423
+    },
+    "TestService.BuildATreeTests.RoadmapPhase1": {
+      "Hash": 1903218799,
+      "Length": 9017
+    },
+    "TestService.BuildATreeTests.Integration": {
+      "Hash": 584880642,
+      "Length": 20219
+    },
+    "ReplicatedStorage.BuildATree.Util.RollDisplay": {
+      "Hash": 553212622,
+      "Length": 1697
+    },
+    "ServerScriptService.BuildATree.Main": {
+      "Hash": 2028936864,
+      "Length": 3819
+    },
+    "ReplicatedStorage.BuildATree.Util.IntentValidator": {
+      "Hash": 77390850,
+      "Length": 2859
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.UIController": {
+      "Hash": 39781622,
+      "Length": 39969
+    },
+    "ReplicatedStorage.BuildATree.Util.Profile": {
+      "Hash": 50749575,
+      "Length": 4740
+    },
+    "ReplicatedStorage.BuildATree.Util.PartCatalog": {
+      "Hash": 902697232,
+      "Length": 1610
+    },
+    "ReplicatedStorage.BuildATree.Util.ParseNumber": {
+      "Hash": 686689161,
+      "Length": 704
+    },
+    "TestService.BuildATreeTests.CommerceChecks": {
+      "Hash": 1490315295,
+      "Length": 17404
+    },
+    "ReplicatedStorage.BuildATree.Util.GrowthCalculator": {
+      "Hash": 596009253,
+      "Length": 1394
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.JournalController": {
+      "Hash": 1950494506,
+      "Length": 12561
+    },
+    "ServerScriptService.BuildATree.Services.EventService": {
+      "Hash": 569662455,
+      "Length": 1109
+    },
+    "StarterPlayer.StarterPlayerScripts.BuildATree.Controllers.Effects": {
+      "Hash": 1691051903,
+      "Length": 8846
+    },
+    "ServerScriptService.BuildATree.Services.GameService": {
+      "Hash": 521296387,
+      "Length": 39131
+    },
+    "ReplicatedStorage.BuildATree.Util.RollEngine": {
+      "Hash": 1430456203,
+      "Length": 2522
+    },
+    "ReplicatedStorage.BuildATree.Config": {
+      "Hash": 1528340413,
+      "Length": 17094
+    },
+    "ReplicatedStorage.BuildATree.Util.PreviewModels": {
+      "Hash": 1247180356,
+      "Length": 7574
+    },
+    "ReplicatedStorage.BuildATree.Util.Journal": {
+      "Hash": 1612186744,
+      "Length": 6729
+    }
+  },
+  "GameId": 10774301287
+}

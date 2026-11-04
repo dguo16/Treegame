@@ -1,0 +1,23 @@
+newmtl PomegranateRind
+Kd 0.7 0.22 0.35
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PomegranateCalyx
+Kd 0.82 0.42 0.42
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1
+
+newmtl PomegranateCrownInside
+Kd 0.47 0.18 0.28
+Ka 0 0 0
+Ks 0 0 0
+Ns 1
+d 1
+illum 1

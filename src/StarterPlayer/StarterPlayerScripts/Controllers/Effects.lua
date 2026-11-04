@@ -11,6 +11,12 @@ function E.Sound(key,pitch)
  local id=C.SoundConfig[key]; if not id or id=="" or not E.Settings.SFX then return end
  local sound=Instance.new("Sound"); sound.SoundId=id; sound.PlaybackSpeed=pitch or 1; sound.Volume=E.Settings.SFXVolume or .4; sound.Parent=workspace.CurrentCamera; sound:Play(); Debris:AddItem(sound,5)
 end
+function E.Giant(data)
+ local now=os.clock();if now<(E.GiantAt or -math.huge)then return end
+ local root=Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+ if not root or(root.Position-data.Position).Magnitude>C.Cosmetics.AuraDistance then return end
+ E.GiantAt=now+C.FruitInventory.GiantCooldown;E.Sound("Giant",1.15)
+end
 function E.Burst(position,color,count)
  if E.Settings.ReducedEffects then return end
  local anchor=Instance.new("Part"); anchor.Anchored=true; anchor.CanCollide=false; anchor.Transparency=1; anchor.Position=position; anchor.Parent=workspace
@@ -71,10 +77,14 @@ function E.Start()
   local state=E.State;local own=world and world:FindFirstChild("Garden_"..Players.LocalPlayer.UserId);local target
   if state and own then local step=state.Onboarding or 9;if step==4 then target=own:FindFirstChild(state.Growth and "Plot7"or "Plot8")elseif step==5 then target=own:FindFirstChild("Plot1")elseif step==6 then local stand=world:FindFirstChild("FruitSellStand");target=stand and stand:FindFirstChild("Counter")elseif step==7 or step==8 then local stand=world:FindFirstChild("GardenShopStand");target=stand and stand:FindFirstChild("Counter")end end
   guide.Enabled=target~=nil;if target then arrow.Position=target.Position+Vector3.new(0,7+math.sin(os.clock()*3),0)end
+  if world then for _,anchor in world:GetChildren()do local glow=anchor:FindFirstChild("GiantGlow");if glow then
+   local root=Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+   glow.Enabled=not E.Settings.ReducedEffects and root~=nil and(root.Position-anchor.Position).Magnitude<C.Cosmetics.AuraDistance
+  end end end
   if world then for _,garden in world:GetChildren() do if garden:IsA("Folder") and garden.Name:match("Garden_") then
    for _,model in garden:GetChildren() do if model:IsA("Model") and model.PrimaryPart and model:GetAttribute("GrowthState") then
     local aura=model.PrimaryPart:FindFirstChild("RarityAura");local root=Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart");local enabled=not E.Settings.ReducedEffects and root and (root.Position-model.PrimaryPart.Position).Magnitude<C.RarityEffects.Distance
-    if aura then aura.Enabled=enabled==true end;local glow=model:FindFirstChild("RarityGlow");if glow then glow.Enabled=enabled==true end
+    if aura then aura.Enabled=enabled==true end;local earned=model.PrimaryPart:FindFirstChild("EarnedAura");if earned then earned.Enabled=not E.Settings.ReducedEffects and root~=nil and (root.Position-model.PrimaryPart.Position).Magnitude<C.Cosmetics.AuraDistance end;local glow=model:FindFirstChild("RarityGlow");if glow then glow.Enabled=enabled==true end
     local progress=model:GetAttribute("Progress") or 1; local state=model:GetAttribute("GrowthState")
     local target=state=="Growing" and math.max(.12,progress) or 1
     local current=model:GetScale(); if math.abs(current-target)>.005 then model:ScaleTo(current+(target-current)*.2) end
